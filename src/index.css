@@ -1,3 +1,14 @@
 @tailwind base;
+
+@layer base {
+  body {
+    @apply bg-gray-200 m-0;
+  }
+
+  a {
+    @apply text-th-violet underline;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
