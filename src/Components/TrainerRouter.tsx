@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
+import Categories from './Pages/Categories'
 import Home from './Pages/Home'
 
 export default function TrainerRouter() {
@@ -17,6 +18,9 @@ export default function TrainerRouter() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/categories">
+            <Categories />
           </Route>
         </Switch>
       </div>
