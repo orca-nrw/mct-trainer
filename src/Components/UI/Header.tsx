@@ -9,10 +9,18 @@ export const Header = () => {
       <Link to="/">
         <div className="w-full flex">
           <div className="flex-auto">
-            <img className="max-h-32 max-w-full" src={edbHeaderLogo} alt="EDB Logo" />
+            <img
+              className="max-h-32 max-w-full"
+              src={edbHeaderLogo}
+              alt="EDB Logo"
+            />
           </div>
           <div className="flex-auto">
-            <img className="max-h-32 max-w-full float-right" src={eildHeaderLogo} alt="EILD Logo" />
+            <img
+              className="max-h-32 max-w-full float-right"
+              src={eildHeaderLogo}
+              alt="EILD Logo"
+            />
           </div>
         </div>
       </Link>
