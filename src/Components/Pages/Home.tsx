@@ -13,9 +13,7 @@ export default function Home() {
       </p>
 
       <Link to="/categories">
-        <Button>
-          Weiter
-        </Button>
+        <Button>Weiter</Button>
       </Link>
     </div>
   )
