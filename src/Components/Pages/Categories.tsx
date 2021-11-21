@@ -1,24 +1,30 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../UI/Button'
 import CheckboxList from '../UI/CheckboxList'
 import TrainerHeader from '../UI/TrainerHeader'
 
-export default function Categories() {
-  const [selectedCategories, setSelectedCategories] = useState(
-    new Array(5).fill(false)
-  )
+interface Props {
+  categories: string[]
+  selectedCategories: boolean[]
+  setSelectedCategories: (selectedCategories: boolean[]) => void
+}
 
+export default function Categories({
+  categories,
+  selectedCategories,
+  setSelectedCategories,
+}: Props) {
   return (
     <div className="space-y-4">
       <TrainerHeader>Kategorien</TrainerHeader>
       <p>Wählen Sie die gewünschten Kategorien aus:</p>
       <CheckboxList
-        entries={['A', 'B', 'C', 'D', 'E']}
+        entries={categories}
         checked={selectedCategories}
         setChecked={setSelectedCategories}
       />
-      <Link to="/quiz">
+      <Link to="/quiz/questions">
         <Button>Test starten</Button>
       </Link>
     </div>
