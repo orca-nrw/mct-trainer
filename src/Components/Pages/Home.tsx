@@ -12,7 +12,7 @@ export default function Home() {
         werden.
       </p>
 
-      <Link to="/categories">
+      <Link to="/quiz/categories">
         <Button>Weiter</Button>
       </Link>
     </div>
