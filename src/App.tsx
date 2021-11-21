@@ -1,15 +1,17 @@
 import React from 'react'
-import TrainerRouter from './Components/TrainerRouter'
-import { Footer } from './Components/UI/Footer'
-import { Header } from './Components/UI/Header'
+import { Route, Routes } from 'react-router'
+import Home from './Components/Pages/Home'
+import QuizRouter from './Components/Pages/QuizRouter'
+import MainLayout from './Components/UI/MainLayout'
 
 function App() {
   return (
-    <div className="max-w-screen-xl space-y-4 mx-auto my-0 flex flex-col justify-center">
-      <Header />
-      <TrainerRouter />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+        <Route path="quiz/*" element={<QuizRouter />} />
+      </Route>
+    </Routes>
   )
 }
 
