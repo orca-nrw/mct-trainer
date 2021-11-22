@@ -7,9 +7,15 @@ import TrainerHeader from '../UI/TrainerHeader'
 
 interface Props {
   selectedQuestions: Question[]
+  selectedAnswers: string[][]
+  setSelectedAnswers: (selectedAnswers: string[][]) => void
 }
 
-export default function QuestionsContainer({ selectedQuestions }: Props) {
+export default function QuestionsContainer({
+  selectedQuestions,
+  selectedAnswers,
+  setSelectedAnswers,
+}: Props) {
   // Navigate to category selection if no questions are selected
   const navigate = useNavigate()
   if (!selectedQuestions || selectedQuestions.length === 0) {
@@ -25,6 +31,8 @@ export default function QuestionsContainer({ selectedQuestions }: Props) {
       <QuestionHandler
         questionList={selectedQuestions}
         currentQuestion={currentQuestion}
+        selectedAnswers={selectedAnswers}
+        setSelectedAnswers={setSelectedAnswers}
       />
       <QuestionSelector
         numberOfQuestions={selectedQuestions.length}

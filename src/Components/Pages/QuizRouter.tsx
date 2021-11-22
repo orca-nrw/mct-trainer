@@ -14,6 +14,9 @@ export default function QuizRouter() {
   )
 
   const [selectedQuestions, setSelectedQuestions] = useState<Question[]>([])
+  const [selectedAnswersArrays, setSelectedAnswersArrays] = useState<
+    string[][]
+  >([])
 
   useEffect(() => {
     const filteredQuestions = questions.filter(
@@ -40,7 +43,13 @@ export default function QuizRouter() {
       />
       <Route
         path="questions"
-        element={<QuestionsContainer selectedQuestions={selectedQuestions} />}
+        element={
+          <QuestionsContainer
+            selectedQuestions={selectedQuestions}
+            selectedAnswers={selectedAnswersArrays}
+            setSelectedAnswers={setSelectedAnswersArrays}
+          />
+        }
       />
       <Route path="evaluation" element={<Evaluation />} />
     </Routes>
