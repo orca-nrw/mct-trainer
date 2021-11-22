@@ -16,7 +16,7 @@ export default function QuizRouter() {
   const [selectedQuestions, setSelectedQuestions] = useState<Question[]>([])
   const [selectedAnswersArrays, setSelectedAnswersArrays] = useState<
     string[][]
-  >([])
+  >(new Array(15).fill([]))
 
   useEffect(() => {
     const filteredQuestions = questions.filter(
@@ -27,6 +27,12 @@ export default function QuizRouter() {
     // Draw sample from filteredQuestions
     const newSelectedQuestions = _.sampleSize(filteredQuestions, 15)
     setSelectedQuestions(newSelectedQuestions)
+
+    setSelectedAnswersArrays(
+      newSelectedQuestions.map((question) =>
+        new Array(question.answers.length).fill('')
+      )
+    )
   }, [selectedCategories])
 
   return (
