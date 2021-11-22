@@ -57,7 +57,15 @@ export default function QuizRouter() {
           />
         }
       />
-      <Route path="evaluation" element={<Evaluation />} />
+      <Route
+        path="evaluation"
+        element={
+          <Evaluation
+            selectedQuestions={selectedQuestions}
+            selectedAnswers={selectedAnswersArrays}
+          />
+        }
+      />
     </Routes>
   )
 }
