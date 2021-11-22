@@ -1,15 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router'
-import Categories from './Categories'
+import CategorySelection from './CategorySelection'
 import Evaluation from './Evaluation'
 import QuestionsContainer from './QuestionsContainer'
-
-const categories = ['A', 'B', 'C', 'D', 'E']
+import categories from '../../Helper/Categories'
+import questions from '../../Helper/Questions'
+import _ from 'lodash'
+import Question from '../../Types/Question'
 
 export default function QuizRouter() {
   const [selectedCategories, setSelectedCategories] = useState(
     new Array(categories.length).fill(false)
   )
+
+  const [selectedQuestions, setSelectedQuestions] = useState<Question[]>([])
+
+  useEffect(() => {
+    const filteredQuestions = questions.filter(
+      // Check whether the questions category is true in the selected Categories
+      (question) => selectedCategories[question.category - 1] === true
+    )
+
+    // Draw sample from filteredQuestions
+    const newSelectedQuestions = _.sampleSize(filteredQuestions, 15)
+    setSelectedQuestions(newSelectedQuestions)
+  }, [selectedCategories])
 
   return (
     <Routes>
