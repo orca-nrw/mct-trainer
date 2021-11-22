@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Button from '../UI/Button'
+import PrimaryButton from '../UI/PrimaryButton'
 import CheckboxList from '../UI/CheckboxList'
 import TrainerHeader from '../UI/TrainerHeader'
 
@@ -33,12 +33,12 @@ export default function CategorySelection({
         setChecked={setSelectedCategories}
       />
 
-      <Button
+      <PrimaryButton
         onClick={handleStart}
         disabled={!selectedCategories.some((category) => category !== false)}
       >
         Test starten
-      </Button>
+      </PrimaryButton>
     </div>
   )
 }

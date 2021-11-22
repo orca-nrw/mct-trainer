@@ -6,7 +6,7 @@ interface PropTypes {
   disabled?: boolean
 }
 
-export default function Button({
+export default function PrimaryButton({
   children,
   onClick,
   disabled = false,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Button from '../UI/Button'
+import PrimaryButton from '../UI/PrimaryButton'
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       </p>
 
       <Link to="/quiz/categories">
-        <Button>Weiter</Button>
+        <PrimaryButton>Weiter</PrimaryButton>
       </Link>
     </div>
   )

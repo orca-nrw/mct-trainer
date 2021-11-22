@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React from 'react'
-import Button from './Button'
+import PrimaryButton from './PrimaryButton'
 
 interface Props {
   numberOfQuestions: number
@@ -31,9 +31,9 @@ export default function QuestionSelector({
 
   return (
     <div className="flex space-x-2 justify-center">
-      <Button onClick={handleBack} disabled={currentQuestion === 0}>
+      <PrimaryButton onClick={handleBack} disabled={currentQuestion === 0}>
         Zurück
-      </Button>
+      </PrimaryButton>
       <select
         className="px-2 py-2 border border-black rounded-md text-lg font-semibold"
         name="currentQuestion"
@@ -49,12 +49,12 @@ export default function QuestionSelector({
           )
         })}
       </select>
-      <Button
+      <PrimaryButton
         onClick={handleNext}
         disabled={currentQuestion + 1 === numberOfQuestions}
       >
         Weiter
-      </Button>
+      </PrimaryButton>
     </div>
   )
 }
