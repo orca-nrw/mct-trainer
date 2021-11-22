@@ -1,5 +1,6 @@
 import React from 'react'
 import Question from '../../Types/Question'
+import AnswerHandler from './AnswerHandler'
 
 interface Props {
   questionList: Question[]
@@ -13,11 +14,7 @@ export default function QuestionHandler({
   return (
     <div className="space-y-8">
       <p>{questionList[currentQuestion].text}</p>
-      <div className="space-y-2">
-        {questionList[currentQuestion].answers.map((answer, index) => {
-          return <p key={index}>{answer.text}</p>
-        })}
-      </div>
+      <AnswerHandler answers={questionList[currentQuestion].answers} />
     </div>
   )
 }
