@@ -38,7 +38,10 @@ export default function QuizRouter() {
           />
         }
       />
-      <Route path="questions" element={<QuestionsContainer />} />
+      <Route
+        path="questions"
+        element={<QuestionsContainer selectedQuestions={selectedQuestions} />}
+      />
       <Route path="evaluation" element={<Evaluation />} />
     </Routes>
   )
