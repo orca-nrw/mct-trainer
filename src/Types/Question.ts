@@ -1,3 +1,5 @@
+import Answer from './Answer'
+
 export default interface Question {
   id: number
   category: number
@@ -5,8 +7,5 @@ export default interface Question {
   text: string
   explanation?: string
   type: 'multiple-choice' | 'text'
-  answers: {
-    text: string
-    solution: string
-  }[]
+  answers: Answer[]
 }
