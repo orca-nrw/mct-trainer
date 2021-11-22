@@ -19,9 +19,8 @@ export default function QuestionHandler({
     selectedSubAnswers: string[],
     index: number
   ) {
-    const newSelectedAnswers = selectedAnswers
+    const newSelectedAnswers = [...selectedAnswers]
     newSelectedAnswers[index] = selectedSubAnswers
-
     setSelectedAnswers(newSelectedAnswers)
   }
 
