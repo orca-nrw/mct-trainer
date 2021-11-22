@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import Question from '../../Types/Question'
+import QuestionEvaluation from '../UI/QuestionEvaluation'
 import TrainerHeader from '../UI/TrainerHeader'
 
 interface Props {
@@ -24,6 +25,15 @@ export default function Evaluation({
   return (
     <div className="space-y-4">
       <TrainerHeader>Evaluation</TrainerHeader>
+      {selectedQuestions.map((question, index) => {
+        return (
+          <QuestionEvaluation
+            key={index}
+            question={question}
+            selectedAnswers={selectedAnswers[index]}
+          />
+        )
+      })}
     </div>
   )
 }
