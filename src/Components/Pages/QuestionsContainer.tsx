@@ -14,6 +14,7 @@ export default function QuestionsContainer({ selectedQuestions }: Props) {
   const navigate = useNavigate()
   if (!selectedQuestions || selectedQuestions.length === 0) {
     navigate('/quiz/categories')
+    return <></>
   }
 
   const [currentQuestion, setCurrentQuestion] = useState(0)
