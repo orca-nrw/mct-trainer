@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Button from '../UI/Button'
 import CheckboxList from '../UI/CheckboxList'
 import TrainerHeader from '../UI/TrainerHeader'
@@ -10,11 +10,19 @@ interface Props {
   setSelectedCategories: (selectedCategories: boolean[]) => void
 }
 
-export default function Categories({
+export default function CategorySelection({
   categories,
   selectedCategories,
   setSelectedCategories,
 }: Props) {
+  const navigate = useNavigate()
+
+  function handleStart() {
+    if (selectedCategories.every((category) => category === false)) return
+
+    navigate('/quiz/questions')
+  }
+
   return (
     <div className="space-y-4">
       <TrainerHeader>Kategorien</TrainerHeader>
@@ -24,9 +32,13 @@ export default function Categories({
         checked={selectedCategories}
         setChecked={setSelectedCategories}
       />
-      <Link to="/quiz/questions">
-        <Button>Test starten</Button>
-      </Link>
+
+      <Button
+        onClick={handleStart}
+        disabled={!selectedCategories.some((category) => category !== false)}
+      >
+        Test starten
+      </Button>
     </div>
   )
 }
