@@ -1,6 +1,7 @@
 import React from 'react'
 import Question from '../../Types/Question'
-import AnswerHandler from './AnswerHandler'
+import CheckboxAnswerHandler from './CheckboxAnswerHandler'
+import TextboxAnswerHandler from './TextboxAnswerHandler'
 
 interface Props {
   questionList: Question[]
@@ -27,13 +28,23 @@ export default function QuestionHandler({
   return (
     <div className="space-y-8">
       <p>{questionList[currentQuestion].text}</p>
-      <AnswerHandler
-        answers={questionList[currentQuestion].answers}
-        selectedAnswers={selectedAnswers[currentQuestion]}
-        setSelectedAnswers={(selectedSubAnswers: string[]) =>
-          setSelectedAnswersIndexed(selectedSubAnswers, currentQuestion)
-        }
-      />
+      {questionList[currentQuestion].type === 'multiple-choice' ? (
+        <CheckboxAnswerHandler
+          answers={questionList[currentQuestion].answers}
+          selectedAnswers={selectedAnswers[currentQuestion]}
+          setSelectedAnswers={(selectedSubAnswers: string[]) =>
+            setSelectedAnswersIndexed(selectedSubAnswers, currentQuestion)
+          }
+        />
+      ) : (
+        <TextboxAnswerHandler
+          answers={questionList[currentQuestion].answers}
+          selectedAnswers={selectedAnswers[currentQuestion]}
+          setSelectedAnswers={(selectedSubAnswers: string[]) =>
+            setSelectedAnswersIndexed(selectedSubAnswers, currentQuestion)
+          }
+        />
+      )}
     </div>
   )
 }
