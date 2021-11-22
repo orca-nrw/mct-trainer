@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import Question from '../../Types/Question'
+import PrimaryButton from '../UI/PrimaryButton'
 import QuestionHandler from '../UI/QuestionHandler'
 import QuestionSelector from '../UI/QuestionSelector'
 import TrainerHeader from '../UI/TrainerHeader'
@@ -47,7 +48,11 @@ export default function QuestionsContainer({
           />
         </>
       )}
-      <button>Test beenden</button>
+      <div className="flex justify-center">
+        <PrimaryButton onClick={() => navigate('/quiz/evaluation')}>
+          Test beenden
+        </PrimaryButton>
+      </div>
     </div>
   )
 }
