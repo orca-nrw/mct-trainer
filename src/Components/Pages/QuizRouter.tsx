@@ -31,8 +31,8 @@ export default function QuizRouter() {
       <Route
         path="categories"
         element={
-          <Categories
-            categories={categories}
+          <CategorySelection
+            categories={categories.map((categoryObj) => categoryObj.name)}
             selectedCategories={selectedCategories}
             setSelectedCategories={setSelectedCategories}
           />
