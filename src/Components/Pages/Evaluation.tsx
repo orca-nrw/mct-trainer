@@ -32,7 +32,6 @@ export default function Evaluation({
             index={index}
             question={question}
             selectedAnswers={selectedAnswers[index]}
-            isCorrect={false}
           />
         )
       })}

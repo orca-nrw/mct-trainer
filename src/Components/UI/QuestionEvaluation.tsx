@@ -5,7 +5,6 @@ interface Props {
   question: Question
   selectedAnswers: string[]
   index: number
-  isCorrect: boolean
 }
 
 export default function QuestionEvaluation({
