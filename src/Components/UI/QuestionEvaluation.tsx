@@ -12,8 +12,11 @@ export default function QuestionEvaluation({
   question,
   selectedAnswers,
   index,
-  isCorrect,
 }: Props) {
+  const isCorrect = question.answers.every(
+    (answer, index) => answer.solution === selectedAnswers[index]
+  )
+
   return (
     <div className="border border-black rounded-md">
       <div
