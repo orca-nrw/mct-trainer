@@ -30,7 +30,11 @@ export default function QuizRouter() {
 
     setSelectedAnswersArrays(
       newSelectedQuestions.map((question) =>
-        new Array(question.answers.length).fill('')
+        // Fill answer strings depending on question type
+        // Multiple Choice Answers have a default of "false" while text have empty strings
+        new Array(question.answers.length).fill(
+          question.type === 'multiple-choice' ? 'false' : ''
+        )
       )
     )
   }, [selectedCategories])
