@@ -29,8 +29,10 @@ export default function Evaluation({
         return (
           <QuestionEvaluation
             key={index}
+            index={index}
             question={question}
             selectedAnswers={selectedAnswers[index]}
+            isCorrect={false}
           />
         )
       })}
