@@ -14,7 +14,8 @@ export default function QuestionEvaluation({
   index,
 }: Props) {
   const isCorrect = question.answers.every(
-    (answer, index) => answer.solution === selectedAnswers[index]
+    (answer, index) =>
+      answer.solution.toLowerCase() === selectedAnswers[index].toLowerCase()
   )
 
   return (
