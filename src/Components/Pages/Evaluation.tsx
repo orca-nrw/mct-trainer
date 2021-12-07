@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
 import Question from '../../Types/Question'
+import PrimaryButton from '../UI/PrimaryButton'
 import QuestionEvaluation from '../UI/QuestionEvaluation'
 import TrainerHeader from '../UI/TrainerHeader'
 
@@ -35,6 +37,11 @@ export default function Evaluation({
           />
         )
       })}
+      <div className="flex justify-center">
+        <Link to="/quiz/categories">
+          <PrimaryButton>Neuer Test</PrimaryButton>
+        </Link>
+      </div>
     </div>
   )
 }
