@@ -18,11 +18,11 @@ export default function QuestionEvaluation({
   )
 
   return (
-    <div className="border border-black rounded-md">
+    <div className="border border-gray-300 rounded-md shadow-md">
       <div
         className={`${
-          isCorrect ? 'bg-green-300 text-green-900' : 'bg-red-300 text-red-900'
-        } px-4 py-2 rounded-t-md flex justify-between`}
+          isCorrect ? 'bg-green-200 text-green-900' : 'bg-red-200 text-red-900'
+        } px-4 py-2 rounded-t-md border-b border-gray-300 flex justify-between`}
       >
         <h1>{index + 1}. Frage</h1>
         <ButtonModal />
