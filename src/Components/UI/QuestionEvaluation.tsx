@@ -1,5 +1,6 @@
 import React from 'react'
 import Question from '../../Types/Question'
+import ButtonModal from './ButtonModal'
 
 interface Props {
   question: Question
@@ -21,9 +22,10 @@ export default function QuestionEvaluation({
       <div
         className={`${
           isCorrect ? 'bg-green-300 text-green-900' : 'bg-red-300 text-red-900'
-        } px-4 py-2 rounded-t-md`}
+        } px-4 py-2 rounded-t-md flex justify-between`}
       >
-        {index + 1}. Frage
+        <h1>{index + 1}. Frage</h1>
+        <ButtonModal />
       </div>
       <div className="p-4">{question.text}</div>
       <table className="w-full">
