@@ -1,6 +1,6 @@
 import React from 'react'
 import Question from '../../Types/Question'
-import ButtonModal from './ButtonModal'
+import ButtonModal from './ModalButton'
 
 interface Props {
   question: Question
