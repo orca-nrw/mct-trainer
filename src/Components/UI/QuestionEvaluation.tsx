@@ -25,7 +25,9 @@ export default function QuestionEvaluation({
         } px-4 py-2 rounded-t-md border-b border-gray-300 flex justify-between`}
       >
         <h1>{index + 1}. Frage</h1>
-        <ButtonModal />
+        <ButtonModal
+          modalText={question.explanation || 'Keine Erklärung vorhanden...'}
+        />
       </div>
       <div className="p-4">{question.text}</div>
       <table className="w-full">
