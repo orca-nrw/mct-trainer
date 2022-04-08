@@ -18,7 +18,7 @@ export default function QuizRouter() {
     string[][]
   >(new Array(15).fill([]))
 
-  useEffect(() => {
+  function resetQuestions() {
     const filteredQuestions = questions.filter(
       // Check whether the questions category is true in the selected Categories
       (question) => selectedCategories[question.category - 1] === true
@@ -27,9 +27,15 @@ export default function QuizRouter() {
     // Draw sample from filteredQuestions
     const newSelectedQuestions = _.sampleSize(filteredQuestions, 15)
     setSelectedQuestions(newSelectedQuestions)
+  }
 
+  useEffect(() => {
+    resetQuestions()
+  }, [selectedCategories])
+
+  useEffect(() => {
     setSelectedAnswersArrays(
-      newSelectedQuestions.map((question) =>
+      selectedQuestions.map((question) =>
         // Fill answer strings depending on question type
         // Multiple Choice Answers have a default of "false" while text have empty strings
         new Array(question.answers.length).fill(
@@ -37,7 +43,7 @@ export default function QuizRouter() {
         )
       )
     )
-  }, [selectedCategories])
+  }, [selectedQuestions])
 
   return (
     <Routes>
@@ -48,6 +54,7 @@ export default function QuizRouter() {
             categories={categories.map((categoryObj) => categoryObj.name)}
             selectedCategories={selectedCategories}
             setSelectedCategories={setSelectedCategories}
+            resetQuestions={resetQuestions}
           />
         }
       />

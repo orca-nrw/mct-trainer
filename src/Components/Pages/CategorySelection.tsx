@@ -8,17 +8,22 @@ interface Props {
   categories: string[]
   selectedCategories: boolean[]
   setSelectedCategories: (selectedCategories: boolean[]) => void
+  resetQuestions: () => void
 }
 
 export default function CategorySelection({
   categories,
   selectedCategories,
   setSelectedCategories,
+  resetQuestions,
 }: Props) {
   const navigate = useNavigate()
 
   function handleStart() {
     if (selectedCategories.every((category) => category === false)) return
+
+    // Reset the selected questions upon starting another quiz
+    resetQuestions()
 
     navigate('/quiz/questions')
   }
