@@ -959,37 +959,6 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 1596,
-    category: 7,
-    difficulty: 1,
-    text: 'Welcher Operation entspricht eine SELECT-Anweisung mit \nWHERE ... NOT IN (... ) \nin der relationalen Algebra?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'UNION',
-        solution: 'false',
-      },
-      {
-        text: 'DIVISION',
-        solution: 'false',
-      },
-      {
-        text: 'DIFFERENZ',
-        solution: 'true',
-      },
-      {
-        text: 'JOIN',
-        solution: 'false',
-      },
-      {
-        text: 'keiner von allen',
-        solution: 'false',
-      },
-    ],
-  },
-  {
     id: 1595,
     category: 14,
     difficulty: 2,
@@ -1194,33 +1163,6 @@ const questions: Question[] = [
       {
         text: 'Der Autor heißt',
         solution: 'Bayer',
-      },
-    ],
-  },
-  {
-    id: 1121,
-    category: 7,
-    difficulty: 1,
-    text: 'Welcher Operator der relationalen Algebra entspricht dem "NOT IN" aus einer SQL-WHERE-Bedingung?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Vereinigung',
-        solution: 'false',
-      },
-      {
-        text: 'Division',
-        solution: 'false',
-      },
-      {
-        text: 'Durchschnitt',
-        solution: 'false',
-      },
-      {
-        text: 'Differenz',
-        solution: 'true',
       },
     ],
   },
@@ -2919,33 +2861,6 @@ const questions: Question[] = [
       {
         text: 'stimmt nicht',
         solution: 'true',
-      },
-    ],
-  },
-  {
-    id: 934,
-    category: 14,
-    difficulty: 3,
-    text: 'Bei welchem Isolationsgrad kann Nonrepeatable Read auftreten?',
-    explanation:
-      'Die folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n \n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n \n    serializable\n    nein\n    nein\n    nein\n  \n\n\n\n ',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'read uncommitted',
-        solution: 'true',
-      },
-      {
-        text: 'read committed',
-        solution: 'true',
-      },
-      {
-        text: 'repeatable read',
-        solution: 'false',
-      },
-      {
-        text: 'serializable',
-        solution: 'false',
       },
     ],
   },
@@ -6817,76 +6732,6 @@ const questions: Question[] = [
       {
         text: 'und ',
         solution: 'TOO_MANY_ROWS',
-      },
-    ],
-  },
-  {
-    id: 1289,
-    category: 7,
-    difficulty: 3,
-    text: 'Mit welchen Klauseln/Operationen einer SQL-Anfrage kann eine Theta-Join-Operation aus der Relationalen Algebra simuliert werden?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'SELECT',
-        solution: 'false',
-      },
-      {
-        text: 'FROM',
-        solution: 'true',
-      },
-      {
-        text: 'WHERE',
-        solution: 'true',
-      },
-      {
-        text: 'GROUP BY',
-        solution: 'false',
-      },
-      {
-        text: 'ORDER BY',
-        solution: 'false',
-      },
-      {
-        text: 'MINUS',
-        solution: 'false',
-      },
-      {
-        text: 'UNION',
-        solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 1290,
-    category: 7,
-    difficulty: 1,
-    text: 'Welchem Operator in der Relationalen Algebra entspricht die folgende Anfrage an die Fahrrad-Datenbank? SELECT * FROM kunden, auftraege; \n',
-    explanation:
-      'Da es keine WHERE-Bedingung gibt, die die Spalten der  beiden Tabellen verbindet, und da es keine JOIN-Operatoren in der FROM-Klausel gibt, handelt es sich hier um ein kartesisches Produkt. \n\nDie Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Natural Join',
-        solution: 'false',
-      },
-      {
-        text: 'Equi Join',
-        solution: 'false',
-      },
-      {
-        text: 'Kartesisches Produkt',
-        solution: 'true',
-      },
-      {
-        text: 'Theta Join',
-        solution: 'false',
-      },
-      {
-        text: 'keinem dieser Operatoren',
-        solution: 'false',
       },
     ],
   },
@@ -11242,41 +11087,6 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 1332,
-    category: 7,
-    difficulty: 2,
-    text: 'Welche SELECT-Komponenten lassen sich in der relationalen Algebra ausdrücken?',
-    explanation:
-      'Kein ORDER BY: Sortiert wird in der Relationalen Algebra nicht\nKein GROUP BY, kein HAVING: Gruppiert wird in der Relationalen Algebra nicht. \n\nDie Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'SELECT',
-        solution: 'true',
-      },
-      {
-        text: 'FROM',
-        solution: 'true',
-      },
-      {
-        text: 'WHERE',
-        solution: 'true',
-      },
-      {
-        text: 'GROUP BY\n',
-        solution: 'true',
-      },
-      {
-        text: 'HAVING',
-        solution: 'false',
-      },
-      {
-        text: 'ORDER BY',
-        solution: 'false',
-      },
-    ],
-  },
-  {
     id: 1361,
     category: 12,
     difficulty: 3,
@@ -14133,33 +13943,6 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 1721,
-    category: 14,
-    difficulty: 1,
-    text: 'Bei welchem Isolationsgrad kann Dirty-Read (unsauberes Lesen) auftreten?',
-    explanation:
-      'unsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt. \n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen.\n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen.\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'read uncommitted',
-        solution: 'true',
-      },
-      {
-        text: 'read committed',
-        solution: 'false',
-      },
-      {
-        text: 'repeatable read',
-        solution: 'false',
-      },
-      {
-        text: 'serializable',
-        solution: 'false',
-      },
-    ],
-  },
-  {
     id: 1722,
     category: 7,
     difficulty: 1,
@@ -14558,60 +14341,6 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 1909,
-    category: 14,
-    difficulty: 2,
-    text: 'Welches Problem kann beim Isolationsgrad READ UNCOMMITTED auftreten?',
-    explanation:
-      'Beim Isolationsgrad READ UNCOMMITTED können alle drei Probleme auftreten. \n\nUnsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt.   \n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen. \n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen. \n\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Unsauberes Lesen',
-        solution: 'true',
-      },
-      {
-        text: 'Nicht wiederholbares Lesen',
-        solution: 'true',
-      },
-      {
-        text: 'Phantom',
-        solution: 'true',
-      },
-      {
-        text: 'keines der Probleme',
-        solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 1910,
-    category: 14,
-    difficulty: 3,
-    text: 'Welches Problem kann beim Isolationsgrad READ COMMITTED auftreten?',
-    explanation:
-      'Beim Isolationsgrad READ COMMITTED können die beiden Probleme "nicht wiederholbares Lesen" und "Phantome" auftreten. \nUnsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt. \n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen.\n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen.\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Unsauberes Lesen',
-        solution: 'false',
-      },
-      {
-        text: 'Nicht wiederholbares Lesen',
-        solution: 'true',
-      },
-      {
-        text: 'Phantom',
-        solution: 'true',
-      },
-      {
-        text: 'keines der Probleme',
-        solution: 'false',
-      },
-    ],
-  },
-  {
     id: 1970,
     category: 9,
     difficulty: 2,
@@ -14665,44 +14394,6 @@ const questions: Question[] = [
       {
         text: 'stimmt nicht',
         solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 1915,
-    category: 14,
-    difficulty: 1,
-    text: 'Der SQL-Standard läßt mit dem Isolationsgrad "READ UNCOMMITTED" unsauberes Lesen zu.',
-    explanation:
-      'unsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt.\n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen.\n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen.\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'stimmt',
-        solution: 'true',
-      },
-      {
-        text: 'stimmt nicht',
-        solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 1916,
-    category: 14,
-    difficulty: 3,
-    text: 'ORACLE läßt mit dem Isolationsgrad "READ UNCOMMITTED" unsauberes Lesen zu.',
-    explanation:
-      'unsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt.\n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen.\n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen.\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'stimmt',
-        solution: 'false',
-      },
-      {
-        text: 'stimmt nicht',
-        solution: 'true',
       },
     ],
   },
@@ -16284,57 +15975,6 @@ const questions: Question[] = [
       },
       {
         text: 'statische, temporale Bedingung',
-        solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 2167,
-    category: 7,
-    difficulty: 3,
-    text: 'Betrachten Sie zwei Relationen R und S mit jeweils einer Spalte A mit dem Datentyp Integer.\n\n    Welche SELECT-Anweisungen entsprechen dem Ausdruck R-S ("-" steht für Differenz) in der relationalen Algebra?\n',
-    explanation:
-      '\n    Auch richtig ist:\n\n    \n\n    SELECT R.A\n\n    FROM R LEFT OUTER JOIN S ON S.A = R.A\n\n    WHERE S.A is NULL;\n\n    Hier werden die Datensätze aus R ermittelt, die keine entsprechenden Datensätze in S haben - also die Differenz aus der relationalen Algebra.\n\n    \n\n    Der NOT EXISTS ist grundsätzlich auch geeignet, aber hier fehlt die Korrelation der inneren mit der äußeren Anfrage (WHERE S.A=R.A).\n\n    \n\n    Die generelle Zuordnung Relationale Algebra <-> SQL entnehmen Sie bitte der folgenden Tabelle:\n<table border="1">\n    \n        \n            \n                Relationale Algebra\n            <th align="left">\n                SQL\n        \n        \n            \n                Projektion\n            \n                SELECT\n        \n        \n            \n                Selektion\n            \n                WHERE\n        \n        \n            \n                Kartesisches Produkt\n            \n                FROM\n        \n        \n            \n                Theta Join\n            \n                FROM + WHERE\n        \n        \n            \n                Natural Join\n            \n                FROM + WHERE + SELECT\n        \n        \n            \n                Vereinigung\n            \n                UNION\n        \n        \n            \n                Differenz\n            \n                EXCEPT / MINUS / NOT IN / NOT EXISTS\n        \n        \n            \n                Durchschnitt\n            \n                INTERSECTION\n        \n        \n            \n                Division\n            \n                "doppeltes NOT EXISTS" / "Zählen"\n        \n    \n\n\n     \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'SELECT A \nFROM R LEFT OUTER JOIN S \nWHERE B is NULL;',
-        solution: 'false',
-      },
-      {
-        text: 'SELECT A \nFROM R LEFT OUTER JOIN S;',
-        solution: 'false',
-      },
-      {
-        text: 'SELECT A \nFROM R LEFT OUTER JOIN S ON (S.A != R.A)\n',
-        solution: 'false',
-      },
-      {
-        text: 'SELECT R.A \nFROM R, S \nWHERE R.A <> S.A;',
-        solution: 'false',
-      },
-      {
-        text: 'SELECT *\nFROM R\nWHERE A NOT IN (SELECT A FROM S);\n',
-        solution: 'true',
-      },
-      {
-        text: 'SELECT *\nFROM R\nWHERE NOT EXISTS (SELECT A FROM S WHERE S.A=R.A);\n',
-        solution: 'true',
-      },
-      {
-        text: 'SELECT * FROM R\n MINUS\nSELECT * FROM S;\n',
-        solution: 'true',
-      },
-      {
-        text: 'SELECT A \nFROM R LEFT OUTER JOIN S ON S.A = R.A\nWHERE B is NULL;\n',
-        solution: 'true',
-      },
-      {
-        text: 'SELECT *\nFROM R\nWHERE NOT EXISTS (SELECT A FROM S);\n',
-        solution: 'false',
-      },
-      {
-        text: 'SELECT R.A \nFROM   R, S \nWHERE  R.A = S.A;',
         solution: 'false',
       },
     ],
@@ -18036,33 +17676,6 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 2134,
-    category: 7,
-    difficulty: 2,
-    text: 'Welcher Operator der Relationalen Algebra verbirgt sich hinter der FROM-Klausel einer SQL-Anfrage? (z.B. "FROM tab_1, tab_2")',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Selektion',
-        solution: 'false',
-      },
-      {
-        text: 'Projektion',
-        solution: 'false',
-      },
-      {
-        text: 'Kartesisches Produkt',
-        solution: 'true',
-      },
-      {
-        text: 'Natural Join',
-        solution: 'false',
-      },
-    ],
-  },
-  {
     id: 1744,
     category: 1,
     difficulty: 3,
@@ -18339,33 +17952,6 @@ const questions: Question[] = [
       {
         text: 'SELECT',
         solution: '6',
-      },
-    ],
-  },
-  {
-    id: 2133,
-    category: 7,
-    difficulty: 2,
-    text: 'Welcher Operator der Relationalen Algebra verbirgt sich hinter der SELECT-Klausel einer SQL-Anfrage?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Selektion',
-        solution: 'false',
-      },
-      {
-        text: 'Projektion',
-        solution: 'true',
-      },
-      {
-        text: 'kartesisches Produkt',
-        solution: 'false',
-      },
-      {
-        text: 'Natural Join',
-        solution: 'false',
       },
     ],
   },
@@ -21088,41 +20674,6 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 2419,
-    category: 7,
-    difficulty: 3,
-    text: 'Betrachten Sie zwei Relationen R und S mit jeweils einer Spalte A mit dem Datentyp Integer. \nWelche SELECT-Anweisungen entsprechen dem Ausdruck R-S ("-" steht für Differenz) in der relationalen Algebra?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n\n\nZudem ist auch richtig: \nSELECT A \nFROM R LEFT OUTER JOIN S ON S.B = R.A\nWHERE B is NULL;\nEs werden hier die Datensätze aus R ermittelt, die keine entsprechenden Datensätze in S haben - also die Differenz aus der Relationalen Algebra.',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'SELECT *\nFROM R\nWHERE A NOT IN (SELECT A FROM S);\n',
-        solution: 'true',
-      },
-      {
-        text: 'SELECT *\nFROM R\nWHERE NOT EXSITS (SELECT A FROM S WHERE S.A=R.A);\n',
-        solution: 'true',
-      },
-      {
-        text: 'SELECT *\nFROM R\nWHERE NOT EXSITS (SELECT A FROM S);\n',
-        solution: 'false',
-      },
-      {
-        text: 'SELECT * FROM R\n MINUS\nSELECT * FROM S;\n',
-        solution: 'true',
-      },
-      {
-        text: 'SELECT A \nFROM R LEFT OUTER JOIN S ON S.A = R.A\nWHERE S.A IS NULL;\n\n',
-        solution: 'true',
-      },
-      {
-        text: 'SELECT A \nFROM R INNER JOIN S ON S.A = R.A\nWHERE S.A IS NULL;\n\n',
-        solution: 'false',
-      },
-    ],
-  },
-  {
     id: 2557,
     category: 4,
     difficulty: 2,
@@ -21662,33 +21213,6 @@ const questions: Question[] = [
       {
         text: 'bewirkt eine aufsteigende Sortierung über den Nachnamen',
         solution: 'true',
-      },
-    ],
-  },
-  {
-    id: 2135,
-    category: 7,
-    difficulty: 1,
-    text: 'Welcher Operator der Relationalen Algebra verbirgt sich hinter der WHERE-Klausel einer SQL-Anfrage?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Selektion',
-        solution: 'true',
-      },
-      {
-        text: 'Projektion',
-        solution: 'false',
-      },
-      {
-        text: 'kartesisches Produkt',
-        solution: 'false',
-      },
-      {
-        text: 'keiner der RA-Operatoren',
-        solution: 'false',
       },
     ],
   },
@@ -23169,33 +22693,6 @@ const questions: Question[] = [
       {
         text: 'SET DEFAULT ',
         solution: 'true',
-      },
-    ],
-  },
-  {
-    id: 2645,
-    category: 7,
-    difficulty: 1,
-    text: 'Welcher Operator der relationalen Algebra entspricht dem "UNION" aus einer SQL-Anfrage?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Vereinigung',
-        solution: 'true',
-      },
-      {
-        text: 'Division',
-        solution: 'false',
-      },
-      {
-        text: 'Durchschnitt',
-        solution: 'false',
-      },
-      {
-        text: 'Differenz',
-        solution: 'false',
       },
     ],
   },
@@ -25105,123 +24602,6 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 2721,
-    category: 6,
-    difficulty: 3,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n    CREATE TABLE Hierarchie\n\n    ( Angestellter VARCHAR2(20),\n\n    Vorgesetzter VARCHAR2(20),\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n    Die Tabelle ist mit folgenden Datensätzen gefüllt: \n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\n    \n        \n            \n                Angestellter\n            \n                Vorgesetzter\n        \n        \n            \n                Schulz\n            \n                Schulz\n        \n        \n            \n                Meier\n            \n                Schulz\n        \n        \n            \n                Müller\n            \n                Meier\n        \n        \n            \n                Schmidt\n            \n                Schulz\n        \n        \n            \n                Tulpe\n            \n                Müller\n        \n        \n            \n                Real\n            \n                Tulpe\n        \n        \n            \n                Taris\n            \n                Müller\n        \n    \n\n\n     Welche Datensätze bleiben nach dem Löschen von Meier-Schulz?\n',
-    explanation:
-      '\n    Das Löschen von Meier-Schulz führt dazu:\n\n    1. Stufe: Löschen von Meier-Schulz\n\n    2. Stufe: Löschen aller Datensätze wo Meier Vorgesetzter\n\n    Müller-Meier\n\n    3. Stufe: Löschen aller Datensätze wo Müller Vorgesetzter\n\n    Tulpe-Müller, Taris-Müller\n\n    4. Stufe: Löschen aller Datensätze wo Tulpe oder Taris Vorgesetzter\n\n    Real-Tulpe\n\n    \n\n    Bleiben: Schulz-Schulz, Schmidt-Schulz\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Schulz    -    Schulz',
-        solution: 'true',
-      },
-      {
-        text: 'Meier     -    Schulz',
-        solution: 'false',
-      },
-      {
-        text: 'Müller    -    Meier',
-        solution: 'false',
-      },
-      {
-        text: 'Schmidt   -    Schulz',
-        solution: 'true',
-      },
-      {
-        text: 'Tulpe     -    Müller',
-        solution: 'false',
-      },
-      {
-        text: 'Real      -    Tulpe\n',
-        solution: 'false',
-      },
-      {
-        text: 'Taris     -    Müller',
-        solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 2722,
-    category: 6,
-    difficulty: 2,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n    CREATE TABLE Hierarchie\n\n    ( Angestellter VARCHAR2(20),\n\n    Vorgesetzter VARCHAR2(20),\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n    Die Tabelle ist mit folgenden Datensätzen gefüllt: \n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\n    \n        \n            \n                Angestellter\n            \n                Vorgesetzter\n        \n        \n            \n                Schulz\n            \n                Schulz\n        \n        \n            \n                Meier\n            \n                Schulz\n        \n        \n            \n                Müller\n            \n                Meier\n        \n        \n            \n                Schmidt\n            \n                Schulz\n        \n        \n            \n                Tulpe\n            \n                Müller\n        \n        \n            \n                Real\n            \n                Tulpe\n        \n        \n            \n                Taris\n            \n                Müller\n        \n    \n\n\n     Welche Datensätze bleiben nach dem Löschen von Schmidt-Schulz?\n',
-    explanation:
-      '\n    Das Löschen von Schmitd-Schulz führt dazu:\n\n    1. Stufe: Löschen von Schmitd-Schulz\n\n    2. Stufe: Löschen aller Datensätze wo Schmitd Vorgesetzter\n\n    gibt es keine, also ist das kaskadierende Löschen schon fertig\n\n    \n\n    Bleiben: alle außer Schmidt-Schulz\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Schulz    -    Schulz',
-        solution: 'true',
-      },
-      {
-        text: 'Meier     -    Schulz',
-        solution: 'true',
-      },
-      {
-        text: 'Müller    -    Meier',
-        solution: 'true',
-      },
-      {
-        text: 'Schmidt   -    Schulz',
-        solution: 'false',
-      },
-      {
-        text: 'Tulpe     -    Müller',
-        solution: 'true',
-      },
-      {
-        text: 'Real      -    Tulpe\n',
-        solution: 'true',
-      },
-      {
-        text: 'Taris     -    Müller',
-        solution: 'true',
-      },
-    ],
-  },
-  {
-    id: 2723,
-    category: 6,
-    difficulty: 3,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n    CREATE TABLE Hierarchie\n\n    ( Angestellter VARCHAR2(20),\n\n    Vorgesetzter VARCHAR2(20),\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n    Die Tabelle ist mit folgenden Datensätzen gefüllt: \n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\n    \n        \n            \n                Angestellter\n            \n                Vorgesetzter\n        \n        \n            \n                Schulz\n            \n                Schulz\n        \n        \n            \n                Meier\n            \n                Schulz\n        \n        \n            \n                Müller\n            \n                Meier\n        \n        \n            \n                Schmidt\n            \n                Schulz\n        \n        \n            \n                Tulpe\n            \n                Müller\n        \n        \n            \n                Real\n            \n                Tulpe\n        \n        \n            \n                Taris\n            \n                Müller\n        \n    \n\n\n     Welche Datensätze bleiben nach dem Löschen von Tulpe-Müller?\n',
-    explanation:
-      '\n    Das Löschen von Tulpe-Müller führt dazu:\n\n    1. Stufe: Löschen von Tulpe-Müller\n\n    2. Stufe: Löschen aller Datensätze wo Tulpe Vorgesetzter\n\n    Real-Tulpe\n\n    3. Stufe: Löschen aller Datensätze wo Real Vorgesetzter\n\n    gibt es nicht, also Ende des kaskadierenden Löschens\n\n    \n\n    Bleiben: alle außer Tulpe-Müller, Real-Tulpe\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Schulz    -    Schulz',
-        solution: 'true',
-      },
-      {
-        text: 'Meier     -    Schulz',
-        solution: 'true',
-      },
-      {
-        text: 'Müller    -    Meier',
-        solution: 'true',
-      },
-      {
-        text: 'Schmidt   -    Schulz',
-        solution: 'true',
-      },
-      {
-        text: 'Tulpe     -    Müller',
-        solution: 'false',
-      },
-      {
-        text: 'Real      -    Tulpe\n',
-        solution: 'false',
-      },
-      {
-        text: 'Taris     -    Müller',
-        solution: 'true',
-      },
-    ],
-  },
-  {
     id: 2705,
     category: 13,
     difficulty: 3,
@@ -25822,87 +25202,6 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 2644,
-    category: 7,
-    difficulty: 1,
-    text: 'Welcher Operator der relationalen Algebra entspricht dem "NOT EXISTS" aus einer SQL-WHERE-Bedingung?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Vereinigung',
-        solution: 'false',
-      },
-      {
-        text: 'Division',
-        solution: 'false',
-      },
-      {
-        text: 'Durchschnitt',
-        solution: 'false',
-      },
-      {
-        text: 'Differenz',
-        solution: 'true',
-      },
-    ],
-  },
-  {
-    id: 2647,
-    category: 7,
-    difficulty: 1,
-    text: 'Welcher Operator der relationalen Algebra entspricht dem "INTERSECTION" aus einer SQL-Anfrage?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Vereinigung',
-        solution: 'false',
-      },
-      {
-        text: 'Division',
-        solution: 'false',
-      },
-      {
-        text: 'Durchschnitt',
-        solution: 'true',
-      },
-      {
-        text: 'Differenz',
-        solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 2648,
-    category: 7,
-    difficulty: 1,
-    text: 'Für welche/n Operator/en der relationalen Algebra gibt es keinen entsprechenden Operator in SQL?\n',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Vereinigung',
-        solution: 'false',
-      },
-      {
-        text: 'Division',
-        solution: 'true',
-      },
-      {
-        text: 'Durchschnitt',
-        solution: 'false',
-      },
-      {
-        text: 'Differenz',
-        solution: 'false',
-      },
-    ],
-  },
-  {
     id: 2620,
     category: 6,
     difficulty: 1,
@@ -25969,33 +25268,6 @@ const questions: Question[] = [
       {
         text: 'ALTER',
         solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 2646,
-    category: 7,
-    difficulty: 1,
-    text: 'Welcher Operator der relationalen Algebra entspricht dem "MINUS" aus einer SQL-Anfrage?',
-    explanation:
-      'Die Zuordnung Relationale Algebra  SQL entnehmen Sie bitte der folgenden Tabelle: \n\n<table border="1">\n  \n    Relationale Algebra\n    <th align="left">SQL\n\n  \n  \n    Projektion\n    SELECT\n  \n  \n    Selektion\n    WHERE\n  \n  \n    Kartesisches Produkt\n    FROM\n  \n  \n    Theta Join\n    FROM + WHERE\n  \n  \n    Natural Join\n    FROM + WHERE + SELECT\n  \n  \n    Vereinigung\n    UNION\n  \n  \n    Differenz\n    EXCEPT / MINUS / NOT IN / NOT EXISTS\n  \n  \n    Durchschnitt\n    INTERSECTION\n  \n  \n    Division\n    "doppeltes NOT EXISTS" / "Zählen" \n  \n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Vereinigung',
-        solution: 'false',
-      },
-      {
-        text: 'Division',
-        solution: 'false',
-      },
-      {
-        text: 'Durchschnitt',
-        solution: 'false',
-      },
-      {
-        text: 'Differenz',
-        solution: 'true',
       },
     ],
   },
@@ -28356,114 +27628,6 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 2669,
-    category: 14,
-    difficulty: 3,
-    text: 'Welches Problem kann beim Isolationsgrad REPEATABLE READ auftreten?',
-    explanation:
-      'unsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt.\n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen.\n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen.\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Unsauberes Lesen',
-        solution: 'false',
-      },
-      {
-        text: 'Nicht wiederholbares Lesen',
-        solution: 'false',
-      },
-      {
-        text: 'Phantom',
-        solution: 'true',
-      },
-      {
-        text: 'keines der Probleme',
-        solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 2670,
-    category: 14,
-    difficulty: 2,
-    text: 'Bei welchem Isolationsgrad können keine Probleme auftreten?',
-    explanation:
-      '\nunsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt.\n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen.\n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen.\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'read uncommitted',
-        solution: 'false',
-      },
-      {
-        text: 'read committed',
-        solution: 'false',
-      },
-      {
-        text: 'repeatable read',
-        solution: 'false',
-      },
-      {
-        text: 'serializable',
-        solution: 'true',
-      },
-    ],
-  },
-  {
-    id: 2671,
-    category: 14,
-    difficulty: 2,
-    text: 'Bei welchem Isolationsgrad können nur noch die Probleme "Phantome" und "nicht wiederholbares Lesen" auftreten?',
-    explanation:
-      'unsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt.\n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen.\n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen.\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'read uncommitted',
-        solution: 'false',
-      },
-      {
-        text: 'read committed',
-        solution: 'true',
-      },
-      {
-        text: 'repeatable read',
-        solution: 'false',
-      },
-      {
-        text: 'serializable',
-        solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 2672,
-    category: 14,
-    difficulty: 3,
-    text: 'Bei welchem Isolationsgrad kann nur noch das Problem der "Phantome" auftreten?',
-    explanation:
-      'unsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt.\n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen.\n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen.\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'read uncommitted',
-        solution: 'false',
-      },
-      {
-        text: 'read committed',
-        solution: 'false',
-      },
-      {
-        text: 'repeatable read',
-        solution: 'true',
-      },
-      {
-        text: 'serializable',
-        solution: 'false',
-      },
-    ],
-  },
-  {
     id: 2674,
     category: 14,
     difficulty: 1,
@@ -28520,7 +27684,7 @@ const questions: Question[] = [
     id: 2663,
     category: 7,
     difficulty: 1,
-    text: 'Betrachten Sie die beiden folgenden CREATE-Table_Befehle: CREATE TABLE Zeitschrift ( Zeitschrift_id INTEGER NOT NULL, Namen VARCHAR2(20) NULL, PRIMARY KEY (Zeitschrift_id)); CREATE TABLE Aufsatz ( Aufsatz_id INTEGER NOT NULL, Titel VARCHAR2(20) NULL, Zeitschrift_id INTEGER NOT NULL, PRIMARY KEY (Aufsatz_id), FOREIGN KEY (Zeitschrift_id) REFERENCES Zeitschrift); Die Tabellen enthalten folgende Datensätze: Zeitschrift (1, "DB-Spektrum"); Zeitschrift (2, "Informatik-Spektrum"); Aufsatz (1, "Tuning", 1); Aufsatz (2, "DWH", 1); Kann es problematisch werden, wenn Zeitschrift-Datensätze gelöscht werden?\n',
+    text: 'Betrachten Sie die beiden folgenden CREATE-Table_Befehle: \nCREATE TABLE Zeitschrift (\n       Zeitschrift_id           INTEGER NOT NULL,\n       Namen                    VARCHAR2(20) NULL,\n       PRIMARY KEY (Zeitschrift_id));\n\nCREATE TABLE Aufsatz (\n       Aufsatz_id              INTEGER NOT NULL,\n       Titel                      VARCHAR2(20) NULL,\n       Zeitschrift_id            INTEGER NOT NULL,\n       PRIMARY KEY (Aufsatz_id), \n       FOREIGN KEY (Zeitschrift_id) REFERENCES Zeitschrift); Die Tabellen enthalten folgende Datensätze: Zeitschrift (1, "DB-Spektrum"); Zeitschrift (2, "Informatik-Spektrum"); Aufsatz (1, "Tuning", 1); Aufsatz (2, "DWH", 1); Kann es problematisch werden, wenn Zeitschrift-Datensätze gelöscht werden?\n',
     explanation:
       '\n    Es kann ein Problem sein, weil Zeitschrift die Master-Tabelle ist.\n\n    Wenn Master-Datensätze (hier Zeitschrift) gelöscht werden wird vor dem Löschen geprüft, ob es abhängige Datensätze (Detail: Aufsatz) mit einem passenden Fremdschlüsselwert gibt. Wenn ja, wird nicht gelöscht. Nur wenn nicht, wird der Master-Datensatz gelöscht.\n',
     type: 'multiple-choice',
@@ -28686,33 +27850,6 @@ const questions: Question[] = [
       {
         text: 'INITIALLY DEFERRED',
         solution: 'false',
-      },
-    ],
-  },
-  {
-    id: 2668,
-    category: 14,
-    difficulty: 2,
-    text: 'Welches Problem kann beim Isolationsgrad SERIALIZABLE auftreten?',
-    explanation:
-      'unsauberes Lesen: Transaktion T1 ändert Daten ohne sie zu "committen" und Transaktion T2 kann diese Daten lesen und weiterverarbeiten. Problem ist, T1 kann seine bereits von T2 gelesenen Änderungen wieder rückgängig machen (rollback) und dann hätte T2 Daten verarbeitet, die es gar nicht gibt.\n\nPhantome: Beim wiederholten Ausführen einer Anfrage in der Transaktion T1 werden beim erneuten Ausführen neue Datensätze angezeigt, die beim vorangegangenen Lesen nicht da waren. Diese neuen Datensätze werden Phantome (Phantome) genannt. Grund dafür ist, dass T2 zwischenzeitlich neue Objekte persistent eingefügt\nhat, die die Bedingung der Anfrage von T1 erfüllen.\n\nnicht wiederholbares Lesen: Wird in einer Transaktion T1 das Objekt X gelesen. Anschließend löscht oder ändert T2 das Objekt X und schließt die Transaktion mit COMMIT ab. Liest T1 im Weiteren nochmals das Objekt X, bekommt T1 das Objekt gar nicht bzw. nicht mit den ursprünglichen Werten zu sehen.\n\nDie folgende Tabelle zeigt alle Isolationsgrade von SQL und das mögliche Auftreten bestimmter Probleme: \n\n<table border="1">\n  \n    Isolationsgrad \n    dirty read\n    nonrepeatable read\n    Phantome\n\n\n\n  \n    read uncommitted\n    ja\n    ja\n    ja\n  \n\n  \n    read committed\n    nein\n    ja\n    ja\n  \n\n\n  \n    repeatable read\n    nein\n    nein\n    ja\n  \n\n\n    serializable\n    nein\n    nein\n    nein\n  \n\n',
-    type: 'multiple-choice',
-    answers: [
-      {
-        text: 'Unsauberes Lesen',
-        solution: 'false',
-      },
-      {
-        text: 'Nicht wiederholbares Lesen',
-        solution: 'false',
-      },
-      {
-        text: 'Phantom',
-        solution: 'false',
-      },
-      {
-        text: 'keines der Probleme',
-        solution: 'true',
       },
     ],
   },
