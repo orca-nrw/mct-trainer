@@ -53,7 +53,7 @@ export default function QuestionEvaluation({
           modalText={question.explanation || 'Keine Erklärung vorhanden...'}
         />
       </div>
-      <div className="p-4">{question.text}</div>
+      <div className="p-4 whitespace-pre-line">{question.text}</div>
       <table className="w-full">
         <thead>
           <tr className="border bg-gray-100 text-left">
@@ -66,9 +66,15 @@ export default function QuestionEvaluation({
           {question.answers.map((answer, index) => {
             return (
               <tr className={index % 2 === 1 ? 'bg-gray-50' : ''} key={index}>
-                <td className="border px-4 py-2">{answer.text}</td>
-                <td className="border px-4 py-2">{answer.solution}</td>
-                <td className="border px-4 py-2">{selectedAnswers[index]}</td>
+                <td className="border px-4 py-2 whitespace-pre-line">
+                  {answer.text}
+                </td>
+                <td className="border px-4 py-2 whitespace-pre-line">
+                  {answer.solution}
+                </td>
+                <td className="border px-4 py-2 whitespace-pre-line">
+                  {selectedAnswers[index]}
+                </td>
               </tr>
             )
           })}

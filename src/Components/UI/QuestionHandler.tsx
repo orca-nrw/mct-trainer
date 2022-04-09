@@ -27,7 +27,9 @@ export default function QuestionHandler({
 
   return (
     <div className="space-y-8">
-      <p>{questionList[currentQuestion].text}</p>
+      <p className="whitespace-pre-line">
+        {questionList[currentQuestion].text}
+      </p>
       {questionList[currentQuestion].type === 'multiple-choice' ? (
         <CheckboxAnswerHandler
           answers={questionList[currentQuestion].answers}

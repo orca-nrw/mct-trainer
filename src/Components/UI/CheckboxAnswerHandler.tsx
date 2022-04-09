@@ -33,7 +33,10 @@ export default function CheckboxAnswerHandler({
               checked={selectedAnswers[index] === 'true'}
               onChange={() => handleOnChange(index)}
             />
-            <label className="ml-2" htmlFor={`checkbox-${index}`}>
+            <label
+              className="ml-2 whitespace-pre-line"
+              htmlFor={`checkbox-${index}`}
+            >
               {answer.text}
             </label>
           </div>

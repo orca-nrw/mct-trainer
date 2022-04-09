@@ -25,7 +25,10 @@ export default function TextboxAnswerHandler({
       {answers.map((answer, index) => {
         return (
           <div key={index}>
-            <label className="mr-2" htmlFor={`textfield-${index}`}>
+            <label
+              className="mr-2 whitespace-pre-line"
+              htmlFor={`textfield-${index}`}
+            >
               {answer.text}
             </label>
             <input

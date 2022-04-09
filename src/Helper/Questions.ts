@@ -149,7 +149,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'SELECT * FROM \tAngestellte, Abteilungen\nWHERE Angestellte.ABT_Nr = Abteilungen.ABT_Nr;\n\n',
+        text: 'SELECT * FROM     Angestellte, Abteilungen\nWHERE Angestellte.ABT_Nr = Abteilungen.ABT_Nr;\n\n',
         solution: 'false',
       },
       {
@@ -352,7 +352,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'SELECT * FROM \tAngestellte, Abteilungen\nWHERE Angestellte.ABT_Nr = Abteilungen.ABT_Nr;\n\n',
+        text: 'SELECT * FROM     Angestellte, Abteilungen\nWHERE Angestellte.ABT_Nr = Abteilungen.ABT_Nr;\n\n',
         solution: 'true',
       },
       {
@@ -817,25 +817,25 @@ const questions: Question[] = [
     id: 1582,
     category: 6,
     difficulty: 2,
-    text: 'Es soll folgende Spieler-Tabelle angelegt werden:  spieler (spieler_id, name, handy) mit dem Primärschlüssel: spieler_id.\n\n\tMit welchem/n Befehl/en kann zusätzlich ein zusammengesetzter, eindeutiger Zweitschlüssel für die Tabelle "spieler" über die beiden Attribute "name, handy" definiert werden, der zum Transaktionsende geprüft werden soll?\n',
+    text: 'Es soll folgende Spieler-Tabelle angelegt werden:  spieler (spieler_id, name, handy) mit dem Primärschlüssel: spieler_id.\n\n    Mit welchem/n Befehl/en kann zusätzlich ein zusammengesetzter, eindeutiger Zweitschlüssel für die Tabelle "spieler" über die beiden Attribute "name, handy" definiert werden, der zum Transaktionsende geprüft werden soll?\n',
     explanation:
-      '\n\tNur der Ausdruck\n\n\t\n\n\tCREATE TABLE spieler\n\n\t(spieler_id NUMBER(9) PRIMARY KEY,\n\n\tname VARCHAR2(50),\n\n\thandy NUMBER(11),\n\n\tUNIQUE (name, handy) INITIALLY DEFERRED);\n\n\t\n\n\tist syntaktisch richtig und entspricht der Fragestellung.\n',
+      '\n    Nur der Ausdruck\n\n    \n\n    CREATE TABLE spieler\n\n    (spieler_id NUMBER(9) PRIMARY KEY,\n\n    name VARCHAR2(50),\n\n    handy NUMBER(11),\n\n    UNIQUE (name, handy) INITIALLY DEFERRED);\n\n    \n\n    ist syntaktisch richtig und entspricht der Fragestellung.\n',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE TABLE spieler  \n(spieler_id NUMBER(9) PRIMARY KEY, \t\nname VARCHAR2(50), \nhandy\tNUMBER(11), \nUNIQUE (name, handy) INITIALLY DEFERRED);\n',
+        text: 'CREATE TABLE spieler  \n(spieler_id NUMBER(9) PRIMARY KEY,     \nname VARCHAR2(50), \nhandy    NUMBER(11), \nUNIQUE (name, handy) INITIALLY DEFERRED);\n',
         solution: 'true',
       },
       {
-        text: 'CREATE TABLE spieler  \n(spieler_id NUMBER(9) PRIMARY KEY, \t\n name VARCHAR2(50) UNIQUE INITIALLY DEFERRED, \n handy NUMBER(11) UNIQUE INITIALLY DEFERRED);\n',
+        text: 'CREATE TABLE spieler  \n(spieler_id NUMBER(9) PRIMARY KEY,     \n name VARCHAR2(50) UNIQUE INITIALLY DEFERRED, \n handy NUMBER(11) UNIQUE INITIALLY DEFERRED);\n',
         solution: 'false',
       },
       {
-        text: 'CREATE TABLE spieler  \n(spieler_id NUMBER(9) PRIMARY KEY, \t\nname VARCHAR2(50), \nhandy\tNUMBER(11), \nUNIQUE (name, handy) INITIALLY IMMEDIATE);\n',
+        text: 'CREATE TABLE spieler  \n(spieler_id NUMBER(9) PRIMARY KEY,     \nname VARCHAR2(50), \nhandy    NUMBER(11), \nUNIQUE (name, handy) INITIALLY IMMEDIATE);\n',
         solution: 'false',
       },
       {
-        text: 'CREATE TABLE spieler  \n(spieler_id NUMBER(9) PRIMARY KEY, \t\n name VARCHAR2(50) UNIQUE INITIALLY IMMEDIATE, \n handy NUMBER(11) UNIQUE INITIALLY IMMEDIATE);',
+        text: 'CREATE TABLE spieler  \n(spieler_id NUMBER(9) PRIMARY KEY,     \n name VARCHAR2(50) UNIQUE INITIALLY IMMEDIATE, \n handy NUMBER(11) UNIQUE INITIALLY IMMEDIATE);',
         solution: 'false',
       },
     ],
@@ -926,7 +926,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Betrachten Sie die folgende Definition einer Sequence: CREATE SEQUENCE Kun_seq INCREMENT BY 1 START WITH 1 NOMAXVALUE NOCYCLE CACHE 10;\n',
     explanation:
-      '\n\tDer nächste Wert einer Sequenz wird mit <sequence_name>NEXTVAL abgerufen..\n\n\tEin solcher INSERT, der nur einen Datensatz einfügt, wird mit dem Schlüsselwort VALUES( ) fortgesetzt.\n\n\tINSERT INTO Kunden (Kun_Nr, Nachname) VALUES (Kun_seq.NEXTVAL, "Vogt")\n',
+      '\n    Der nächste Wert einer Sequenz wird mit <sequence_name>NEXTVAL abgerufen..\n\n    Ein solcher INSERT, der nur einen Datensatz einfügt, wird mit dem Schlüsselwort VALUES( ) fortgesetzt.\n\n    INSERT INTO Kunden (Kun_Nr, Nachname) VALUES (Kun_seq.NEXTVAL, "Vogt")\n',
     type: 'text',
     answers: [
       {
@@ -939,7 +939,7 @@ const questions: Question[] = [
     id: 1592,
     category: 12,
     difficulty: 2,
-    text: 'Betrachten Sie den folgenden PL/SQL-Code\n\n    PACKAGE xyz\n    IS\n  \tPROCEDURE b (p1 VARCHAR2);\n    END;\n\n    CREATE PACKAGE BODY xyz\n    IS \n  \tPRODEDURE a (p1 NUMBER) IS ...\n    \t\n    END; \n\nWelche Methode ist privat?\n\n',
+    text: 'Betrachten Sie den folgenden PL/SQL-Code\n\n    PACKAGE xyz\n    IS\n      PROCEDURE b (p1 VARCHAR2);\n    END;\n\n    CREATE PACKAGE BODY xyz\n    IS \n      PRODEDURE a (p1 NUMBER) IS ...\n        \n    END; \n\nWelche Methode ist privat?\n\n',
     explanation:
       'Je nach Platzierung eines Paketobjekts, wie Prozedur,\nFunktion, Variable, Konstante, Cursor etc., ist es entweder öffentlich oder privat.  \nAlle Objekte, die in der Paketspezifikation deklariert sind, sind öffentlich und können damit von außerhalb des Pakets mit Paketname.Objektname aufgerufen werden.  \nAlle Objekte, die nur im Paketrumpf definiert sind, sind privat und können damit nur innerhalb des Pakets von den Paketroutinen aufgerufen werden.\na ist daher privat, da die Prozedur a innerhalb des BODY-Teils, also im Paketrumpf definiert ist.',
     type: 'multiple-choice',
@@ -1044,7 +1044,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Was versteht man unter\n',
     explanation:
-      '\n\tDAL ist der administrative Teil, wie z.B. GRANT, REVOKE für die Rechte,...\n\n\tDML ist die Datenmanipulationssprache mit INSERT, UPDATE, DELETE.\n\n\tDDL ist die Datendefinitionssprache, um "Objekte" wie z.B. Tabellen, Indexe, Sequenzen, Trigger, Constraints im DBS anlegen zu können und umfasst im Wesentlichen CREATE, ALTER, DROP.\n\n\tDQL ist die Anfragesprache, die nur aus dem SELECT-Befehl besteht.\n',
+      '\n    DAL ist der administrative Teil, wie z.B. GRANT, REVOKE für die Rechte,...\n\n    DML ist die Datenmanipulationssprache mit INSERT, UPDATE, DELETE.\n\n    DDL ist die Datendefinitionssprache, um "Objekte" wie z.B. Tabellen, Indexe, Sequenzen, Trigger, Constraints im DBS anlegen zu können und umfasst im Wesentlichen CREATE, ALTER, DROP.\n\n    DQL ist die Anfragesprache, die nur aus dem SELECT-Befehl besteht.\n',
     type: 'text',
     answers: [
       {
@@ -1138,7 +1138,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Beim Löschen in einem B-Baum wird\n',
     explanation:
-      '\n\tKleben, Schmieren und Vertuschen kommen nur im wirklichen Leben oder in der Bastelstunde vor. B-Bäume werden verschmolzen oder ausgeglichen, wenn das Löschen eine Unterbesetzung eines Blattes verursacht..\n',
+      '\n    Kleben, Schmieren und Vertuschen kommen nur im wirklichen Leben oder in der Bastelstunde vor. B-Bäume werden verschmolzen oder ausgeglichen, wenn das Löschen eine Unterbesetzung eines Blattes verursacht..\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -1610,27 +1610,27 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT\tKunden.Kun_Nr, \n\tKunden.Vorname, \n\tKunden.Nachname \nFROM\tKunden\nWHERE EXISTS\n(SELECT * FROM Auftraege\nWHERE  Kunden.Kun_Nr = Auftraege.Kun_Nr);',
+        text: 'SELECT    Kunden.Kun_Nr, \n    Kunden.Vorname, \n    Kunden.Nachname \nFROM    Kunden\nWHERE EXISTS\n(SELECT * FROM Auftraege\nWHERE  Kunden.Kun_Nr = Auftraege.Kun_Nr);',
         solution: 'true',
       },
       {
-        text: 'SELECT\tDISTINCT Kunden.Kun_Nr, \n\tKunden.Vorname, \n\tKunden.Nachname\nFROM\tKunden, Auftraege\nWHERE\tAuftraege.Kun_Nr=Kunden.Kun_Nr; ',
+        text: 'SELECT    DISTINCT Kunden.Kun_Nr, \n    Kunden.Vorname, \n    Kunden.Nachname\nFROM    Kunden, Auftraege\nWHERE    Auftraege.Kun_Nr=Kunden.Kun_Nr; ',
         solution: 'true',
       },
       {
-        text: 'SELECT\tKunden.Kun_Nr, \n\tKunden.Vorname, \n\tKunden.Nachname \nFROM\tKunden\nWHERE EXISTS\n(SELECT * FROM Auftraege)\n',
+        text: 'SELECT    Kunden.Kun_Nr, \n    Kunden.Vorname, \n    Kunden.Nachname \nFROM    Kunden\nWHERE EXISTS\n(SELECT * FROM Auftraege)\n',
         solution: 'false',
       },
       {
-        text: 'SELECT\tKunden.Kun_Nr, \n\tKunden.Vorname, \n\tKunden.Nachname\nFROM\tKunden, Auftraege\nWHERE\tAuftraege.Kun_Nr=Kunden.Kun_Nr;',
+        text: 'SELECT    Kunden.Kun_Nr, \n    Kunden.Vorname, \n    Kunden.Nachname\nFROM    Kunden, Auftraege\nWHERE    Auftraege.Kun_Nr=Kunden.Kun_Nr;',
         solution: 'true',
       },
       {
-        text: 'SELECT\tKunden.Kun_Nr, \n\tKunden.Vorname, \n\tKunden.Nachname \nFROM\tKunden\nWHERE Kunden_nr IN\n(SELECT DISTINCT Kun_Nr FROM Auftraege);\n',
+        text: 'SELECT    Kunden.Kun_Nr, \n    Kunden.Vorname, \n    Kunden.Nachname \nFROM    Kunden\nWHERE Kunden_nr IN\n(SELECT DISTINCT Kun_Nr FROM Auftraege);\n',
         solution: 'true',
       },
       {
-        text: 'SELECT\tDISTINCT Kunden.Kun_Nr, \n\tKunden.Vorname, \n\tKunden.Nachname\nFROM\tKunden, Auftraege;',
+        text: 'SELECT    DISTINCT Kunden.Kun_Nr, \n    Kunden.Vorname, \n    Kunden.Nachname\nFROM    Kunden, Auftraege;',
         solution: 'false',
       },
     ],
@@ -2113,7 +2113,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Der Datentyp "Boolean" wurde mit dem folgenden JDBC-Standard eingeführt:',
     explanation:
-      'Mit JDBC 2.0 wurden folgende Datentypen eingeführt: \n\nBLOB\tin java.sql.Blob\nCLOB\tin java.sql.Clob \nSTRUCT\tin java.sql.Struct \nARRAY\tin java.sql.Array \nREF\tin java.sql.Ref \n',
+      'Mit JDBC 2.0 wurden folgende Datentypen eingeführt: \n\nBLOB    in java.sql.Blob\nCLOB    in java.sql.Clob \nSTRUCT    in java.sql.Struct \nARRAY    in java.sql.Array \nREF    in java.sql.Ref \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -2493,7 +2493,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Mit welcher SELECT-Abfrage stellt man fest, ob eine Spalte vom Typ VARCHAR einen NULL-Wert hat?\n',
     explanation:
-      '\n\tDie einzige Möglichkeit, abzufragen, ob eine Spalte keinen Wert hat, ist im SQL-Standard "IS NULL".\n',
+      '\n    Die einzige Möglichkeit, abzufragen, ob eine Spalte keinen Wert hat, ist im SQL-Standard "IS NULL".\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -2554,15 +2554,15 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT\t  Abt_Nr\nFROM \t  Angestellte\nGROUP BY  Abt_Nr\nWHERE     COUNT(*) > = 5;\n',
+        text: 'SELECT      Abt_Nr\nFROM       Angestellte\nGROUP BY  Abt_Nr\nWHERE     COUNT(*) > = 5;\n',
         solution: 'false',
       },
       {
-        text: 'SELECT\t  Abt_Nr\nFROM \t  Angestellte\nGROUP BY  Abt_Nr\nHAVING COUNT(*) > = 5;',
+        text: 'SELECT      Abt_Nr\nFROM       Angestellte\nGROUP BY  Abt_Nr\nHAVING COUNT(*) > = 5;',
         solution: 'true',
       },
       {
-        text: 'SELECT\t  Abt_Nr\nFROM \t  Angestellte\nWHERE     COUNT(*) > = 5;\nGROUP BY  Abt_Nr;\n',
+        text: 'SELECT      Abt_Nr\nFROM       Angestellte\nWHERE     COUNT(*) > = 5;\nGROUP BY  Abt_Nr;\n',
         solution: 'false',
       },
     ],
@@ -2825,7 +2825,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'In welchen Data-Dictionary-Tabellen sind unter ORACLE Informationen zu CONSTRAINTS enthalten?\n',
     explanation:
-      '\n\tDas Dictionary von Oracle umfasst eine Vielzahl von Tabellen bzw. Sichten. Sie sind in verschiedene Gruppen aufgeteilt, die im Namen deutlich werden:\n\n\tUSER_...: Sichten für alle DB-Objekte, die ein Benutzer selbst angelegt hat.\n\n\tALL_...: Sichten für alle DB-Objekte, die ein Benutzer selbst angelegt hat bzw. für die er von anderen Anwendern Zugriffsrechte bekommen hat.\n\n\tDBA_...: Sichten für alle DB-Objekte, die überhaupt in der Datenbank existieren. Auf diese Sichten hat nur ein Benutzer mit Administrationsrechten Zugriff.\n\n\tV$-Views: Sichten mit statistischen Informationen.\n\n\t\n\n\tUSER_CONSTRAINTS gibt Auskunft über die vom Anwender angelegten Constraints.\n\n\tUSER_CONS_COLUMNS gibt Auskunft über die von den Constraints betroffenen Spalten.\n',
+      '\n    Das Dictionary von Oracle umfasst eine Vielzahl von Tabellen bzw. Sichten. Sie sind in verschiedene Gruppen aufgeteilt, die im Namen deutlich werden:\n\n    USER_...: Sichten für alle DB-Objekte, die ein Benutzer selbst angelegt hat.\n\n    ALL_...: Sichten für alle DB-Objekte, die ein Benutzer selbst angelegt hat bzw. für die er von anderen Anwendern Zugriffsrechte bekommen hat.\n\n    DBA_...: Sichten für alle DB-Objekte, die überhaupt in der Datenbank existieren. Auf diese Sichten hat nur ein Benutzer mit Administrationsrechten Zugriff.\n\n    V$-Views: Sichten mit statistischen Informationen.\n\n    \n\n    USER_CONSTRAINTS gibt Auskunft über die vom Anwender angelegten Constraints.\n\n    USER_CONS_COLUMNS gibt Auskunft über die von den Constraints betroffenen Spalten.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -3116,7 +3116,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Ein Trigger kann sich selber oder einen anderen Trigger anstoßen.',
     explanation:
-      'Trigger können durch DML-Anweisungen oder eben auch durch Datenbanktrigger ausgelöst werden, wobei auch rekursive Trigger syntaktisch zugelassen sind. Für die Semantik ist dann der Programmierer selber zuständig. \n\t\n',
+      'Trigger können durch DML-Anweisungen oder eben auch durch Datenbanktrigger ausgelöst werden, wobei auch rekursive Trigger syntaktisch zugelassen sind. Für die Semantik ist dann der Programmierer selber zuständig. \n    \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -3426,11 +3426,11 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Betrachten Sie die folgende Frage an die beiden Tabellen Angestellten und Abteilungen: In welchen Abteilungen sind alle Berufe der Unternehmung vertreten? Welche der folgenden Abfragen liefert das gewünschte Ergebnis?\n',
     explanation:
-      '\n\tDa es hier darum geht, die Abteilungen mit "ALLEN" Berufen zu ermitteln, handelt es sich um eine sogennate  Allaussage (Allquantor) und der wird ja bekanntlich in der Relationalen Algebra mittels der Division realisiert. In SQL fehlt ein solcher Operator leider. Aber wie aus der Logik bekannt, kann ein Allquantor mittels einem "doppelte negierten Existenzquantor" simuliert werden. Diese Anfrage hat wörtlich genommen die Semantik: "Zeigen Sie die Abteilungen, für die es KEINE Berufe gibt, die es NICHT in der Firma gibt" (vgl. mit Originalanfrage: semantisch äquivalent)\n\n\t\n\n\tEin alternativer Lösungsansatz zählt die verschiedenen Berufe und ermittelt dann die Abteilungen mit der gleichen Anzahl an verschiedenen Berufen.\n\n\t\n\n\tSELECT A.Abt_NR, MAX(COUNT(A.Beruf))\n\n\tFROM Angestellte A , Abteilungen B\n\n\tWHERE A.Abt_Nr = B.Abt_Nr\n\n\tGROUP BY A.Abt_nr\n\n\tDiese Anfrage ist syntaktisch nicht ausführbar, da bei der Verwendung der MAX-Funktion in der SELECT-Klausel keine weiteren Spalten zulässig sind. MAX liefert nur einen Datensatz, es könnten aber durchaus mehrere Abteilungen alle Berufe enthalten.\n\n\t\n\n\tSELECT Abt_NR, Beruf\n\n\tFROM Angestellte\n\n\tWHERE beruf = ALL\n\n\t(SELECT DISTINCT Beruf FROM Angestellte)\n\n\tDiese Anfrage liefert immer die leere Menge, sobald mehr als zwei verschiedene Berufe in der Angestellten-Tabelle vorkommen. Denn für jeden Angestellten wird sein eingetragener Beruf verglichen, ob er gleich allen Datensätzen der Unteranfrage ist. Ein Wert kann aber niemals GLEICH mit mehreren unterschiedlichen Werten sein.\n',
+      '\n    Da es hier darum geht, die Abteilungen mit "ALLEN" Berufen zu ermitteln, handelt es sich um eine sogennate  Allaussage (Allquantor) und der wird ja bekanntlich in der Relationalen Algebra mittels der Division realisiert. In SQL fehlt ein solcher Operator leider. Aber wie aus der Logik bekannt, kann ein Allquantor mittels einem "doppelte negierten Existenzquantor" simuliert werden. Diese Anfrage hat wörtlich genommen die Semantik: "Zeigen Sie die Abteilungen, für die es KEINE Berufe gibt, die es NICHT in der Firma gibt" (vgl. mit Originalanfrage: semantisch äquivalent)\n\n    \n\n    Ein alternativer Lösungsansatz zählt die verschiedenen Berufe und ermittelt dann die Abteilungen mit der gleichen Anzahl an verschiedenen Berufen.\n\n    \n\n    SELECT A.Abt_NR, MAX(COUNT(A.Beruf))\n\n    FROM Angestellte A , Abteilungen B\n\n    WHERE A.Abt_Nr = B.Abt_Nr\n\n    GROUP BY A.Abt_nr\n\n    Diese Anfrage ist syntaktisch nicht ausführbar, da bei der Verwendung der MAX-Funktion in der SELECT-Klausel keine weiteren Spalten zulässig sind. MAX liefert nur einen Datensatz, es könnten aber durchaus mehrere Abteilungen alle Berufe enthalten.\n\n    \n\n    SELECT Abt_NR, Beruf\n\n    FROM Angestellte\n\n    WHERE beruf = ALL\n\n    (SELECT DISTINCT Beruf FROM Angestellte)\n\n    Diese Anfrage liefert immer die leere Menge, sobald mehr als zwei verschiedene Berufe in der Angestellten-Tabelle vorkommen. Denn für jeden Angestellten wird sein eingetragener Beruf verglichen, ob er gleich allen Datensätzen der Unteranfrage ist. Ein Wert kann aber niemals GLEICH mit mehreren unterschiedlichen Werten sein.\n',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT A1.Abt_Nr, A1.Name FROM Abteilungen A1\n\n\t  WHERE NOT EXISTS ( SELECT * FROM Angestellte A2\n\n\t      WHERE NOT EXISTS ( SELECT * FROM Angestellte A3 WHERE a2.Beruf = a3.Beruf AND a1.Abt_NR = a3.Abt_nr))\n',
+        text: 'SELECT A1.Abt_Nr, A1.Name FROM Abteilungen A1\n\n      WHERE NOT EXISTS ( SELECT * FROM Angestellte A2\n\n          WHERE NOT EXISTS ( SELECT * FROM Angestellte A3 WHERE a2.Beruf = a3.Beruf AND a1.Abt_NR = a3.Abt_nr))\n',
         solution: 'true',
       },
       {
@@ -3438,7 +3438,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'SELECT Abt_NR, COUNT( DISTINCT Beruf) FROM Angestellte\n\n\t   GROUP By Abt_NR HAVING COUNT ( DISTINCT beruf) = (SELECT COUNT ( DISTINCT Beruf) FROM angestellte)\n',
+        text: 'SELECT Abt_NR, COUNT( DISTINCT Beruf) FROM Angestellte\n\n       GROUP By Abt_NR HAVING COUNT ( DISTINCT beruf) = (SELECT COUNT ( DISTINCT Beruf) FROM angestellte)\n',
         solution: 'true',
       },
       {
@@ -3591,7 +3591,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welches Datenmodell ist in einer Baumstruktur organisiert?\n',
     explanation:
-      '\n\tDas hierarchisches Datenbankmodell ist das älteste Datenbankmodell, es bildet die reale Welt durch eine hierarchische Baumstruktur ab und wurde später Grundlage des Netzwerkdatenmodells. Es entstand schon in den 60erJahren und wurde Grundlage des Systems IMS/DB der Firma IBM. Heutzutage erlebt die hierarchische Datenspeicherung eine Renaissance in Verbindung mit XML.\n',
+      '\n    Das hierarchisches Datenbankmodell ist das älteste Datenbankmodell, es bildet die reale Welt durch eine hierarchische Baumstruktur ab und wurde später Grundlage des Netzwerkdatenmodells. Es entstand schon in den 60erJahren und wurde Grundlage des Systems IMS/DB der Firma IBM. Heutzutage erlebt die hierarchische Datenspeicherung eine Renaissance in Verbindung mit XML.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -4219,7 +4219,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Der Ausdruck "SELECT Nachname FROM KUNDEN ORDER BY Nachname DESC"\n',
     explanation:
-      '\n\tDie ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend.\n\n\tEine Gruppierung erfolgt nur mit einer GROUP BY-Klausel-\n',
+      '\n    Die ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend.\n\n    Eine Gruppierung erfolgt nur mit einer GROUP BY-Klausel-\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -4494,19 +4494,19 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT \tNachname, Vorname, Gehalt\nFROM \tAngestellte\nWHERE \tGehalt BETWEEN 3000 AND 3600;\n',
+        text: 'SELECT     Nachname, Vorname, Gehalt\nFROM     Angestellte\nWHERE     Gehalt BETWEEN 3000 AND 3600;\n',
         solution: 'true',
       },
       {
-        text: 'SELECT \tNachname, Vorname, Gehalt\nFROM \tAngestellte\nWHERE \tGehalt > 3000 \nAND     Gehalt < 3600\n',
+        text: 'SELECT     Nachname, Vorname, Gehalt\nFROM     Angestellte\nWHERE     Gehalt > 3000 \nAND     Gehalt < 3600\n',
         solution: 'false',
       },
       {
-        text: 'SELECT \tNachname, Vorname, Gehalt\nFROM \tAngestellte\nWHERE \tGehalt >= 3000 \nAND     Gehalt <= 3600\n',
+        text: 'SELECT     Nachname, Vorname, Gehalt\nFROM     Angestellte\nWHERE     Gehalt >= 3000 \nAND     Gehalt <= 3600\n',
         solution: 'true',
       },
       {
-        text: 'SELECT \tNachname, Vorname, Gehalt\nFROM \tAngestellte\nWHERE \tGehalt IN (3000, 3600)',
+        text: 'SELECT     Nachname, Vorname, Gehalt\nFROM     Angestellte\nWHERE     Gehalt IN (3000, 3600)',
         solution: 'false',
       },
     ],
@@ -4517,19 +4517,19 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'In der Fahrrad-Datenbank Byce & Co. sind insbesondere folgende Tabellen enthalten:\n     Artikel(TNr, Bezeichnung, .....)\n     Auftrage(AuftragsNr, KundenNr, Auftragsdatum, ...)\n     Auftragspositionen(AuftragsNr, TNr, Menge,...)   \n\nDer Vertriebsleiter Dr. Guck der Firma Byce & Co. möchte herausfinden, für welche Artikel überhaupt Aufträge vorliegen. Er stellt diese Anfrage an die EDV-Abteilung. Welche der folgenden Anfragen liefert das gewünschte Ergebnis?\n',
     explanation:
-      'Man kann diese Anfrage mittels Natural Join, IN-, EXISTS-Operator lösen. Mann kann auch eine Anfrage in einer FROM-Klausel formulieren. \n\nSELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   TNR IN (SELECT * FROM Auftraege b \n\t\tWHERE a.TNr = b.TNr); \nDiese Anfrage ist falsch, weil sie syntaktisch nicht richtig ist. Wenn der linke Operand des IN-Operators die TNR ist, dann können beim rechten Operanden nicht alle Spalten für die Ergebnismenge selektiert werden. Statt SELECT * müsste hier SELECT TNR stehen. Und dann wäre die WHERE-Klausel beim Sub-SELECT überflüssig. \n\n\nSELECT  \tDISTINCT a.TNr,  a.Bezeichnung\nFROM     \tArtikel a, (SELECT * FROM Auftragspositionen) b;\nDiese Anfrage ist falsch, weil statt einem Natural Join nur ein kartesisches Produkt formuliert wurde. Es fehlt z.B. eine WHERE-Klausel mit  WHERE  \ta.Tnr = b.Tnr; \n\n\nSELECT \ta.TNr, a.Bezeichnung\nFROM    Auftragspositionen a, Auftraege b \nWHERE  \ta.Tnr = b.Tnr;\nDiese Anfrage ist falsch, weil sie syntaktisch nicht richtig ist. \nDie Spalte Bezeichnung gibt es nicht in der Auftragspositionen-Tabelle, sondern nur in der Artikel-Tabelle. ',
+      'Man kann diese Anfrage mittels Natural Join, IN-, EXISTS-Operator lösen. Mann kann auch eine Anfrage in einer FROM-Klausel formulieren. \n\nSELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   TNR IN (SELECT * FROM Auftraege b \n        WHERE a.TNr = b.TNr); \nDiese Anfrage ist falsch, weil sie syntaktisch nicht richtig ist. Wenn der linke Operand des IN-Operators die TNR ist, dann können beim rechten Operanden nicht alle Spalten für die Ergebnismenge selektiert werden. Statt SELECT * müsste hier SELECT TNR stehen. Und dann wäre die WHERE-Klausel beim Sub-SELECT überflüssig. \n\n\nSELECT      DISTINCT a.TNr,  a.Bezeichnung\nFROM         Artikel a, (SELECT * FROM Auftragspositionen) b;\nDiese Anfrage ist falsch, weil statt einem Natural Join nur ein kartesisches Produkt formuliert wurde. Es fehlt z.B. eine WHERE-Klausel mit  WHERE      a.Tnr = b.Tnr; \n\n\nSELECT     a.TNr, a.Bezeichnung\nFROM    Auftragspositionen a, Auftraege b \nWHERE      a.Tnr = b.Tnr;\nDiese Anfrage ist falsch, weil sie syntaktisch nicht richtig ist. \nDie Spalte Bezeichnung gibt es nicht in der Auftragspositionen-Tabelle, sondern nur in der Artikel-Tabelle. ',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT  DISTINCT a.TNr,  a.Bezeichnung\nFROM    Artikel a, (SELECT * FROM Auftragspositionen) b\nWHERE  \ta.TNr = b.TNr;\n',
+        text: 'SELECT  DISTINCT a.TNr,  a.Bezeichnung\nFROM    Artikel a, (SELECT * FROM Auftragspositionen) b\nWHERE      a.TNr = b.TNr;\n',
         solution: 'true',
       },
       {
-        text: 'SELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   TNR IN (SELECT * FROM Auftraege b \n\t\tWHERE a.TNr = b.TNr);\n\n\n',
+        text: 'SELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   TNR IN (SELECT * FROM Auftraege b \n        WHERE a.TNr = b.TNr);\n\n\n',
         solution: 'false',
       },
       {
-        text: 'SELECT  a.Tnr, a.Bezeichnung\nFROM    Artikel a\nWHERE   EXISTS \n        (SELECT b.TNR FROM Auftragspositionen b \n\t\t      \tWHERE a.TNR = b.TNR);\n\n\n',
+        text: 'SELECT  a.Tnr, a.Bezeichnung\nFROM    Artikel a\nWHERE   EXISTS \n        (SELECT b.TNR FROM Auftragspositionen b \n                  WHERE a.TNR = b.TNR);\n\n\n',
         solution: 'true',
       },
       {
@@ -4537,15 +4537,15 @@ const questions: Question[] = [
         solution: 'true',
       },
       {
-        text: 'SELECT  \tDISTINCT a.TNr,  a.Bezeichnung\nFROM     \tArtikel a, (SELECT * FROM Auftragspositionen) b;\n\n\n\n\n',
+        text: 'SELECT      DISTINCT a.TNr,  a.Bezeichnung\nFROM         Artikel a, (SELECT * FROM Auftragspositionen) b;\n\n\n\n\n',
         solution: 'false',
       },
       {
-        text: 'SELECT  \ta.TNr, a.Bezeichnung\nFROM     \tArtikel a\nWHERE   \tTNR IN (SELECT TNr FROM Auftragspositionen);\n\n\n',
+        text: 'SELECT      a.TNr, a.Bezeichnung\nFROM         Artikel a\nWHERE       TNR IN (SELECT TNr FROM Auftragspositionen);\n\n\n',
         solution: 'true',
       },
       {
-        text: 'SELECT \ta.TNr, a.Bezeichnung\nFROM    Auftragspositionen a, Auftraege b \nWHERE  \ta.Tnr = b.Tnr;\n\n',
+        text: 'SELECT     a.TNr, a.Bezeichnung\nFROM    Auftragspositionen a, Auftraege b \nWHERE      a.Tnr = b.Tnr;\n\n',
         solution: 'false',
       },
     ],
@@ -4708,7 +4708,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Mit welchem SQL-Befehl werden Daten in Tabellen eingefügt? Bitte geben Sie nur einen Ausdruck, nicht den kompletten Befehl  ein!\n',
     explanation:
-      '\n\tEs gibt einen Befehl zum Einfügen von genau einem Datensatz:\n\n\tINSERT INTO tabellenname VALUES (spaltenwert_1, ..., spaltenwert_n);\n\n\tUnd es  gibt einen Befehl zum Einfügen von mehreren Datensätzen aus anderen Tabellen oder Sichten:\n\n\tINSERT INTO tabellenname AS SELECT (spaltenwert_1, ..., spaltenwert_n) FROM ... WHERE ...;\n',
+      '\n    Es gibt einen Befehl zum Einfügen von genau einem Datensatz:\n\n    INSERT INTO tabellenname VALUES (spaltenwert_1, ..., spaltenwert_n);\n\n    Und es  gibt einen Befehl zum Einfügen von mehreren Datensätzen aus anderen Tabellen oder Sichten:\n\n    INSERT INTO tabellenname AS SELECT (spaltenwert_1, ..., spaltenwert_n) FROM ... WHERE ...;\n',
     type: 'text',
     answers: [
       {
@@ -4949,7 +4949,7 @@ const questions: Question[] = [
     answers: [
       {
         text: 'Der SQL-Ausdruck (ohne Semikolon, inGroßbuchstaben) lautet:\n',
-        solution: '\r\n\tREVOKE ALL ON XYZ FROM EMIL\r\n',
+        solution: '\r\n    REVOKE ALL ON XYZ FROM EMIL\r\n',
       },
     ],
   },
@@ -4989,7 +4989,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Von welchem JDBC-Interfaces erben die anderen Interfaces?\n',
     explanation:
-      '\n\tDas CallableStatement erbt vom Interface PreparedStatement Attribute und Methoden, und dieses wiederum vom Statement-Interface.\n',
+      '\n    Das CallableStatement erbt vom Interface PreparedStatement Attribute und Methoden, und dieses wiederum vom Statement-Interface.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -5060,7 +5060,7 @@ const questions: Question[] = [
     category: 10,
     difficulty: 1,
     text: 'Der aktuelle, letzte JDBC-Standard ist:\n',
-    explanation: '\n\tJDBC 4.0 wurde 2006 veröffentlicht\n',
+    explanation: '\n    JDBC 4.0 wurde 2006 veröffentlicht\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -5186,7 +5186,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Das relationale Modell kann wie folgt definiert werden: MULTISET ( ROW ( Basisdatentyp ) )\n',
     explanation:
-      '\n\tMULTISET ( ROW ( Basisdatentyp ) ) beschreibt das Datenmodell von SQL, das relationale Datenmodell der relationalen Algebra wird durch SET ( ROW ( Basisdatentyp ) ) beschrieben.\n',
+      '\n    MULTISET ( ROW ( Basisdatentyp ) ) beschreibt das Datenmodell von SQL, das relationale Datenmodell der relationalen Algebra wird durch SET ( ROW ( Basisdatentyp ) ) beschrieben.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -5724,7 +5724,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche Aussage ist wahr?\n',
     explanation:
-      '\n\tDie Normalformen (1NF, 2NF und 3NF) spielen in objektrelationalem SQL keine Rolle, ihre Verletzung relationalen Tabellen sind solche, die nicht auf einem Typ basieren, CREATE TABLE OF typname.... Sie können aber sehr wohl einen selbstdefiniereten  Datentypen benutzen.\n',
+      '\n    Die Normalformen (1NF, 2NF und 3NF) spielen in objektrelationalem SQL keine Rolle, ihre Verletzung relationalen Tabellen sind solche, die nicht auf einem Typ basieren, CREATE TABLE OF typname.... Sie können aber sehr wohl einen selbstdefiniereten  Datentypen benutzen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -6466,7 +6466,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Womit kann man in PL/SQL eine Variable definieren, deren Datentyp einer Spalte einer Tabelle entspricht?\n',
     explanation:
-      '\n\tMitTabellenname.Spaltenname%TYPE;  wird eine PL/SQL-Variable entsprechend eines zuvor definierten Attributs (Spalte) einer Tabelle definiert. Alternativ kann man auch mit Tabellenname%ROWTYPE die Attributstruktur der Tabelle komplett an einen Variable in PL/SQL übertragen.\n',
+      '\n    MitTabellenname.Spaltenname%TYPE;  wird eine PL/SQL-Variable entsprechend eines zuvor definierten Attributs (Spalte) einer Tabelle definiert. Alternativ kann man auch mit Tabellenname%ROWTYPE die Attributstruktur der Tabelle komplett an einen Variable in PL/SQL übertragen.\n',
     type: 'text',
     answers: [
       {
@@ -6614,7 +6614,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Wodurch ist eine dynamische SQL-Anweisung gekennzeichnet?\n',
     explanation:
-      '\n\tDynamisch bedeutet gerade, dass ein Inhalt einer Textvariable erst zur Laufzeit dem Datenbanksystem übergeben und dann auch übersetzt wird.\n',
+      '\n    Dynamisch bedeutet gerade, dass ein Inhalt einer Textvariable erst zur Laufzeit dem Datenbanksystem übergeben und dann auch übersetzt wird.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -6921,21 +6921,21 @@ const questions: Question[] = [
     id: 1293,
     category: 7,
     difficulty: 3,
-    text: 'Gegeben sei folgender Ausschnitt eines relationale Schemas einer Datenbank:\n\n\tSpieler (Spieler_id, Name, Adresse, Geburtsdatum) Vereine (V_Kuerzel, Vereinsname, Ort, Gruendungsjahr )\n\n\tSpiele (Spiel_id, Heim_V_Kuerzel, Gast_V_Kuerzel, Spieltag, Ergebnis, Anzahl_Zuschauer)\n\n\tSpieleinsatz (Spiel_id, Spieler_id, von_Minute, bis_Minute)\n\n\tWelche der angegeben SQL-Abfragen beantwortet/en die Frage: Welche Vereine (Kürzel, Name) haben wenigstens ein Auswärtsspiel, also wenigstens ein als Spiel als Gastmannschaft in der Rückrunde (Spieltag 18-34) absolviert?\n',
+    text: 'Gegeben sei folgender Ausschnitt eines relationale Schemas einer Datenbank:\n\n    Spieler (Spieler_id, Name, Adresse, Geburtsdatum) Vereine (V_Kuerzel, Vereinsname, Ort, Gruendungsjahr )\n\n    Spiele (Spiel_id, Heim_V_Kuerzel, Gast_V_Kuerzel, Spieltag, Ergebnis, Anzahl_Zuschauer)\n\n    Spieleinsatz (Spiel_id, Spieler_id, von_Minute, bis_Minute)\n\n    Welche der angegeben SQL-Abfragen beantwortet/en die Frage: Welche Vereine (Kürzel, Name) haben wenigstens ein Auswärtsspiel, also wenigstens ein als Spiel als Gastmannschaft in der Rückrunde (Spieltag 18-34) absolviert?\n',
     explanation:
-      '\n\tSELECT v_kuerzel, vereinsname\n\n\tFROM verein, spiele\n\n\tWHERE spieltag BETWEEN 18 AND 34;\n\n\t\n\n\tist semantisch falsch: Es wird hier das kartesische Produkt zwischen den beiden Tabellen ausgeführt und nicht der Natural Join.\n\n\t\n\n\tDie übrigen Anfragen sind alle richtig.\n',
+      '\n    SELECT v_kuerzel, vereinsname\n\n    FROM verein, spiele\n\n    WHERE spieltag BETWEEN 18 AND 34;\n\n    \n\n    ist semantisch falsch: Es wird hier das kartesische Produkt zwischen den beiden Tabellen ausgeführt und nicht der Natural Join.\n\n    \n\n    Die übrigen Anfragen sind alle richtig.\n',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT v_kuerzel, vereinsname \t\nFROM verein, spiele \nWHERE v_kuerzel = gast_v_kuerzel\t\nAND  spieltag BETWEEN 18 AND 34;\n',
+        text: 'SELECT v_kuerzel, vereinsname     \nFROM verein, spiele \nWHERE v_kuerzel = gast_v_kuerzel    \nAND  spieltag BETWEEN 18 AND 34;\n',
         solution: 'true',
       },
       {
-        text: 'SELECT v_kuerzel, vereinsname \t\nFROM verein, spiele \nWHERE v_kuerzel = gast_v_kuerzel\t\nAND spieltag >= 18 AND <= 34;\n',
+        text: 'SELECT v_kuerzel, vereinsname     \nFROM verein, spiele \nWHERE v_kuerzel = gast_v_kuerzel    \nAND spieltag >= 18 AND <= 34;\n',
         solution: 'true',
       },
       {
-        text: 'SELECT v_kuerzel, vereinsname \t\nFROM verein, spiele  \nWHERE  spieltag BETWEEN 18 AND 34;\n',
+        text: 'SELECT v_kuerzel, vereinsname     \nFROM verein, spiele  \nWHERE  spieltag BETWEEN 18 AND 34;\n',
         solution: 'false',
       },
       {
@@ -7401,7 +7401,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche der folgenden Aussagen über Normalformen sind wahr?\n',
     explanation:
-      '\n\tFALSCH ist:\n\n\tDie 1NF ist immer verschieden von der 2NF.\n\n\tWenn es keine partiellen funktionalen Abhängigkeiten gibt vom Primärschlüssel in der 1.NF, dann gilt: 1.NF = 2.NF.\n\n\tFALSCH ist:\n\n\tDie 2NF ist immer verschieden von der 3NF.\n\n\tWenn es keine transitiven funktionalen Abhängigkeiten gibt, dann gilt: 2.NF = 3.NF.\n',
+      '\n    FALSCH ist:\n\n    Die 1NF ist immer verschieden von der 2NF.\n\n    Wenn es keine partiellen funktionalen Abhängigkeiten gibt vom Primärschlüssel in der 1.NF, dann gilt: 1.NF = 2.NF.\n\n    FALSCH ist:\n\n    Die 2NF ist immer verschieden von der 3NF.\n\n    Wenn es keine transitiven funktionalen Abhängigkeiten gibt, dann gilt: 2.NF = 3.NF.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -7661,7 +7661,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'In welcher Phase des Vorgehensmodells der Datenbankentwicklung wird eine Normalisierung durchgeführt?\n',
     explanation:
-      '\n\tIn der Entwurfsphase wird das konzeptionelle Schema auf ein relationales Datenbankschema abgebildet und eine Normalisierung durchgeführt. Außerdem wird bei einer geplanten Anwendungsentwicklung ein objektorientiertes Klassenmodell erstellt, das die für die Datensicht erforderlichen Methoden und Funktionen enthält.\n',
+      '\n    In der Entwurfsphase wird das konzeptionelle Schema auf ein relationales Datenbankschema abgebildet und eine Normalisierung durchgeführt. Außerdem wird bei einer geplanten Anwendungsentwicklung ein objektorientiertes Klassenmodell erstellt, das die für die Datensicht erforderlichen Methoden und Funktionen enthält.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -7845,15 +7845,15 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: "SELECT  Nachname, Ort \nFROM    Kunden\nWHERE \tOrt = 'Köln'\nOR\tNOT (Ort = 'Gummersbach')\n",
+        text: "SELECT  Nachname, Ort \nFROM    Kunden\nWHERE     Ort = 'Köln'\nOR    NOT (Ort = 'Gummersbach')\n",
         solution: 'true',
       },
       {
-        text: "SELECT  Nachname, Ort \nFROM    Kunden\nWHERE \tOrt = 'Köln'\n",
+        text: "SELECT  Nachname, Ort \nFROM    Kunden\nWHERE     Ort = 'Köln'\n",
         solution: 'false',
       },
       {
-        text: "SELECT  Nachname, Ort \nFROM    Kunden\nWHERE \tNOT (Ort = 'Gummersbach')\nOR      Ort = 'Köln'",
+        text: "SELECT  Nachname, Ort \nFROM    Kunden\nWHERE     NOT (Ort = 'Gummersbach')\nOR      Ort = 'Köln'",
         solution: 'true',
       },
     ],
@@ -8747,25 +8747,25 @@ const questions: Question[] = [
     id: 1709,
     category: 7,
     difficulty: 2,
-    text: 'Es sei folgende Kunden-Tabelle gegeben:\n\t\t\tKunden( Kunden_id, Name, Handy ) \nMit welchem/n Befehl/en kann ein Primärschlüssel für die Kunden_Id sowie ein zusammengesetzter, eindeutiger Zweitschlüssel für die Tabelle "Kunden" über die beiden Attribute "Name" und "Handy" definiert werden? \n',
+    text: 'Es sei folgende Kunden-Tabelle gegeben:\n            Kunden( Kunden_id, Name, Handy ) \nMit welchem/n Befehl/en kann ein Primärschlüssel für die Kunden_Id sowie ein zusammengesetzter, eindeutiger Zweitschlüssel für die Tabelle "Kunden" über die beiden Attribute "Name" und "Handy" definiert werden? \n',
     explanation:
       'Eine Tabelle kann nur einen Primary Key haben und CONSTRAINT-Namen sind eindeutig.',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE TABLE Kunden  \n(Kunden_Id\tNUMBER(9) PRIMARY KEY, \t\n Name  \t        VARCHAR2(50),\t\n Handy\t\tNUMBER(11), \nCONSTRAINT Kunden_uk  UNIQUE (Name, Handy));\n',
+        text: 'CREATE TABLE Kunden  \n(Kunden_Id    NUMBER(9) PRIMARY KEY,     \n Name              VARCHAR2(50),    \n Handy        NUMBER(11), \nCONSTRAINT Kunden_uk  UNIQUE (Name, Handy));\n',
         solution: 'true',
       },
       {
-        text: 'CREATE TABLE Kunden  \n(Kunden_I NUMBER(9) PRIMARY KEY, \t\nName VARCHAR2(50)  CONSTRAINT Kunden_uk  UNIQUE, \nHandy  \tNUMBER(11) CONSTRAINT Kunden_uk  UNIQUE);\n',
+        text: 'CREATE TABLE Kunden  \n(Kunden_I NUMBER(9) PRIMARY KEY,     \nName VARCHAR2(50)  CONSTRAINT Kunden_uk  UNIQUE, \nHandy      NUMBER(11) CONSTRAINT Kunden_uk  UNIQUE);\n',
         solution: 'false',
       },
       {
-        text: 'CREATE TABLE Kunden  \n(Kunden_Id NUMBER(9) PRIMARY KEY, \t\n Name  VARCHAR2(50), \n Handy NUMBER(11), \n CONSTRAINT Kunden_pk2  PRIMARY KEY (Name, Handy));\n',
+        text: 'CREATE TABLE Kunden  \n(Kunden_Id NUMBER(9) PRIMARY KEY,     \n Name  VARCHAR2(50), \n Handy NUMBER(11), \n CONSTRAINT Kunden_pk2  PRIMARY KEY (Name, Handy));\n',
         solution: 'false',
       },
       {
-        text: 'CREATE TABLE Kunden  \n(Kunden_Id NUMBER(9) PRIMARY KEY, \t\nName  VARCHAR2(50) CONSTRAINT Kunden_pk2 PRIMARY KEY), \nHandy  NUMBER(11)CONSTRAINT Kunden_pk2 PRIMARY KEY));\n',
+        text: 'CREATE TABLE Kunden  \n(Kunden_Id NUMBER(9) PRIMARY KEY,     \nName  VARCHAR2(50) CONSTRAINT Kunden_pk2 PRIMARY KEY), \nHandy  NUMBER(11)CONSTRAINT Kunden_pk2 PRIMARY KEY));\n',
         solution: 'false',
       },
     ],
@@ -8836,7 +8836,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welcher SQL-Ausdruck zum Einfügen eines Datensatzes mit einem Sequenz-Wert ist korrekt ?\n',
     explanation:
-      '\n\tDer nächste Wert einer Sequenz wird mit <sequence_name>.NEXTVAL abgerufen.\n',
+      '\n    Der nächste Wert einer Sequenz wird mit <sequence_name>.NEXTVAL abgerufen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -8855,7 +8855,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Welche der folgenden Aussagen ist korrekt?\n',
     explanation:
-      '\n\tDie PL/SQL-Einheit steht in der Hierarchie über den Blöcken, d.h., kann aus mehreren untergeordneten Blöcken bestehen.\n',
+      '\n    Die PL/SQL-Einheit steht in der Hierarchie über den Blöcken, d.h., kann aus mehreren untergeordneten Blöcken bestehen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -9529,11 +9529,11 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'SELECT\n\tAbt_Nr,\n\tAVG(Gehalt)\nFROM \tAngestellte\nGROUP BY Abt_Nr;\n',
+        text: 'SELECT\n    Abt_Nr,\n    AVG(Gehalt)\nFROM     Angestellte\nGROUP BY Abt_Nr;\n',
         solution: 'true',
       },
       {
-        text: 'SELECT\n\tAbt_Nr,\n\tNachname,\n\tAVG(Gehalt)\nFROM \tAngestellte\nGROUP BY Abt_Nr;\n',
+        text: 'SELECT\n    Abt_Nr,\n    Nachname,\n    AVG(Gehalt)\nFROM     Angestellte\nGROUP BY Abt_Nr;\n',
         solution: 'false',
       },
     ],
@@ -10603,7 +10603,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'In PL/SQL kann man Trigger definieren\n',
     explanation:
-      '\n\tDer SQL-Standard und ORACLE-SQL sehen DML-Trigger vor, die nach INSERT, UPDATE oder DELETE gefeuert werden, SELECT-Anweisungen leider nicht. ORACLE kennt zusätzlich noch DDL-Trigger, die sich jedoch nicht auf CREATE TABLE (einer einzelnen Tabelle) sondern auf CREATE ON SCHEMA beziehen, sowie INSTEAD-OF-Trigger auf views.\n',
+      '\n    Der SQL-Standard und ORACLE-SQL sehen DML-Trigger vor, die nach INSERT, UPDATE oder DELETE gefeuert werden, SELECT-Anweisungen leider nicht. ORACLE kennt zusätzlich noch DDL-Trigger, die sich jedoch nicht auf CREATE TABLE (einer einzelnen Tabelle) sondern auf CREATE ON SCHEMA beziehen, sowie INSTEAD-OF-Trigger auf views.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -10795,7 +10795,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Ein B-Baum hat folgende Eigenschaften:\n',
     explanation:
-      '\n\tDer B-Baum und der B+-Baum sind vollständig balancierte Bäume, bei denen der Weg von der Wurzel bis zu Blatt immer gleich lang sind und der Höhe H des Baums entsprechen. Die Daten werden, anders als beim B+-Baum, gemeinsam mit dem Index gespeichert. Alle inneren Knoten mit n Einträgen haben n+1 Nachfolger. Und jeder Knoten, außer der Wurzel, hat zwischen k und 2k Einträge, wobei k der Typ des Baums ist.\n',
+      '\n    Der B-Baum und der B+-Baum sind vollständig balancierte Bäume, bei denen der Weg von der Wurzel bis zu Blatt immer gleich lang sind und der Höhe H des Baums entsprechen. Die Daten werden, anders als beim B+-Baum, gemeinsam mit dem Index gespeichert. Alle inneren Knoten mit n Einträgen haben n+1 Nachfolger. Und jeder Knoten, außer der Wurzel, hat zwischen k und 2k Einträge, wobei k der Typ des Baums ist.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -11030,7 +11030,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'In einer WHEN-Bedingung eines zeilenorientierten Triggers haben die Transitionsvariable einen Doppelpunkt.\n',
     explanation:
-      '\n\tDer Doppelpunkt steht zur Stärkung des Gedächtnisses bei den Transitionsvariablen nur im PL/SQL-Ausführungsteil eines Triggers, nicht in der WHEN-Bedingung.\n',
+      '\n    Der Doppelpunkt steht zur Stärkung des Gedächtnisses bei den Transitionsvariablen nur im PL/SQL-Ausführungsteil eines Triggers, nicht in der WHEN-Bedingung.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -11072,7 +11072,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Eine PL/SQL-Funktion a liefert einen booleschen Wert b zurück. Wie können Sie diesen Wert b in SQL*PLUS bzw de, SQL-Developer ausgeben?\n',
     explanation:
-      '\n\tDBMS_OUPUT.PUTLINE(a); kann nicht in dieser Form verwendet werden, da SQL keinen BOOLESCHEN Datentyp kennt. Daher muss der Umweg über eine IF-Abfrage benutzt werden.\n',
+      '\n    DBMS_OUPUT.PUTLINE(a); kann nicht in dieser Form verwendet werden, da SQL keinen BOOLESCHEN Datentyp kennt. Daher muss der Umweg über eine IF-Abfrage benutzt werden.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -11481,7 +11481,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche JAVA-SWING-Klassen können zur Ausgabe von Tabellen nach dem Model-View-Controler-Prinzip genutzt werden?\n',
     explanation:
-      '\n\tWer näheres Wissen will, sollte bei SUN selber nachschlagen:\n\n\t<a href="http://java.sun.com/j2se/1.4.2/docs/api/javax/swing/table/AbstractTableModel.html">JDBC-Dokumentation bei Sun .\n',
+      '\n    Wer näheres Wissen will, sollte bei SUN selber nachschlagen:\n\n    <a href="http://java.sun.com/j2se/1.4.2/docs/api/javax/swing/table/AbstractTableModel.html">JDBC-Dokumentation bei Sun .\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -11660,7 +11660,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Welche Operation aus der relationalen Algebra hat die folgende Eigenschaft: Sie extrahiert bestimmte Attribute aus einer Relation und vertauscht eventuell die Reihenfolge der Attribute.\n',
     explanation:
-      '\n\tDie Projektion extrahiert bestimmte Attribute aus einer Relation und vertauscht eventuell die Reihenfolge:\n\n\tSei R(A1,...,An) eine Relation und L = (B1,...,Bj) mit 1 ≤ j ≤ n eine Attributkombination, d.h. eine geordnete Teilmenge von (A1,...,An).\n\n\tB1 entspricht hier dem Attribut Ai1 und Bj entspricht dem Attribut Aij.\n\n\tDie Projektion ist definiert durch: Projektion L (R) Projektion B1...Bj (R) := {(ai1,...,aij)|(a1,...,an)∈R}.\n',
+      '\n    Die Projektion extrahiert bestimmte Attribute aus einer Relation und vertauscht eventuell die Reihenfolge:\n\n    Sei R(A1,...,An) eine Relation und L = (B1,...,Bj) mit 1 ≤ j ≤ n eine Attributkombination, d.h. eine geordnete Teilmenge von (A1,...,An).\n\n    B1 entspricht hier dem Attribut Ai1 und Bj entspricht dem Attribut Aij.\n\n    Die Projektion ist definiert durch: Projektion L (R) Projektion B1...Bj (R) := {(ai1,...,aij)|(a1,...,an)∈R}.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -11695,11 +11695,11 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT AuftragsNr\nFROM  Auftraege\nWHERE EXISTS\n\t(SELECT * FROM Kunden\n\tWHERE  Kunden.Kun_Nr = Auftraege.Kun_Nr);',
+        text: 'SELECT AuftragsNr\nFROM  Auftraege\nWHERE EXISTS\n    (SELECT * FROM Kunden\n    WHERE  Kunden.Kun_Nr = Auftraege.Kun_Nr);',
         solution: 'true',
       },
       {
-        text: 'SELECT AuftragsNr\nFROM  Auftraege\nWHERE EXISTS\n\t(SELECT * FROM Kunden);',
+        text: 'SELECT AuftragsNr\nFROM  Auftraege\nWHERE EXISTS\n    (SELECT * FROM Kunden);',
         solution: 'false',
       },
     ],
@@ -12851,7 +12851,7 @@ const questions: Question[] = [
     category: 11,
     difficulty: 3,
     text: 'Was passiert bei der Registrierung von Java Stored Procedures in der Datenbank?\n',
-    explanation: '\n\tist noch nicht da.\n',
+    explanation: '\n    ist noch nicht da.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -13050,7 +13050,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Welche Aussagen über (nicht-)identifizierende Beziehungen sind wahr?\n',
     explanation:
-      '\n\tBei identifizierenden Beziehungen wird in der Detail-Entitymenge der Fremdschlüssel zum Primärschlüssel hinzugenommen, bei nicht identifizierenden Beziehungen wird der Fremdschlüssel nur als Attribut eingetragen, welches nicht zum Primärschlüssel der Relation gehört. Der Grund für den Ausschluss idendifizierender Beziehungen bei künstlichen Primärschlüsseln liegt darin, dass künstliche Primärschlüssel per Definition nur aus einem Attribut bestehen dürfen.\n',
+      '\n    Bei identifizierenden Beziehungen wird in der Detail-Entitymenge der Fremdschlüssel zum Primärschlüssel hinzugenommen, bei nicht identifizierenden Beziehungen wird der Fremdschlüssel nur als Attribut eingetragen, welches nicht zum Primärschlüssel der Relation gehört. Der Grund für den Ausschluss idendifizierender Beziehungen bei künstlichen Primärschlüsseln liegt darin, dass künstliche Primärschlüssel per Definition nur aus einem Attribut bestehen dürfen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -13124,7 +13124,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Betrachten Sie die Tabelle Angestellte(Ang_Nr, Nachname, Jahresgehalt) und die Tabelle Kurse(Kurs, Ang_NR, Anzahl). Es werden die Angestellten gesucht, die meisten Kurse abgehalten haben. Welche Abfrage liefert das gewünschte Ergebnis?\n',
     explanation:
-      '\n\tDiese Anfrage kann nur über eine Unterabfrage beantwortet werden; in den anderen Abfragen ist die Gruppenfunktion SUM falsch verwendet.\n',
+      '\n    Diese Anfrage kann nur über eine Unterabfrage beantwortet werden; in den anderen Abfragen ist die Gruppenfunktion SUM falsch verwendet.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -13263,7 +13263,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welcher Optimierungsvorgang transformiert einen algebraischen Ausdruck der relationalen Algebra auf einen semantisch äquivalenten Ausdruck?\n',
     explanation:
-      '\n\tBei der logischen Optimierung wird ein algebraischer Ausdruck der relationalen Algebra auf einen semantisch äquivalenten Ausdruck transformiert, der weniger Laufzeit benötigt. Je weniger Tupel die Zwischenergebnismengen haben, umso schneller ist die Anfrageauswertung.\n',
+      '\n    Bei der logischen Optimierung wird ein algebraischer Ausdruck der relationalen Algebra auf einen semantisch äquivalenten Ausdruck transformiert, der weniger Laufzeit benötigt. Je weniger Tupel die Zwischenergebnismengen haben, umso schneller ist die Anfrageauswertung.\n',
     type: 'text',
     answers: [
       {
@@ -13532,7 +13532,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wozu gehört der Ausdruck "START WITH" in Standard-SQL?\n',
     explanation:
-      '\n\tHier ein Beispiel für eine Sequenz:\n\n\tBetrachten Sie die folgende Definition einer Sequenz:\n\n\tCREATE SEQUENCE Kun_seq\n\n\tINCREMENT BY 1\n\n\tSTART WITH 1\n\n\tNOMAXVALUE\n\n\tNOCYCLE\n\n\tCACHE 10;\n\n\t\n\n\tCONNECT BY gehört nicht zum Standard-SQL.\n',
+      '\n    Hier ein Beispiel für eine Sequenz:\n\n    Betrachten Sie die folgende Definition einer Sequenz:\n\n    CREATE SEQUENCE Kun_seq\n\n    INCREMENT BY 1\n\n    START WITH 1\n\n    NOMAXVALUE\n\n    NOCYCLE\n\n    CACHE 10;\n\n    \n\n    CONNECT BY gehört nicht zum Standard-SQL.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -15002,7 +15002,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'SELECT * FROM \tAngestellte, Abteilungen\nAND Angestellte.ABT_Nr = Abteilungen.ABT_Nr;\n\n',
+        text: 'SELECT * FROM     Angestellte, Abteilungen\nAND Angestellte.ABT_Nr = Abteilungen.ABT_Nr;\n\n',
         solution: 'false',
       },
       {
@@ -15415,7 +15415,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche Komponenten gehören zu einem Datenbankschema?\n',
     explanation:
-      '\n\tIn der Entwurfsphase wird das konzeptionelle Schema auf ein relationales Datenbankschema abgebildet und eine Normalisierung durchgeführt. Das Datenbankschema ist ein auf den Datenbanktyp abgestimmtes Datenmodell, im relationalen Fall also ein relationales Schema, bestehend aus miteinander verknüpften Relationen.\n\n\t\n\n\tFerner wird das Schema ergänzt um einzelne Benutzersichten, Indexangaben zur Zugriffsoptimierung und Speicherstrukturen, wie B-Baum, oder HASH- Verfahren sowie die Zugriffsrechte der Benutzer im Multiuser-System.\n',
+      '\n    In der Entwurfsphase wird das konzeptionelle Schema auf ein relationales Datenbankschema abgebildet und eine Normalisierung durchgeführt. Das Datenbankschema ist ein auf den Datenbanktyp abgestimmtes Datenmodell, im relationalen Fall also ein relationales Schema, bestehend aus miteinander verknüpften Relationen.\n\n    \n\n    Ferner wird das Schema ergänzt um einzelne Benutzersichten, Indexangaben zur Zugriffsoptimierung und Speicherstrukturen, wie B-Baum, oder HASH- Verfahren sowie die Zugriffsrechte der Benutzer im Multiuser-System.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -15763,15 +15763,15 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'PreparedStatement updOrt =\n \tcon.PrepareStatement("UPDATE Kunden SET Ort = !");\n',
+        text: 'PreparedStatement updOrt =\n     con.PrepareStatement("UPDATE Kunden SET Ort = !");\n',
         solution: 'false',
       },
       {
-        text: 'PreparedStatement updOrt =\n \tcon.PrepareStatement("UPDATE Kunden SET Ort = *");\n',
+        text: 'PreparedStatement updOrt =\n     con.PrepareStatement("UPDATE Kunden SET Ort = *");\n',
         solution: 'false',
       },
       {
-        text: 'PreparedStatement updOrt =\n \tcon.PrepareStatement("UPDATE Kunden SET Ort = ?");\n',
+        text: 'PreparedStatement updOrt =\n     con.PrepareStatement("UPDATE Kunden SET Ort = ?");\n',
         solution: 'true',
       },
       {
@@ -15840,19 +15840,19 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welcher Befehl ist syntaktisch richtig, um in JDBC eine gespeicherte Routine auszuführen? Con ist dabei das Verbindungsobjekt.',
     explanation:
-      'prepareCall erzeugt ein Callable-Statement-Objekt, mit dem man in der Datenbank gespeicherte Prozeduren aufrufen kann.\n\nDie exakte Syntax ist: \n\nCallableStatement callst = \n \t\tcon.prepareCall("{call setze_zeitstempel(?)}"); ',
+      'prepareCall erzeugt ein Callable-Statement-Objekt, mit dem man in der Datenbank gespeicherte Prozeduren aufrufen kann.\n\nDie exakte Syntax ist: \n\nCallableStatement callst = \n         con.prepareCall("{call setze_zeitstempel(?)}"); ',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CallableStatement callst = \n \t\tcon.prepareCall("{exec setze_zeitstempel(?)}"); \n',
+        text: 'CallableStatement callst = \n         con.prepareCall("{exec setze_zeitstempel(?)}"); \n',
         solution: 'false',
       },
       {
-        text: 'CallableStatement callst = \n \t\tcon.prepareCall("{call setze_zeitstempel(?)}"); \n',
+        text: 'CallableStatement callst = \n         con.prepareCall("{call setze_zeitstempel(?)}"); \n',
         solution: 'true',
       },
       {
-        text: 'CallableStatement callst = \n \t\tcon.prepareCall("{run setze_zeitstempel(?)}");\n',
+        text: 'CallableStatement callst = \n         con.prepareCall("{run setze_zeitstempel(?)}");\n',
         solution: 'false',
       },
       {
@@ -15871,15 +15871,15 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CallableStatement callst = \n \t\tcon.prepareCall("{call setze_zeitstempel(?)}"); \n',
+        text: 'CallableStatement callst = \n         con.prepareCall("{call setze_zeitstempel(?)}"); \n',
         solution: 'true',
       },
       {
-        text: 'CallableStatement callst = \n \t\tcon.prepareCall("{call setze_zeitstempel(*)}"); \n',
+        text: 'CallableStatement callst = \n         con.prepareCall("{call setze_zeitstempel(*)}"); \n',
         solution: 'false',
       },
       {
-        text: 'CallableStatement callst = \n \t\tcon.prepareCall("{call setze_zeitstempel(!)}"); \n',
+        text: 'CallableStatement callst = \n         con.prepareCall("{call setze_zeitstempel(!)}"); \n',
         solution: 'false',
       },
       {
@@ -16292,9 +16292,9 @@ const questions: Question[] = [
     id: 2167,
     category: 7,
     difficulty: 3,
-    text: 'Betrachten Sie zwei Relationen R und S mit jeweils einer Spalte A mit dem Datentyp Integer.\n\n\tWelche SELECT-Anweisungen entsprechen dem Ausdruck R-S ("-" steht für Differenz) in der relationalen Algebra?\n',
+    text: 'Betrachten Sie zwei Relationen R und S mit jeweils einer Spalte A mit dem Datentyp Integer.\n\n    Welche SELECT-Anweisungen entsprechen dem Ausdruck R-S ("-" steht für Differenz) in der relationalen Algebra?\n',
     explanation:
-      '\n\tAuch richtig ist:\n\n\t\n\n\tSELECT R.A\n\n\tFROM R LEFT OUTER JOIN S ON S.A = R.A\n\n\tWHERE S.A is NULL;\n\n\tHier werden die Datensätze aus R ermittelt, die keine entsprechenden Datensätze in S haben - also die Differenz aus der relationalen Algebra.\n\n\t\n\n\tDer NOT EXISTS ist grundsätzlich auch geeignet, aber hier fehlt die Korrelation der inneren mit der äußeren Anfrage (WHERE S.A=R.A).\n\n\t\n\n\tDie generelle Zuordnung Relationale Algebra <-> SQL entnehmen Sie bitte der folgenden Tabelle:\n<table border="1">\n\t\n\t\t\n\t\t\t\n\t\t\t\tRelationale Algebra\n\t\t\t<th align="left">\n\t\t\t\tSQL\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tProjektion\n\t\t\t\n\t\t\t\tSELECT\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tSelektion\n\t\t\t\n\t\t\t\tWHERE\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tKartesisches Produkt\n\t\t\t\n\t\t\t\tFROM\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tTheta Join\n\t\t\t\n\t\t\t\tFROM + WHERE\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tNatural Join\n\t\t\t\n\t\t\t\tFROM + WHERE + SELECT\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tVereinigung\n\t\t\t\n\t\t\t\tUNION\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tDifferenz\n\t\t\t\n\t\t\t\tEXCEPT / MINUS / NOT IN / NOT EXISTS\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tDurchschnitt\n\t\t\t\n\t\t\t\tINTERSECTION\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tDivision\n\t\t\t\n\t\t\t\t"doppeltes NOT EXISTS" / "Zählen"\n\t\t\n\t\n\n\n\t \n',
+      '\n    Auch richtig ist:\n\n    \n\n    SELECT R.A\n\n    FROM R LEFT OUTER JOIN S ON S.A = R.A\n\n    WHERE S.A is NULL;\n\n    Hier werden die Datensätze aus R ermittelt, die keine entsprechenden Datensätze in S haben - also die Differenz aus der relationalen Algebra.\n\n    \n\n    Der NOT EXISTS ist grundsätzlich auch geeignet, aber hier fehlt die Korrelation der inneren mit der äußeren Anfrage (WHERE S.A=R.A).\n\n    \n\n    Die generelle Zuordnung Relationale Algebra <-> SQL entnehmen Sie bitte der folgenden Tabelle:\n<table border="1">\n    \n        \n            \n                Relationale Algebra\n            <th align="left">\n                SQL\n        \n        \n            \n                Projektion\n            \n                SELECT\n        \n        \n            \n                Selektion\n            \n                WHERE\n        \n        \n            \n                Kartesisches Produkt\n            \n                FROM\n        \n        \n            \n                Theta Join\n            \n                FROM + WHERE\n        \n        \n            \n                Natural Join\n            \n                FROM + WHERE + SELECT\n        \n        \n            \n                Vereinigung\n            \n                UNION\n        \n        \n            \n                Differenz\n            \n                EXCEPT / MINUS / NOT IN / NOT EXISTS\n        \n        \n            \n                Durchschnitt\n            \n                INTERSECTION\n        \n        \n            \n                Division\n            \n                "doppeltes NOT EXISTS" / "Zählen"\n        \n    \n\n\n     \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -16343,8 +16343,9 @@ const questions: Question[] = [
     id: 2223,
     category: 12,
     difficulty: 1,
-    text: 'Wie lautet das Ergebnis der Berechnung im folgenden PL/SQL-Block?\n\n\tDECLARE\n\n\t   v1 NUMBER := 5;\n\n\t   v2 NUMBER := NULL;\n\n\tBEGIN\n\n\t   v1 := v1 + v2;\n\n\tEND;\n',
-    explanation: '\n\tDie Summe aus einer Zahl und einem NULL-Wert ist NULL.\n',
+    text: 'Wie lautet das Ergebnis der Berechnung im folgenden PL/SQL-Block?\n\n    DECLARE\n\n       v1 NUMBER := 5;\n\n       v2 NUMBER := NULL;\n\n    BEGIN\n\n       v1 := v1 + v2;\n\n    END;\n',
+    explanation:
+      '\n    Die Summe aus einer Zahl und einem NULL-Wert ist NULL.\n',
     type: 'text',
     answers: [
       {
@@ -16632,9 +16633,9 @@ const questions: Question[] = [
     id: 2256,
     category: 12,
     difficulty: 3,
-    text: 'Betrachten Sie die folgende Package-Definition:\n\n\tWelche Prozedur-Spezifikation/en ist/sind nicht zulässig?\n\n\tCREATE PACKAGE xyz IS PROCEDURE a (p1 NUMBER); -- Nr 1\n\n\tPROCEDURE a (p1 NUMBER, p2 NUMBER); -- Nr 2\n\n\tPROCEDURE a (p3 NUMBER); -- Nr 3\n\n\tPROCEDURE a (p1 DATE); -- Nr 4\n\n\tPROCEDURE a (p1 NUMBER); -- Nr 5\n\n\tEND;\n\n\tWelche Prozedur-Spezifikation/en ist/sind nicht zulässig?\n',
+    text: 'Betrachten Sie die folgende Package-Definition:\n\n    Welche Prozedur-Spezifikation/en ist/sind nicht zulässig?\n\n    CREATE PACKAGE xyz IS PROCEDURE a (p1 NUMBER); -- Nr 1\n\n    PROCEDURE a (p1 NUMBER, p2 NUMBER); -- Nr 2\n\n    PROCEDURE a (p3 NUMBER); -- Nr 3\n\n    PROCEDURE a (p1 DATE); -- Nr 4\n\n    PROCEDURE a (p1 NUMBER); -- Nr 5\n\n    END;\n\n    Welche Prozedur-Spezifikation/en ist/sind nicht zulässig?\n',
     explanation:
-      '\n\tEine Prozedur kann den gleichen Namen und unterschiedliche Parametertypen und -anzahlen, aber nicht den gleichen Namen und sowohl gleiche Parameteranzahlen wie auch Parametertypen haben.\n',
+      '\n    Eine Prozedur kann den gleichen Namen und unterschiedliche Parametertypen und -anzahlen, aber nicht den gleichen Namen und sowohl gleiche Parameteranzahlen wie auch Parametertypen haben.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -17432,11 +17433,11 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT v_kuerzel, vereinsname \t\nFROM verein, spiele \nWHERE v_kuerzel = gast_v_kuerzel\t\nAND  spieltag BETWEEN 18 AND 34;\n',
+        text: 'SELECT v_kuerzel, vereinsname     \nFROM verein, spiele \nWHERE v_kuerzel = gast_v_kuerzel    \nAND  spieltag BETWEEN 18 AND 34;\n',
         solution: 'true',
       },
       {
-        text: 'SELECT v_kuerzel, vereinsname \t\nFROM verein, spiele \nWHERE v_kuerzel = gast_v_kuerzel\t\nAND spieltag >= 18 AND spieltag <= 34;\n',
+        text: 'SELECT v_kuerzel, vereinsname     \nFROM verein, spiele \nWHERE v_kuerzel = gast_v_kuerzel    \nAND spieltag >= 18 AND spieltag <= 34;\n',
         solution: 'true',
       },
       {
@@ -17656,15 +17657,15 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT Nachname, Vorname\nFROM Angestellte\n\tUNION\nSELECT Nachname\nFROM Kunden;\n',
+        text: 'SELECT Nachname, Vorname\nFROM Angestellte\n    UNION\nSELECT Nachname\nFROM Kunden;\n',
         solution: 'false',
       },
       {
-        text: 'SELECT Nachname\nFROM Angestellte\n\tUNION\nSELECT Nachname\nFROM Kunden;\n',
+        text: 'SELECT Nachname\nFROM Angestellte\n    UNION\nSELECT Nachname\nFROM Kunden;\n',
         solution: 'true',
       },
       {
-        text: 'SELECT Nachname\nFROM Angestellte\n\tMINUS\nSELECT Vorname\nFROM Kunden;\n',
+        text: 'SELECT Nachname\nFROM Angestellte\n    MINUS\nSELECT Vorname\nFROM Kunden;\n',
         solution: 'true',
       },
     ],
@@ -17708,9 +17709,9 @@ const questions: Question[] = [
     id: 2409,
     category: 6,
     difficulty: 1,
-    text: 'Betrachten Sie die beiden folgenden CREATE-Table_Befehle: \n\n\tCREATE TABLE Zeitschrift ( Zeitschrift_id INTEGER NOT NULL, Namen VARCHAR2(20) NULL, PRIMARY KEY (Zeitschrift_id));\n\n\tCREATE TABLE Aufsatz ( Aufsatz_id INTEGER NOT NULL, Titel VARCHAR2(20) NULL, Zeitschrift_id INTEGER NOT NULL, PRIMARY KEY (Aufsatz_id), FOREIGN KEY (Zeitschrift_id) REFERENCES Zeitschrift);\n\n\tWelche der beiden Tabellen kann zuerst gelöscht werden?\n',
+    text: 'Betrachten Sie die beiden folgenden CREATE-Table_Befehle: \n\n    CREATE TABLE Zeitschrift ( Zeitschrift_id INTEGER NOT NULL, Namen VARCHAR2(20) NULL, PRIMARY KEY (Zeitschrift_id));\n\n    CREATE TABLE Aufsatz ( Aufsatz_id INTEGER NOT NULL, Titel VARCHAR2(20) NULL, Zeitschrift_id INTEGER NOT NULL, PRIMARY KEY (Aufsatz_id), FOREIGN KEY (Zeitschrift_id) REFERENCES Zeitschrift);\n\n    Welche der beiden Tabellen kann zuerst gelöscht werden?\n',
     explanation:
-      '\n\tEine Tabelle mit einem Primary-Key (hier Zeitschrift mit Zeitschrift_id) , der als Foreign-Key in einer anderen Tabelle vorkommt, kann nicht gelöscht werden, solange die Verweistabelle noch existiert.\n',
+      '\n    Eine Tabelle mit einem Primary-Key (hier Zeitschrift mit Zeitschrift_id) , der als Foreign-Key in einer anderen Tabelle vorkommt, kann nicht gelöscht werden, solange die Verweistabelle noch existiert.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -17783,7 +17784,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'In einer Oracle-When-Bedingung eines Zeilentriggers kann eine SELECT-Anweisung stehen.\n',
     explanation:
-      '\n\tDie  WHEN-Bedingung  formuliert eine beliebige SQL-Suchbedingung mit ein paar Modifikationen. Statt wie in der WHERE-Klausel einfach die Spalten zu verwenden, deren Tabellen in der FROM-Klausel spezifiziert wurden, kann in der WHEN-Bedingung auf die Daten der zugehörigen Tabelle mittels Transitionstabellen und -variablen zugegriffen werden. Nur wenn diese Bedingung zu TRUE ausgewertet wird, wird der Aktionsteil auch ausgeführt (bei FALSE und NULL nicht). Sie muss immer in Klammern  stehen.\n\n\t\n\n\tZu beachten ist, dass die WHEN-Bedingung kein Teil des Ereignisses ist. Erst wenn das feuernde Ereignis eingetreten und der Trigger aktiviert ist, wird mit der Bedingung geprüft, ob der Aktionsteil ausgeführt wird. SELECT-Anweisungen sind hier nicht zugelassen\n\n\t\n\n\tDa Oracle keine Transitionstabellen kennt und Transitionsvariablen zu zeilenorienterten Triggern mit einer WHEN -Bedingung gehören, sind ORACLE-Trigger mit einer WHEN-Bedingung immer zeilenorientiert.\n',
+      '\n    Die  WHEN-Bedingung  formuliert eine beliebige SQL-Suchbedingung mit ein paar Modifikationen. Statt wie in der WHERE-Klausel einfach die Spalten zu verwenden, deren Tabellen in der FROM-Klausel spezifiziert wurden, kann in der WHEN-Bedingung auf die Daten der zugehörigen Tabelle mittels Transitionstabellen und -variablen zugegriffen werden. Nur wenn diese Bedingung zu TRUE ausgewertet wird, wird der Aktionsteil auch ausgeführt (bei FALSE und NULL nicht). Sie muss immer in Klammern  stehen.\n\n    \n\n    Zu beachten ist, dass die WHEN-Bedingung kein Teil des Ereignisses ist. Erst wenn das feuernde Ereignis eingetreten und der Trigger aktiviert ist, wird mit der Bedingung geprüft, ob der Aktionsteil ausgeführt wird. SELECT-Anweisungen sind hier nicht zugelassen\n\n    \n\n    Da Oracle keine Transitionstabellen kennt und Transitionsvariablen zu zeilenorienterten Triggern mit einer WHEN -Bedingung gehören, sind ORACLE-Trigger mit einer WHEN-Bedingung immer zeilenorientiert.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -17994,7 +17995,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Der Ausdruck "SELECT Nachname FROM KUNDEN"\n',
     explanation:
-      '\n\tDie ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend. ASC ist die Default-Option, so dass bei fehlender Option immer aufsteigend sortiert wird.\n\n\tWird gar keine ORDER BY-Klausel angegeben, so erfolgt auch keine Sortierung.\n\n\t \n',
+      '\n    Die ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend. ASC ist die Default-Option, so dass bei fehlender Option immer aufsteigend sortiert wird.\n\n    Wird gar keine ORDER BY-Klausel angegeben, so erfolgt auch keine Sortierung.\n\n     \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -18017,7 +18018,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Der Ausdruck "SELECT Nachname, SUM(Umsaetze) FROM KUNDEN GROUP BY Nachname"\n',
     explanation:
-      '\n\tGROUP By bewirkt hier keine Sortierung über den Nachnamen.\n',
+      '\n    GROUP By bewirkt hier keine Sortierung über den Nachnamen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -18466,7 +18467,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Wie viele Einträge hat ein B-Baum vom Typ 2 der Höhe 2 maximal?\n',
     explanation:
-      '\n\tEin B-Baum vom Typ 2 hat maximal eine Wurzel, 5 Knoten auf der ersten Ebene (h = 1) und nochmal 5*5 = 25 Knoten auf der zweiten Ebene (h=2).Insgesamt sind das 31 Knoten mit maximal 124 = 31 * 4 Einträgen.\n',
+      '\n    Ein B-Baum vom Typ 2 hat maximal eine Wurzel, 5 Knoten auf der ersten Ebene (h = 1) und nochmal 5*5 = 25 Knoten auf der zweiten Ebene (h=2).Insgesamt sind das 31 Knoten mit maximal 124 = 31 * 4 Einträgen.\n',
     type: 'text',
     answers: [
       {
@@ -18481,7 +18482,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Wie viele Einträge hat ein B-Baum vom Typ 1 der Höhe 2 maximal?\n',
     explanation:
-      '\n\tDie Wurzel: hat 2 Einträge\n\n\t1. Ebene: 2+2+2=6 Einträge\n\n\t2. Ebene: 3*(2+2+2)=18 Einträge\n\n\t\n\n\tSumme: 26\n',
+      '\n    Die Wurzel: hat 2 Einträge\n\n    1. Ebene: 2+2+2=6 Einträge\n\n    2. Ebene: 3*(2+2+2)=18 Einträge\n\n    \n\n    Summe: 26\n',
     type: 'text',
     answers: [
       {
@@ -18550,15 +18551,15 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: "CREATE TABLE patienten\n(patienten_id NUMBER(12) PRIMARY KEY,  \n nachname VARCHAR2(50)   NOT NULL,  \t \n vorname  VARCHAR2(20)   NOT NULL, \t    \n knz      VARCHAR2(1)    CHECK (knz IN ('J','N')));",
+        text: "CREATE TABLE patienten\n(patienten_id NUMBER(12) PRIMARY KEY,  \n nachname VARCHAR2(50)   NOT NULL,       \n vorname  VARCHAR2(20)   NOT NULL,         \n knz      VARCHAR2(1)    CHECK (knz IN ('J','N')));",
         solution: 'true',
       },
       {
-        text: "CREATE TABLE patienten\n(patienten_id NUMBER(12) PRIMARY KEY,  \n nachname VARCHAR2(50)   NOT NULL,  \t \n vorname  VARCHAR2(20)   NOT NULL, \t    \n knz      VARCHAR2(1)    CHECK (knz = ('J','N')));",
+        text: "CREATE TABLE patienten\n(patienten_id NUMBER(12) PRIMARY KEY,  \n nachname VARCHAR2(50)   NOT NULL,       \n vorname  VARCHAR2(20)   NOT NULL,         \n knz      VARCHAR2(1)    CHECK (knz = ('J','N')));",
         solution: 'false',
       },
       {
-        text: "CREATE TABLE patienten\n(patienten_id NUMBER(12) PRIMARY KEY,  \n nachname VARCHAR2(50)   NOT NULL,  \t \n vorname  VARCHAR2(20)   NOT NULL, \t    \n knz      VARCHAR2(1)    CHECK (knz = ALL ('J','N')));",
+        text: "CREATE TABLE patienten\n(patienten_id NUMBER(12) PRIMARY KEY,  \n nachname VARCHAR2(50)   NOT NULL,       \n vorname  VARCHAR2(20)   NOT NULL,         \n knz      VARCHAR2(1)    CHECK (knz = ALL ('J','N')));",
         solution: 'true',
       },
       {
@@ -18566,7 +18567,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: "CREATE TABLE patienten\n(patienten_id NUMBER(12) PRIMARY KEY,  \n nachname VARCHAR2(50)   NOT NULL,  \t \n vorname  VARCHAR2(20)   NOT NULL, \t    \n knz      VARCHAR2(1)    IN ('J','N'));",
+        text: "CREATE TABLE patienten\n(patienten_id NUMBER(12) PRIMARY KEY,  \n nachname VARCHAR2(50)   NOT NULL,       \n vorname  VARCHAR2(20)   NOT NULL,         \n knz      VARCHAR2(1)    IN ('J','N'));",
         solution: 'false',
       },
     ],
@@ -18589,7 +18590,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: "SELECT w.name   \nFROM   wein w, rebsorte r\nWHERE  w.rebsorte  = r.sorte\nAND    r.name      = 'Riesling'\nAND    NOT EXISTS (SELECT j.wein_id\n                   FROM   jahrgang j\n                   WHERE  j.qualitaet = 3\n\t\t   AND    j.wein_id   = w.wein_id);",
+        text: "SELECT w.name   \nFROM   wein w, rebsorte r\nWHERE  w.rebsorte  = r.sorte\nAND    r.name      = 'Riesling'\nAND    NOT EXISTS (SELECT j.wein_id\n                   FROM   jahrgang j\n                   WHERE  j.qualitaet = 3\n           AND    j.wein_id   = w.wein_id);",
         solution: 'true',
       },
       {
@@ -18832,7 +18833,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie viele Beziehungsarten gibt es in ER-Diagrammen, wenn man die Kardinalität und die Optionalität, aber nicht die Symmetrie (1:n und n:1 bezeichnen den gleichen Typ) mit einbezieht? Dabei soll auch nicht  berücksichtigt werden, ob die Beziehung identifizierend  ist oder nicht.\n',
     explanation:
-      '\n\t(1:1) (1:C) (1:M) (1:CM)+\n\n\t(C:C) (C:M) (C:CM)+\n\n\t(N:M) (N:CM)+\n\n\t(CN :CM)+\n\n\t================================\n\n\t10 Beziehungstypen\n',
+      '\n    (1:1) (1:C) (1:M) (1:CM)+\n\n    (C:C) (C:M) (C:CM)+\n\n    (N:M) (N:CM)+\n\n    (CN :CM)+\n\n    ================================\n\n    10 Beziehungstypen\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -18863,7 +18864,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche Aussagen über identifizierende 1:cn-Beziehungen in ER-Diagrammen sind richtig?\n',
     explanation:
-      '\n\tBei identifizierenden Beziehungen werden in der Detail-Entitymenge die Fremdschlüsselattribute zum Primärschlüssel hinzugenommen, bei nicht identifizierenden Beziehungen werden die Fremdschlüsselattribute nur als "normales" Nichtschlüsselattribut eingetragen, welches nicht zum Primärschlüssel der Relation gehört. Dass die Aussage über die Nichtverwendung von identifizierenden Beziehungen bei künstlichen Primärschlüsseln korrekt ist, liegt an der Definition der künstlichen Primärschlüssel, die ja nur aus einem Attribut bestehen dürfen.\n',
+      '\n    Bei identifizierenden Beziehungen werden in der Detail-Entitymenge die Fremdschlüsselattribute zum Primärschlüssel hinzugenommen, bei nicht identifizierenden Beziehungen werden die Fremdschlüsselattribute nur als "normales" Nichtschlüsselattribut eingetragen, welches nicht zum Primärschlüssel der Relation gehört. Dass die Aussage über die Nichtverwendung von identifizierenden Beziehungen bei künstlichen Primärschlüsseln korrekt ist, liegt an der Definition der künstlichen Primärschlüssel, die ja nur aus einem Attribut bestehen dürfen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -18960,11 +18961,11 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: "CREATE or REPLACE TRIGGER pruefen\nAFTER INSERT ON test\nFOR EACH ROW\nDECLARE\nMY_VAR number;\nBEGIN\n      SELECT count(*) INTO MY_VAR\n\tFROM Test;\t\n\t\n\tIF MY_VAR > 2\n\tTHEN\n\t   RAISE_Application_error(-2001, 'Zu viele Daten!');\n\tEND IF;\nEND;\n",
+        text: "CREATE or REPLACE TRIGGER pruefen\nAFTER INSERT ON test\nFOR EACH ROW\nDECLARE\nMY_VAR number;\nBEGIN\n      SELECT count(*) INTO MY_VAR\n    FROM Test;    \n    \n    IF MY_VAR > 2\n    THEN\n       RAISE_Application_error(-2001, 'Zu viele Daten!');\n    END IF;\nEND;\n",
         solution: 'true',
       },
       {
-        text: "CREATE or REPLACE TRIGGER pruefen\nAFTER INSERT ON test\nDECLARE\nMY_VAR number;\nBEGIN\n      SELECT count(*) INTO MY_VAR\n\tFROM Test;\t\n\t\n\tIF MY_VAR > 2\n\tTHEN\n\t   RAISE_Application_error(-2001, 'Zu viele Daten!');\n\tEND IF;\nEND;\n",
+        text: "CREATE or REPLACE TRIGGER pruefen\nAFTER INSERT ON test\nDECLARE\nMY_VAR number;\nBEGIN\n      SELECT count(*) INTO MY_VAR\n    FROM Test;    \n    \n    IF MY_VAR > 2\n    THEN\n       RAISE_Application_error(-2001, 'Zu viele Daten!');\n    END IF;\nEND;\n",
         solution: 'false',
       },
     ],
@@ -19073,7 +19074,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Mit welcher Anweisung werden in SQL*PLUS bzw. dem SQL-Developer Ausgaben aus PL/SQL mit DBMS_OUTPUT.PUT_LINE (...) erst sichtbar?\n',
     explanation:
-      '\n\tMit SET SERVEROUTPUT ON kann man das Ergebnis von DBMS_OUTPUT.PUT_LINE ()sichtbar machen und die Bildschirmbuffergröße über SIZE XXX ändern. Ohne SET SERVEROUTPUT ON ist das Ergebnis einer PL/SQL-Prozedur zunächst unsichtbar.\n',
+      '\n    Mit SET SERVEROUTPUT ON kann man das Ergebnis von DBMS_OUTPUT.PUT_LINE ()sichtbar machen und die Bildschirmbuffergröße über SIZE XXX ändern. Ohne SET SERVEROUTPUT ON ist das Ergebnis einer PL/SQL-Prozedur zunächst unsichtbar.\n',
     type: 'text',
     answers: [
       {
@@ -19309,7 +19310,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Womit kann man in PL/SQL eine Variable definieren, deren Datentyp sich auf eine einzelne Spaltendefinition bezieht und die bei Änderungen der Tabellendefinition entsprechend aktualisiert wird?\n',
     explanation:
-      '\n\tMit Tabellenname%ROWTYPeE wird die Attributstruktur einer Tabelle komplett übertragen, mit Tabellenname.Spaltenname%TYPE nur die Spaltendefinition einer einzigen Spalte der Tabelle.\n',
+      '\n    Mit Tabellenname%ROWTYPeE wird die Attributstruktur einer Tabelle komplett übertragen, mit Tabellenname.Spaltenname%TYPE nur die Spaltendefinition einer einzigen Spalte der Tabelle.\n',
     type: 'text',
     answers: [
       {
@@ -19359,7 +19360,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'CREATE OR REPLACE TYPE kinder_typ AS OBJECT (Name VARCHAR2(25, Geb_Datum DATE);\n\n\tCREATE OR REPLACE TYPE kinder_vartyp AS VARRAY(5) OF kinder_typ;\n',
+        text: 'CREATE OR REPLACE TYPE kinder_typ AS OBJECT (Name VARCHAR2(25, Geb_Datum DATE);\n\n    CREATE OR REPLACE TYPE kinder_vartyp AS VARRAY(5) OF kinder_typ;\n',
         solution: 'true',
       },
       {
@@ -19491,7 +19492,7 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'Er sorgt dafür, dass der Wert der Spalte Benutzer mit der Kennung des angemeldeten Anwenders gefüllt wird. \n\t\n',
+        text: 'Er sorgt dafür, dass der Wert der Spalte Benutzer mit der Kennung des angemeldeten Anwenders gefüllt wird. \n    \n',
         solution: 'false',
       },
       {
@@ -19721,7 +19722,7 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'Er sorgt dafür, dass der Wert der Spalte Benutzer mit der Kennung des angemeldeten Anwenders gefüllt wird. \n\t\n',
+        text: 'Er sorgt dafür, dass der Wert der Spalte Benutzer mit der Kennung des angemeldeten Anwenders gefüllt wird. \n    \n',
         solution: 'true',
       },
       {
@@ -19832,7 +19833,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Transitionsvariablen werden bei Oracle\n',
     explanation:
-      '\n\tTransitionstabellen (Referencing Tables: OLD TABLE, NEW TABLE) sind sowohl in Befehls- wie auch in Zeilentriggern verfügbar.  Transitionsvariablen  (Referencing Variables: OLD [ROW], NEW [ROW]) hingegen sind nur in Zeilentriggern zugreifbar. Die Transitionstabellen beinhalten während der Triggerausführung den alten und den neuen Zustand der Triggertabelle. Um auf den neuen oder alten Wert eines Attributs zugreifen zu können, wird dem Attributnamen das Schlüsselwort NEW bzw. OLD in Punktnotation vorangestellt (z.B. OLD.Spalte).\n\n\t\n\n\tLiegt ein UPDATE-Ereignis vor, so sind die OLD wie auch die NEW-Variablen und -Tabellen mit den zugehörigen alten/neuen Werten gefüllt. Beim DELETE-Ereignis sind nur die OLD-Variablen und -Tabellen belegt. Beim INSERT sind es nur die NEW-Variablen und -Tabellen. Für BEFORE TRIGGER gilt die zusätzliche Restriktion, dass keine Transitionstabellen verfügbar sind. Der Geltungsbereich der Transitionsvariablen und -tabellen sind die Trigger, die für das zugehörige Ereignis gefeuert wurden. In der Referenzklausel besteht nun die Möglichkeit die Schlüsselwörter OLD bzw. NEW [ROW] sowie OLD und NEW TABLE umzubenennen in selbst gewählte Bezeichnungen, die Zeilenalias_alter/neuer_Wert und Tabellenalias_ alter/neuer_Wert.\n\n\t\n\n\tDer SQL-Standard definiert Transitionstabellen und Transitionsvariablen, DB2 kennt beide Typen, Oracle nur Transitionsvariablen.\n',
+      '\n    Transitionstabellen (Referencing Tables: OLD TABLE, NEW TABLE) sind sowohl in Befehls- wie auch in Zeilentriggern verfügbar.  Transitionsvariablen  (Referencing Variables: OLD [ROW], NEW [ROW]) hingegen sind nur in Zeilentriggern zugreifbar. Die Transitionstabellen beinhalten während der Triggerausführung den alten und den neuen Zustand der Triggertabelle. Um auf den neuen oder alten Wert eines Attributs zugreifen zu können, wird dem Attributnamen das Schlüsselwort NEW bzw. OLD in Punktnotation vorangestellt (z.B. OLD.Spalte).\n\n    \n\n    Liegt ein UPDATE-Ereignis vor, so sind die OLD wie auch die NEW-Variablen und -Tabellen mit den zugehörigen alten/neuen Werten gefüllt. Beim DELETE-Ereignis sind nur die OLD-Variablen und -Tabellen belegt. Beim INSERT sind es nur die NEW-Variablen und -Tabellen. Für BEFORE TRIGGER gilt die zusätzliche Restriktion, dass keine Transitionstabellen verfügbar sind. Der Geltungsbereich der Transitionsvariablen und -tabellen sind die Trigger, die für das zugehörige Ereignis gefeuert wurden. In der Referenzklausel besteht nun die Möglichkeit die Schlüsselwörter OLD bzw. NEW [ROW] sowie OLD und NEW TABLE umzubenennen in selbst gewählte Bezeichnungen, die Zeilenalias_alter/neuer_Wert und Tabellenalias_ alter/neuer_Wert.\n\n    \n\n    Der SQL-Standard definiert Transitionstabellen und Transitionsvariablen, DB2 kennt beide Typen, Oracle nur Transitionsvariablen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -19944,12 +19945,12 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Womit kann man in PL/SQL eine Variable definieren, deren Datentyp sich auf eine Tabellendefinition bezieht und die bei Änderungen der Tabellendefinition entsprechend aktualisiert wird?\n',
     explanation:
-      '\n\tMit Tabellenname%ROWTYPE wird die Attributstruktur einer Tabelle komplett an einen PL/SQL-Rekord übertragen und dynamisch angepasst. wenn sich die Tabellendefinition ändert. Mit Tabellenname.Spaltenname%TYPE kann man eine Variable entsprechend einer einzelnen Spalte einer Tabelle definieren.\n',
+      '\n    Mit Tabellenname%ROWTYPE wird die Attributstruktur einer Tabelle komplett an einen PL/SQL-Rekord übertragen und dynamisch angepasst. wenn sich die Tabellendefinition ändert. Mit Tabellenname.Spaltenname%TYPE kann man eine Variable entsprechend einer einzelnen Spalte einer Tabelle definieren.\n',
     type: 'text',
     answers: [
       {
         text: 'Das ist:\n',
-        solution: '\r\n\t%ROWTYPE\r\n',
+        solution: '\r\n    %ROWTYPE\r\n',
       },
     ],
   },
@@ -20171,7 +20172,7 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'Dieses Problem gibt es nicht bei Oracle. \n\t',
+        text: 'Dieses Problem gibt es nicht bei Oracle. \n    ',
         solution: 'false',
       },
       {
@@ -20226,7 +20227,7 @@ const questions: Question[] = [
     id: 2178,
     category: 14,
     difficulty: 2,
-    text: "Es ist folgende Tabelle mit zwei persistent gespeicherten Datensätzen gegeben:\nCREATE TABLE trans_tab (s1  NUMBER(3) PRIMARY KEY INITIALLY IMMEDIATE, \n                        s2  VARCHAR2(20) UNIQUE INITIALLY DEFERRED);\nINSERT INTO trans_tab VALUES (1, 'Mustermann');\nINSERT INTO trans_tab VALUES (2, 'Musterfrau');\nCOMMIT;\n\nSchauen Sie sich nachfolgende Anweisungen an und geben Sie an, welche Datensätze zum Zeitpunkt b) mit der SELECT-Anfrage angezeigt werden. \n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt a)\nINSERT INTO trans_tab VALUES (3, 'Schmitt');\nINSERT INTO trans_tab VALUES (4, 'Schmidt');\nINSERT INTO trans_tab VALUES (4, 'Schmitzchen');\n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt b)\nINSERT INTO trans_tab VALUES (5, 'Schmitzchen');\nINSERT INTO trans_tab VALUES (6, 'Schmitzchen');\n\nSELECT * FROM trans_tab;    \t \t\t-- Zeitpunkt c)\nCOMMIT;\n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt d)",
+    text: "Es ist folgende Tabelle mit zwei persistent gespeicherten Datensätzen gegeben:\nCREATE TABLE trans_tab (s1  NUMBER(3) PRIMARY KEY INITIALLY IMMEDIATE, \n                        s2  VARCHAR2(20) UNIQUE INITIALLY DEFERRED);\nINSERT INTO trans_tab VALUES (1, 'Mustermann');\nINSERT INTO trans_tab VALUES (2, 'Musterfrau');\nCOMMIT;\n\nSchauen Sie sich nachfolgende Anweisungen an und geben Sie an, welche Datensätze zum Zeitpunkt b) mit der SELECT-Anfrage angezeigt werden. \n\nSELECT * FROM trans_tab;                -- Zeitpunkt a)\nINSERT INTO trans_tab VALUES (3, 'Schmitt');\nINSERT INTO trans_tab VALUES (4, 'Schmidt');\nINSERT INTO trans_tab VALUES (4, 'Schmitzchen');\n\nSELECT * FROM trans_tab;                -- Zeitpunkt b)\nINSERT INTO trans_tab VALUES (5, 'Schmitzchen');\nINSERT INTO trans_tab VALUES (6, 'Schmitzchen');\n\nSELECT * FROM trans_tab;                 -- Zeitpunkt c)\nCOMMIT;\n\nSELECT * FROM trans_tab;                -- Zeitpunkt d)",
     explanation:
       'Nach dem CREATE-TABLE werden zwei Datensätze eingefügt, die keines der Constraints verletzt, und anschließend mit COMMIT persistent gespeichert, so dass folgender Inhalt beim a)-SELECT gegen ist. \n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau\n\nVon den drei bis zum b)-SELECT eingefügten Datensätzen verletzt der letzte mit dem Primärschlüssel 4 das PRIMARY KEY-Constraint und da dies als IMMEDIATE definiert ist, wird nur dieser fehlerhafte, letzte Datensatz zurückgewiesen. Die beiden vorherigen richtigen Datensätze bleiben in der aktuellen Transaktion. Aber Achtung, da hier nicht "committed" wird, werden diese beiden Datensätze nicht persistent gespeichert. \n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau\n         3 Schmitt\n         4 Schmidt\n',
     type: 'multiple-choice',
@@ -20253,7 +20254,7 @@ const questions: Question[] = [
     id: 2179,
     category: 14,
     difficulty: 2,
-    text: "Es ist folgende Tabelle mit zwei persistent gespeicherten Datensätzen gegeben:\nCREATE TABLE trans_tab (s1  NUMBER(3) PRIMARY KEY INITIALLY IMMEDIATE, \n                        s2  VARCHAR2(20) UNIQUE   INITIALLY DEFERRED);\nINSERT INTO trans_tab VALUES (1, 'Mustermann');\nINSERT INTO trans_tab VALUES (2, 'Musterfrau');\nCOMMIT;\n\nSchauen Sie sich nachfolgende Anweisungen an und geben Sie an, welche Datensätze zum Zeitpunkt c) mit der SELECT-Anfrage angezeigt werden. \n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt a)\nINSERT INTO trans_tab VALUES (3, 'Schmitt');\nINSERT INTO trans_tab VALUES (4, 'Schmidt');\nINSERT INTO trans_tab VALUES (4, 'Schmitzchen');\n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt b)\nINSERT INTO trans_tab VALUES (5, 'Schmitzchen');\nINSERT INTO trans_tab VALUES (6, 'Schmitzchen');\n\nSELECT * FROM trans_tab;    \t \t\t-- Zeitpunkt c)\nCOMMIT;\n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt d)",
+    text: "Es ist folgende Tabelle mit zwei persistent gespeicherten Datensätzen gegeben:\nCREATE TABLE trans_tab (s1  NUMBER(3) PRIMARY KEY INITIALLY IMMEDIATE, \n                        s2  VARCHAR2(20) UNIQUE   INITIALLY DEFERRED);\nINSERT INTO trans_tab VALUES (1, 'Mustermann');\nINSERT INTO trans_tab VALUES (2, 'Musterfrau');\nCOMMIT;\n\nSchauen Sie sich nachfolgende Anweisungen an und geben Sie an, welche Datensätze zum Zeitpunkt c) mit der SELECT-Anfrage angezeigt werden. \n\nSELECT * FROM trans_tab;                -- Zeitpunkt a)\nINSERT INTO trans_tab VALUES (3, 'Schmitt');\nINSERT INTO trans_tab VALUES (4, 'Schmidt');\nINSERT INTO trans_tab VALUES (4, 'Schmitzchen');\n\nSELECT * FROM trans_tab;                -- Zeitpunkt b)\nINSERT INTO trans_tab VALUES (5, 'Schmitzchen');\nINSERT INTO trans_tab VALUES (6, 'Schmitzchen');\n\nSELECT * FROM trans_tab;                 -- Zeitpunkt c)\nCOMMIT;\n\nSELECT * FROM trans_tab;                -- Zeitpunkt d)",
     explanation:
       'Nach dem CREATE-TABLE werden zwei Datensätze eingefügt, die keines der Constraints verletzt, und anschließend mit COMMIT persistent gespeichert, so dass folgender Inhalt beim a)-SELECT gegen ist. \n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau\n\nVon den drei bis zum b)-SELECT eingefügten Datensätzen verletzt der letzte mit dem Primärschlüssel 4 das PRIMARY KEY-Constraint und da dies als IMMEDIATE definiert ist, wird nur dieser fehlerhafte, letzte Datensatz zurückgewiesen. Die beiden vorherigen richtigen Datensätze bleiben in der aktuellen Transaktion. Aber Achtung, da hier nicht "committed" wird, werden diese beiden Datensätze nicht persistent gespeichert. \n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau\n         3 Schmitt\n         4 Schmidt\n\nDie laufende Transaktion wird mit zwei weiteren INSERTs (5, 6) fortgesetzt. Der zweite davon verletzt mit einer erneuten Einfügung des Namens "Schmitzschen" zwar das UNIQUE-Constraint, aber da dies als DEFERRED definiert ist, wird dieser Fehler noch nicht vom DBS erkannt, die beiden neuen Datensätze gehören zum Zeitpunkt des c)-SELECTs nun auch der aktuellen Transaktion an.  \n\n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau\n         3 Schmitt\n         4 Schmidt\n         5 Schmitzchen\n         6 Schmitzchen',
     type: 'multiple-choice',
@@ -20280,7 +20281,7 @@ const questions: Question[] = [
     id: 2180,
     category: 14,
     difficulty: 2,
-    text: "Es ist folgende Tabelle mit zwei persistent gespeicherten Datensätzen gegeben:\nCREATE TABLE trans_tab (s1  NUMBER(3) PRIMARY KEY INITIALLY IMMEDIATE, \n                        s2  VARCHAR2(20) UNIQUE   INITIALLY DEFERRED);\nINSERT INTO trans_tab VALUES (1, 'Mustermann');\nINSERT INTO trans_tab VALUES (2, 'Musterfrau');\nCOMMIT;\n\nSchauen Sie sich nachfolgende Anweisungen an und geben Sie an, welche Datensätze zum Zeitpunkt d) mit der SELECT-Anfrage angezeigt werden. \n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt a)\nINSERT INTO trans_tab VALUES (3, 'Schmitt');\nINSERT INTO trans_tab VALUES (4, 'Schmidt');\nINSERT INTO trans_tab VALUES (4, 'Schmitzchen');\n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt b)\nINSERT INTO trans_tab VALUES (5, 'Schmitzchen');\nINSERT INTO trans_tab VALUES (6, 'Schmitzchen');\n\nSELECT * FROM trans_tab;    \t \t\t-- Zeitpunkt c)\nCOMMIT;\n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt d)",
+    text: "Es ist folgende Tabelle mit zwei persistent gespeicherten Datensätzen gegeben:\nCREATE TABLE trans_tab (s1  NUMBER(3) PRIMARY KEY INITIALLY IMMEDIATE, \n                        s2  VARCHAR2(20) UNIQUE   INITIALLY DEFERRED);\nINSERT INTO trans_tab VALUES (1, 'Mustermann');\nINSERT INTO trans_tab VALUES (2, 'Musterfrau');\nCOMMIT;\n\nSchauen Sie sich nachfolgende Anweisungen an und geben Sie an, welche Datensätze zum Zeitpunkt d) mit der SELECT-Anfrage angezeigt werden. \n\nSELECT * FROM trans_tab;                -- Zeitpunkt a)\nINSERT INTO trans_tab VALUES (3, 'Schmitt');\nINSERT INTO trans_tab VALUES (4, 'Schmidt');\nINSERT INTO trans_tab VALUES (4, 'Schmitzchen');\n\nSELECT * FROM trans_tab;                -- Zeitpunkt b)\nINSERT INTO trans_tab VALUES (5, 'Schmitzchen');\nINSERT INTO trans_tab VALUES (6, 'Schmitzchen');\n\nSELECT * FROM trans_tab;                 -- Zeitpunkt c)\nCOMMIT;\n\nSELECT * FROM trans_tab;                -- Zeitpunkt d)",
     explanation:
       'Nach dem CREATE-TABLE werden zwei Datensätze eingefügt, die keines der Constraints verletzt, und anschließend mit COMMIT persistent gespeichert, so dass folgender Inhalt beim a)-SELECT gegen ist. \n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau\n\nVon den drei bis zum b)-SELECT eingefügten Datensätzen verletzt der letzte mit dem Primärschlüssel 4 das PRIMARY KEY-Constraint und da dies als IMMEDIATE definiert ist, wird nur dieser fehlerhafte, letzte Datensatz zurückgewiesen. Die beiden vorherigen richtigen Datensätze bleiben in der aktuellen Transaktion. Aber Achtung, da hier nicht "committed" wird, werden diese beiden Datensätze nicht persistent gespeichert. \n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau\n         3 Schmitt\n         4 Schmidt\n\nDie laufende Transaktion wird mit zwei weiteren INSERTs (5, 6) fortgesetzt. Der zweite davon verletzt mit einer erneuten Einfügung des Namens "Schmitzschen" zwar das UNIQUE-Constraint, aber da dies als DEFERRED definiert ist, wird dieser Fehler noch nicht vom DBS erkannt, die beiden neuen Datensätze gehören zum Zeitpunkt des c)-SELECTs nun auch der aktuellen Transaktion an.  \n\n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau\n         3 Schmitt\n         4 Schmidt\n         5 Schmitzchen\n         6 Schmitzchen\n\nDie aktuelle Transaktion bestehend aus den Datensätzen 3, 4, 5, 6 wird vor dem d)-SELECT mittels COMMIT abgeschlossen. Damit werden alle DEFERRED-Constraints geprüft und in diesem Fall der UNIQUE-Fehler mit "Schmitzchen" erkannt. Da bei DEFERRED-Fehlern die gesamte Transaktion zurückgerollt wird, bleiben nur noch die beiden ursprünglichen Datensätze übrig, die mit der ersten Transaktion "committed" wurden. \n\n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau',
     type: 'multiple-choice',
@@ -20433,7 +20434,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Wie wird eine Prozedur mit dem Bezeichner prozedurname aufgerufen?\n',
     explanation:
-      '\n\tBeispiele für Prozeduraufrufe sind:\n\n\tSQL-Developer\n\n\tEXECUTE prozedurname(var_y, var_x)\n\n\t\n\n\tIm PL/SQL-Programm:\n\n\tprozedurname(var_y, var_x)\n\n\t\n\n\tSELECT/DML-Anweisung, IF-Bedingung und Zuweisungen sind Aufrufformen für Funktionen. Und Trigger werden "durch ein eingetretenes Ereignis" gefeuert und zu einem "einen eingetretenen Ausführungszeitpunkt" ausgeführt.\n',
+      '\n    Beispiele für Prozeduraufrufe sind:\n\n    SQL-Developer\n\n    EXECUTE prozedurname(var_y, var_x)\n\n    \n\n    Im PL/SQL-Programm:\n\n    prozedurname(var_y, var_x)\n\n    \n\n    SELECT/DML-Anweisung, IF-Bedingung und Zuweisungen sind Aufrufformen für Funktionen. Und Trigger werden "durch ein eingetretenes Ereignis" gefeuert und zu einem "einen eingetretenen Ausführungszeitpunkt" ausgeführt.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -20584,7 +20585,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Wie heißt der CONSTRAINT, wenn eine Spalte Primärschlüssel ist?\n',
     explanation:
-      '\n\tDas Primärschlüssel-Constraint heißt PRIMARY KEY.\n\n\t\n\n\tDie übrigen vier  Constraints sind: UNIQUE, CHECK, FOREIGN KEY und NOT NULL.\n',
+      '\n    Das Primärschlüssel-Constraint heißt PRIMARY KEY.\n\n    \n\n    Die übrigen vier  Constraints sind: UNIQUE, CHECK, FOREIGN KEY und NOT NULL.\n',
     type: 'text',
     answers: [
       {
@@ -20651,9 +20652,9 @@ const questions: Question[] = [
     id: 2159,
     category: 6,
     difficulty: 3,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n\tCREATE TABLE Hierarchie ( Angestellter VARCHAR2(20) NOT NULL,\n\n\tVorgesetzter VARCHAR2(20) NOT NULL,\n\n\tPRIMARY KEY (Angestellter),\n\n\tFOREIGN KEY (Angestellter) REFERENCES Hierarchie (Vorgesetzter) ON DELETE CASCADE);\n\n\tWelche Aussage/n ist/sind korrekt?\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n    CREATE TABLE Hierarchie ( Angestellter VARCHAR2(20) NOT NULL,\n\n    Vorgesetzter VARCHAR2(20) NOT NULL,\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Angestellter) REFERENCES Hierarchie (Vorgesetzter) ON DELETE CASCADE);\n\n    Welche Aussage/n ist/sind korrekt?\n',
     explanation:
-      '\n\tDer Primärschlüssel ist als Tabellen-Constraint definiert. Gut zu erkennen an dem trennenden Komma zu der vorangehenden Spaltendefinition der Spalte Vorgesetzter.\n\n\t\n\n\tDie Eingabe der Datensätze "("Hugo","Emil"), ("Erna","Emil"), ("Anna","Emil")" wird bereits beim 1. Datensatz fehl schlagen, da die Fremdschlüsselbeziehung für "Emil" fehl schlägt, weil es keinen Mitarbeitersatz für Emil mit seinem Vorgesetzten gibt z.B. mit ("Emil","Annna").\n\n\t\n\n\tDie Einfügung von Anton schlägt ebenfalls fehl, weil für Anton der Name seines Vorgesetzten fehlt, den er ja nicht hat. Die Spalte Vorgesetzter ist jedoch Pflichteingabe (NOT NULL).\n\n\t\n\n\tWenn für eine Einfügung eines neuen Datensatzes die Primärschlüsselbedingung fehl schlägt, dann wird die Einfügung rückgängig gemacht und eine entsprechende Fehlermeldung angezeigt.\n',
+      '\n    Der Primärschlüssel ist als Tabellen-Constraint definiert. Gut zu erkennen an dem trennenden Komma zu der vorangehenden Spaltendefinition der Spalte Vorgesetzter.\n\n    \n\n    Die Eingabe der Datensätze "("Hugo","Emil"), ("Erna","Emil"), ("Anna","Emil")" wird bereits beim 1. Datensatz fehl schlagen, da die Fremdschlüsselbeziehung für "Emil" fehl schlägt, weil es keinen Mitarbeitersatz für Emil mit seinem Vorgesetzten gibt z.B. mit ("Emil","Annna").\n\n    \n\n    Die Einfügung von Anton schlägt ebenfalls fehl, weil für Anton der Name seines Vorgesetzten fehlt, den er ja nicht hat. Die Spalte Vorgesetzter ist jedoch Pflichteingabe (NOT NULL).\n\n    \n\n    Wenn für eine Einfügung eines neuen Datensatzes die Primärschlüsselbedingung fehl schlägt, dann wird die Einfügung rückgängig gemacht und eine entsprechende Fehlermeldung angezeigt.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -20856,7 +20857,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche Aufgabe hat eine öffentliche Package-Variable?\n',
     explanation:
-      '\n\tHier sind alle Antworten richtig bis auf "Sie dient ausschließlich dem Informationsaustausch zwischen Routinen des gleichen Packages.", da dies nur eine von mehreren Möglichkeiten ist.\n',
+      '\n    Hier sind alle Antworten richtig bis auf "Sie dient ausschließlich dem Informationsaustausch zwischen Routinen des gleichen Packages.", da dies nur eine von mehreren Möglichkeiten ist.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -20902,7 +20903,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche Aussagen über NESTED TABLE-Datentypen sind bei Oracle wahr?\n',
     explanation:
-      '\n\tDa Nested-Table über den TABLE-Konstruktor angelegt werden, ist eine maximale Anzahl der Einträge nicht vorgesehen. Alle anderen Aussagen sind richtig..\n',
+      '\n    Da Nested-Table über den TABLE-Konstruktor angelegt werden, ist eine maximale Anzahl der Einträge nicht vorgesehen. Alle anderen Aussagen sind richtig..\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -21057,15 +21058,15 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'In der Fahrrad-Datenbank Byce & Co. sind insbesondere folgende Tabellen enthalten:\n     Artikel(TNr, Bezeichnung, .....)\n     Auftrage(AuftragsNr, KundenNr, Auftragsdatum, ...)\n     Auftragspositionen(AuftragsNr, TNr, Menge,...)   \n\nWelche der folgenden Anfragen liefern das gleiche Ergebnis?\n',
     explanation:
-      'Das gleiche Ergebnis liefern: \n\nSELECT  DISTINCT a.TNr,  a.Bezeichnung\nFROM    Artikel a, (SELECT * FROM Auftragspositionen) b\nWHERE  \ta.TNr = b.TNr;\n\nSELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   EXISTS (SELECT * FROM Auftragspositionen b \n\t\tWHERE a.TNr = b.TNr);\n\nSELECT  DISTINCT b.TNr, b.Bezeichnung\nFROM    Auftragspositionen a, Artikel b \nWHERE   a.tnr = b.Tnr;\n\nSELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   TNR IN  (SELECT b.TNr FROM Auftragspositionen b \n\t\t WHERE a.TNr = b.TNr);\n\nDie Semantik dieser Anfragen ist: "Welche Artikel wurden verkauft?"\n\nEine ganz andere Semantik hat:  \nSELECT \ta.TNr, a.Bezeichnung\nFROM    Auftragspositionen a, Auftraege b \nWHERE  \ta.Tnr = b.Tnr;\nSemantik: "Für welche Auftraege gibt es auch verkaufte Artikel?"\n\n\nSELECT  a.Tnr, a.Bezeichnung\nFROM    Artikel a\nWHERE   EXISTS (SELECT b.TNR FROM Auftragspositionen b);\nDiese Anfrage hätte eine richtige Semantik, wenn die Anfrage korreliert wäre, d.h. es gäbe eine Bedingung bei der unteren Anfrage, die die obere und die untere Anfrage in Beziehung setzt: "WHERE b.tnr=a.trn". Ohne diese Korrelation liefert diese Anfrage immer alle Artikel, sobald in der Auftragspositionen-Tabelle wenigstens ein Datensatz gespeichert ist - unabhängig davon, ob die TNR übereinstimmen. ',
+      'Das gleiche Ergebnis liefern: \n\nSELECT  DISTINCT a.TNr,  a.Bezeichnung\nFROM    Artikel a, (SELECT * FROM Auftragspositionen) b\nWHERE      a.TNr = b.TNr;\n\nSELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   EXISTS (SELECT * FROM Auftragspositionen b \n        WHERE a.TNr = b.TNr);\n\nSELECT  DISTINCT b.TNr, b.Bezeichnung\nFROM    Auftragspositionen a, Artikel b \nWHERE   a.tnr = b.Tnr;\n\nSELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   TNR IN  (SELECT b.TNr FROM Auftragspositionen b \n         WHERE a.TNr = b.TNr);\n\nDie Semantik dieser Anfragen ist: "Welche Artikel wurden verkauft?"\n\nEine ganz andere Semantik hat:  \nSELECT     a.TNr, a.Bezeichnung\nFROM    Auftragspositionen a, Auftraege b \nWHERE      a.Tnr = b.Tnr;\nSemantik: "Für welche Auftraege gibt es auch verkaufte Artikel?"\n\n\nSELECT  a.Tnr, a.Bezeichnung\nFROM    Artikel a\nWHERE   EXISTS (SELECT b.TNR FROM Auftragspositionen b);\nDiese Anfrage hätte eine richtige Semantik, wenn die Anfrage korreliert wäre, d.h. es gäbe eine Bedingung bei der unteren Anfrage, die die obere und die untere Anfrage in Beziehung setzt: "WHERE b.tnr=a.trn". Ohne diese Korrelation liefert diese Anfrage immer alle Artikel, sobald in der Auftragspositionen-Tabelle wenigstens ein Datensatz gespeichert ist - unabhängig davon, ob die TNR übereinstimmen. ',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'SELECT  DISTINCT a.TNr,  a.Bezeichnung\nFROM    Artikel a, (SELECT * FROM Auftragspositionen) b\nWHERE  \ta.TNr = b.TNr;\n',
+        text: 'SELECT  DISTINCT a.TNr,  a.Bezeichnung\nFROM    Artikel a, (SELECT * FROM Auftragspositionen) b\nWHERE      a.TNr = b.TNr;\n',
         solution: 'true',
       },
       {
-        text: 'SELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   EXISTS (SELECT * FROM Auftragspositionen b \n\t\tWHERE a.TNr = b.TNr);\n\n',
+        text: 'SELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   EXISTS (SELECT * FROM Auftragspositionen b \n        WHERE a.TNr = b.TNr);\n\n',
         solution: 'true',
       },
       {
@@ -21077,11 +21078,11 @@ const questions: Question[] = [
         solution: 'true',
       },
       {
-        text: 'SELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   TNR IN  (SELECT b.TNr FROM Auftragspositionen b \n\t\t WHERE a.TNr = b.TNr);\n',
+        text: 'SELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   TNR IN  (SELECT b.TNr FROM Auftragspositionen b \n         WHERE a.TNr = b.TNr);\n',
         solution: 'true',
       },
       {
-        text: 'SELECT \ta.TNr, a.Bezeichnung\nFROM    Auftragspositionen a, Auftraege b \nWHERE  \ta.Tnr = b.Tnr;\n',
+        text: 'SELECT     a.TNr, a.Bezeichnung\nFROM    Auftragspositionen a, Auftraege b \nWHERE      a.Tnr = b.Tnr;\n',
         solution: 'false',
       },
     ],
@@ -21233,9 +21234,9 @@ const questions: Question[] = [
     id: 2580,
     category: 4,
     difficulty: 2,
-    text: 'Es sind die folgenden beiden Relationen R1, R2 gegeben:\n\n\tR1: S1 S2 C Y A W\n\n\tR2: S2 S3 S4 V C Y W D Z\n',
+    text: 'Es sind die folgenden beiden Relationen R1, R2 gegeben:\n\n    R1: S1 S2 C Y A W\n\n    R2: S2 S3 S4 V C Y W D Z\n',
     explanation:
-      '\n\tSeien zwei Relationen R1(A1,...,An) und R2(B1,...,Bm) gegeben. Das kartesische Produkt ist die Menge aller Paare aus Tupeln der ersten Relation R1 verknüpft mit Tupeln der zweiten Relation R2 unabhängig von irgenwelchen gleichen oder ungleichen Attributwerten für die einzelnen Attribute.\n',
+      '\n    Seien zwei Relationen R1(A1,...,An) und R2(B1,...,Bm) gegeben. Das kartesische Produkt ist die Menge aller Paare aus Tupeln der ersten Relation R1 verknüpft mit Tupeln der zweiten Relation R2 unabhängig von irgenwelchen gleichen oder ungleichen Attributwerten für die einzelnen Attribute.\n',
     type: 'text',
     answers: [
       {
@@ -21409,7 +21410,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Wie heißt bei Oracle die Klausel, mit der man einen potentiellen Supertypen spezifiziert? Wenn es eine solche Klausel nicht gibt, schreiben Sie,  "gibt es nicht"\n',
     explanation:
-      '\n\t[NOT] FINAL:\n\n\tNOT FINAL spezifiziert einen Supertypen, wobei der Default FINAL ist, d.h. ein Typ kann nicht als Supertyp verwendet werden.\u000b Deklariert werden FINAL und NOT FINAL beim Supertypen und den Subtypen, für die wiederum\u000b Subtypen definiert werden sollen. Ein Suptyp erbt über die der UNDER-Klausel: CREATE TYPE... UNDER Supertyp  Methoden und Attribute vom Supertyp.\n\n\t[NOT] OVERRIDING:\n\n\tDamit ist die \u000bRedefinition (Overloading) einer vererbten Supertyp-Methode gemeint.\n\n\t[NOT] INSTANTIABLE:\n\n\t\u000bMit NOT INSTANTIABLE ist der Typ oder die Methode nicht instanzierbar, d.h. es gibt keine Konstruktormethoden, so dass keine Instanzen erzeugt werden können. INSTANTIABLE wird deklariert beim Supertypen oder einem Subtypen.\n',
+      '\n    [NOT] FINAL:\n\n    NOT FINAL spezifiziert einen Supertypen, wobei der Default FINAL ist, d.h. ein Typ kann nicht als Supertyp verwendet werden.\u000b Deklariert werden FINAL und NOT FINAL beim Supertypen und den Subtypen, für die wiederum\u000b Subtypen definiert werden sollen. Ein Suptyp erbt über die der UNDER-Klausel: CREATE TYPE... UNDER Supertyp  Methoden und Attribute vom Supertyp.\n\n    [NOT] OVERRIDING:\n\n    Damit ist die \u000bRedefinition (Overloading) einer vererbten Supertyp-Methode gemeint.\n\n    [NOT] INSTANTIABLE:\n\n    \u000bMit NOT INSTANTIABLE ist der Typ oder die Methode nicht instanzierbar, d.h. es gibt keine Konstruktormethoden, so dass keine Instanzen erzeugt werden können. INSTANTIABLE wird deklariert beim Supertypen oder einem Subtypen.\n',
     type: 'text',
     answers: [
       {
@@ -21591,9 +21592,9 @@ const questions: Question[] = [
     id: 2126,
     category: 6,
     difficulty: 3,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n\tCREATE TABLE Hierarchie\n\n\t( Angestellter VARCHAR2(20) NOT NULL,\n\n\tVorgesetzter VARCHAR2(20) NOT NULL,\n\n\tPRIMARY KEY (Angestellter),\n\n\tFOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie ON DELETE CASCADE);\n\n\tWelche Aussage/n ist/sind korrekt?\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n    CREATE TABLE Hierarchie\n\n    ( Angestellter VARCHAR2(20) NOT NULL,\n\n    Vorgesetzter VARCHAR2(20) NOT NULL,\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie ON DELETE CASCADE);\n\n    Welche Aussage/n ist/sind korrekt?\n',
     explanation:
-      '\n\tJa, die CREATE-Anweisung ist syntaktisch korrekt.\n\n\t\n\n\tJa, die Angestellten-Vorgesetzten-Beziehung wird hier semantisch korrekt abgebildet, weil der Fremdschlüssel der Vorgesetzten-Spalte auf den Primärschlüssel des Angestellten zeigt, der sein Vorgesetzter ist.\n\n\t\n\n\tz.B.: Emil hat den Vorgesetzten Hugo:\n\n\tAngestellter Vorgesetzter\n\n\t("Hugo","Anton"),\n\n\t("Emil","Hugo"),\n\n\t\n\n\tDer 1. Datensatz ist der Mitarbeiter-Datensatz von Hugo und der 2. der von Emil. Der Fremdschlüssel des Emil-Datensatzes verweist auf den Mitarbeiter Hugo, der sein Vorgesetzter ist.\n',
+      '\n    Ja, die CREATE-Anweisung ist syntaktisch korrekt.\n\n    \n\n    Ja, die Angestellten-Vorgesetzten-Beziehung wird hier semantisch korrekt abgebildet, weil der Fremdschlüssel der Vorgesetzten-Spalte auf den Primärschlüssel des Angestellten zeigt, der sein Vorgesetzter ist.\n\n    \n\n    z.B.: Emil hat den Vorgesetzten Hugo:\n\n    Angestellter Vorgesetzter\n\n    ("Hugo","Anton"),\n\n    ("Emil","Hugo"),\n\n    \n\n    Der 1. Datensatz ist der Mitarbeiter-Datensatz von Hugo und der 2. der von Emil. Der Fremdschlüssel des Emil-Datensatzes verweist auf den Mitarbeiter Hugo, der sein Vorgesetzter ist.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -21618,9 +21619,9 @@ const questions: Question[] = [
     id: 2127,
     category: 6,
     difficulty: 3,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n\tCREATE TABLE Hierarchie ( Angestellter VARCHAR2(20) NOT NULL, Vorgesetzter VARCHAR2(20) NOT NULL, PRIMARY KEY (Angestellter), FOREIGN KEY (Angestellter) REFERENCES Hierarchie (Vorgesetzter) ON DELETE CASCADE);\n\n\tWelche Aussage/n ist/sind korrekt?\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n    CREATE TABLE Hierarchie ( Angestellter VARCHAR2(20) NOT NULL, Vorgesetzter VARCHAR2(20) NOT NULL, PRIMARY KEY (Angestellter), FOREIGN KEY (Angestellter) REFERENCES Hierarchie (Vorgesetzter) ON DELETE CASCADE);\n\n    Welche Aussage/n ist/sind korrekt?\n',
     explanation:
-      '\n\tNein, die CREATE-Anweisung ist syntaktisch  nicht korrekt, weil eine Spalte referenziert wird, die gar keine Schlüsselspalte ist. Die Fremdschlüsselbeziehung kann nur funktionieren, wenn die referenzierte Spalte der Master-Tabelle, hier Vorgesetzter, auch eindeutig ist. Für den Vorgesetzten fehlt jedoch ein PRIMARY KEY- oder UNIQUE-Constraint.\n\n\t\n\n\tNein, die Angestellten-Vorgesetzten-Beziehung wird hier nicht semantisch korrekt abgebildet, weil der Fremdschlüssel von der Angestellten-Spalte auf die Vorgesetzten-Spalte referenziert, dort können Werte mehrfach auftreten, so dass eine eindeutige Referenz nicht gegeben ist. z.B.\n\n\t\n\n\tAngestellter Vorgesetzter\n\n\t("Hugo","Anton"),\n\n\t("Emil","Hugo"),\n\n\t("Erna","Hugo")\n\n\t\n\n\tEmil und Erna haben beide den Vorgesetzten Hugo. Hier tritt jedoch ein Konflikt ein, weil der Fremdschlüssel immer den Master-Datensatz referenziert und der muss eindeutig sein. Hier würde vom 1. Datensatz mit dem Wert "Hugo" auf sowohl den 2. wie auch den 3. referenziert werden - so etwas geht nicht!\n',
+      '\n    Nein, die CREATE-Anweisung ist syntaktisch  nicht korrekt, weil eine Spalte referenziert wird, die gar keine Schlüsselspalte ist. Die Fremdschlüsselbeziehung kann nur funktionieren, wenn die referenzierte Spalte der Master-Tabelle, hier Vorgesetzter, auch eindeutig ist. Für den Vorgesetzten fehlt jedoch ein PRIMARY KEY- oder UNIQUE-Constraint.\n\n    \n\n    Nein, die Angestellten-Vorgesetzten-Beziehung wird hier nicht semantisch korrekt abgebildet, weil der Fremdschlüssel von der Angestellten-Spalte auf die Vorgesetzten-Spalte referenziert, dort können Werte mehrfach auftreten, so dass eine eindeutige Referenz nicht gegeben ist. z.B.\n\n    \n\n    Angestellter Vorgesetzter\n\n    ("Hugo","Anton"),\n\n    ("Emil","Hugo"),\n\n    ("Erna","Hugo")\n\n    \n\n    Emil und Erna haben beide den Vorgesetzten Hugo. Hier tritt jedoch ein Konflikt ein, weil der Fremdschlüssel immer den Master-Datensatz referenziert und der muss eindeutig sein. Hier würde vom 1. Datensatz mit dem Wert "Hugo" auf sowohl den 2. wie auch den 3. referenziert werden - so etwas geht nicht!\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -21647,7 +21648,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Der Ausdruck "SELECT Nachname FROM KUNDEN ORDER BY Nachname ASC"\n',
     explanation:
-      '\n\tDie ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend.\n\n\tEine Gruppierung erfolgt nur mit einer GROUP BY-Klausel.\n',
+      '\n    Die ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend.\n\n    Eine Gruppierung erfolgt nur mit einer GROUP BY-Klausel.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -21972,7 +21973,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Das Problem der Stabilität der OID tritt auf bei:\n',
     explanation:
-      '\n\tRICHTIG ist, dass das Problem der OID-Stabilität bei objektgenerierenden Objektsichten aufritt.\n\n\t \n\n\tWelche unterschiedlichen Sichten gibt es im OR-Kontext?\n\n\tRelational: Tupelsichten\n\n\t\n\t\tTupelsicht über beliebige Tabellen und Sichten\n\t\n\t\tZeilen stellen Tupel dar\n\n\n\tObjektrelational: Typisierte Sichten\n\n\t\n\t\tBasiert auf einem Strukturdatentyp\n\t\n\t\tMittel der Zugriffskontrolle;\n\t\n\t\termöglicht logische Datenunabhängigkeit\n\t\n\t\tObjektgenerierend:\n\t\n\t\tTypisierte Sicht, deren Zeilen neu erzeugte Objekte darstellen\n\t\n\t\tOID-Erzeugung: systemgeneriert, benutzerdefiniert, abgeleitet\n\t\n\t\tObjektrelationale Darstellung relationaler Daten\n\t\n\t\tObjekterhaltend:\n\t\n\t\tTypisierte Sicht, deren Zeilen bestehende Objekte darstellen\n\t\n\t\tVerallgemeinernde sowie spezialisierende Darstellungen möglich\n\t\n\t\tBessere Strukturierung der DB u. Wiederverwendbarkeit von Datentypen\n\t\n\t\tFROM-Klausel mit typischerweise nur einer typisierten Tabelle oder Sicht, wobei diese aber aus mehreren mit Mengenoperationen zusammengesetzten typisierten Tabellen und Sichten bestehen kann.\n\t\n\t\tKann bei Unterstützung des Substituierbarkeitsprinzips zur Darstellung der Subtypobjekte als Instanzen des Supertyps genutzt werden.\n\n',
+      '\n    RICHTIG ist, dass das Problem der OID-Stabilität bei objektgenerierenden Objektsichten aufritt.\n\n     \n\n    Welche unterschiedlichen Sichten gibt es im OR-Kontext?\n\n    Relational: Tupelsichten\n\n    \n        Tupelsicht über beliebige Tabellen und Sichten\n    \n        Zeilen stellen Tupel dar\n\n\n    Objektrelational: Typisierte Sichten\n\n    \n        Basiert auf einem Strukturdatentyp\n    \n        Mittel der Zugriffskontrolle;\n    \n        ermöglicht logische Datenunabhängigkeit\n    \n        Objektgenerierend:\n    \n        Typisierte Sicht, deren Zeilen neu erzeugte Objekte darstellen\n    \n        OID-Erzeugung: systemgeneriert, benutzerdefiniert, abgeleitet\n    \n        Objektrelationale Darstellung relationaler Daten\n    \n        Objekterhaltend:\n    \n        Typisierte Sicht, deren Zeilen bestehende Objekte darstellen\n    \n        Verallgemeinernde sowie spezialisierende Darstellungen möglich\n    \n        Bessere Strukturierung der DB u. Wiederverwendbarkeit von Datentypen\n    \n        FROM-Klausel mit typischerweise nur einer typisierten Tabelle oder Sicht, wobei diese aber aus mehreren mit Mengenoperationen zusammengesetzten typisierten Tabellen und Sichten bestehen kann.\n    \n        Kann bei Unterstützung des Substituierbarkeitsprinzips zur Darstellung der Subtypobjekte als Instanzen des Supertyps genutzt werden.\n\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -22020,7 +22021,8 @@ const questions: Question[] = [
     category: 7,
     difficulty: 3,
     text: 'Welche Aussagen über Indexe sind wahr?\n',
-    explanation: '\n\tDie Lösung ergibt sich aus der Definition eines Index.\n',
+    explanation:
+      '\n    Die Lösung ergibt sich aus der Definition eines Index.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -22109,7 +22111,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Wenn Sie im gesamten ERM ausschließlich Surrogate Keys als Primärschlüssel verwenden, sind folgende Aussagen richtig:\n',
     explanation:
-      '\n\tBei Surrogate-Keys werden ausschließlich nicht-identifizierende 1:n-Beziehungen benutzt, um zusammengesetzte Schlüssel zu vermeiden.\n',
+      '\n    Bei Surrogate-Keys werden ausschließlich nicht-identifizierende 1:n-Beziehungen benutzt, um zusammengesetzte Schlüssel zu vermeiden.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -22151,7 +22153,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Das SQL-Daten-Modell kann wie folgt definiert werden: SET ( ROW ( Basisdatentyp ) ) .\n',
     explanation:
-      '\n\tMULTISET ( ROW ( Basisdatentyp ) ) beschreibt das Datenmodell von SQL, das relationale Datenmodell der relationalen Algebra wird durch SET ( ROW ( Basisdatentyp ) ) beschrieben.\n',
+      '\n    MULTISET ( ROW ( Basisdatentyp ) ) beschreibt das Datenmodell von SQL, das relationale Datenmodell der relationalen Algebra wird durch SET ( ROW ( Basisdatentyp ) ) beschrieben.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -22212,7 +22214,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie heißt der CONSTRAINT, wenn eine Spalte Pflichteingabespalte ist?\n',
     explanation:
-      '\n\tDas SQL-Constraint für die Pflichteingabe heißt NOT NULL und ist als einziges Constraint ausschließlich als Spalten-Constraint definierbar und erzwingt für eine Spalte die Eingabe eines Wertes. Diese Spalte kann nicht leer sein (NULL).\n',
+      '\n    Das SQL-Constraint für die Pflichteingabe heißt NOT NULL und ist als einziges Constraint ausschließlich als Spalten-Constraint definierbar und erzwingt für eine Spalte die Eingabe eines Wertes. Diese Spalte kann nicht leer sein (NULL).\n',
     type: 'text',
     answers: [
       {
@@ -22452,7 +22454,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Gegeben sei eine Relation R(A, B, C) mit den funktionalen Abhängigkeiten A -> B, C und B -> C. Welche Zerlegung entspricht einer verlustfreien und abhängigkeitstreuen Zerlegung in die 3NF?\n',
     explanation:
-      '\n\tIn der 3. NF werden für jede funktionale Abhängigkeit eine eigene Relation erstellt, plus eine für den Primärschlüssel der 1.NF, sollte dieser nicht bereits Teil einer der Relationen sein.\n\n\t\n\n\tDa es sich oben um eine transitive Abhängigkeit handelt, muss das transitiv abhängige Attribut C aus der einen Relation entfernt werden.\n',
+      '\n    In der 3. NF werden für jede funktionale Abhängigkeit eine eigene Relation erstellt, plus eine für den Primärschlüssel der 1.NF, sollte dieser nicht bereits Teil einer der Relationen sein.\n\n    \n\n    Da es sich oben um eine transitive Abhängigkeit handelt, muss das transitiv abhängige Attribut C aus der einen Relation entfernt werden.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -22477,7 +22479,7 @@ const questions: Question[] = [
     id: 2177,
     category: 14,
     difficulty: 2,
-    text: "Es ist folgende Tabelle mit zwei persistent gespeicherten Datensätzen gegeben:\nCREATE TABLE trans_tab (s1  NUMBER(3) PRIMARY KEY INITIALLY IMMEDIATE, \n                        s2  VARCHAR2(20) UNIQUE INITIALLY DEFERRED);\nINSERT INTO trans_tab VALUES (1, 'Mustermann');\nINSERT INTO trans_tab VALUES (2, 'Musterfrau');\nCOMMIT;\n\nSchauen Sie sich nachfolgende Anweisungen an und geben Sie an, welche Datensätze zum Zeitpunkt a) mit der SELECT-Anfrage angezeigt werden. \n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt a)\nINSERT INTO trans_tab VALUES (3, 'Schmitt');\nINSERT INTO trans_tab VALUES (4, 'Schmidt');\nINSERT INTO trans_tab VALUES (4, 'Schmitzchen');\n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt b)\nINSERT INTO trans_tab VALUES (5, 'Schmitzchen');\nINSERT INTO trans_tab VALUES (6, 'Schmitzchen');\n\nSELECT * FROM trans_tab;    \t \t\t-- Zeitpunkt c)\nCOMMIT;\n\nSELECT * FROM trans_tab;    \t\t\t-- Zeitpunkt d)",
+    text: "Es ist folgende Tabelle mit zwei persistent gespeicherten Datensätzen gegeben:\nCREATE TABLE trans_tab (s1  NUMBER(3) PRIMARY KEY INITIALLY IMMEDIATE, \n                        s2  VARCHAR2(20) UNIQUE INITIALLY DEFERRED);\nINSERT INTO trans_tab VALUES (1, 'Mustermann');\nINSERT INTO trans_tab VALUES (2, 'Musterfrau');\nCOMMIT;\n\nSchauen Sie sich nachfolgende Anweisungen an und geben Sie an, welche Datensätze zum Zeitpunkt a) mit der SELECT-Anfrage angezeigt werden. \n\nSELECT * FROM trans_tab;                -- Zeitpunkt a)\nINSERT INTO trans_tab VALUES (3, 'Schmitt');\nINSERT INTO trans_tab VALUES (4, 'Schmidt');\nINSERT INTO trans_tab VALUES (4, 'Schmitzchen');\n\nSELECT * FROM trans_tab;                -- Zeitpunkt b)\nINSERT INTO trans_tab VALUES (5, 'Schmitzchen');\nINSERT INTO trans_tab VALUES (6, 'Schmitzchen');\n\nSELECT * FROM trans_tab;                 -- Zeitpunkt c)\nCOMMIT;\n\nSELECT * FROM trans_tab;                -- Zeitpunkt d)",
     explanation:
       'Nach dem CREATE-TABLE werden zwei Datensätze eingefügt, die keines der Constraints verletzt, und anschließend mit COMMIT persistent gespeichert, so dass folgender Inhalt beim a)-SeELECT gegen ist. \n        S1 S2\n---------- --------------------\n         1 Mustermann\n         2 Musterfrau\n',
     type: 'multiple-choice',
@@ -22810,7 +22812,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'In Oracle-Instead-Of-Triggern können die Transitionsvariablen :NEW.spaltenname beschrieben werden.\n',
     explanation:
-      '\n\tDie Transitionsvariablen :NEW.spaltenname können unter Oracle-PL/SQL bei INSTEAD-OF-Triggern zwar gelesen, aber nicht beschrieben werden. Die :OLD.Transitionsvariablen können nie beschrieben werden, das sie einen alten Zustand enthalten.\n',
+      '\n    Die Transitionsvariablen :NEW.spaltenname können unter Oracle-PL/SQL bei INSTEAD-OF-Triggern zwar gelesen, aber nicht beschrieben werden. Die :OLD.Transitionsvariablen können nie beschrieben werden, das sie einen alten Zustand enthalten.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -22829,7 +22831,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Bei welchen Oracle-Triggern können die Transitionsvariablen :OLD.spaltenname beschrieben werden?\n',
     explanation:
-      '\n\tDie :OLD.Transitionsvariablen könenn bei keinem Trigger-Typ beschrieben werden, da sie den Zustand vor einer Transaktion beinhalten.\n\n\t\n\n\t \n',
+      '\n    Die :OLD.Transitionsvariablen könenn bei keinem Trigger-Typ beschrieben werden, da sie den Zustand vor einer Transaktion beinhalten.\n\n    \n\n     \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -22864,7 +22866,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welcher Optimierungsvorgang transformiert einen algebraischen Ausdruck der relationalen Algebra auf einen semantisch äquivalenten Ausdruck?\n',
     explanation:
-      '\n\tBei der logischen Optimierung wird ein algebraischer Ausdruck der relationalen Algebra auf einen semantisch äquivalenten Ausdruck transformiert, der weniger Laufzeit benötigt. Je weniger Tupel die Zwischenergebnismengen haben, umso schneller ist die Anfrageauswertung.\n',
+      '\n    Bei der logischen Optimierung wird ein algebraischer Ausdruck der relationalen Algebra auf einen semantisch äquivalenten Ausdruck transformiert, der weniger Laufzeit benötigt. Je weniger Tupel die Zwischenergebnismengen haben, umso schneller ist die Anfrageauswertung.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -22885,9 +22887,9 @@ const questions: Question[] = [
     id: 3362,
     category: 3,
     difficulty: 1,
-    text: 'Um welchen Attributtyp handelt es sich hier?\n\n\tStudiendauer eines Studenten\n',
+    text: 'Um welchen Attributtyp handelt es sich hier?\n\n    Studiendauer eines Studenten\n',
     explanation:
-      '\n\tNominale Attribute unterscheiden sich nur durch ihren Namen, ordinale Attribute lassen sich zusätzlich der Größe nach ordnen und können verglichen werden. Intervallattribute beschreiben einen Intervallbereich und lassen sich addieren bzw. subtrahieren. Numerische Attribute beschreiben Zahlen, die alle vier Grundrechnenarten, also zusätzlich auch Multiplikation und  Division,  zulassen.\n',
+      '\n    Nominale Attribute unterscheiden sich nur durch ihren Namen, ordinale Attribute lassen sich zusätzlich der Größe nach ordnen und können verglichen werden. Intervallattribute beschreiben einen Intervallbereich und lassen sich addieren bzw. subtrahieren. Numerische Attribute beschreiben Zahlen, die alle vier Grundrechnenarten, also zusätzlich auch Multiplikation und  Division,  zulassen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -22945,7 +22947,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie viele Einträge hat ein B-Baum vom Typ 1 der Höhe 1 maximal?\n',
     explanation:
-      '\n\tWurzel: 2 Einträge\n\n\t1. Ebene: 2+2+2=6 Einträge\n\n\tSumme: 8\n',
+      '\n    Wurzel: 2 Einträge\n\n    1. Ebene: 2+2+2=6 Einträge\n\n    Summe: 8\n',
     type: 'text',
     answers: [
       {
@@ -22983,7 +22985,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Der Natural Join ist in der relationalen Algebra der einzige Join-Operator, der ohne Bedingung auskommt\n',
     explanation:
-      '\n\tDer Theta Join hat immer eine Bedingung und unterdrückt keine doppelten Spalten. Equi-Join und Outer-Joins bauen auf der Definition des Theta-Joins auf.\n',
+      '\n    Der Theta Join hat immer eine Bedingung und unterdrückt keine doppelten Spalten. Equi-Join und Outer-Joins bauen auf der Definition des Theta-Joins auf.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -23002,7 +23004,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche Aussagen über das Fehlerverhalten des SQL-Integritätsprüfungskonzepts sind wahr?\n',
     explanation:
-      '\n\tDas "Normalverhalten" bei einem Integritätsfehler in SQL ist, dass dieser Fehler angezeigt wird und bei einer IMMEDIATE-Prüfung die Datenmanipulation abgebrochen wird bzw. bei einer DEFERRED-Prüfung die ganze Transaktion zurückgerollt wird. Dieses Verhalten wird für Integritätsfehler ausschließlich bei NOT NULL, PRIMARY KEY, UNIQUE ausgeführt.\n\n\t\n\n\tLediglich die Fremdschlüssel-Constraints bieten neben diesem "Normalverhalten" eine Option zur Fehlerkorrektur und zwar unabhängig davon, ob als Spalten- oder Tabellen-Constraint definiert. Die Fehlerkorrekturen betrifft die sog. "Dangling Tuples"-Problematik,wenn Masterdatensätze gelöscht werden, für die noch abhängige Detail-Datensätze bestehen. Es besteht dann die Möglichkeit, z.B. die abhängigen Detaildatensätze ebenfalls zu löschen (CASCADE) oder deren Fremdschlüsselwert auf einen vorgegebenen Wert bzw. auf NULL zu setzen (DEFAULT/NULL)...\n\n\t\n\n\t ::=\n\n\tREFERENCES Tabellenname [ ( Spaltenname [ , Spaltenname ]... ) ]\n\n\t<Übereinstimmungstyp>\n\n\t[ <fehlerkorrektur definition=""> ]\n\n\t\n\n\t<fehlerkorrektur definition=""> ::=\n\n\tON UPDATE <fehlerkorrektur aktion="">\n\n\t| ON DELETE <fehlerkorrektur aktion="">\n\n\t\n\n\t<fehlerkorrektur aktion=""> ::=\n\n\tCASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION\n\n\t\n\n\tWenn man bedenkt, für welche Problemstellung die Fehlerkorrektur gedacht ist, dann kommt man schnell darauf, das es nur die beiden Klauseln "ON UPDATE" und "ON DELETE" geben kann.\n\n\tWerden Fremdschlüssel verwendet, so kann es zur sog. "Dangling Tuples"-Problematik kommen, bei der es darum geht, dass Master-Datensätze, die noch von Detail-Datensätze referenziert werden, gelöscht oder deren Schlüsselwert geändert wird und das anschließend Detail-Datensätze existieren, für deren Fremdschlüsselwerte es dann keinen passenden Datensatz in der Master-Tabelle mehr gibt.\n\n\tDas Einfügen von Master-Datensätzen ist immer unproblematisch, da eine Fremdschlüsselbedingung es zulässt, dass es Master-Datensätze gibt, für die es keine Detail-Datensätze gibt. \n',
+      '\n    Das "Normalverhalten" bei einem Integritätsfehler in SQL ist, dass dieser Fehler angezeigt wird und bei einer IMMEDIATE-Prüfung die Datenmanipulation abgebrochen wird bzw. bei einer DEFERRED-Prüfung die ganze Transaktion zurückgerollt wird. Dieses Verhalten wird für Integritätsfehler ausschließlich bei NOT NULL, PRIMARY KEY, UNIQUE ausgeführt.\n\n    \n\n    Lediglich die Fremdschlüssel-Constraints bieten neben diesem "Normalverhalten" eine Option zur Fehlerkorrektur und zwar unabhängig davon, ob als Spalten- oder Tabellen-Constraint definiert. Die Fehlerkorrekturen betrifft die sog. "Dangling Tuples"-Problematik,wenn Masterdatensätze gelöscht werden, für die noch abhängige Detail-Datensätze bestehen. Es besteht dann die Möglichkeit, z.B. die abhängigen Detaildatensätze ebenfalls zu löschen (CASCADE) oder deren Fremdschlüsselwert auf einen vorgegebenen Wert bzw. auf NULL zu setzen (DEFAULT/NULL)...\n\n    \n\n     ::=\n\n    REFERENCES Tabellenname [ ( Spaltenname [ , Spaltenname ]... ) ]\n\n    <Übereinstimmungstyp>\n\n    [ <fehlerkorrektur definition=""> ]\n\n    \n\n    <fehlerkorrektur definition=""> ::=\n\n    ON UPDATE <fehlerkorrektur aktion="">\n\n    | ON DELETE <fehlerkorrektur aktion="">\n\n    \n\n    <fehlerkorrektur aktion=""> ::=\n\n    CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION\n\n    \n\n    Wenn man bedenkt, für welche Problemstellung die Fehlerkorrektur gedacht ist, dann kommt man schnell darauf, das es nur die beiden Klauseln "ON UPDATE" und "ON DELETE" geben kann.\n\n    Werden Fremdschlüssel verwendet, so kann es zur sog. "Dangling Tuples"-Problematik kommen, bei der es darum geht, dass Master-Datensätze, die noch von Detail-Datensätze referenziert werden, gelöscht oder deren Schlüsselwert geändert wird und das anschließend Detail-Datensätze existieren, für deren Fremdschlüsselwerte es dann keinen passenden Datensatz in der Master-Tabelle mehr gibt.\n\n    Das Einfügen von Master-Datensätzen ist immer unproblematisch, da eine Fremdschlüsselbedingung es zulässt, dass es Master-Datensätze gibt, für die es keine Detail-Datensätze gibt. \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -23039,9 +23041,9 @@ const questions: Question[] = [
     id: 2619,
     category: 6,
     difficulty: 2,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n\tCREATE TABLE Hierarchie\n\n\t( Angestellter VARCHAR2(20) NOT NULL,\n\n\tVorgesetzter VARCHAR2(20) NOT NULL PRIMARY KEY (Angestellter),\n\n\tFOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n\t\n\n\tEs wird versucht, einen Datensatz in die leere Tabelle einzufügen:\n\n\tINSERT INTO HIERACHIE (Hans, Emil);\n\n\tWas ist das Ergebnis dieser INSERT-Anweisung?\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n    CREATE TABLE Hierarchie\n\n    ( Angestellter VARCHAR2(20) NOT NULL,\n\n    Vorgesetzter VARCHAR2(20) NOT NULL PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n    \n\n    Es wird versucht, einen Datensatz in die leere Tabelle einzufügen:\n\n    INSERT INTO HIERACHIE (Hans, Emil);\n\n    Was ist das Ergebnis dieser INSERT-Anweisung?\n',
     explanation:
-      '\n\tDer Datensatz kann nicht eingefügt werden, weil die Fremdschlüsselbeziehung mit dem Wert "Emil" fehlschlägt. Es gibt ja noch keinen anderen Datensatz in der Tabelle.\n\n\t\n\n\tFehlerbericht:\n\n\tSQL-Fehler: ORA-02291: Integritäts-Constraint (SS_10.SYS_C0015753) verletzt - übergeordneter Schlüssel nicht gefunden\n\n\t02291. 00000 - "integrity constraint (%s.%s) violated - parent key not found"\n\n\t*Cause: A foreign key value has no matching primary key value.\n\n\t*Action: Delete the foreign key or add a matching primary key.\n',
+      '\n    Der Datensatz kann nicht eingefügt werden, weil die Fremdschlüsselbeziehung mit dem Wert "Emil" fehlschlägt. Es gibt ja noch keinen anderen Datensatz in der Tabelle.\n\n    \n\n    Fehlerbericht:\n\n    SQL-Fehler: ORA-02291: Integritäts-Constraint (SS_10.SYS_C0015753) verletzt - übergeordneter Schlüssel nicht gefunden\n\n    02291. 00000 - "integrity constraint (%s.%s) violated - parent key not found"\n\n    *Cause: A foreign key value has no matching primary key value.\n\n    *Action: Delete the foreign key or add a matching primary key.\n',
     type: 'text',
     answers: [
       {
@@ -23203,7 +23205,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie heißt der CONSTRAINT, wenn eine Spalte Fremdschlüssel ist?\n',
     explanation:
-      '\n\tDas Fremdschlüssel-Constraint heißt FOREIGN KEY.\n\n\t\n\n\tDie <font color="#000000" face="Arial, Helvetica, Geneva, sans-serif">übrigen vier  Constraints sind: UNIQUE, CHECK, PRIMARY KEY und NOT NULL.\n',
+      '\n    Das Fremdschlüssel-Constraint heißt FOREIGN KEY.\n\n    \n\n    Die <font color="#000000" face="Arial, Helvetica, Geneva, sans-serif">übrigen vier  Constraints sind: UNIQUE, CHECK, PRIMARY KEY und NOT NULL.\n',
     type: 'text',
     answers: [
       {
@@ -23353,7 +23355,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Wie heißt bei Oracle die Klausel für systemgenerierte OIDs (object identifier)? Wenn es keine solche Klausel gibt, schreiben Sie "gibt es nicht".\n',
     explanation:
-      '\n\tDie OID-Generierung bietet zwei Möglichkeiten: SYSTEM GENERATED bedeutet,dass eine weltweit eindeutige OID erzeugt wird, PRIMARY KEY entspricht dem Konzept eines Primärschlüssels.\n\n\t \n',
+      '\n    Die OID-Generierung bietet zwei Möglichkeiten: SYSTEM GENERATED bedeutet,dass eine weltweit eindeutige OID erzeugt wird, PRIMARY KEY entspricht dem Konzept eines Primärschlüssels.\n\n     \n',
     type: 'text',
     answers: [
       {
@@ -23724,9 +23726,9 @@ const questions: Question[] = [
     id: 2502,
     category: 14,
     difficulty: 3,
-    text: 'Es ist die folgende leere Tabelle gegeben:  busfahrer(mita_id, stundenlohn), wobei mita_id eine Primärschlüsselspalte (Prüfungszeitpunkt: IMMEDIATE) ist und stundenlohn eine Pflichteingabespalte (Prüfungszeitpunkt: DEFERRED). Es ist folgende Transaktion gegeben:\n\n\tINSERT INTO busfahrer VALUES (4711, 6);\n\n\tINSERT INTO busfahrer VALUES (4711, 8);\n\n\tSELECT mita_id FROM busfahrer;-- 1. SELECT\n\n\tINSERT INTO busfahrer VALUES (4712, 0);\n\n\tSELECT mita_id FROM busfahrer;-- 2. SELECT\n\n\tINSERT INTO busfahrer VALUES (4713, NULL);\n\n\tSELECT mita_id FROM busfahrer;-- 3. SELECT\n\n\tCOMMIT;\n\n\tSELECT mita_id FROM busfahrer;-- 4. SELECT\n\n\tGeben Sie für jede SELECT-Anweisung an, welche Ergebnismenge angezeigt wird, wobei mehrere Datensätze durch ein Semikolon getrennt sind und schreiben Sie NO ROWS, falls der SELECT keine Zeilen liefert!\n',
+    text: 'Es ist die folgende leere Tabelle gegeben:  busfahrer(mita_id, stundenlohn), wobei mita_id eine Primärschlüsselspalte (Prüfungszeitpunkt: IMMEDIATE) ist und stundenlohn eine Pflichteingabespalte (Prüfungszeitpunkt: DEFERRED). Es ist folgende Transaktion gegeben:\n\n    INSERT INTO busfahrer VALUES (4711, 6);\n\n    INSERT INTO busfahrer VALUES (4711, 8);\n\n    SELECT mita_id FROM busfahrer;-- 1. SELECT\n\n    INSERT INTO busfahrer VALUES (4712, 0);\n\n    SELECT mita_id FROM busfahrer;-- 2. SELECT\n\n    INSERT INTO busfahrer VALUES (4713, NULL);\n\n    SELECT mita_id FROM busfahrer;-- 3. SELECT\n\n    COMMIT;\n\n    SELECT mita_id FROM busfahrer;-- 4. SELECT\n\n    Geben Sie für jede SELECT-Anweisung an, welche Ergebnismenge angezeigt wird, wobei mehrere Datensätze durch ein Semikolon getrennt sind und schreiben Sie NO ROWS, falls der SELECT keine Zeilen liefert!\n',
     explanation:
-      '\n\t1. SELECT: 4711\n\n\tDer 2. INSERT (4711,8) wird unmittelbar abgebrochen, weil er die Primärschlüsselbedingung verletzt.\n\n\t\n\n\t2. SELECT: 4711; 4712\n\n\tDie Einfügung (4712,0) verletzt keine Constraints.\n\n\t\n\n\t3. SELECT: 4711; 4712; 4713\n\n\tDie Einfügung (4713,NULL) verletzt das Pflichteingabe-Constraint für die 2. Spalte, wird jedoch erst einmal ausgeführt, da dieses Constraint mit dem Prüfungszeitpunkt DEFERRED definiert ist. Diese Bedingung erst also zum COMMIT geprüft.\n\n\t\n\n\t4. SELECT: NO ROWS\n\n\tVor diesem SELECT wird ein COMMIT ausgeführt und damit die gesamte Transaktion, die mit dem ersten INSERT gestartet wurde, abgeschlossen. Abschließen heißt: erst einmal alle DEFERRED-Constraints prüfen und im Fehlerfall - wie hier, weil die Pflichteingabe für den 3. Datensatz verletzt ist - die gesamte Transaktion zurückrollen.\n',
+      '\n    1. SELECT: 4711\n\n    Der 2. INSERT (4711,8) wird unmittelbar abgebrochen, weil er die Primärschlüsselbedingung verletzt.\n\n    \n\n    2. SELECT: 4711; 4712\n\n    Die Einfügung (4712,0) verletzt keine Constraints.\n\n    \n\n    3. SELECT: 4711; 4712; 4713\n\n    Die Einfügung (4713,NULL) verletzt das Pflichteingabe-Constraint für die 2. Spalte, wird jedoch erst einmal ausgeführt, da dieses Constraint mit dem Prüfungszeitpunkt DEFERRED definiert ist. Diese Bedingung erst also zum COMMIT geprüft.\n\n    \n\n    4. SELECT: NO ROWS\n\n    Vor diesem SELECT wird ein COMMIT ausgeführt und damit die gesamte Transaktion, die mit dem ersten INSERT gestartet wurde, abgeschlossen. Abschließen heißt: erst einmal alle DEFERRED-Constraints prüfen und im Fehlerfall - wie hier, weil die Pflichteingabe für den 3. Datensatz verletzt ist - die gesamte Transaktion zurückrollen.\n',
     type: 'text',
     answers: [
       {
@@ -23819,7 +23821,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Gegeben sei eine Relation R(A, B, C) mit den funktionalen Abhängigkeiten A -> B, C und B -> C. Um welche funktionale Abhängigkeit handelt es sich hier? Bitte vervollständigen Sie die Antwort.\n',
     explanation:
-      '\n\tHier ist C von B und B von A abhängig und damit ist C transitiv von A abhängig.\n\n\tMit X, Y und Z seien paarweise verschiedene Attributkombinationen einer Relation R = R(A1, A2,...,An) bezeichnet.\n\n\tZ heißt transitiv abhängig von X, wenn Y voll funktional abhängig von X und Z voll funktional abhängig von Y ist, aber X nicht voll funktional abhängig von Y ist.\n\n\tAlso X → Y → Z, aber nicht Y → X.\n\n\t \n',
+      '\n    Hier ist C von B und B von A abhängig und damit ist C transitiv von A abhängig.\n\n    Mit X, Y und Z seien paarweise verschiedene Attributkombinationen einer Relation R = R(A1, A2,...,An) bezeichnet.\n\n    Z heißt transitiv abhängig von X, wenn Y voll funktional abhängig von X und Z voll funktional abhängig von Y ist, aber X nicht voll funktional abhängig von Y ist.\n\n    Also X → Y → Z, aber nicht Y → X.\n\n     \n',
     type: 'text',
     answers: [
       {
@@ -23834,7 +23836,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Gegeben sei eine Relation R(A, B, C, D) mit den mit funktionalen Abhängigkeiten A, B -> C, D und B -> C. Um welche funktionale Abhängigkeit handelt es sich hier? Bitte vervollständigen Sie die Antwort!\n',
     explanation:
-      '\n\tEine partielle funktionale Abhängigkeit besteht, wenn es ein Element y aus Y gibt, das nur von einer echten Teilmenge der Attribute aus X funktional abhängt.\n',
+      '\n    Eine partielle funktionale Abhängigkeit besteht, wenn es ein Element y aus Y gibt, das nur von einer echten Teilmenge der Attribute aus X funktional abhängt.\n',
     type: 'text',
     answers: [
       {
@@ -23895,7 +23897,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Gegeben sei eine Relation R(A, B, C) mit den funktionalen Abhängigkeiten A -> B, C und B -> C. Welche Zerlegung entspricht einer verlustfreien und abhängigkeitstreuen Zerlegung in die 2NF?\n',
     explanation:
-      '\n\tIn der 2.NF werden partielle funktionale Abhängigkeiten aufgelöst. Hier handelt es sich jedoch um eine transitive funktionale Abhängigkeit, die jedoch erst in der 3.NF aufgelöst wird. Daher gilt hier 1.NF=2.NF.\n\n\t\n\n\tEine Relation R ist in der ersten Normalform (1NF), wenn alle Attribute nur atomare Werte (keine mengenwertigen Datentypen) enthalten.\n\n\tEine Relation R mit Primärschlüssel S befindet sich in der zweiten Normalform (2NF), wenn sie (1NF) ist und jedes Nichtschlüsselattribut voll funktional abhängig vom Primärschlüssel S ist.\n\n\tEine Relation R ist in der dritten Normalform (3NF), wenn sie sich in der ersten und der zweiten Normalform befindet und kein Nichtschlüsselattribut transitiv abhängig von einem Schlüsselattribut ist.\n',
+      '\n    In der 2.NF werden partielle funktionale Abhängigkeiten aufgelöst. Hier handelt es sich jedoch um eine transitive funktionale Abhängigkeit, die jedoch erst in der 3.NF aufgelöst wird. Daher gilt hier 1.NF=2.NF.\n\n    \n\n    Eine Relation R ist in der ersten Normalform (1NF), wenn alle Attribute nur atomare Werte (keine mengenwertigen Datentypen) enthalten.\n\n    Eine Relation R mit Primärschlüssel S befindet sich in der zweiten Normalform (2NF), wenn sie (1NF) ist und jedes Nichtschlüsselattribut voll funktional abhängig vom Primärschlüssel S ist.\n\n    Eine Relation R ist in der dritten Normalform (3NF), wenn sie sich in der ersten und der zweiten Normalform befindet und kein Nichtschlüsselattribut transitiv abhängig von einem Schlüsselattribut ist.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -24053,7 +24055,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Sobald ein CONSTRAINT erzeugt und aktiviert wird, werden nur alle neu eingefügten Datensätze und alle zukünftigen Datenänderungen und -löschungen in und aus dieser Tabelle geprüft, ob sie den CONSTRAINT erfüllen. Die bereits gespeicherten Daten werden nicht geprüft.\n',
     explanation:
-      '\n\tFalsch, das Constraint-Konzept bietet einen 100% Schutz. Das Wort "nur" stimmt hier nicht. Wenn man in der ORACLE-DBA-View USER_CONSTRAINTS sieht, dass ein Constraint erzeugt und aktiviert ist, dann kann man absolut sicher sein, dass alle gespeicherten Daten unabhängig vom Zeitpunkt der Speicherung korrekt sind. Sobald ein CONSTRAINT erzeugt und aktiviert wird, werden zurückwirkend alle in der Datenbank vorhanden Daten geprüft, ob sie dem CONSTRAINT genügen. Falls dies nicht der Fall ist, kann der CONSTRAINT nicht erzeugt werden.\n\n\t\n\n\tDas ist einer der Punkte, bei dem sich Integritätsprüfung mit Constraints und mit Triggern unterscheiden. Werden Trigger verwendet besteht diese Sicherheit nicht. Es werden nur für alle Datenmanipulationen ab dem Zeitpunkt der Triggererzeugung überprüft.\n',
+      '\n    Falsch, das Constraint-Konzept bietet einen 100% Schutz. Das Wort "nur" stimmt hier nicht. Wenn man in der ORACLE-DBA-View USER_CONSTRAINTS sieht, dass ein Constraint erzeugt und aktiviert ist, dann kann man absolut sicher sein, dass alle gespeicherten Daten unabhängig vom Zeitpunkt der Speicherung korrekt sind. Sobald ein CONSTRAINT erzeugt und aktiviert wird, werden zurückwirkend alle in der Datenbank vorhanden Daten geprüft, ob sie dem CONSTRAINT genügen. Falls dies nicht der Fall ist, kann der CONSTRAINT nicht erzeugt werden.\n\n    \n\n    Das ist einer der Punkte, bei dem sich Integritätsprüfung mit Constraints und mit Triggern unterscheiden. Werden Trigger verwendet besteht diese Sicherheit nicht. Es werden nur für alle Datenmanipulationen ab dem Zeitpunkt der Triggererzeugung überprüft.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -24365,7 +24367,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Welche Join-Operatoren sind immer verlustfrei?\n',
     explanation:
-      '\n\tEine Join-Operation zwischen R und S heißt verlustfrei, wenn alle Tupel von R und S am Verbund teilnehmen. Die inverse Operation Projektion erzeugt dann wieder R und S aus dem Join-Ergebnis. Bei allen Join-Operatoren bis auf den Full-Outer -Join können Tupel, die  in der verknüpften Operation kein Gegenüber haben, wegfallen.\n',
+      '\n    Eine Join-Operation zwischen R und S heißt verlustfrei, wenn alle Tupel von R und S am Verbund teilnehmen. Die inverse Operation Projektion erzeugt dann wieder R und S aus dem Join-Ergebnis. Bei allen Join-Operatoren bis auf den Full-Outer -Join können Tupel, die  in der verknüpften Operation kein Gegenüber haben, wegfallen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -24765,7 +24767,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche Aussage(n) über Unterabfragen sind wahr?\n',
     explanation:
-      '\n\tWenn ein Wert kleiner ist als irgendein Wert des Ergebnis einer Unterabfrage, ist er insbesondere auch kleiner als das Maximum der Werte der Unterabfrage. Wenn ein Wert kleiner als das Maximum des Ergebnises einer Unterbafrage ist, ist er auch kleiner als ein beliebiger Wert des Ergebnises der Unterabfrage.\n\n\tWenn ein Wert kleiner ist als jeder Wert des Ergebnis einer Unterabfrage, ist er insbesondere auch kleiner als das Minimum der Werte der Unterabfrage. Wenn ein Wert kleiner als das Minimum des Ergebnises einer Unterabfrage ist, ist er auch kleiner als alle Werte der Unterabfrage.\n\n\tDie Aussage (< ANY(Unterabfrage)) ist schwächer als < ALL(Unterabfrage) und genauso ist das die Aussage (kleiner als das Maximum) schwächer als (kleiner als das Minimum).\n\n\tsiehe Erklärungen von Unterabfragen im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Suchbedingung"> Unterabfragen \n',
+      '\n    Wenn ein Wert kleiner ist als irgendein Wert des Ergebnis einer Unterabfrage, ist er insbesondere auch kleiner als das Maximum der Werte der Unterabfrage. Wenn ein Wert kleiner als das Maximum des Ergebnises einer Unterbafrage ist, ist er auch kleiner als ein beliebiger Wert des Ergebnises der Unterabfrage.\n\n    Wenn ein Wert kleiner ist als jeder Wert des Ergebnis einer Unterabfrage, ist er insbesondere auch kleiner als das Minimum der Werte der Unterabfrage. Wenn ein Wert kleiner als das Minimum des Ergebnises einer Unterabfrage ist, ist er auch kleiner als alle Werte der Unterabfrage.\n\n    Die Aussage (< ANY(Unterabfrage)) ist schwächer als < ALL(Unterabfrage) und genauso ist das die Aussage (kleiner als das Maximum) schwächer als (kleiner als das Minimum).\n\n    siehe Erklärungen von Unterabfragen im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Suchbedingung"> Unterabfragen \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -24891,9 +24893,9 @@ const questions: Question[] = [
     id: 2720,
     category: 6,
     difficulty: 1,
-    text: 'Betrachten Sie die beiden folgenden CREATE-Table_Befehle:\n\n\tCREATE TABLE Zeitschrift\n\n\t( Zeitschrift_id INTEGER NOT NULL,\n\n\tNamen VARCHAR2(20) NULL,\n\n\tPRIMARY KEY (Zeitschrift_id));\n\n\t\n\n\tCREATE TABLE Aufsatz\n\n\t( Aufsatz_id INTEGER NOT NULL,\n\n\tTitel VARCHAR2(20) NULL,\n\n\tZeitschrift_id INTEGER NOT NULL,\n\n\tPRIMARY KEY (Aufsatz_id),\n\n\tFOREIGN KEY (Zeitschrift_id) REFERENCES Zeitschrift);\n\n\tAuf welcher der beiden Tabellen ist ein ON DELETE CASCADE möglich, mit dem Zweck, dass zu einer Zeitschrift auch die zuhörigen Aufsätze gelöscht werden?\n',
+    text: 'Betrachten Sie die beiden folgenden CREATE-Table_Befehle:\n\n    CREATE TABLE Zeitschrift\n\n    ( Zeitschrift_id INTEGER NOT NULL,\n\n    Namen VARCHAR2(20) NULL,\n\n    PRIMARY KEY (Zeitschrift_id));\n\n    \n\n    CREATE TABLE Aufsatz\n\n    ( Aufsatz_id INTEGER NOT NULL,\n\n    Titel VARCHAR2(20) NULL,\n\n    Zeitschrift_id INTEGER NOT NULL,\n\n    PRIMARY KEY (Aufsatz_id),\n\n    FOREIGN KEY (Zeitschrift_id) REFERENCES Zeitschrift);\n\n    Auf welcher der beiden Tabellen ist ein ON DELETE CASCADE möglich, mit dem Zweck, dass zu einer Zeitschrift auch die zuhörigen Aufsätze gelöscht werden?\n',
     explanation:
-      '\n\tON DELETE CASCADE ist eine Option des Fremdschlüssel-Constraints und da bei der Zeitschriften-Tabelle gar kein Fremdschlüssel definiert ist, kann auch kein ON DELETE CASCADE spezifiziert werden.\n',
+      '\n    ON DELETE CASCADE ist eine Option des Fremdschlüssel-Constraints und da bei der Zeitschriften-Tabelle gar kein Fremdschlüssel definiert ist, kann auch kein ON DELETE CASCADE spezifiziert werden.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -24966,7 +24968,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Mit welchem Methodenaufruf wird Transaktionsverarbeitung möglich, die ein explizites COMMIT oder ROLLBACK von der Anwendung erfordern? Wenn es die Default-Einstellung ist, schreiben Sie "default". Wenn ein Methodenaufruf notwendig ist, rufen Sie die Methode für das Verbindungsobjekt "con".',
     explanation:
-      'Nach Verbindungsaufbau ist der Modus defaultmäßig auf \n       Auto-Commit-Modus = true  \ngesetzt. D.h. jede einzelne SQL-Anweisung wird als Transaktion \u000b      behandelt, und nach dem Ausführen automatisch festgeschrieben.\n\nUm mehr als eine SQL-Anweisung als Transaktion zu erlauben, muss der Auto-Commit-Modus ausgeschaltet werden:\n\n\tverbindung.setAutoCommit(false);\nIn diesem Modus muss die Java-Anwendung selbst die Transaktionen mit COMMIT oder ROLLBACK abschließen. ',
+      'Nach Verbindungsaufbau ist der Modus defaultmäßig auf \n       Auto-Commit-Modus = true  \ngesetzt. D.h. jede einzelne SQL-Anweisung wird als Transaktion \u000b      behandelt, und nach dem Ausführen automatisch festgeschrieben.\n\nUm mehr als eine SQL-Anweisung als Transaktion zu erlauben, muss der Auto-Commit-Modus ausgeschaltet werden:\n\n    verbindung.setAutoCommit(false);\nIn diesem Modus muss die Java-Anwendung selbst die Transaktionen mit COMMIT oder ROLLBACK abschließen. ',
     type: 'text',
     answers: [
       {
@@ -25048,9 +25050,9 @@ const questions: Question[] = [
     id: 2708,
     category: 12,
     difficulty: 2,
-    text: 'Folgende Prozedur sei gegeben:\n\n\tCREATE OR REPLACE PROCEDURE test_proc (p1 IN NUMBER, p2 INOUT NUMBER) ... ;\n\n\tWie kann diese Prozedur innerhalb eines PL/SQL-Programms aufgerufen werden?\n',
+    text: 'Folgende Prozedur sei gegeben:\n\n    CREATE OR REPLACE PROCEDURE test_proc (p1 IN NUMBER, p2 INOUT NUMBER) ... ;\n\n    Wie kann diese Prozedur innerhalb eines PL/SQL-Programms aufgerufen werden?\n',
     explanation:
-      '\n\tPL/SQL unterschiedet drei Typen der Parameterübergabe: IN, OUT und IN OUT, wobei IN der Defaultwert ist.\n\n\t\n\n\tBeim Typ IN wird der Übergabewert beim Aufruf in das Programm übernommen, Dieser Typ verhält sich daher wie eine Konstante innerhalb eines Programms. Daher sind als Aufrufparameter Konstanten und Variablen zulässig.\n\n\tBeim Typ OUT wird ein Wert aus dem Programm heraus an das aufrufende Programm übergeben und IN OUT ist eine Kombination aus beiden Möglichkeiten.\n\n\tBeim Typ OUT gibt es eine Wertübergabe in initialisierter Form an die Prozedur und Rückgabe eines veränderten Werts an das aufrufende Objekt. Dieser Typ verhält sich daher wie eine nicht initialisierte Variable, die nur einen Wert aufnehmen und an das aufrufende Objekt zurückgeben kann. Daher sind als Aufrufparameter keine Konstanten sondern nur Variablen zulässig.\n\n\tDer Typ IN OUT verhält sich wie eine initialisierte Variable, die einen Wert aufnehmen und an das aufrufende Objekt zurückgeben kann. Daher sind als Aufrufparameter keine Konstanten sondern nur Variablen zulässig.\n',
+      '\n    PL/SQL unterschiedet drei Typen der Parameterübergabe: IN, OUT und IN OUT, wobei IN der Defaultwert ist.\n\n    \n\n    Beim Typ IN wird der Übergabewert beim Aufruf in das Programm übernommen, Dieser Typ verhält sich daher wie eine Konstante innerhalb eines Programms. Daher sind als Aufrufparameter Konstanten und Variablen zulässig.\n\n    Beim Typ OUT wird ein Wert aus dem Programm heraus an das aufrufende Programm übergeben und IN OUT ist eine Kombination aus beiden Möglichkeiten.\n\n    Beim Typ OUT gibt es eine Wertübergabe in initialisierter Form an die Prozedur und Rückgabe eines veränderten Werts an das aufrufende Objekt. Dieser Typ verhält sich daher wie eine nicht initialisierte Variable, die nur einen Wert aufnehmen und an das aufrufende Objekt zurückgeben kann. Daher sind als Aufrufparameter keine Konstanten sondern nur Variablen zulässig.\n\n    Der Typ IN OUT verhält sich wie eine initialisierte Variable, die einen Wert aufnehmen und an das aufrufende Objekt zurückgeben kann. Daher sind als Aufrufparameter keine Konstanten sondern nur Variablen zulässig.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25077,7 +25079,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Es sei eine Funktion test_check(sp1 IN NUMBER) RETURN BOOLEAN ; gegeben. Welche Aufrufe sind richtig?\n',
     explanation:
-      '\n\tDa der Rückgabewert (RETURN-Wert) vom Typ BOOLEAN ist, ist eine Verwendung innerhalb von Bedingungen z.B. von WHILE-Schleifen oder IF-Anweisungen sehr komfortabel möglich. Mit EXECUTE können Prozeduren ausgeführt werden und zwar  nicht innerhalb von PL/SQL-Programmen (dort nur durch Verwendung des Prozedurnamens) sondern in Tools wie  SQL-Developer. Bei Funktionen muss zusätzlich der Return-Wert verarbeitet werden.  Die Anweisung "SELECT funktionsname FROM DUAL;" eignet sich hervorragend für den Aufruf von Funktionen mit nur IN-Parametern, solange für sie nicht BOOLEAN als RETURN-Wert definiert ist. Der Grund ist, im SQL-Kontext kennt Oracle leider immer noch nicht den Datentyp BOOLEAN sondern nur in PL/SQL-Programmen.\n',
+      '\n    Da der Rückgabewert (RETURN-Wert) vom Typ BOOLEAN ist, ist eine Verwendung innerhalb von Bedingungen z.B. von WHILE-Schleifen oder IF-Anweisungen sehr komfortabel möglich. Mit EXECUTE können Prozeduren ausgeführt werden und zwar  nicht innerhalb von PL/SQL-Programmen (dort nur durch Verwendung des Prozedurnamens) sondern in Tools wie  SQL-Developer. Bei Funktionen muss zusätzlich der Return-Wert verarbeitet werden.  Die Anweisung "SELECT funktionsname FROM DUAL;" eignet sich hervorragend für den Aufruf von Funktionen mit nur IN-Parametern, solange für sie nicht BOOLEAN als RETURN-Wert definiert ist. Der Grund ist, im SQL-Kontext kennt Oracle leider immer noch nicht den Datentyp BOOLEAN sondern nur in PL/SQL-Programmen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25106,9 +25108,9 @@ const questions: Question[] = [
     id: 2721,
     category: 6,
     difficulty: 3,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n\tCREATE TABLE Hierarchie\n\n\t( Angestellter VARCHAR2(20),\n\n\tVorgesetzter VARCHAR2(20),\n\n\tPRIMARY KEY (Angestellter),\n\n\tFOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n\tDie Tabelle ist mit folgenden Datensätzen gefüllt: \n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\n\t\n\t\t\n\t\t\t\n\t\t\t\tAngestellter\n\t\t\t\n\t\t\t\tVorgesetzter\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tSchulz\n\t\t\t\n\t\t\t\tSchulz\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tMeier\n\t\t\t\n\t\t\t\tSchulz\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tMüller\n\t\t\t\n\t\t\t\tMeier\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tSchmidt\n\t\t\t\n\t\t\t\tSchulz\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tTulpe\n\t\t\t\n\t\t\t\tMüller\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tReal\n\t\t\t\n\t\t\t\tTulpe\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tTaris\n\t\t\t\n\t\t\t\tMüller\n\t\t\n\t\n\n\n\t Welche Datensätze bleiben nach dem Löschen von Meier-Schulz?\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n    CREATE TABLE Hierarchie\n\n    ( Angestellter VARCHAR2(20),\n\n    Vorgesetzter VARCHAR2(20),\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n    Die Tabelle ist mit folgenden Datensätzen gefüllt: \n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\n    \n        \n            \n                Angestellter\n            \n                Vorgesetzter\n        \n        \n            \n                Schulz\n            \n                Schulz\n        \n        \n            \n                Meier\n            \n                Schulz\n        \n        \n            \n                Müller\n            \n                Meier\n        \n        \n            \n                Schmidt\n            \n                Schulz\n        \n        \n            \n                Tulpe\n            \n                Müller\n        \n        \n            \n                Real\n            \n                Tulpe\n        \n        \n            \n                Taris\n            \n                Müller\n        \n    \n\n\n     Welche Datensätze bleiben nach dem Löschen von Meier-Schulz?\n',
     explanation:
-      '\n\tDas Löschen von Meier-Schulz führt dazu:\n\n\t1. Stufe: Löschen von Meier-Schulz\n\n\t2. Stufe: Löschen aller Datensätze wo Meier Vorgesetzter\n\n\tMüller-Meier\n\n\t3. Stufe: Löschen aller Datensätze wo Müller Vorgesetzter\n\n\tTulpe-Müller, Taris-Müller\n\n\t4. Stufe: Löschen aller Datensätze wo Tulpe oder Taris Vorgesetzter\n\n\tReal-Tulpe\n\n\t\n\n\tBleiben: Schulz-Schulz, Schmidt-Schulz\n',
+      '\n    Das Löschen von Meier-Schulz führt dazu:\n\n    1. Stufe: Löschen von Meier-Schulz\n\n    2. Stufe: Löschen aller Datensätze wo Meier Vorgesetzter\n\n    Müller-Meier\n\n    3. Stufe: Löschen aller Datensätze wo Müller Vorgesetzter\n\n    Tulpe-Müller, Taris-Müller\n\n    4. Stufe: Löschen aller Datensätze wo Tulpe oder Taris Vorgesetzter\n\n    Real-Tulpe\n\n    \n\n    Bleiben: Schulz-Schulz, Schmidt-Schulz\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25145,9 +25147,9 @@ const questions: Question[] = [
     id: 2722,
     category: 6,
     difficulty: 2,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n\tCREATE TABLE Hierarchie\n\n\t( Angestellter VARCHAR2(20),\n\n\tVorgesetzter VARCHAR2(20),\n\n\tPRIMARY KEY (Angestellter),\n\n\tFOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n\tDie Tabelle ist mit folgenden Datensätzen gefüllt: \n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\n\t\n\t\t\n\t\t\t\n\t\t\t\tAngestellter\n\t\t\t\n\t\t\t\tVorgesetzter\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tSchulz\n\t\t\t\n\t\t\t\tSchulz\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tMeier\n\t\t\t\n\t\t\t\tSchulz\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tMüller\n\t\t\t\n\t\t\t\tMeier\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tSchmidt\n\t\t\t\n\t\t\t\tSchulz\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tTulpe\n\t\t\t\n\t\t\t\tMüller\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tReal\n\t\t\t\n\t\t\t\tTulpe\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tTaris\n\t\t\t\n\t\t\t\tMüller\n\t\t\n\t\n\n\n\t Welche Datensätze bleiben nach dem Löschen von Schmidt-Schulz?\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n    CREATE TABLE Hierarchie\n\n    ( Angestellter VARCHAR2(20),\n\n    Vorgesetzter VARCHAR2(20),\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n    Die Tabelle ist mit folgenden Datensätzen gefüllt: \n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\n    \n        \n            \n                Angestellter\n            \n                Vorgesetzter\n        \n        \n            \n                Schulz\n            \n                Schulz\n        \n        \n            \n                Meier\n            \n                Schulz\n        \n        \n            \n                Müller\n            \n                Meier\n        \n        \n            \n                Schmidt\n            \n                Schulz\n        \n        \n            \n                Tulpe\n            \n                Müller\n        \n        \n            \n                Real\n            \n                Tulpe\n        \n        \n            \n                Taris\n            \n                Müller\n        \n    \n\n\n     Welche Datensätze bleiben nach dem Löschen von Schmidt-Schulz?\n',
     explanation:
-      '\n\tDas Löschen von Schmitd-Schulz führt dazu:\n\n\t1. Stufe: Löschen von Schmitd-Schulz\n\n\t2. Stufe: Löschen aller Datensätze wo Schmitd Vorgesetzter\n\n\tgibt es keine, also ist das kaskadierende Löschen schon fertig\n\n\t\n\n\tBleiben: alle außer Schmidt-Schulz\n',
+      '\n    Das Löschen von Schmitd-Schulz führt dazu:\n\n    1. Stufe: Löschen von Schmitd-Schulz\n\n    2. Stufe: Löschen aller Datensätze wo Schmitd Vorgesetzter\n\n    gibt es keine, also ist das kaskadierende Löschen schon fertig\n\n    \n\n    Bleiben: alle außer Schmidt-Schulz\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25184,9 +25186,9 @@ const questions: Question[] = [
     id: 2723,
     category: 6,
     difficulty: 3,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n\tCREATE TABLE Hierarchie\n\n\t( Angestellter VARCHAR2(20),\n\n\tVorgesetzter VARCHAR2(20),\n\n\tPRIMARY KEY (Angestellter),\n\n\tFOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n\tDie Tabelle ist mit folgenden Datensätzen gefüllt: \n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\n\t\n\t\t\n\t\t\t\n\t\t\t\tAngestellter\n\t\t\t\n\t\t\t\tVorgesetzter\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tSchulz\n\t\t\t\n\t\t\t\tSchulz\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tMeier\n\t\t\t\n\t\t\t\tSchulz\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tMüller\n\t\t\t\n\t\t\t\tMeier\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tSchmidt\n\t\t\t\n\t\t\t\tSchulz\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tTulpe\n\t\t\t\n\t\t\t\tMüller\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tReal\n\t\t\t\n\t\t\t\tTulpe\n\t\t\n\t\t\n\t\t\t\n\t\t\t\tTaris\n\t\t\t\n\t\t\t\tMüller\n\t\t\n\t\n\n\n\t Welche Datensätze bleiben nach dem Löschen von Tulpe-Müller?\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl: \n\n    CREATE TABLE Hierarchie\n\n    ( Angestellter VARCHAR2(20),\n\n    Vorgesetzter VARCHAR2(20),\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n    Die Tabelle ist mit folgenden Datensätzen gefüllt: \n<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">\n    \n        \n            \n                Angestellter\n            \n                Vorgesetzter\n        \n        \n            \n                Schulz\n            \n                Schulz\n        \n        \n            \n                Meier\n            \n                Schulz\n        \n        \n            \n                Müller\n            \n                Meier\n        \n        \n            \n                Schmidt\n            \n                Schulz\n        \n        \n            \n                Tulpe\n            \n                Müller\n        \n        \n            \n                Real\n            \n                Tulpe\n        \n        \n            \n                Taris\n            \n                Müller\n        \n    \n\n\n     Welche Datensätze bleiben nach dem Löschen von Tulpe-Müller?\n',
     explanation:
-      '\n\tDas Löschen von Tulpe-Müller führt dazu:\n\n\t1. Stufe: Löschen von Tulpe-Müller\n\n\t2. Stufe: Löschen aller Datensätze wo Tulpe Vorgesetzter\n\n\tReal-Tulpe\n\n\t3. Stufe: Löschen aller Datensätze wo Real Vorgesetzter\n\n\tgibt es nicht, also Ende des kaskadierenden Löschens\n\n\t\n\n\tBleiben: alle außer Tulpe-Müller, Real-Tulpe\n',
+      '\n    Das Löschen von Tulpe-Müller führt dazu:\n\n    1. Stufe: Löschen von Tulpe-Müller\n\n    2. Stufe: Löschen aller Datensätze wo Tulpe Vorgesetzter\n\n    Real-Tulpe\n\n    3. Stufe: Löschen aller Datensätze wo Real Vorgesetzter\n\n    gibt es nicht, also Ende des kaskadierenden Löschens\n\n    \n\n    Bleiben: alle außer Tulpe-Müller, Real-Tulpe\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25295,7 +25297,7 @@ const questions: Question[] = [
     answers: [
       {
         text: 'OUT- und INOUT-Parameter müssen ______ werden.\n',
-        solution: '\r\n\tregistriert\r\n',
+        solution: '\r\n    registriert\r\n',
       },
     ],
   },
@@ -25305,7 +25307,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welcher Status ist die Defaulteinstellung für den Auto-Commit-Modus bei Transaktionen für Datenbankverbindungen, die unter JDBC aufgebaut werden?',
     explanation:
-      'Nach Verbindungsaufbau ist der Modus defaultmäßig auf \n       Auto-Commit-Modus = true  \ngesetzt. D.h. jede einzelne SQL-Anweisung wird als Transaktion \u000b      behandelt, und nach dem Ausführen automatisch festgeschrieben.\n\nUm mehr als eine SQL-Anweisung als Transaktion zu erlauben, muss der Auto-Commit-Modus ausgeschaltet werden:\n\n\tverbindung.setAutoCommit(false);\nIn diesem Modus muss die Java-Anwendung selbst die Transaktionen mit COMMIT oder ROLLBACK abschließen. ',
+      'Nach Verbindungsaufbau ist der Modus defaultmäßig auf \n       Auto-Commit-Modus = true  \ngesetzt. D.h. jede einzelne SQL-Anweisung wird als Transaktion \u000b      behandelt, und nach dem Ausführen automatisch festgeschrieben.\n\nUm mehr als eine SQL-Anweisung als Transaktion zu erlauben, muss der Auto-Commit-Modus ausgeschaltet werden:\n\n    verbindung.setAutoCommit(false);\nIn diesem Modus muss die Java-Anwendung selbst die Transaktionen mit COMMIT oder ROLLBACK abschließen. ',
     type: 'multiple-choice',
     answers: [
       {
@@ -25401,7 +25403,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Sie möchten einen Trigger schreiben, der angestoßen wird, nachdem Zeilen aus einer Tabelle gelöscht werden und es sollen dabei die Anzahl der verbliebenen Zeilen der Tabelle angezeigt werden. Welchen Triggertyp benötigen Sie?\n',
     explanation:
-      '\n\tDer Ausführungszeitpunkt AFTER ist wichtig, da ein BEFORE-Trigger bei DELETE keinen Sinn macht. Ein zeilenorientierter Trigger würde das Mutating-Table-Problem auslösen.\n\n\tNach dem Ausführungsmodell von zeilenorientierten Triggern werden diese nur angestoßen, wenn sich tatsächlich Daten in der Datenbank verändert haben. (siehe < a href = "http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Zeilenorientierter-Trigger"target = "_blank"> zeilenorientierten Trigger.. Die verbliebenen Datensätze werden nur beim Ausführungszeitpunkt AFTER angezeigt (siehe <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Zeilenorientierter-Trigger" target="_blank"> CREATE-TRIGGER )\n',
+      '\n    Der Ausführungszeitpunkt AFTER ist wichtig, da ein BEFORE-Trigger bei DELETE keinen Sinn macht. Ein zeilenorientierter Trigger würde das Mutating-Table-Problem auslösen.\n\n    Nach dem Ausführungsmodell von zeilenorientierten Triggern werden diese nur angestoßen, wenn sich tatsächlich Daten in der Datenbank verändert haben. (siehe < a href = "http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Zeilenorientierter-Trigger"target = "_blank"> zeilenorientierten Trigger.. Die verbliebenen Datensätze werden nur beim Ausführungszeitpunkt AFTER angezeigt (siehe <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Zeilenorientierter-Trigger" target="_blank"> CREATE-TRIGGER )\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25434,9 +25436,9 @@ const questions: Question[] = [
     id: 3137,
     category: 12,
     difficulty: 2,
-    text: 'Betrachten Sie den folgenden PL/SQL-Block:\n\n\tSET SERVEROUTPUT ON\n\n\tDECLARE\n\n\tang_rec angestellte%ROWTYPE\n\n\tBEGIN\n\n\tSELECT * into ang_rec from angestellte where ang_nr = 12:\n\n\tIF SQL%NOTFOUND\n\n\tTHEN DBMS_OUTPUT:PUT_LINE ("Keine Daten gefunden!");\n\n\tELSE DBMS_OUTPUT:PUT_LINE (ang_rec.nachname);\n\n\t\n\n\tEND IF ;\n\n\tEND;\n\n\t\n\n\tWelche Antwort(en) ist korrekt?\n',
+    text: 'Betrachten Sie den folgenden PL/SQL-Block:\n\n    SET SERVEROUTPUT ON\n\n    DECLARE\n\n    ang_rec angestellte%ROWTYPE\n\n    BEGIN\n\n    SELECT * into ang_rec from angestellte where ang_nr = 12:\n\n    IF SQL%NOTFOUND\n\n    THEN DBMS_OUTPUT:PUT_LINE ("Keine Daten gefunden!");\n\n    ELSE DBMS_OUTPUT:PUT_LINE (ang_rec.nachname);\n\n    \n\n    END IF ;\n\n    END;\n\n    \n\n    Welche Antwort(en) ist korrekt?\n',
     explanation:
-      '\n\tPL/SQL-Blöcke werfen einen Fehler, wenn eine SELECT-Anweisung keine Datensätze liefert. Dieser Fehler muss mit NO_ROWS_FOUND abgefangen werden.\n',
+      '\n    PL/SQL-Blöcke werfen einen Fehler, wenn eine SELECT-Anweisung keine Datensätze liefert. Dieser Fehler muss mit NO_ROWS_FOUND abgefangen werden.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25463,7 +25465,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Aussage ist wahr über Transaktionen in PL/SQL-Blöcken?\n',
     explanation:
-      '\n\tPL/SQL-Blocke können als Bestandteil einer Transaktion geschrieben werden. Daher kann eine Transaktion auch mehrere Blöcke umfassen.\n',
+      '\n    PL/SQL-Blocke können als Bestandteil einer Transaktion geschrieben werden. Daher kann eine Transaktion auch mehrere Blöcke umfassen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25542,9 +25544,9 @@ const questions: Question[] = [
     id: 3118,
     category: 12,
     difficulty: 1,
-    text: 'Betrachten Sie den folgenden anonymen PL-SQL-Block: <font face="courier new">SET SERVEROUTPUT ON;\n\n\tDECLARE\n\n\tv_alter NUMBER;\n\n\tBEGIN\n\n\tIF v_alter < 14 THEN\n\n\tDBMS_OUTPUT.PUT_LINE("Ich bin ein Kind!");\n\n\tELSE\n\n\tDBMS_OUTPUT.PUT_LINE("Ich bin kein Kind mehr!");\n\n\tEND;\n\n\tWelche Aussagen sind wahr?\n',
+    text: 'Betrachten Sie den folgenden anonymen PL-SQL-Block: <font face="courier new">SET SERVEROUTPUT ON;\n\n    DECLARE\n\n    v_alter NUMBER;\n\n    BEGIN\n\n    IF v_alter < 14 THEN\n\n    DBMS_OUTPUT.PUT_LINE("Ich bin ein Kind!");\n\n    ELSE\n\n    DBMS_OUTPUT.PUT_LINE("Ich bin kein Kind mehr!");\n\n    END;\n\n    Welche Aussagen sind wahr?\n',
     explanation:
-      '\n\tIn der dreiwertigen Logik ergibt der Vergleich von einem Null Wert mit einem numerischen Wert UNKNOWN und die Ausgabe springt in der IF-Anweisung  in den ELSE-Ast (siehe <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/IF" target="_blank">IF ).\n',
+      '\n    In der dreiwertigen Logik ergibt der Vergleich von einem Null Wert mit einem numerischen Wert UNKNOWN und die Ausgabe springt in der IF-Anweisung  in den ELSE-Ast (siehe <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/IF" target="_blank">IF ).\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25683,7 +25685,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Welche Aussage über PL/SQL-Variable ist wahr?\n',
     explanation:
-      '\n\tEinfach Ausprobieren, ist allerdings auch logisch. Eine Variable mit dem NOT NULL CONSTRAINT muss einen Wert haben.\n',
+      '\n    Einfach Ausprobieren, ist allerdings auch logisch. Eine Variable mit dem NOT NULL CONSTRAINT muss einen Wert haben.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25702,7 +25704,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Wie heißt der CONSTRAINT, dessen Semantik durch den Programmierer festgelegt wird?\n',
     explanation:
-      '\n\tDas Zweitschlüssel-Constraint heißt UNIQUE.\n\n\t\n\n\tDie übrigen vier Constraints sind: FOREIGN KEY, CHECK, PRIMARY KEY und NOT NULL.\n',
+      '\n    Das Zweitschlüssel-Constraint heißt UNIQUE.\n\n    \n\n    Die übrigen vier Constraints sind: FOREIGN KEY, CHECK, PRIMARY KEY und NOT NULL.\n',
     type: 'text',
     answers: [
       {
@@ -25790,7 +25792,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Bei welchen Oracle-Triggern können die Transitionsvariablen :NEW.spaltenname beschrieben werden?\n',
     explanation:
-      '\n\tDie NEW-Transitionsvariablen könenn nur bei Zeilentriggern und zwar beim Ereignis "INSERT" und  UPDATE,  beschrieben werden. Beim Ereignis "DELETE"" existiert keine NEW-Transitionsvariable. Statement-Trigger (Befehlstrigger) haben generell  keinen Zugriff auf  Transitionsvariable. INSTEAD-OF-Trigger können zwar Transitionvariable lesen, aber nicht ändern.\n\n\t \n',
+      '\n    Die NEW-Transitionsvariablen könenn nur bei Zeilentriggern und zwar beim Ereignis "INSERT" und  UPDATE,  beschrieben werden. Beim Ereignis "DELETE"" existiert keine NEW-Transitionsvariable. Statement-Trigger (Befehlstrigger) haben generell  keinen Zugriff auf  Transitionsvariable. INSTEAD-OF-Trigger können zwar Transitionvariable lesen, aber nicht ändern.\n\n     \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -25904,9 +25906,9 @@ const questions: Question[] = [
     id: 2620,
     category: 6,
     difficulty: 1,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n\tCREATE TABLE Hierarchie ( Angestellter VARCHAR2(20) NOT NULL,\n\n\tVorgesetzter VARCHAR2(20) NOT NULL,\n\n\tPRIMARY KEY (Angestellter),\n\n\tFOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n\tEs wird versucht, folgenden Datensatz einzufügen in die leere Tabelle einzufügen:\n\n\tINSERT INTO hierarchie VALUES ("Hugo",NULL);\n\n\tGeben Sie den Inhalt der Tabelle nach dem Einfügen des Datensatzes an!\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n    CREATE TABLE Hierarchie ( Angestellter VARCHAR2(20) NOT NULL,\n\n    Vorgesetzter VARCHAR2(20) NOT NULL,\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n    Es wird versucht, folgenden Datensatz einzufügen in die leere Tabelle einzufügen:\n\n    INSERT INTO hierarchie VALUES ("Hugo",NULL);\n\n    Geben Sie den Inhalt der Tabelle nach dem Einfügen des Datensatzes an!\n',
     explanation:
-      '\n\tDer Datensatz kann nicht eingefügt werden, weil das Pflichteingabe-Constraint (NOT NULL) der Spalte Vorgesetzter fehl schlägt.\n',
+      '\n    Der Datensatz kann nicht eingefügt werden, weil das Pflichteingabe-Constraint (NOT NULL) der Spalte Vorgesetzter fehl schlägt.\n',
     type: 'text',
     answers: [
       {
@@ -26026,7 +26028,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Wie heißt der CONSTRAINT, wenn eine Spalte Zweitschlüssel ist?\n',
     explanation:
-      '\n\tDas Zweitschlüssel-Constraint heißt UNIQUE.\n\n\t\n\n\tDie übrigen vier Constraints sind: FOREIGN KEY, CHECK, PRIMARY KEY und NOT NULL.\n',
+      '\n    Das Zweitschlüssel-Constraint heißt UNIQUE.\n\n    \n\n    Die übrigen vier Constraints sind: FOREIGN KEY, CHECK, PRIMARY KEY und NOT NULL.\n',
     type: 'text',
     answers: [
       {
@@ -26093,7 +26095,7 @@ const questions: Question[] = [
     id: 2618,
     category: 6,
     difficulty: 2,
-    text: 'Betrachten Sie die folgende Definition einer Sequence:\nCREATE SEQUENCE Kun_seq\n        INCREMENT BY 2\n\tSTART WITH 3\n\tNOMAXVALUE\n\tNOCYCLE\n\tCACHE 10;\n',
+    text: 'Betrachten Sie die folgende Definition einer Sequence:\nCREATE SEQUENCE Kun_seq\n        INCREMENT BY 2\n    START WITH 3\n    NOMAXVALUE\n    NOCYCLE\n    CACHE 10;\n',
     explanation:
       'Die Sequenz startet mit 3, zählt immer 2 hoch, daher: 3 5 7 9 11 \nDie Caching-Option steuert das Zwischenspeichern von Sequenznummer, eine interne Optimierung und spielt bei der Nummernvergabe keine Rolle. ',
     type: 'text',
@@ -26237,7 +26239,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Der Ausdruck "SELECT Vorname FROM KUNDEN ORDER BY Nachname ASC"\n',
     explanation:
-      '\n\tDie Sortierung kann ausgeführt werden, weil die ORDER BY-Klausel als vorletzte Klausel ausgeführt wird, unmittelbar vor der letzten Klausel der SELECT-Klausel. Daher kann auch über Spalten sortiert werden, die anschließend mittels der SELECT-Klausel "weg projiziert" werden.\n\n\tDie ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend. ASC ist die Default-Option, so dass bei fehlender Option immer aufsteigend sortiert wird.\n\n\tWird gar keine ORDER BY-Klausel angegeben, so erfolgt auch keine Sortierung.\n\n\t \n',
+      '\n    Die Sortierung kann ausgeführt werden, weil die ORDER BY-Klausel als vorletzte Klausel ausgeführt wird, unmittelbar vor der letzten Klausel der SELECT-Klausel. Daher kann auch über Spalten sortiert werden, die anschließend mittels der SELECT-Klausel "weg projiziert" werden.\n\n    Die ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend. ASC ist die Default-Option, so dass bei fehlender Option immer aufsteigend sortiert wird.\n\n    Wird gar keine ORDER BY-Klausel angegeben, so erfolgt auch keine Sortierung.\n\n     \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -26260,7 +26262,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Der Ausdruck "SELECT Vorname FROM KUNDEN ORDER BY Nachname DESC"\n',
     explanation:
-      '\n\tDie Sortierung kann ausgeführt werden, weil die ORDER BY-Klausel als vorletzte Klausel ausgeführt wird, unmittelbar vor der letzten Klausel der SELECT-Klausel. Daher kann auch über Spalten sortiert werden, die anschließend mittels der SELECT-Klausel "weg projiziert" werden.\n\n\tDie ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend. ASC ist die Default-Option, so dass bei fehlender Option immer aufsteigend sortiert wird.\n\n\tWird gar keine ORDER BY-Klausel angegeben, so erfolgt auch keine Sortierung.\n\n\tEine Gruppierung erfolgt nur mit einer GROUP BY-Klausel.\n',
+      '\n    Die Sortierung kann ausgeführt werden, weil die ORDER BY-Klausel als vorletzte Klausel ausgeführt wird, unmittelbar vor der letzten Klausel der SELECT-Klausel. Daher kann auch über Spalten sortiert werden, die anschließend mittels der SELECT-Klausel "weg projiziert" werden.\n\n    Die ORDER BY-Klausel mit der Option ASC sortiert aufsteigend, mit DESC absteigend. ASC ist die Default-Option, so dass bei fehlender Option immer aufsteigend sortiert wird.\n\n    Wird gar keine ORDER BY-Klausel angegeben, so erfolgt auch keine Sortierung.\n\n    Eine Gruppierung erfolgt nur mit einer GROUP BY-Klausel.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -26281,7 +26283,7 @@ const questions: Question[] = [
     id: 2641,
     category: 7,
     difficulty: 1,
-    text: "Welche Semantik hat folgender SELECT-Ausdruck? \n\nSELECT  Nachname, Ort \nFROM    Kunden\nWHERE \tOrt = 'Köln'\nOR\tNOT (Ort = 'Gummersbach')",
+    text: "Welche Semantik hat folgender SELECT-Ausdruck? \n\nSELECT  Nachname, Ort \nFROM    Kunden\nWHERE     Ort = 'Köln'\nOR    NOT (Ort = 'Gummersbach')",
     explanation:
       'Der Begriff Semantik meint die Aufgabenstellung, die zu dieser SELECT-Anfrage gehört. \nDie Semantik obiger Anfrage ist: "Zeigen Sie die Kunden, die nicht in Gummersbach wohnen oder in Köln leben?" ',
     type: 'multiple-choice',
@@ -26321,7 +26323,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Arten von Sperren gibt es in SQL?\n',
     explanation:
-      '\n\tLesesperren (read lock, shared lock oder SLOCK) auf Objekt und Schreibsperren (write lock, exclusive lock oder XLOCK)\n\n\tgehören zum SQL-Standard.\n',
+      '\n    Lesesperren (read lock, shared lock oder SLOCK) auf Objekt und Schreibsperren (write lock, exclusive lock oder XLOCK)\n\n    gehören zum SQL-Standard.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -26352,7 +26354,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Aussagen über Sperren in SQL sind wahr?\n',
     explanation:
-      '\n\tLesesperren (read lock, shared lock oder SLOCK) auf Objekt und Schreibsperren (write lock, exclusive lock oder XLOCK)\n\n\tgehören zum SQL-Standard. Lesesperren könen mehrfach auf eine Objekt ausgeführt werden, Schreibsperren nicht.\n',
+      '\n    Lesesperren (read lock, shared lock oder SLOCK) auf Objekt und Schreibsperren (write lock, exclusive lock oder XLOCK)\n\n    gehören zum SQL-Standard. Lesesperren könen mehrfach auf eine Objekt ausgeführt werden, Schreibsperren nicht.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -26371,12 +26373,12 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Aus welchen Phasen besteht das 2PL-Sperrprotokoll?\n',
     explanation:
-      '\n\tIn der Wachstumspahse werden alle Sperren gesetzt, danach die Änderungn durchgeführt und in der Schrumpfungsphase werden alle Sperren aufgehoben.\n',
+      '\n    In der Wachstumspahse werden alle Sperren gesetzt, danach die Änderungn durchgeführt und in der Schrumpfungsphase werden alle Sperren aufgehoben.\n',
     type: 'text',
     answers: [
       {
         text: 'Bitte in alpahabetischer Reihenfolge ohne Komma aufschreiben!\n',
-        solution: '\r\n\tSchrumpfungsphase Wachstumsphase\r\n',
+        solution: '\r\n    Schrumpfungsphase Wachstumsphase\r\n',
       },
     ],
   },
@@ -26415,9 +26417,9 @@ const questions: Question[] = [
     id: 2621,
     category: 6,
     difficulty: 3,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n\tCREATE TABLE Hierarchie\n\n\t( Angestellter VARCHAR2(20) NOT NULL,\n\n\tVorgesetzter VARCHAR2(20) NOT NULL,\n\n\tPRIMARY KEY (Angestellter),\n\n\tFOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n\t\n\n\tWelche Aussagen sind wahr?\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n    CREATE TABLE Hierarchie\n\n    ( Angestellter VARCHAR2(20) NOT NULL,\n\n    Vorgesetzter VARCHAR2(20) NOT NULL,\n\n    PRIMARY KEY (Angestellter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Hierarchie (Angestellter) ON DELETE CASCADE);\n\n    \n\n    Welche Aussagen sind wahr?\n',
     explanation:
-      '\n\tDas Problem hier ist: Die leere Tabelle Hierarchie kann gar nicht gefüllt werden mit Datensätzen.\n\n\t\n\n\tFügt man erst ("Emil", "Hugo") ein, so schlägt dies fehl, weil die Fremdschlüsselbeziehung verletzt ist. Es gibt keinen Master-Datensatz mit Hugo als Angestellten z.B.: ("Hugo", ...).\n\n\t\n\n\tFügt man erst ("Hugo", NULL) ein, so schlägt dies fehl, weil die NOT NULL-Bedingung für die Vorgesetzten-Spalte verletzt ist.\n\n\t\n\n\tDa beide Constraints als IMMEDIATE definiert sind (Default, wenn eine Angabe des Prüfungszeitpunkts fehlt) macht es keinen Unterschied, ob man beide Einfügungen in einer Transaktion ablaufen lässt.\n\n\t\n\n\tWenn man beide Constraints als DEFERRED definiert hätte, dann wäre es jedoch unerheblich, ob erst der eine oder erst der andere Satz eingefügt würde, dann würden also beide Einfügereihenfolgen funktionieren. Es würde ja erst zum COMMIT-Zeitpunkt geprüft, ob der Endzustand ok ist und keine Zwischenzustände.\n\n\t\n\n\tDer Datensatz kann nicht eingefügt werden, weil das Pflichteingabe-Constraint (NOT NULL) der Spalte Vorgesetzter fehl schlägt. Der Datensatz kann nicht eingefügt werden, weil die Fremdschlüsselbeziehung mit dem Wert "Emil" fehlschlägt. Es gibt ja noch keinen anderen Datensatz in der Tabelle.\n',
+      '\n    Das Problem hier ist: Die leere Tabelle Hierarchie kann gar nicht gefüllt werden mit Datensätzen.\n\n    \n\n    Fügt man erst ("Emil", "Hugo") ein, so schlägt dies fehl, weil die Fremdschlüsselbeziehung verletzt ist. Es gibt keinen Master-Datensatz mit Hugo als Angestellten z.B.: ("Hugo", ...).\n\n    \n\n    Fügt man erst ("Hugo", NULL) ein, so schlägt dies fehl, weil die NOT NULL-Bedingung für die Vorgesetzten-Spalte verletzt ist.\n\n    \n\n    Da beide Constraints als IMMEDIATE definiert sind (Default, wenn eine Angabe des Prüfungszeitpunkts fehlt) macht es keinen Unterschied, ob man beide Einfügungen in einer Transaktion ablaufen lässt.\n\n    \n\n    Wenn man beide Constraints als DEFERRED definiert hätte, dann wäre es jedoch unerheblich, ob erst der eine oder erst der andere Satz eingefügt würde, dann würden also beide Einfügereihenfolgen funktionieren. Es würde ja erst zum COMMIT-Zeitpunkt geprüft, ob der Endzustand ok ist und keine Zwischenzustände.\n\n    \n\n    Der Datensatz kann nicht eingefügt werden, weil das Pflichteingabe-Constraint (NOT NULL) der Spalte Vorgesetzter fehl schlägt. Der Datensatz kann nicht eingefügt werden, weil die Fremdschlüsselbeziehung mit dem Wert "Emil" fehlschlägt. Es gibt ja noch keinen anderen Datensatz in der Tabelle.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -26446,9 +26448,9 @@ const questions: Question[] = [
     id: 2622,
     category: 6,
     difficulty: 3,
-    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n\tCREATE TABLE Vorgesetzte\n\n\t( Mitarbeiter VARCHAR2(20),\n\n\tVorgesetzter VARCHAR2(20) NOT NULL,\n\n\tPRIMARY KEY (Mitarbeiter),\n\n\tFOREIGN KEY (Vorgesetzter) REFERENCES Vorgesetzte (Mitarbeiter) ON DELETE CASCADE);\n\n\tDiese Tabelle hat ein Problem: Es können keine Datensätze eingefügt werden. Überlegen Sie, warum! Welche Aktionen, jede einzeln für sich, könnten dieses Problem lösen?\n',
+    text: 'Betrachten Sie folgenden CREATE TABLE-Befehl:\n\n    CREATE TABLE Vorgesetzte\n\n    ( Mitarbeiter VARCHAR2(20),\n\n    Vorgesetzter VARCHAR2(20) NOT NULL,\n\n    PRIMARY KEY (Mitarbeiter),\n\n    FOREIGN KEY (Vorgesetzter) REFERENCES Vorgesetzte (Mitarbeiter) ON DELETE CASCADE);\n\n    Diese Tabelle hat ein Problem: Es können keine Datensätze eingefügt werden. Überlegen Sie, warum! Welche Aktionen, jede einzeln für sich, könnten dieses Problem lösen?\n',
     explanation:
-      '\n\tDas Einfüge-Problem besteht darin, dass kein Mitarbeiter-Datensatz mit Vorgesetztem (z.B. ("Hugo","Anton")) als erste eingefügt werden kann, weil dann die Fremdschlüsselbeziehung verletzt ist. Es fehlt ein Master-Datensatz für den Anton.\n\n\tWird hingegen versucht, den Datensatz des obersten Chefs, der ja keinen Vorgesetzten hat (z.B. ("Anton", NULL)), einzufügen, dann verweigert das NOT NULL-Constraint auf der Vorgesetzten-Spalte den Datensatz.\n\n\t\n\n\tJede der folgenden Aktionen löst das Einfüge-Problem der Tabelle Vorgesetzter:\n\n\t- Die Spalte Vorgesetzter als NULL-Spalte definieren.\n\n\t- Die Spalte Vorgesetzter ohne FOREIGN KEY definieren.\n\n\t- Wenigstens eines der Constraints als DEFERRED programmieren.\n\n\t\n\n\tIrgendein oder mehrere Constraints als IMMEDIATE zu programmieren hilft nicht weiter, das sind die Constraints bereits. IMMEDIATE ist der Default-Prüfungszeitpunkt, wenn nichts programmiert ist.\n\n\tWird hingegen eines oder auch mehrere Constraints als DEFERRED programmiert, so wird dieses bzw. diese erst dann geprüft, wenn die Transaktion mit COMMIT abgeschlossen wird. Etwaige fehlerhafte Zwischenzustände würden dann nicht bemerkt. Aber hier würde es bereits genügen, wenn eines der problematischen Constraints als DEFERRED definiert würde.\n\n\t\n\n\tDer Verzicht auf die ON DELETE CASCADE-Klausel hilft überhaupt nicht weiter, weil sie mit dem Problem nichts zu tun hat.\n\n\t\n\n\tGleiches gilt für das PRIMARY KEY-Constraint.\n\n\t\n\n\tAuf die REFERENCES-Klausel zu verzichten geht rein syntaktisch nicht, weil sonst die FOREIGN KEY-Klausel nicht mehr richtig wäre.\n',
+      '\n    Das Einfüge-Problem besteht darin, dass kein Mitarbeiter-Datensatz mit Vorgesetztem (z.B. ("Hugo","Anton")) als erste eingefügt werden kann, weil dann die Fremdschlüsselbeziehung verletzt ist. Es fehlt ein Master-Datensatz für den Anton.\n\n    Wird hingegen versucht, den Datensatz des obersten Chefs, der ja keinen Vorgesetzten hat (z.B. ("Anton", NULL)), einzufügen, dann verweigert das NOT NULL-Constraint auf der Vorgesetzten-Spalte den Datensatz.\n\n    \n\n    Jede der folgenden Aktionen löst das Einfüge-Problem der Tabelle Vorgesetzter:\n\n    - Die Spalte Vorgesetzter als NULL-Spalte definieren.\n\n    - Die Spalte Vorgesetzter ohne FOREIGN KEY definieren.\n\n    - Wenigstens eines der Constraints als DEFERRED programmieren.\n\n    \n\n    Irgendein oder mehrere Constraints als IMMEDIATE zu programmieren hilft nicht weiter, das sind die Constraints bereits. IMMEDIATE ist der Default-Prüfungszeitpunkt, wenn nichts programmiert ist.\n\n    Wird hingegen eines oder auch mehrere Constraints als DEFERRED programmiert, so wird dieses bzw. diese erst dann geprüft, wenn die Transaktion mit COMMIT abgeschlossen wird. Etwaige fehlerhafte Zwischenzustände würden dann nicht bemerkt. Aber hier würde es bereits genügen, wenn eines der problematischen Constraints als DEFERRED definiert würde.\n\n    \n\n    Der Verzicht auf die ON DELETE CASCADE-Klausel hilft überhaupt nicht weiter, weil sie mit dem Problem nichts zu tun hat.\n\n    \n\n    Gleiches gilt für das PRIMARY KEY-Constraint.\n\n    \n\n    Auf die REFERENCES-Klausel zu verzichten geht rein syntaktisch nicht, weil sonst die FOREIGN KEY-Klausel nicht mehr richtig wäre.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -26522,7 +26524,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Es ist für die Linien-Tabelle folgender Constraint gegeben: ALTER TABLE linien ADD CONSTRAINT linien_typ_check CHECK (UPPER(linien_typ) IN ("BA", "BU", "SB")) INITIALLY DEFERRED; Kann dieser Constraint auch mit Triggern gelöst werden?\n',
     explanation:
-      '\n\tNein, weil es sich um eine DEFERRED-Prüfung handelt und dafür fehlt ein BEFORE-COMMIT-Trigger.\n',
+      '\n    Nein, weil es sich um eine DEFERRED-Prüfung handelt und dafür fehlt ein BEFORE-COMMIT-Trigger.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -26630,7 +26632,7 @@ const questions: Question[] = [
     id: 2617,
     category: 6,
     difficulty: 1,
-    text: 'Betrachten Sie die folgende Definition einer Sequence:\nCREATE SEQUENCE Kun_seq\n        INCREMENT BY 1\n\tSTART WITH 1\n\tNOMAXVALUE\n\tNOCYCLE\n\tCACHE 10;\n',
+    text: 'Betrachten Sie die folgende Definition einer Sequence:\nCREATE SEQUENCE Kun_seq\n        INCREMENT BY 1\n    START WITH 1\n    NOMAXVALUE\n    NOCYCLE\n    CACHE 10;\n',
     explanation:
       'Die Sequenz startet mit 1, zählt immer 1 hoch, daher: 1 2 3 4 5 6 7 8 9 10 \nDie Caching-Option steuert das Zwischenspeichern von Sequenznummer, eine interne Optimierung und spielt bei der Nummernvergabe keine Rolle. ',
     type: 'text',
@@ -26647,7 +26649,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'In welcher Reihenfolge werden die Klauseln eines SELECT-Befehls ausgeführt bzw. geparst? (Geben Sie Zahlen von 1 bis 6 an!)\n',
     explanation:
-      '\n\tDie Reihenfolge Ausführung der Klauseln einer SELECT-Anfrage sind:\n\n\t6. SELECT ...\n\n\t1. FROM ...\n\n\t2. [ WHERE ... ]\n\n\t3. [ GROUP BY ... ]\n\n\t4. [ HAVING ... ]\n\n\t5. [ ORDER BY ... ]\n\n\tDie eckigen Klammern geben die Optionalität der Klauseln an.\n',
+      '\n    Die Reihenfolge Ausführung der Klauseln einer SELECT-Anfrage sind:\n\n    6. SELECT ...\n\n    1. FROM ...\n\n    2. [ WHERE ... ]\n\n    3. [ GROUP BY ... ]\n\n    4. [ HAVING ... ]\n\n    5. [ ORDER BY ... ]\n\n    Die eckigen Klammern geben die Optionalität der Klauseln an.\n',
     type: 'text',
     answers: [
       {
@@ -26744,7 +26746,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Betrachten Sie eine Relation mit drei Spalten. Wie viele Indizes kann man anlegen?\n',
     explanation:
-      '\n\tDie Reihenfolge der Attribute spielt ja eine Rolle, daher 15 Kombinationsmöglichkeiten bei drei Spalten a, b, c:\n\n\ta, b, c,\n\n\tab, ac, ba, bc, ca, cb,\n\n\tabc, acb, bac, bca, cab, cba\n',
+      '\n    Die Reihenfolge der Attribute spielt ja eine Rolle, daher 15 Kombinationsmöglichkeiten bei drei Spalten a, b, c:\n\n    a, b, c,\n\n    ab, ac, ba, bc, ca, cb,\n\n    abc, acb, bac, bca, cab, cba\n',
     type: 'text',
     answers: [
       {
@@ -27285,7 +27287,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Unter welchen Voraussetzungen kann bei der Programmierung von SELECT INTO-Anweisungen auf die eine oder andere EXCEPTION, die üblicherweise immer im Zusammenhang mit SELECT-INTOs zu programmieren sind, ganz sicher verzichtet werden?\n',
     explanation:
-      '\n\tSELECT INTO übergibt genau einen Datensatz oder Wert an die INTO-Variable, die nur genau einen Wert oder Datensatz aufnehmen kann. Mehrere bzw. keine Datensätze als Ergebnis des SELECTS werfen die Exception TOO_MANY_ROWS bzw. NO_DATA_FOUND, wenn das Resultat des SELECTS leer ist. Eine Alternative ist die Verwendung eines Cursors, der auch mehrere Datensätze verarbeiten kann.\n\n\t\n\n\tEs reicht nicht aus, wenn in Tabellen Datensätze vorhanden sind. Relevant ist, dass immer wdenigstens ein Datensatz gefunden wird, um auf die NO_DATA_FOUND verzichten zu können.\n\n\t\n\n\tWerden Anfragen über Primär- oder Eindeutigkeitsschlüssel an eine einzige Tabelle formuliert, steht fest, dass es keine TOO_MANY_ROWS geben kann.\n\n\t\n\n\tWerden Anfragen über Primär- oder Eindeutigkeitsschlüssel an die Detail-Tabelle von Joins formuliert, die mittels Fremdschlüsseln verknpüft sind, so steht fest, dass es keine TOO_MANY_ROWS geben kann.\n\n\t\n\n\tAggregatfunktionen haben die Eigenschaft, dass sie je Gruppe nur einen Ergenbisdatensatz liefern. Steht also zwingend fest, dass es nur eine Gruppe gibt - z.B. bei fehlender Gruppierung nur über die GEsamtmenge - dann kann auch auf die TOO_MANY_ROWS verzichtet werden.\n',
+      '\n    SELECT INTO übergibt genau einen Datensatz oder Wert an die INTO-Variable, die nur genau einen Wert oder Datensatz aufnehmen kann. Mehrere bzw. keine Datensätze als Ergebnis des SELECTS werfen die Exception TOO_MANY_ROWS bzw. NO_DATA_FOUND, wenn das Resultat des SELECTS leer ist. Eine Alternative ist die Verwendung eines Cursors, der auch mehrere Datensätze verarbeiten kann.\n\n    \n\n    Es reicht nicht aus, wenn in Tabellen Datensätze vorhanden sind. Relevant ist, dass immer wdenigstens ein Datensatz gefunden wird, um auf die NO_DATA_FOUND verzichten zu können.\n\n    \n\n    Werden Anfragen über Primär- oder Eindeutigkeitsschlüssel an eine einzige Tabelle formuliert, steht fest, dass es keine TOO_MANY_ROWS geben kann.\n\n    \n\n    Werden Anfragen über Primär- oder Eindeutigkeitsschlüssel an die Detail-Tabelle von Joins formuliert, die mittels Fremdschlüsseln verknpüft sind, so steht fest, dass es keine TOO_MANY_ROWS geben kann.\n\n    \n\n    Aggregatfunktionen haben die Eigenschaft, dass sie je Gruppe nur einen Ergenbisdatensatz liefern. Steht also zwingend fest, dass es nur eine Gruppe gibt - z.B. bei fehlender Gruppierung nur über die GEsamtmenge - dann kann auch auf die TOO_MANY_ROWS verzichtet werden.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -27420,7 +27422,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Wenn innerhalb eines DML-Triggers einer Spalte des aktuell eingefügten oder geänderten Datensatzes ein Wert zugewiesen werden soll, sollte am besten welcher Trigger verwendet werden?\n',
     explanation:
-      '\n\tAFTER-ROW/STATEMENT-Trigger funktionieren gar nicht, da diese ja erst ausgeführt werden, wenn der Datensatz in der DB eingefügt bzw. geändert wurde, BEFORE-STATEMENT-Trigger nicht, da sie über keine Transitionsvariablen verfügen.\n\n\tAm besten geht es mit den BEFORE-ROW-Triggern und den darin verfügbaren Transitionsvariablen. Die NEW.Transitionsvariablen bekommen einfach den neuen Wert zugewiesen und anschließend wird der manipulierte Datensatz mit den Werten der NEW-Transitionsvarialben in die DB eingefügt bzw. geändert,  z.B.: :NEW.eingefuegt_am := SYSDATE;\n\n\tAuch INSTEAD OF-Trigger eignen sich auch - nur etwas anders. Sie sind für Sichten (VIEWs) definierbar und nicht für Tabellen. Es gibt sie nur als ROW-Variante - nicht als STATEMENT-Trigger.  Und die Transitionsvariablen können nur gelesen, aber nicht geändert werden. Die Inhalte der Transitionsvariablen können dann per INSERT/UPDATE-Anweisung in eine oder mehrere Tabellen umgeleitet werden. \n\n\t \n',
+      '\n    AFTER-ROW/STATEMENT-Trigger funktionieren gar nicht, da diese ja erst ausgeführt werden, wenn der Datensatz in der DB eingefügt bzw. geändert wurde, BEFORE-STATEMENT-Trigger nicht, da sie über keine Transitionsvariablen verfügen.\n\n    Am besten geht es mit den BEFORE-ROW-Triggern und den darin verfügbaren Transitionsvariablen. Die NEW.Transitionsvariablen bekommen einfach den neuen Wert zugewiesen und anschließend wird der manipulierte Datensatz mit den Werten der NEW-Transitionsvarialben in die DB eingefügt bzw. geändert,  z.B.: :NEW.eingefuegt_am := SYSDATE;\n\n    Auch INSTEAD OF-Trigger eignen sich auch - nur etwas anders. Sie sind für Sichten (VIEWs) definierbar und nicht für Tabellen. Es gibt sie nur als ROW-Variante - nicht als STATEMENT-Trigger.  Und die Transitionsvariablen können nur gelesen, aber nicht geändert werden. Die Inhalte der Transitionsvariablen können dann per INSERT/UPDATE-Anweisung in eine oder mehrere Tabellen umgeleitet werden. \n\n     \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -27687,7 +27689,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Es sei eine typisierte Tabelle (Objekttabelle) kunden_ot gegeben. Es soll bei DML-Anweisungen auf diese Tabelle objektorientiert zugegriffen werden, also kein relationaler Zugriff. Für die Tabelle wird der Tabellenalias kdot in der DML-Anweisung vergeben. Wie heißt die für diesen instanzierten Zugriff relevante Funktion?\n',
     explanation:
-      'Welche Betrachtungsweisen gibt es für Objekttabellen? \n\nRelational / Multi-Column: \nAls mehrspaltige Tabelle, in der jedes Attribut des object types die Anwendung von relationalen Operationen erlaubt.\u000b\n\nObjektorientiert / Single-Column: \nAls einspaltige Tabelle, in der jeder Datensatz ein Objekt darstellt, die die Anwendung von OO-Operationen erlaubt.\nVALUE-Funktion:\u000b \nArgument: Tabellenalias einer object table:\n \u000b     VALUE (table_alias)\u000b\nRückgabewerte:\tObjektinstanzen, die den Datensätzen der Objekttabelle entsprechen. Der Typ der Objektinstanz ist der Typ der Objekttabelle. \n',
+      'Welche Betrachtungsweisen gibt es für Objekttabellen? \n\nRelational / Multi-Column: \nAls mehrspaltige Tabelle, in der jedes Attribut des object types die Anwendung von relationalen Operationen erlaubt.\u000b\n\nObjektorientiert / Single-Column: \nAls einspaltige Tabelle, in der jeder Datensatz ein Objekt darstellt, die die Anwendung von OO-Operationen erlaubt.\nVALUE-Funktion:\u000b \nArgument: Tabellenalias einer object table:\n \u000b     VALUE (table_alias)\u000b\nRückgabewerte:    Objektinstanzen, die den Datensätzen der Objekttabelle entsprechen. Der Typ der Objektinstanz ist der Typ der Objekttabelle. \n',
     type: 'text',
     answers: [
       {
@@ -27957,7 +27959,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Welche Speicherstrukturen  können aufgrund von Überlaufseiten langsamer werden? (nur die Kürzel in Großbuchstaben und in alphabetischer Reihenfolge)\n',
     explanation:
-      '\n\tÜberlaufseiten verlangsamen den Lesezugriff bei ISAM und HASH, da die ursprüngliche Speicherstruktur zu einer linearen Liste ausarten kann, die sequentiell beim Lesen durchsucht werden muss.\n\n\t\n\n\tDie anderen Speicherstrukturen haben keine Überlaufseiten.\n',
+      '\n    Überlaufseiten verlangsamen den Lesezugriff bei ISAM und HASH, da die ursprüngliche Speicherstruktur zu einer linearen Liste ausarten kann, die sequentiell beim Lesen durchsucht werden muss.\n\n    \n\n    Die anderen Speicherstrukturen haben keine Überlaufseiten.\n',
     type: 'text',
     answers: [
       {
@@ -27976,12 +27978,12 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Bei welchen Speicherstrukturen  werden Bereichsvergleiche wie z.B. <, >, >=, >= über den Schlüssel schlecht unterstützt? (Kürzel in Großbuchstaben und in alphabetischer Reihenfolge)\n',
     explanation:
-      '\n\tBei HEAP werden die Datensätze unsortiert in der Reihenfolge der Eingabe gespeichert und dann auch wieder gelesen.\n\n\t\n\n\tBei HASH wird ein in der Regel numerischer Schlüsselwert in eine Art logischer Seitennummer umgerechnet (z.B. Modulo-Verfahren). Benachbarte Nummern können somit in völlig unterschiedlichen Seiten gespeichert werden.\n',
+      '\n    Bei HEAP werden die Datensätze unsortiert in der Reihenfolge der Eingabe gespeichert und dann auch wieder gelesen.\n\n    \n\n    Bei HASH wird ein in der Regel numerischer Schlüsselwert in eine Art logischer Seitennummer umgerechnet (z.B. Modulo-Verfahren). Benachbarte Nummern können somit in völlig unterschiedlichen Seiten gespeichert werden.\n',
     type: 'text',
     answers: [
       {
         text: 'Das ist einmal:\n',
-        solution: '\r\n\tHASH\r\n',
+        solution: '\r\n    HASH\r\n',
       },
       {
         text: 'und zum anderen ...',
@@ -28053,7 +28055,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche abhängigen Objekte werden unter ORACLE-SQL gelöscht, wenn eine Tabelle gelöscht wird, für die dieses Objekt definiert ist?\n',
     explanation:
-      '\n\tSynonyme und Views bleiben bestehen, allerdings wird der Status auf INVALID gesetzt. Nur abhängige Indizes werden gelöscht, z.B. der Primärschlüssel.\n',
+      '\n    Synonyme und Views bleiben bestehen, allerdings wird der Status auf INVALID gesetzt. Nur abhängige Indizes werden gelöscht, z.B. der Primärschlüssel.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -28074,14 +28076,14 @@ const questions: Question[] = [
     id: 2770,
     category: 14,
     difficulty: 2,
-    text: 'Betrachten Sie die folgenden Anweisungen in Oracle-SQL:\n\n\tCOMMIT; SAVEPOINT POINT_A;\n\n\tCREATE TABLE CLASSES CLASS_ID NUMBER(13) PRIMARY KEY, INSTRUCTOR_ID NUMBER(13));\n\n\tINSERT INTO CLASSES VALUES (1,1);\n\n\tINSERT INTO CLASSES VALUES (2,2);\n\n\tSAVEPOINT POINT_B; INSERT INTO CLASSES VALUES (3,3);\n\n\tROLLBACK WORK TO POINT_A; INSERT INTO CLASSES VALUES (4,4);\n\n\tROLLBACK WORK TO POINT_B; COMMIT;\n\n\tWieviele Datensätze stehen nach diesen Anweisungen in der Tabelle CLASSES?\n',
+    text: 'Betrachten Sie die folgenden Anweisungen in Oracle-SQL:\n\n    COMMIT; SAVEPOINT POINT_A;\n\n    CREATE TABLE CLASSES CLASS_ID NUMBER(13) PRIMARY KEY, INSTRUCTOR_ID NUMBER(13));\n\n    INSERT INTO CLASSES VALUES (1,1);\n\n    INSERT INTO CLASSES VALUES (2,2);\n\n    SAVEPOINT POINT_B; INSERT INTO CLASSES VALUES (3,3);\n\n    ROLLBACK WORK TO POINT_A; INSERT INTO CLASSES VALUES (4,4);\n\n    ROLLBACK WORK TO POINT_B; COMMIT;\n\n    Wieviele Datensätze stehen nach diesen Anweisungen in der Tabelle CLASSES?\n',
     explanation:
-      '\n\tCREATE TABLE bewirkt ein implizites COMMIT, so dass der SAVEPOINT A aufgehoben wird. Die Datensätze 3 und 4 werden dagegen vor dem endgültigen COMMIT zurückgerollt.\n',
+      '\n    CREATE TABLE bewirkt ein implizites COMMIT, so dass der SAVEPOINT A aufgehoben wird. Die Datensätze 3 und 4 werden dagegen vor dem endgültigen COMMIT zurückgerollt.\n',
     type: 'text',
     answers: [
       {
         text: 'Tragen Sie eine Zahl ein!\n',
-        solution: '\r\n\t2\r\n',
+        solution: '\r\n    2\r\n',
       },
     ],
   },
@@ -28089,9 +28091,9 @@ const questions: Question[] = [
     id: 2771,
     category: 6,
     difficulty: 2,
-    text: 'Verursachen die folgenden SQL-Befehle unter ORACLE einen Fehler? \n\n\tCREATE TABLE TEST (nr number);\n\n\tCREATE VIEW TEST AS SELECT * FROM TEST;\n',
+    text: 'Verursachen die folgenden SQL-Befehle unter ORACLE einen Fehler? \n\n    CREATE TABLE TEST (nr number);\n\n    CREATE VIEW TEST AS SELECT * FROM TEST;\n',
     explanation:
-      '\n\tUnter Oracle-SQL können nicht zwei Objekte mit dem gleichen Namen angelegt werden, auch wenn sie unterschiedlichen Typs, wie Tabellen und Sichten sind. Alle Objekte, auf die ein Benutzer Zugriff hat, findet man in der Dictionary-View USER_OBJECTS.\n',
+      '\n    Unter Oracle-SQL können nicht zwei Objekte mit dem gleichen Namen angelegt werden, auch wenn sie unterschiedlichen Typs, wie Tabellen und Sichten sind. Alle Objekte, auf die ein Benutzer Zugriff hat, findet man in der Dictionary-View USER_OBJECTS.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -28243,9 +28245,9 @@ const questions: Question[] = [
     id: 2775,
     category: 6,
     difficulty: 2,
-    text: 'Betrachten Sie den folgenden CREATE-TABLE-Befehl:\n\n\tCREATE TABLE Person (\n\n\tID NUMBER,\n\n\tNACHNAME VARCHAR2,\n\n\tTYP CHAR);\n\n\t\n\n\tWelche Aussage/n sind/ist korrekt?\n',
+    text: 'Betrachten Sie den folgenden CREATE-TABLE-Befehl:\n\n    CREATE TABLE Person (\n\n    ID NUMBER,\n\n    NACHNAME VARCHAR2,\n\n    TYP CHAR);\n\n    \n\n    Welche Aussage/n sind/ist korrekt?\n',
     explanation:
-      '\n\tNUMBER und CHAR kommen ohne Längenangabe aus, NUMBER ist eine Fließkommazahl, CHAR ein Textfeld der Länge 1.\n',
+      '\n    NUMBER und CHAR kommen ohne Längenangabe aus, NUMBER ist eine Fließkommazahl, CHAR ein Textfeld der Länge 1.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -28268,12 +28270,12 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Mit welchem Schlüsselwort kann man eine Stelle definieren, bis zu der ein ROLLBACK zurückrollen soll?\n',
     explanation:
-      '\n\tSAVEPOINT ist ein SQL-Befehl, der angibt, bis zu welcher SQL-DML-Anweisung ein ROLLBACK zurückrollen soll.\n',
+      '\n    SAVEPOINT ist ein SQL-Befehl, der angibt, bis zu welcher SQL-DML-Anweisung ein ROLLBACK zurückrollen soll.\n',
     type: 'text',
     answers: [
       {
         text: 'Das ist ein\n',
-        solution: '\r\n\tSAVEPOINT\r\n',
+        solution: '\r\n    SAVEPOINT\r\n',
       },
     ],
   },
@@ -28499,7 +28501,7 @@ const questions: Question[] = [
     id: 2662,
     category: 7,
     difficulty: 1,
-    text: "Betrachten Sie die beiden folgenden CREATE-Table_Befehle:\nCREATE TABLE Zeitschrift (\n       Zeitschrift_id       \tINTEGER NOT NULL,\n       Namen                \tVARCHAR2(20) NULL,\n       PRIMARY KEY (Zeitschrift_id));\n\nCREATE TABLE Aufsatz (\n       Aufsatz_id         \t INTEGER NOT NULL,\n       Titel                \t  VARCHAR2(20) NULL,\n       Zeitschrift_id       \t INTEGER NOT NULL,\n       PRIMARY KEY (Aufsatz_id), \n       FOREIGN KEY (Zeitschrift_id) REFERENCES Zeitschrift);      \n\nDie Tabellen enthalten folgende Datensätze: \nZeitschrift (1, 'DB-Spektrum');\nZeitschrift (2, 'Informatik-Spektrum');\n\nAufsatz (1, 'Tuning', 1); \nAufsatz (2, 'DWH', 1); \n\nKann es problematisch werden, wenn Aufsatz-Datensätze gelöscht werden?",
+    text: "Betrachten Sie die beiden folgenden CREATE-Table_Befehle:\nCREATE TABLE Zeitschrift (\n       Zeitschrift_id           INTEGER NOT NULL,\n       Namen                    VARCHAR2(20) NULL,\n       PRIMARY KEY (Zeitschrift_id));\n\nCREATE TABLE Aufsatz (\n       Aufsatz_id              INTEGER NOT NULL,\n       Titel                      VARCHAR2(20) NULL,\n       Zeitschrift_id            INTEGER NOT NULL,\n       PRIMARY KEY (Aufsatz_id), \n       FOREIGN KEY (Zeitschrift_id) REFERENCES Zeitschrift);      \n\nDie Tabellen enthalten folgende Datensätze: \nZeitschrift (1, 'DB-Spektrum');\nZeitschrift (2, 'Informatik-Spektrum');\n\nAufsatz (1, 'Tuning', 1); \nAufsatz (2, 'DWH', 1); \n\nKann es problematisch werden, wenn Aufsatz-Datensätze gelöscht werden?",
     explanation:
       'Es ist kein Problem, weil Aufsatz die Detail-Tabelle ist. \nProblematisch wäre es, wenn Master-Datensätze (hier Zeitschrift) gelöscht werden, weil dann vor dem Löschen geprüft wird, ob es abhängige Datensätze (Detail: Aufsatz) mit einem passenden Fremdschlüsselwert gibt. Wenn ja, wird nicht gelöscht. Nur wenn nicht, wird der Master-Datensatz gelöscht. ',
     type: 'multiple-choice',
@@ -28520,7 +28522,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Betrachten Sie die beiden folgenden CREATE-Table_Befehle: CREATE TABLE Zeitschrift ( Zeitschrift_id INTEGER NOT NULL, Namen VARCHAR2(20) NULL, PRIMARY KEY (Zeitschrift_id)); CREATE TABLE Aufsatz ( Aufsatz_id INTEGER NOT NULL, Titel VARCHAR2(20) NULL, Zeitschrift_id INTEGER NOT NULL, PRIMARY KEY (Aufsatz_id), FOREIGN KEY (Zeitschrift_id) REFERENCES Zeitschrift); Die Tabellen enthalten folgende Datensätze: Zeitschrift (1, "DB-Spektrum"); Zeitschrift (2, "Informatik-Spektrum"); Aufsatz (1, "Tuning", 1); Aufsatz (2, "DWH", 1); Kann es problematisch werden, wenn Zeitschrift-Datensätze gelöscht werden?\n',
     explanation:
-      '\n\tEs kann ein Problem sein, weil Zeitschrift die Master-Tabelle ist.\n\n\tWenn Master-Datensätze (hier Zeitschrift) gelöscht werden wird vor dem Löschen geprüft, ob es abhängige Datensätze (Detail: Aufsatz) mit einem passenden Fremdschlüsselwert gibt. Wenn ja, wird nicht gelöscht. Nur wenn nicht, wird der Master-Datensatz gelöscht.\n',
+      '\n    Es kann ein Problem sein, weil Zeitschrift die Master-Tabelle ist.\n\n    Wenn Master-Datensätze (hier Zeitschrift) gelöscht werden wird vor dem Löschen geprüft, ob es abhängige Datensätze (Detail: Aufsatz) mit einem passenden Fremdschlüsselwert gibt. Wenn ja, wird nicht gelöscht. Nur wenn nicht, wird der Master-Datensatz gelöscht.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -28583,9 +28585,9 @@ const questions: Question[] = [
     id: 2653,
     category: 14,
     difficulty: 3,
-    text: 'Es ist die folgende leere Tabelle gegeben: busfahrer(mita_id, stundenlohn), wobei mita_id eine Primärschlüsselspalte (Prüfungszeitpunkt: IMMEDIATE) ist und stundenlohn eine Pflichteingabespalte (Prüfungszeitpunkt: DEFERRED).\n\n\tEs sind folgende Transaktionen gegeben:\n\n\tINSERT INTO busfahrer VALUES (4711, 6);\n\n\tINSERT INTO busfahrer VALUES (4712, 0);\n\n\tSELECT mita_id FROM busfahrer; -- 1. SELECT\n\n\tINSERT INTO busfahrer VALUES (4711, 8);\n\n\tSELECT mita_id FROM busfahrer; -- 2. SELECT\n\n\tCOMMIT;\n\n\tSELECT mita_id FROM busfahrer; -- 3.SELECT\n\n\tINSERT INTO busfahrer VALUES (4713, NULL);\n\n\tSELECT mita_id FROM busfahrer; -- 4. SELECT\n\n\tINSERT INTO busfahrer VALUES (4714, 9);\n\n\tSELECT mita_id FROM busfahrer; -- 5. SELECT\n\n\tCOMMIT;\n\n\tSELECT mita_id FROM busfahrer; -- 6. SELECT\n\n\tGeben Sie für jedes SELECT-Anweisung an, welche Ergebnismenge angezeigt wird, wobei mehrere Datensätze durch ein Semikolon getrennt sind und schreiben Sie NO ROWS, falls der SELECT keine Zeilen liefert!\n\n\t \n',
+    text: 'Es ist die folgende leere Tabelle gegeben: busfahrer(mita_id, stundenlohn), wobei mita_id eine Primärschlüsselspalte (Prüfungszeitpunkt: IMMEDIATE) ist und stundenlohn eine Pflichteingabespalte (Prüfungszeitpunkt: DEFERRED).\n\n    Es sind folgende Transaktionen gegeben:\n\n    INSERT INTO busfahrer VALUES (4711, 6);\n\n    INSERT INTO busfahrer VALUES (4712, 0);\n\n    SELECT mita_id FROM busfahrer; -- 1. SELECT\n\n    INSERT INTO busfahrer VALUES (4711, 8);\n\n    SELECT mita_id FROM busfahrer; -- 2. SELECT\n\n    COMMIT;\n\n    SELECT mita_id FROM busfahrer; -- 3.SELECT\n\n    INSERT INTO busfahrer VALUES (4713, NULL);\n\n    SELECT mita_id FROM busfahrer; -- 4. SELECT\n\n    INSERT INTO busfahrer VALUES (4714, 9);\n\n    SELECT mita_id FROM busfahrer; -- 5. SELECT\n\n    COMMIT;\n\n    SELECT mita_id FROM busfahrer; -- 6. SELECT\n\n    Geben Sie für jedes SELECT-Anweisung an, welche Ergebnismenge angezeigt wird, wobei mehrere Datensätze durch ein Semikolon getrennt sind und schreiben Sie NO ROWS, falls der SELECT keine Zeilen liefert!\n\n     \n',
     explanation:
-      '\n\t1. SELECT: 4711; 4712\n\n\t\n\n\t2. SELECT: 4711; 4712\n\n\tDer 3. INSERT (4711,8) wird unmittelbar abgebrochen, weil er die Primärschlüsselbedingung verletzt.\n\n\t\n\n\t3. SELECT: 4711; 4712\n\n\tCOMMIT beendet die 1. Transaktion und da durch die beiden Datensätze das DEFERRED-Constraint nicht verletzt ist, werden die beiden Datensätze persistent gespeichert und können durch kein Zurückrollen von Transaktionen mehr entfernt werden.\n\n\t\n\n\t4. SELECT: 4711; 4712\n\n\tMit der Einfügung (4713, NULL) startet die 2. Transaktion. Sie verletzt das Pflichteingabe-Constraint für die 2. Spalte, wird jedoch erst einmal eingefügt, da dieses Constraint mit dem Prüfungszeitpunkt DEFERRED definiert ist. Diese Bedingung erst also zum COMMIT geprüft.\n\n\t\n\n\t5. SELECT: 4711; 4712; 4713; 4714\n\n\tDie Einfügung (4714, 9) verletzt keine Constraints.\n\n\t\n\n\t6. SELECT: 4711; 4712 Dieses 2. COMMIT schließt die 2. Transaktion mit einer DEFERRED-Integritätsptügung ab, stellt einen Fehler fest für (4713, NULL) und rollt diese 2. Transaktion bis zum 1. COMMIT zurück, so dass nur noch die Datensätze der 1. Transaktion persistent in der DB gespeichert sind.\n',
+      '\n    1. SELECT: 4711; 4712\n\n    \n\n    2. SELECT: 4711; 4712\n\n    Der 3. INSERT (4711,8) wird unmittelbar abgebrochen, weil er die Primärschlüsselbedingung verletzt.\n\n    \n\n    3. SELECT: 4711; 4712\n\n    COMMIT beendet die 1. Transaktion und da durch die beiden Datensätze das DEFERRED-Constraint nicht verletzt ist, werden die beiden Datensätze persistent gespeichert und können durch kein Zurückrollen von Transaktionen mehr entfernt werden.\n\n    \n\n    4. SELECT: 4711; 4712\n\n    Mit der Einfügung (4713, NULL) startet die 2. Transaktion. Sie verletzt das Pflichteingabe-Constraint für die 2. Spalte, wird jedoch erst einmal eingefügt, da dieses Constraint mit dem Prüfungszeitpunkt DEFERRED definiert ist. Diese Bedingung erst also zum COMMIT geprüft.\n\n    \n\n    5. SELECT: 4711; 4712; 4713; 4714\n\n    Die Einfügung (4714, 9) verletzt keine Constraints.\n\n    \n\n    6. SELECT: 4711; 4712 Dieses 2. COMMIT schließt die 2. Transaktion mit einer DEFERRED-Integritätsptügung ab, stellt einen Fehler fest für (4713, NULL) und rollt diese 2. Transaktion bis zum 1. COMMIT zurück, so dass nur noch die Datensätze der 1. Transaktion persistent in der DB gespeichert sind.\n',
     type: 'text',
     answers: [
       {
@@ -28743,7 +28745,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'SELECT * FROM \tAngestellte, Abteilungen\nWHERE Angestellte.ABT_Nr = Abteilungen.ABT_Nr;\n\n',
+        text: 'SELECT * FROM     Angestellte, Abteilungen\nWHERE Angestellte.ABT_Nr = Abteilungen.ABT_Nr;\n\n',
         solution: 'false',
       },
       {
@@ -28858,7 +28860,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'INSTEAD-OF-TRIGGER  gehören zum SQL-Standard.\n',
     explanation:
-      '\n\tINSTEAD-OF-Trigger sind ein ORACLE-Feature, das nur für Views definert ist und damit Views änderbar macht.\n',
+      '\n    INSTEAD-OF-Trigger sind ein ORACLE-Feature, das nur für Views definert ist und damit Views änderbar macht.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -28877,7 +28879,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'INSTEAD-OF-TRIGGER  können unter Oracle-SQL definiert werden\n',
     explanation:
-      '\n\tINSTEAD-OF.Trigger sind ein ORACLE-Feature, das nur für Views definert ist und damit Views änderbar macht.\n',
+      '\n    INSTEAD-OF.Trigger sind ein ORACLE-Feature, das nur für Views definert ist und damit Views änderbar macht.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -28900,7 +28902,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welcher Join-Operator ist immer verlustfrei?\n',
     explanation:
-      '\n\tEine Join-Operation zwischen R und S heißt verlustfrei, wenn alle Tupel von R und S am Verbund teilnehmen. Die inverse Operation Projektion erzeugt dann wieder R und S aus dem Join-Ergebnis. Bei allen Join-Operatoren bis auf den Full-Outer-Join können Tupel, die in der verknüpften Operation kein Gegenüber haben, wegfallen.\n',
+      '\n    Eine Join-Operation zwischen R und S heißt verlustfrei, wenn alle Tupel von R und S am Verbund teilnehmen. Die inverse Operation Projektion erzeugt dann wieder R und S aus dem Join-Ergebnis. Bei allen Join-Operatoren bis auf den Full-Outer-Join können Tupel, die in der verknüpften Operation kein Gegenüber haben, wegfallen.\n',
     type: 'text',
     answers: [
       {
@@ -28982,9 +28984,9 @@ const questions: Question[] = [
     id: 3488,
     category: 7,
     difficulty: 3,
-    text: 'Welche Aussage über Unterabfragen ist wahr?\n\n\tUnterabfragen mit ALL und ANY können verneint werden, d.h. eine Unterabfrage der Form\n\n\tSELECT  Nachname, Gehalt\n\n\tFROM  Angestellte\n\n\tWHERE  Gehalt > NOT ALL\n\n\t(SELECT  Gehalt\n\n\tFROM  Angestellte a, Abteilungen b\n\n\tWHERE  a.Abt_Nr = b.Abt_Nr  AND Leiter = 4);\n\n\tist syntaktisch korrekt.\n\n\t \n',
+    text: 'Welche Aussage über Unterabfragen ist wahr?\n\n    Unterabfragen mit ALL und ANY können verneint werden, d.h. eine Unterabfrage der Form\n\n    SELECT  Nachname, Gehalt\n\n    FROM  Angestellte\n\n    WHERE  Gehalt > NOT ALL\n\n    (SELECT  Gehalt\n\n    FROM  Angestellte a, Abteilungen b\n\n    WHERE  a.Abt_Nr = b.Abt_Nr  AND Leiter = 4);\n\n    ist syntaktisch korrekt.\n\n     \n',
     explanation:
-      '\n\tUnterabfragen mit ANY oder All könen leider nicht verneint werden.\n\n\tsiehe Erklärungen von Unterabfragen im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Suchbedingung"> Unterabfragen \n',
+      '\n    Unterabfragen mit ANY oder All könen leider nicht verneint werden.\n\n    siehe Erklärungen von Unterabfragen im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Suchbedingung"> Unterabfragen \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29003,7 +29005,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Aussage über den Query-Executen-Plan bei Oracle ist wahr?\n',
     explanation:
-      '\n\tWenn man unter Oracle z.B. mit "EXPLAIN PLAN SET ..sql_anweisung..." den Query-Executen-Plan erzeugt, wird für die genannte SQL-Anweisung nur der Query-Executen-Plan erzeugt und in der plan_tabelle abgespeichert. Die Anweisung selber wird dabei nicht ausgeführt.\n',
+      '\n    Wenn man unter Oracle z.B. mit "EXPLAIN PLAN SET ..sql_anweisung..." den Query-Executen-Plan erzeugt, wird für die genannte SQL-Anweisung nur der Query-Executen-Plan erzeugt und in der plan_tabelle abgespeichert. Die Anweisung selber wird dabei nicht ausgeführt.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29041,7 +29043,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Jede Überführung in eine Normalform (1NF, 2NF odr 3NF) verringert Redundanz in der Datenbank.\n',
     explanation:
-      '\n\tDie Überführung einer Relation in die 1NF erhöht in der Regel die Redundanz.\n',
+      '\n    Die Überführung einer Relation in die 1NF erhöht in der Regel die Redundanz.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29093,9 +29095,9 @@ const questions: Question[] = [
     id: 2878,
     category: 7,
     difficulty: 1,
-    text: 'Betrachten Sie die folgenden SQL-Anweisungen:\n\n\tCREATE TABLE test (spalte varchar2(10));\n\n\tINSERT INTO TEST VALUES ("Ja");\n\n\tINSERT INTO TEST VALUES ("Nein");\n\n\tINSERT INTO TEST VALUES (NULL);\n\n\tCOMMIT;\n\n\tSELECT * FROM TEST WHERE Spalte in ("Ja", "Nein");\n\n\tWelches Ergebnis hat diese SELECT-Abfrage?\n',
+    text: 'Betrachten Sie die folgenden SQL-Anweisungen:\n\n    CREATE TABLE test (spalte varchar2(10));\n\n    INSERT INTO TEST VALUES ("Ja");\n\n    INSERT INTO TEST VALUES ("Nein");\n\n    INSERT INTO TEST VALUES (NULL);\n\n    COMMIT;\n\n    SELECT * FROM TEST WHERE Spalte in ("Ja", "Nein");\n\n    Welches Ergebnis hat diese SELECT-Abfrage?\n',
     explanation:
-      '\n\tWegen der <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Dreiwertige-Logik"> dreiwertigen Logik  in SQL liefert der Vergleich mit einem NULL-Wert den Wahrheitswert UNKNOWN, der in der WHERE-Klauesel zu FALSE ausgewertet wird. Es werden daher in der SELECT-Abfrage die Zeilen mit "Ja" und "Nein" ausgegeben.\n',
+      '\n    Wegen der <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Dreiwertige-Logik"> dreiwertigen Logik  in SQL liefert der Vergleich mit einem NULL-Wert den Wahrheitswert UNKNOWN, der in der WHERE-Klauesel zu FALSE ausgewertet wird. Es werden daher in der SELECT-Abfrage die Zeilen mit "Ja" und "Nein" ausgegeben.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29118,7 +29120,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Aus wie vielen Attributen muss ein Primärschlüssel einer Relation bestehen, damit es partielle funktionale Abhängigkeiten geben kann?\n',
     explanation:
-      '\n\tFalls der Primärschlüsel nur aus einem Attribut besteht, kann es keine partiellen Abhängigkeiten geben, da der Primärschlüssel nicht weiter aufgespalten werden kann.\n',
+      '\n    Falls der Primärschlüsel nur aus einem Attribut besteht, kann es keine partiellen Abhängigkeiten geben, da der Primärschlüssel nicht weiter aufgespalten werden kann.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29143,9 +29145,9 @@ const questions: Question[] = [
     id: 3360,
     category: 3,
     difficulty: 1,
-    text: 'Um welchen Attributtyp handelt es sich hier primär?\n\n\tDie Noten einer Hochschule können die Werte 1.0, 1.3, 1,7, ... ,5.0 annehmen.\n',
+    text: 'Um welchen Attributtyp handelt es sich hier primär?\n\n    Die Noten einer Hochschule können die Werte 1.0, 1.3, 1,7, ... ,5.0 annehmen.\n',
     explanation:
-      '\n\tNominale Attribute unterscheiden sich nur durch ihren Namen, ordinale Attribute lassen sich zusätzlich der Größe nach ordnen und können verglichen werden. Intervallattribute beschreiben einen Intervallbereich und lassen sich addieren bzw. subtrahieren. Numerische Attribute beschreiben Zahlen, die alle vier Grundrechnenarten, also zusätzlich auch Multiplikation und  Division,  zulassen.\n',
+      '\n    Nominale Attribute unterscheiden sich nur durch ihren Namen, ordinale Attribute lassen sich zusätzlich der Größe nach ordnen und können verglichen werden. Intervallattribute beschreiben einen Intervallbereich und lassen sich addieren bzw. subtrahieren. Numerische Attribute beschreiben Zahlen, die alle vier Grundrechnenarten, also zusätzlich auch Multiplikation und  Division,  zulassen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29172,7 +29174,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Der Natural Join ist in der relationalen Algebra der einzige Join-Operator, der die Join-Spalten nur einmal ausgibt\n',
     explanation:
-      '\n\tDer Theta Join hat immer eine Bedingung und unterdrückt keine doppelten Spalten. Equi-Join und Outer-Joins bauen auf der Definition des Theta-Joins auf.\n',
+      '\n    Der Theta Join hat immer eine Bedingung und unterdrückt keine doppelten Spalten. Equi-Join und Outer-Joins bauen auf der Definition des Theta-Joins auf.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29218,7 +29220,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Betrachten Sie eine Relation R(A, B, C, D, E, F) mit dem Primärschlüssel A, C und den folgenden funktionalen Abhängigkeiten. Welche Arten funktionaler Abhängigkeiten liegen hier vor? Es ist ausreichend, wenn Sie nur die Eigenschaft "XXX" der funktionalen Abhängigkeit als Antwort eintragen, also volle, partielle oder transitive.\n',
     explanation:
-      '\n\tB, D, E sind voll funktional vom gesamten Primärschlüssel A,C abhängig.\n\n\tF ist von C abhängig, also nur von einem Teil des Primärschlüssels und damit ist F partiell von A,C abhängig.\n\n\tE ist von D abhängig und D von A,C und damit ist E transitiv von A,C abhängig.\n',
+      '\n    B, D, E sind voll funktional vom gesamten Primärschlüssel A,C abhängig.\n\n    F ist von C abhängig, also nur von einem Teil des Primärschlüssels und damit ist F partiell von A,C abhängig.\n\n    E ist von D abhängig und D von A,C und damit ist E transitiv von A,C abhängig.\n',
     type: 'text',
     answers: [
       {
@@ -29400,19 +29402,19 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Sie möchten einen Trigger schreiben, der angestoßen wird, nachdem Zeilen aus einer Tabelle gelöscht werden oder eingefügt werden. Und es sollen dabei die Anzahl der verbliebenen Zeilen der Tabelle angezeigt werden. Welchen Triggertyp benötigen Sie?\n',
     explanation:
-      '\n\tDer Ausführungszeitpunkt AFTER ist wichtig, da ein BEFORE-Trigger bei DELETE keinen Sinn macht. Die verbliebenen Datensätze werden nur beim Ausführungszeitpunkt AFTER angezeigt.\n\n\tEin zeilenorientierter Trigger würde das Mutating-Table-Problem auslösen.\n\n\tNach dem Ausführungsmodell von zeilenorientierten Triggern werden diese nur angestoßen, wenn sich tatsächlich Daten in der Datenbank verändert haben. (siehe < a href = "http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Zeilenorientierter-Trigger"target = "_blank"> zeilenorientierten Trigger. (siehe <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Zeilenorientierter-Trigger" target="_blank"> CREATE-TRIGGER )\n',
+      '\n    Der Ausführungszeitpunkt AFTER ist wichtig, da ein BEFORE-Trigger bei DELETE keinen Sinn macht. Die verbliebenen Datensätze werden nur beim Ausführungszeitpunkt AFTER angezeigt.\n\n    Ein zeilenorientierter Trigger würde das Mutating-Table-Problem auslösen.\n\n    Nach dem Ausführungsmodell von zeilenorientierten Triggern werden diese nur angestoßen, wenn sich tatsächlich Daten in der Datenbank verändert haben. (siehe < a href = "http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Zeilenorientierter-Trigger"target = "_blank"> zeilenorientierten Trigger. (siehe <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Zeilenorientierter-Trigger" target="_blank"> CREATE-TRIGGER )\n',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE OR REPLACE TRIGGER LOESCHE_ANGESTELLTE\n\n\tAFTER INSERT OR DELETE  ON ANGESTELLTE\n\n\tDECLARE\n\n\tnum_rows NUMBER;\n\n\tBEGIN\n\n\tSELECT COUNT(*) INTO num_rows FROM angestellte ;\n\n\tdbms_output.put_line("Die Anzahl der Angestellten ist " || to_char(num_rows));\n\n\tEND;\n',
+        text: 'CREATE OR REPLACE TRIGGER LOESCHE_ANGESTELLTE\n\n    AFTER INSERT OR DELETE  ON ANGESTELLTE\n\n    DECLARE\n\n    num_rows NUMBER;\n\n    BEGIN\n\n    SELECT COUNT(*) INTO num_rows FROM angestellte ;\n\n    dbms_output.put_line("Die Anzahl der Angestellten ist " || to_char(num_rows));\n\n    END;\n',
         solution: 'true',
       },
       {
-        text: 'CREATE OR REPLACE TRIGGER LOESCHE_ANGESTELLTE\n\n\tBEFORE INSERT OR DELETE  ON ANGESTELLTE\n\n\tDECLARE\n\n\tnum_rows NUMBER;\n\n\t  BEGIN\n\n\t\n\n\tSELECT COUNT(*) INTO num_rows FROM angestellte ;\n\n\tdbms_output.put_line("Die Anzahl der Angestellten ist " || to_char(num_rows));\n\n\tEND;\n\n\t/\n',
+        text: 'CREATE OR REPLACE TRIGGER LOESCHE_ANGESTELLTE\n\n    BEFORE INSERT OR DELETE  ON ANGESTELLTE\n\n    DECLARE\n\n    num_rows NUMBER;\n\n      BEGIN\n\n    \n\n    SELECT COUNT(*) INTO num_rows FROM angestellte ;\n\n    dbms_output.put_line("Die Anzahl der Angestellten ist " || to_char(num_rows));\n\n    END;\n\n    /\n',
         solution: 'false',
       },
       {
-        text: 'CREATE OR REPLACE TRIGGER LOESCHE_ANGESTELLTE\n\n\tBEFORE INSERT OR DELETE ON ANGESTELLTE\n\n\tFOR EACH ROW\n\n\tDECLARE\n\n\tnum_rows NUMBER;\n\n\tBEGIN\n\n\tSELECT COUNT(*) INTO num_rows FROM angestellte ;\n\n\tdbms_output.put_line("Die Anzahl der Angestellten ist " || to_char(num_rows));\n\n\tEND;\n\n\t/\n',
+        text: 'CREATE OR REPLACE TRIGGER LOESCHE_ANGESTELLTE\n\n    BEFORE INSERT OR DELETE ON ANGESTELLTE\n\n    FOR EACH ROW\n\n    DECLARE\n\n    num_rows NUMBER;\n\n    BEGIN\n\n    SELECT COUNT(*) INTO num_rows FROM angestellte ;\n\n    dbms_output.put_line("Die Anzahl der Angestellten ist " || to_char(num_rows));\n\n    END;\n\n    /\n',
         solution: 'false',
       },
     ],
@@ -29448,9 +29450,9 @@ const questions: Question[] = [
     id: 3361,
     category: 3,
     difficulty: 1,
-    text: 'Um welchen Attributtyp handelt es sich hier primär?\n\n\tLänderkürzel weltweit, wie "D" für Deutschland\n',
+    text: 'Um welchen Attributtyp handelt es sich hier primär?\n\n    Länderkürzel weltweit, wie "D" für Deutschland\n',
     explanation:
-      '\n\tNominale Attribute unterscheiden sich nur durch ihren Namen, ordinale Attribute lassen sich zusätzlich der Größe nach ordnen und können verglichen werden. Intervallattribute beschreiben einen Intervallbereich und lassen sich addieren bzw. subtrahieren. Numerische Attribute beschreiben Zahlen, die alle vier Grundrechnenarten, also zusätzlich auch Multiplikation und  Division,  zulassen.\n',
+      '\n    Nominale Attribute unterscheiden sich nur durch ihren Namen, ordinale Attribute lassen sich zusätzlich der Größe nach ordnen und können verglichen werden. Intervallattribute beschreiben einen Intervallbereich und lassen sich addieren bzw. subtrahieren. Numerische Attribute beschreiben Zahlen, die alle vier Grundrechnenarten, also zusätzlich auch Multiplikation und  Division,  zulassen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29477,7 +29479,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Auf welchen Spalten ist ein Verweis über einen Fremdschlüssel möglich?\n',
     explanation:
-      '\n\tFremdschlüssel können auf Spalten verweisen, die einen Primärschlüssel oder einen Zweitschlüssel haben. Ein Zweitschlüssel wird in SQL durch einen UNIQUE-Constraint oder einen CREATE UNIQUE INDEX .. implementiert.\n',
+      '\n    Fremdschlüssel können auf Spalten verweisen, die einen Primärschlüssel oder einen Zweitschlüssel haben. Ein Zweitschlüssel wird in SQL durch einen UNIQUE-Constraint oder einen CREATE UNIQUE INDEX .. implementiert.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29500,7 +29502,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Betrachten Sie eine Relation R(A, B, C, D, E, F) mit dem Primärschlüssel A, C und den folgenden funktionalen Abhängigkeiten Welche Arten funktionaler Abhängigkeiten liegen hier vor? Es ist ausreichend, wenn Sie nur die Eigenschaft "XXX" der funktionalen Abhängigkeit als Antwort eintragen, also volle, partielle oder transitive.\n',
     explanation:
-      '\n\tB, D, E, F sind voll funktional vom gesamten Primärschlüssel A,C abhängig.\n\n\tF ist von B abhängig und B von A,C und damit ist F transitiv von A,C abhängig.\n\n\tE ist von D abhängig und D von A,C und damit ist E transitiv von A,C abhängig.\n',
+      '\n    B, D, E, F sind voll funktional vom gesamten Primärschlüssel A,C abhängig.\n\n    F ist von B abhängig und B von A,C und damit ist F transitiv von A,C abhängig.\n\n    E ist von D abhängig und D von A,C und damit ist E transitiv von A,C abhängig.\n',
     type: 'text',
     answers: [
       {
@@ -29608,7 +29610,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welcher Anfragetyp ist schneller?\n',
     explanation:
-      '\n\tFalls die Spaltennamen ohne Tabellennamen angegeben werden, muss das Datenbanksystem zusätzlich ermitteln, in welchen Tabellen die Spalten enthalten sind.\n',
+      '\n    Falls die Spaltennamen ohne Tabellennamen angegeben werden, muss das Datenbanksystem zusätzlich ermitteln, in welchen Tabellen die Spalten enthalten sind.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -29747,7 +29749,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Betrachten Sie eine Relation R(A, B, C, D, E, F) mit dem Primärschlüssel A, C und den folgenden funktionalen Abhängigkeiten Welche Arten funktionaler Abhängigkeiten liegen hier vor? Es ist ausreichend, wenn Sie nur die Eigenschaft "XXX" der funktionalen Abhängigkeit als Antwort eintragen, also volle, partielle oder transitive.\n',
     explanation:
-      '\n\tD, E, F sind voll funktional vom gesamten Primärschlüssel A,C abhängig.\n\n\tB ist nur partiell funktional vom gesamten Primärschlüssel A,C abhängig, nämlich nur von einem Teil des Schlüssel, von C.\n\n\tE ist von D abhängig und D von A,C und damit ist E transitiv von A,C abhängig.\n',
+      '\n    D, E, F sind voll funktional vom gesamten Primärschlüssel A,C abhängig.\n\n    B ist nur partiell funktional vom gesamten Primärschlüssel A,C abhängig, nämlich nur von einem Teil des Schlüssel, von C.\n\n    E ist von D abhängig und D von A,C und damit ist E transitiv von A,C abhängig.\n',
     type: 'text',
     answers: [
       {
@@ -29824,7 +29826,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Betrachten Sie eine Relation R(A, B, C, D, E, F) mit dem Primärschlüssel A, C und den folgenden funktionalen Abhängigkeiten Welche Arten funktionaler Abhängigkeiten liegen hier vor? Es ist ausreichend, wenn Sie nur die Eigenschaft "XXX" der funktionalen Abhängigkeit als Antwort eintragen, also volle, partielle oder transitive.\n',
     explanation:
-      '\n\tD, E, F sind voll funktional vom gesamten Primärschlüssel A,C abhängig.\n\n\tB ist nur partiell funktional vom gesamten Primärschlüssel A,C abhängig, nämlich nur von einem Teil des Schlüssel, von C.\n\n\tE ist nur partiell funktional vom gesamten Primärschlüssel A,C abhängig, nämlich nur von einem Teil des Schlüssel, von A.\n',
+      '\n    D, E, F sind voll funktional vom gesamten Primärschlüssel A,C abhängig.\n\n    B ist nur partiell funktional vom gesamten Primärschlüssel A,C abhängig, nämlich nur von einem Teil des Schlüssel, von C.\n\n    E ist nur partiell funktional vom gesamten Primärschlüssel A,C abhängig, nämlich nur von einem Teil des Schlüssel, von A.\n',
     type: 'text',
     answers: [
       {
@@ -29988,13 +29990,13 @@ const questions: Question[] = [
     id: 2815,
     category: 7,
     difficulty: 3,
-    text: 'Betrachten Sie die beiden folgenden CREATE-Table-Befehle:\n\nCREATE TABLE Auftraege\n(AuftragsNr \t\tNUMBER(38) NOT NULL,\n Auftrags_Typ \t\tVARCHAR2(50) NOT NULL,\n Kun_Nr \t\tNUMBER(38) NOT NULL,\n Ang_Nr \t\tNUMBER(38),\n auftragssumme \t        NUMBER);\n\nCREATE TABLE Auftragspositionen\n(TNr \t\t\tNUMBER(38) NOT NULL,\n AuftragsNr \t\tNUMBER(38) NOT NULL,\n Menge \t\t\tNUMBER);\n\nWelche DELETE-Anweisungen sind korrekt?',
+    text: 'Betrachten Sie die beiden folgenden CREATE-Table-Befehle:\n\nCREATE TABLE Auftraege\n(AuftragsNr         NUMBER(38) NOT NULL,\n Auftrags_Typ         VARCHAR2(50) NOT NULL,\n Kun_Nr         NUMBER(38) NOT NULL,\n Ang_Nr         NUMBER(38),\n auftragssumme             NUMBER);\n\nCREATE TABLE Auftragspositionen\n(TNr             NUMBER(38) NOT NULL,\n AuftragsNr         NUMBER(38) NOT NULL,\n Menge             NUMBER);\n\nWelche DELETE-Anweisungen sind korrekt?',
     explanation:
       'Mit der DELETE-Anweisung kann man keine einzelnen Werte in Spalten, sondern nur komplette Zeilen löschen. Siehe die Syntaxbeschreibung der DELETE-Anweisung im Datenbankwiki unter\n<a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/DELETE"> DELETE-Anweisung ',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'DELETE AuftragsNr FROM Auftraege WHERE auftragssumme < 1000;\t        ',
+        text: 'DELETE AuftragsNr FROM Auftraege WHERE auftragssumme < 1000;            ',
         solution: 'false',
       },
       {
@@ -30017,7 +30019,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Mit welchem Befehl legt man einen CONSTRAINT nachträglich auf einer Tabelle an? Es soll nachträglich auf einer Tabelle Artikel die Spalte Verkaufspreis in NOT NULL verändert werden.\n',
     explanation:
-      '\n\tConstraints sind keine eigenen Datenbankobjekte, sie der gehören zu einer Tabelle und werden daher auch nicht mit einem eigenen DROP-Befehl gelöscht, sondern mit einem ALTER TABLE-Befehl. Die genaue Syntax finden Sie im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/ALTER-TABLE"> ALTER-Table \n',
+      '\n    Constraints sind keine eigenen Datenbankobjekte, sie der gehören zu einer Tabelle und werden daher auch nicht mit einem eigenen DROP-Befehl gelöscht, sondern mit einem ALTER TABLE-Befehl. Die genaue Syntax finden Sie im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/ALTER-TABLE"> ALTER-Table \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -30046,9 +30048,9 @@ const questions: Question[] = [
     id: 2819,
     category: 14,
     difficulty: 2,
-    text: 'Betrachten Sie die folgende Tabelle:\n\n\tcreate table test (test_id INTEGER, text varchar2(15));\n\n\tund die folgenden SQL-Befehle:\n\n\tALTER TABLE test ADD CONSTRAINT Test_pk primary KEY(test_id) DEFERRABLE INITIALLY DEFFERRED;\n\n\tINSERT INTO test VALUES (1, "Ute"); -- Zeile 1\n\n\tINSERT INTO test VALUES (1, "Udo"); -- Zeile 2\n\n\tCOMMIT;\n\n\tSET CONSTRAINT Test_pk IMMEDIATE;\n\n\tINSERT INTO test VALUES (1, "Edda"); -- Zeile 3\n\n\tINSERT INTO test VALUES (2, "Willi");-- Zeile 4\n\n\tCOMMIT;\n\n\tWelche Zeilen werden persistent in der Tabelle test gespeichert?\n',
+    text: 'Betrachten Sie die folgende Tabelle:\n\n    create table test (test_id INTEGER, text varchar2(15));\n\n    und die folgenden SQL-Befehle:\n\n    ALTER TABLE test ADD CONSTRAINT Test_pk primary KEY(test_id) DEFERRABLE INITIALLY DEFFERRED;\n\n    INSERT INTO test VALUES (1, "Ute"); -- Zeile 1\n\n    INSERT INTO test VALUES (1, "Udo"); -- Zeile 2\n\n    COMMIT;\n\n    SET CONSTRAINT Test_pk IMMEDIATE;\n\n    INSERT INTO test VALUES (1, "Edda"); -- Zeile 3\n\n    INSERT INTO test VALUES (2, "Willi");-- Zeile 4\n\n    COMMIT;\n\n    Welche Zeilen werden persistent in der Tabelle test gespeichert?\n',
     explanation:
-      '\n\tBei INITIALLY DEFFERRED wird die ganze Transaktion zurückgerollt, wenn ein Fehler auftritt, so dass die Tabelle nach dem ersten COMMIT leer ist.\n',
+      '\n    Bei INITIALLY DEFFERRED wird die ganze Transaktion zurückgerollt, wenn ein Fehler auftritt, so dass die Tabelle nach dem ersten COMMIT leer ist.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -30077,13 +30079,13 @@ const questions: Question[] = [
     id: 2820,
     category: 6,
     difficulty: 2,
-    text: 'Betrachten Sie die beiden folgenden CREATE-Table-Befehle:\n\n\tCREATE TABLE Auftraege\n\n\t(AuftragsNr NUMBER(38) PRIMARY KEY,\n\n\tAuftrags_Typ VARCHAR2(50) NOT NULL,\n\n\tKun_Nr NUMBER(38) NOT NULL,\n\n\tAng_Nr NUMBER(38),\n\n\tauftragssumme NUMBER);\n\n\t\n\n\tCREATE TABLE Auftragspositionen ,\n\n\t(TNr NUMBER(38),\n\n\tAuftragsNr NUMBER(38),\n\n\tMenge NUMBER,\n\n\tPRIMARY KEY Auftragspositionen(TNR, AuftragsNr));\n\n\t\n\n\tWelche CREATE-Index-Anweisungen sind korrekt?\n',
+    text: 'Betrachten Sie die beiden folgenden CREATE-Table-Befehle:\n\n    CREATE TABLE Auftraege\n\n    (AuftragsNr NUMBER(38) PRIMARY KEY,\n\n    Auftrags_Typ VARCHAR2(50) NOT NULL,\n\n    Kun_Nr NUMBER(38) NOT NULL,\n\n    Ang_Nr NUMBER(38),\n\n    auftragssumme NUMBER);\n\n    \n\n    CREATE TABLE Auftragspositionen ,\n\n    (TNr NUMBER(38),\n\n    AuftragsNr NUMBER(38),\n\n    Menge NUMBER,\n\n    PRIMARY KEY Auftragspositionen(TNR, AuftragsNr));\n\n    \n\n    Welche CREATE-Index-Anweisungen sind korrekt?\n',
     explanation:
-      '\n\tEin Index kann immer nur auf einer Tabelle definiert werden und auch nicht, wenn schon ein entsprechender Primärschlüssel mit den gleichen Spalten existiert. Siehe die Syntaxbeschreibung der CREATE-INDEX-Anweisung im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/CREATE-INDEX"> CREATE-INDEX-Anweisung.\n',
+      '\n    Ein Index kann immer nur auf einer Tabelle definiert werden und auch nicht, wenn schon ein entsprechender Primärschlüssel mit den gleichen Spalten existiert. Siehe die Syntaxbeschreibung der CREATE-INDEX-Anweisung im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/CREATE-INDEX"> CREATE-INDEX-Anweisung.\n',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE UNIQUE INDEX Auftr_INDEX ON Auftraege(TNr);\t        ',
+        text: 'CREATE UNIQUE INDEX Auftr_INDEX ON Auftraege(TNr);            ',
         solution: 'false',
       },
       {
@@ -30154,9 +30156,9 @@ const questions: Question[] = [
     id: 2823,
     category: 7,
     difficulty: 3,
-    text: 'In der Fahrrad-Datenbank Byce & Co. sind insbesondere folgende Tabellen enthalten:\n     Artikel(TNr, Bezeichnung, .....)\n     Auftrage(AuftragsNr, KundenNr, Auftragsdatum, ...)\n     Auftragspositionen(AuftragsNr, TNr, Menge,...)   \n\nDer Vertriebsleiter Dr. Guck der Firma Byce & Co. möchte herausfinden, für welche Artikel überhaupt Aufträge vorliegen. Er stellt folgende Abfrage an die Datenbank:\n\nSELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   NOT EXISTS (SELECT * FROM Auftragspositionen b \n\t\tWHERE a.TNr <> b.TNr);\n\nWelche Aussage(n) sind korrekt?',
+    text: 'In der Fahrrad-Datenbank Byce & Co. sind insbesondere folgende Tabellen enthalten:\n     Artikel(TNr, Bezeichnung, .....)\n     Auftrage(AuftragsNr, KundenNr, Auftragsdatum, ...)\n     Auftragspositionen(AuftragsNr, TNr, Menge,...)   \n\nDer Vertriebsleiter Dr. Guck der Firma Byce & Co. möchte herausfinden, für welche Artikel überhaupt Aufträge vorliegen. Er stellt folgende Abfrage an die Datenbank:\n\nSELECT  a.TNr, a.Bezeichnung\nFROM    Artikel a\nWHERE   NOT EXISTS (SELECT * FROM Auftragspositionen b \n        WHERE a.TNr <> b.TNr);\n\nWelche Aussage(n) sind korrekt?',
     explanation:
-      'Die korrekte Abfrage wäre\n\n SELECT  a.TNr, a.Bezeichnung\n FROM    Artikel a\n WHERE   NOT EXISTS (SELECT * FROM Auftragspositionen b \n\t\tWHERE a.TNr = b.TNr);',
+      'Die korrekte Abfrage wäre\n\n SELECT  a.TNr, a.Bezeichnung\n FROM    Artikel a\n WHERE   NOT EXISTS (SELECT * FROM Auftragspositionen b \n        WHERE a.TNr = b.TNr);',
     type: 'multiple-choice',
     answers: [
       {
@@ -30216,9 +30218,9 @@ const questions: Question[] = [
     id: 2827,
     category: 7,
     difficulty: 3,
-    text: 'Gegeben sei folgender Ausschnitt eines relationalen Schemas einer Datenbank: Abteilungen: {Abt_Nr, Bezeichnung, Ort, Budget, Ang_Nr} Angestellte: {Ang_Nr, Nachname, Vorname, PLZ, Ort, Strasse, Gehalt, Abt_Nr } Es sollen alle Abteilungen mit den zugehörigen Angestellten ausgegeben werden, deren Budget mehr als 5000  beträgt. Es wird dazu das folgende SELECT-Statement abgesetzt:\n\n\tSELECT abt_nr, Name, Budget, Nachname FROM abteilungen WHERE leiter > 2 JOIN angestellte USING (Abt_nr);\n\n\tWelche der folgenden Aussagen ist wahr?\n',
+    text: 'Gegeben sei folgender Ausschnitt eines relationalen Schemas einer Datenbank: Abteilungen: {Abt_Nr, Bezeichnung, Ort, Budget, Ang_Nr} Angestellte: {Ang_Nr, Nachname, Vorname, PLZ, Ort, Strasse, Gehalt, Abt_Nr } Es sollen alle Abteilungen mit den zugehörigen Angestellten ausgegeben werden, deren Budget mehr als 5000  beträgt. Es wird dazu das folgende SELECT-Statement abgesetzt:\n\n    SELECT abt_nr, Name, Budget, Nachname FROM abteilungen WHERE leiter > 2 JOIN angestellte USING (Abt_nr);\n\n    Welche der folgenden Aussagen ist wahr?\n',
     explanation:
-      '\n\tAuch in einer SELECT-Anweisung mit JOIN..... USING steht die WHERE-Klausel immer nach der FROM-Klausel.\n',
+      '\n    Auch in einer SELECT-Anweisung mit JOIN..... USING steht die WHERE-Klausel immer nach der FROM-Klausel.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -30338,7 +30340,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Welche Datenbankoperation ist in der Regel schneller?',
     explanation:
-      'SELECT COUNT(*) erfordert einen Zugriff auf alle Spalten der Tabelle und ist daher in der Regel langsamer. DISTINCT führt zusätzlich eine Sortierung durch.\n\t\t\t\t',
+      'SELECT COUNT(*) erfordert einen Zugriff auf alle Spalten der Tabelle und ist daher in der Regel langsamer. DISTINCT führt zusätzlich eine Sortierung durch.\n                ',
     type: 'multiple-choice',
     answers: [
       {
@@ -30363,9 +30365,9 @@ const questions: Question[] = [
     id: 3480,
     category: 7,
     difficulty: 1,
-    text: 'Betrachten Sie die folgenden SQL-Anweisungen:\n\n\tCREATE TABLE test (spalte varchar2(10));\n\n\tINSERT INTO TEST VALUES ("Ja");\n\n\tINSERT INTO TEST VALUES ("Nein");\n\n\tINSERT INTO TEST VALUES (NULL);\n\n\tCOMMIT;\n\n\tSELECT * FROM TEST WHERE Spalte not in ("Ja", "Nein");\n\n\tWelches Ergebnis hat diese SELECT-Abfrage?\n',
+    text: 'Betrachten Sie die folgenden SQL-Anweisungen:\n\n    CREATE TABLE test (spalte varchar2(10));\n\n    INSERT INTO TEST VALUES ("Ja");\n\n    INSERT INTO TEST VALUES ("Nein");\n\n    INSERT INTO TEST VALUES (NULL);\n\n    COMMIT;\n\n    SELECT * FROM TEST WHERE Spalte not in ("Ja", "Nein");\n\n    Welches Ergebnis hat diese SELECT-Abfrage?\n',
     explanation:
-      '\n\tWegen der <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Dreiwertige-Logik"> dreiwertigen Logik  in SQL liefert der Vergleich mit einem NULL-Wert den Wahrheitswert UNKNOWN, der in der WHERE-Klauesel zu FALSE ausgewertet wird.  Da UNKNOWN mit UNKNOWN  verneint wird, wird die Zeile mit dem NULL-Wert nicht ausgegeben,\n',
+      '\n    Wegen der <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Dreiwertige-Logik"> dreiwertigen Logik  in SQL liefert der Vergleich mit einem NULL-Wert den Wahrheitswert UNKNOWN, der in der WHERE-Klauesel zu FALSE ausgewertet wird.  Da UNKNOWN mit UNKNOWN  verneint wird, wird die Zeile mit dem NULL-Wert nicht ausgegeben,\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -30709,7 +30711,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welcher Oracle-Optimizer entspricht der logischen Optimierung der relationalen Algebra?\n',
     explanation:
-      '\n\tDer CBO ist Standard bei Oracle-Versionen ab Version 10g und benutzt Statistiken, die in der Datenbank gespeichert sind.\n\n\tDer RBO (Rule Based Optimizer) benutzt ähnliche Heuristiken (12 Regeln)  wie die Heuristiken der logischen Optimierung in der relationalen Algebra. Er war Standard bis Oracle 9i.\n\n\tsiehe <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Optimizer" target="_blank"> http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Optimizer .\n',
+      '\n    Der CBO ist Standard bei Oracle-Versionen ab Version 10g und benutzt Statistiken, die in der Datenbank gespeichert sind.\n\n    Der RBO (Rule Based Optimizer) benutzt ähnliche Heuristiken (12 Regeln)  wie die Heuristiken der logischen Optimierung in der relationalen Algebra. Er war Standard bis Oracle 9i.\n\n    siehe <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Optimizer" target="_blank"> http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Optimizer .\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -30730,13 +30732,13 @@ const questions: Question[] = [
     id: 2816,
     category: 6,
     difficulty: 2,
-    text: 'Betrachten Sie die beiden folgenden CREATE-Table-Befehle:\n\n\tCREATE TABLE Auftraege\n\n\t(AuftragsNr NUMBER(38) PRIMARY KEY,\n\n\tAuftrags_Typ VARCHAR2(50) NOT NULL,\n\n\tKun_Nr NUMBER(38) NOT NULL,\n\n\tAng_Nr NUMBER(38),\n\n\tauftragssumme NUMBER);\n\n\t\n\n\tCREATE TABLE Auftragspositionen ,\n\n\t(TNr NUMBER(38),\n\n\tAuftragsNr NUMBER(38),\n\n\tMenge NUMBER,\n\n\tPRIMARY KEY Auftragspositionen(TNR, AuftragsNr));\n\n\t\n\n\tWelche CREATE-Index-Anweisungen sind korrekt?\n',
+    text: 'Betrachten Sie die beiden folgenden CREATE-Table-Befehle:\n\n    CREATE TABLE Auftraege\n\n    (AuftragsNr NUMBER(38) PRIMARY KEY,\n\n    Auftrags_Typ VARCHAR2(50) NOT NULL,\n\n    Kun_Nr NUMBER(38) NOT NULL,\n\n    Ang_Nr NUMBER(38),\n\n    auftragssumme NUMBER);\n\n    \n\n    CREATE TABLE Auftragspositionen ,\n\n    (TNr NUMBER(38),\n\n    AuftragsNr NUMBER(38),\n\n    Menge NUMBER,\n\n    PRIMARY KEY Auftragspositionen(TNR, AuftragsNr));\n\n    \n\n    Welche CREATE-Index-Anweisungen sind korrekt?\n',
     explanation:
-      '\n\tEin Index kann immer nur auf einer Tabelle definiert werden und auch nicht, wenn schon ein entsprechender Primärschlüssel mit den gleichen Spalten existiert. Siehe die Syntaxbeschreibung der CREATE-INDEX-Anweisung im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/CREATE-INDEX"> CREATE-INDEX-Anweisung \n',
+      '\n    Ein Index kann immer nur auf einer Tabelle definiert werden und auch nicht, wenn schon ein entsprechender Primärschlüssel mit den gleichen Spalten existiert. Siehe die Syntaxbeschreibung der CREATE-INDEX-Anweisung im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/CREATE-INDEX"> CREATE-INDEX-Anweisung \n',
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE UNIQUE INDEX Auftr_INDEX ON Auftraege(TNr);\t        ',
+        text: 'CREATE UNIQUE INDEX Auftr_INDEX ON Auftraege(TNr);            ',
         solution: 'false',
       },
       {
@@ -30757,9 +30759,9 @@ const questions: Question[] = [
     id: 2817,
     category: 6,
     difficulty: 3,
-    text: 'Betrachten Sie die folgende CREATE-Table-Anweisung und die anschließende ALTER-Anweisung:\n\n\tCREATE TABLE Artikel (TNr NUMBER(38) PRIMARY KEY,\n\n\tBezeichnung VARCHAR2(50) NOT NULL,\n\n\tArtikel_Typ VARCHAR2(50) NOT NULL,\n\n\tVerkaufspreis NUMBER,\n\n\tJahresumsatz NUMBER,\n\n\tZeitstempel DATE);\n\n\t ALTER TABLE Artikel DROP COLUMN Jahresumsatz;\n\n\tWelche Aussagen sind wahr?\n',
+    text: 'Betrachten Sie die folgende CREATE-Table-Anweisung und die anschließende ALTER-Anweisung:\n\n    CREATE TABLE Artikel (TNr NUMBER(38) PRIMARY KEY,\n\n    Bezeichnung VARCHAR2(50) NOT NULL,\n\n    Artikel_Typ VARCHAR2(50) NOT NULL,\n\n    Verkaufspreis NUMBER,\n\n    Jahresumsatz NUMBER,\n\n    Zeitstempel DATE);\n\n     ALTER TABLE Artikel DROP COLUMN Jahresumsatz;\n\n    Welche Aussagen sind wahr?\n',
     explanation:
-      '\n\tALTER-Table gehört zur DDL-Sprache und kann daher nicht zurückgerollt werden, da sie ein AUTOCOMMIT beinhaltet. Siehe auch <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/ALTER-TABLE"> ALTER-TABLE \n',
+      '\n    ALTER-Table gehört zur DDL-Sprache und kann daher nicht zurückgerollt werden, da sie ein AUTOCOMMIT beinhaltet. Siehe auch <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/ALTER-TABLE"> ALTER-TABLE \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -30842,9 +30844,9 @@ const questions: Question[] = [
     id: 2905,
     category: 7,
     difficulty: 2,
-    text: 'Welche SELECT-Abfrage beantwortet die Frage :\n\n\t\n\n\t"In welchem Land leben die meisten Menschen?"\n\n\t\n\n\tauf der Tabelle country:\n\n\t\n\n\tCREATE TABLE Country\n\n\t(Name VARCHAR2(35) NOT NULL UNIQUE,\n\n\tCOUNTRY VARCHAR2(4) CONSTRAINT CountryKey PRIMARY KEY,\n\n\tCapital VARCHAR2(35),\n\n\tProvince VARCHAR2(35),\n\n\tPopulation NUMBER);\n\n\t\n\n\t \n',
+    text: 'Welche SELECT-Abfrage beantwortet die Frage :\n\n    \n\n    "In welchem Land leben die meisten Menschen?"\n\n    \n\n    auf der Tabelle country:\n\n    \n\n    CREATE TABLE Country\n\n    (Name VARCHAR2(35) NOT NULL UNIQUE,\n\n    COUNTRY VARCHAR2(4) CONSTRAINT CountryKey PRIMARY KEY,\n\n    Capital VARCHAR2(35),\n\n    Province VARCHAR2(35),\n\n    Population NUMBER);\n\n    \n\n     \n',
     explanation:
-      '\n\tDie Abfrage mit <> ALL ist syntaktisch korrekt, liefert aber nicht die gewünschten Länder.\n',
+      '\n    Die Abfrage mit <> ALL ist syntaktisch korrekt, liefert aber nicht die gewünschten Länder.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -30912,9 +30914,9 @@ const questions: Question[] = [
     id: 3424,
     category: 6,
     difficulty: 2,
-    text: 'Welche Auswirkung hat die folgende Anweisung?\n\n\t\n\n\tCREATE TABLE ist_mitglied\n\n\t( Staat_id          INTEGER NOT NULL,\n\n\t   Organisation_id   INTEGER NOT NULL,\n\n\t   TYPE              VARCHAR2 (20)\n\n\t         UNIQUE\n\n\t         CONSTRAINT TYPE_CHECK CHECK\n\n\t            (TYPE IN ("Mitglied", "Anwärter", "Gast", "Beobachter")),\n\n\t   PRIMARY KEY (Staat_id, Organisation_id) );\n',
+    text: 'Welche Auswirkung hat die folgende Anweisung?\n\n    \n\n    CREATE TABLE ist_mitglied\n\n    ( Staat_id          INTEGER NOT NULL,\n\n       Organisation_id   INTEGER NOT NULL,\n\n       TYPE              VARCHAR2 (20)\n\n             UNIQUE\n\n             CONSTRAINT TYPE_CHECK CHECK\n\n                (TYPE IN ("Mitglied", "Anwärter", "Gast", "Beobachter")),\n\n       PRIMARY KEY (Staat_id, Organisation_id) );\n',
     explanation:
-      '\n\tDurch das UNIQUE können die Werte "Mitglied", "Anwärter", "Gast", "Beobachter" nur genau enmal in die Tabelle eingefügt werden. Daher können höchsten vier Werte in die Tabelle Mitglied eingefügt werden.\n',
+      '\n    Durch das UNIQUE können die Werte "Mitglied", "Anwärter", "Gast", "Beobachter" nur genau enmal in die Tabelle eingefügt werden. Daher können höchsten vier Werte in die Tabelle Mitglied eingefügt werden.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -30972,7 +30974,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Welche Datenbank-Situationen können eine schlechte Performance mit langen Wartezeiten verursachen?\n',
     explanation:
-      '\n\tBei einer View-Hierarchie muss das Datenbanksystem unter Umständen alle beteiligten Views parsen, was einen erhöhten Zeitaufwand bedeutet. Kartesische Produkte können zu einem sehr großen Datenvolumen führen, das von der Festplatte gelesen werden muss. Natural-Join sind in der Regel schnell, da Sie über die Primärschlüssel auf die Tabellen zugreifen.\n',
+      '\n    Bei einer View-Hierarchie muss das Datenbanksystem unter Umständen alle beteiligten Views parsen, was einen erhöhten Zeitaufwand bedeutet. Kartesische Produkte können zu einem sehr großen Datenvolumen führen, das von der Festplatte gelesen werden muss. Natural-Join sind in der Regel schnell, da Sie über die Primärschlüssel auf die Tabellen zugreifen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31074,9 +31076,9 @@ const questions: Question[] = [
     id: 3104,
     category: 12,
     difficulty: 2,
-    text: 'Betrachten Sie den folgenden PL/SQL-Code:\n\n\t<font face="courier new">create table ang_temp \n\n\t<font face="courier new">  (angid number not null primary key,\n\n\t   abtid number check (abtid between 100 and 500),\n\n\t   abtname varchar2(500) default "test");\n\n\t\n\n\t<font face="courier new">declare\n\n\tang_c ang_temp%rowtype;\n\n\tBEGIN\n\n\t\n\n\tang_c.angid := NULL;\n\n\tang_c.abtid := 50;\n\n\tdbms_output.PUT_LINE("Hallo" || ang_c.abtname);\n\n\tEND;\n\n\t/\n\n\t\n\n\tWelche Aussagen treffen zu?\n',
+    text: 'Betrachten Sie den folgenden PL/SQL-Code:\n\n    <font face="courier new">create table ang_temp \n\n    <font face="courier new">  (angid number not null primary key,\n\n       abtid number check (abtid between 100 and 500),\n\n       abtname varchar2(500) default "test");\n\n    \n\n    <font face="courier new">declare\n\n    ang_c ang_temp%rowtype;\n\n    BEGIN\n\n    \n\n    ang_c.angid := NULL;\n\n    ang_c.abtid := 50;\n\n    dbms_output.PUT_LINE("Hallo" || ang_c.abtname);\n\n    END;\n\n    /\n\n    \n\n    Welche Aussagen treffen zu?\n',
     explanation:
-      '\n\tIm Record -Typ ang_c <font face="courier new">ang_temp%rowtype werden nur die  Datentypen übernommen, aber nicht die zugehörigen CONSTRAINTS der Tabelle ang_temp geprüft.\n',
+      '\n    Im Record -Typ ang_c <font face="courier new">ang_temp%rowtype werden nur die  Datentypen übernommen, aber nicht die zugehörigen CONSTRAINTS der Tabelle ang_temp geprüft.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31124,9 +31126,9 @@ const questions: Question[] = [
     id: 3119,
     category: 12,
     difficulty: 3,
-    text: 'Betrachten Sie den folgenden anonymen PL-SQL-Block auf der Tabelle\n\n\tAngestellte(ang_nr, Name, abt_nr, gehalt, ....)\n\n\t<font face="courier new">SET SERVEROUTPUT ON; \n\n\t<font face="courier new">DECLARE\n\n\t   v_summe NUMBER;\n\n\t   abt_nr angestellte.ang_nr%TYPE = 5;\n\n\tBEGIN\n\n\t   SELECT SUM(gehalt)\n\n\t   FROM angestellte v_summe INTO v_summe\n\n\t   WHERE abt_nr = abt_nr;\n\n\t   DBMS_OUTPUT.PUT_LINE("Die Gehaltssumme in Abteilung 5 ist " || to_char(v_summe);\n\n\t\n\n\tEND;\n\n\t\n\n\tWelche Aussagen sind wahr?\n',
+    text: 'Betrachten Sie den folgenden anonymen PL-SQL-Block auf der Tabelle\n\n    Angestellte(ang_nr, Name, abt_nr, gehalt, ....)\n\n    <font face="courier new">SET SERVEROUTPUT ON; \n\n    <font face="courier new">DECLARE\n\n       v_summe NUMBER;\n\n       abt_nr angestellte.ang_nr%TYPE = 5;\n\n    BEGIN\n\n       SELECT SUM(gehalt)\n\n       FROM angestellte v_summe INTO v_summe\n\n       WHERE abt_nr = abt_nr;\n\n       DBMS_OUTPUT.PUT_LINE("Die Gehaltssumme in Abteilung 5 ist " || to_char(v_summe);\n\n    \n\n    END;\n\n    \n\n    Welche Aussagen sind wahr?\n',
     explanation:
-      '\n\tEin anonymer PL/SQL-Block ignoriert leider in SQL-Angeweisungen Variablenamen, die gleich Spaltennamen sind. Es wird die Bedingung "abt_nr = abt_nr" geprüft, die immer wahr ist. Es wird daher die Summe über alle Gehälter über alle Abteilungen berechnet.\n',
+      '\n    Ein anonymer PL/SQL-Block ignoriert leider in SQL-Angeweisungen Variablenamen, die gleich Spaltennamen sind. Es wird die Bedingung "abt_nr = abt_nr" geprüft, die immer wahr ist. Es wird daher die Summe über alle Gehälter über alle Abteilungen berechnet.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31189,9 +31191,9 @@ const questions: Question[] = [
     id: 3423,
     category: 6,
     difficulty: 2,
-    text: 'Welche Auswirkung hat die folgende Anweisung, wenn die Tabelle Mitglied die Spalte TYPE enthält?\n\n\t\n\n\tALTER TABLE  Mitglied\n\n\tADD CONSTRAINT  TYPE_CHECK CHECK (UPPER(TYPE) IN ("Mitglied", "Anwärter", "Gast", "Beobachter"));\n',
+    text: 'Welche Auswirkung hat die folgende Anweisung, wenn die Tabelle Mitglied die Spalte TYPE enthält?\n\n    \n\n    ALTER TABLE  Mitglied\n\n    ADD CONSTRAINT  TYPE_CHECK CHECK (UPPER(TYPE) IN ("Mitglied", "Anwärter", "Gast", "Beobachter"));\n',
     explanation:
-      '\n\tDa die Werte "Mitglied", "Anwärter" etc . nicht in Großbuchstaben geschrieben sind, kann die Check-Bedingung TYPE CHECK nie erfüllt sein. Daher  können keine Werte in die Tabelle Mitglied eingefügt werden.\n',
+      '\n    Da die Werte "Mitglied", "Anwärter" etc . nicht in Großbuchstaben geschrieben sind, kann die Check-Bedingung TYPE CHECK nie erfüllt sein. Daher  können keine Werte in die Tabelle Mitglied eingefügt werden.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31214,7 +31216,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welche Aussage(n) über Unterabfragen sind wahr?\n',
     explanation:
-      '\n\tDer In-Operator kann immer benutzt werden, unabhängig davon, wieviele Zeilen die Unterabfrage liefert.\n\n\tsiehe Erklärungen von Unterabfragen im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Suchbedingung"> Unterabfragen \n',
+      '\n    Der In-Operator kann immer benutzt werden, unabhängig davon, wieviele Zeilen die Unterabfrage liefert.\n\n    siehe Erklärungen von Unterabfragen im Datenbankwiki unter <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Suchbedingung"> Unterabfragen \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31266,21 +31268,21 @@ const questions: Question[] = [
     id: 2868,
     category: 13,
     difficulty: 3,
-    text: 'Auf einer Tabelle Test soll ein Oracle-Trigger geschrieben werden, der verhindert, dass mehr als 2 Datensätze in der Tabelle angelegt werden. Welcher Trigger erfüllt diese Aufgabe?\n\nCREATE TABLE test (\n\t   NR NUMBER ,\n\t   Bezeichnung VARCHAR2(20));\n\n',
+    text: 'Auf einer Tabelle Test soll ein Oracle-Trigger geschrieben werden, der verhindert, dass mehr als 2 Datensätze in der Tabelle angelegt werden. Welcher Trigger erfüllt diese Aufgabe?\n\nCREATE TABLE test (\n       NR NUMBER ,\n       Bezeichnung VARCHAR2(20));\n\n',
     explanation:
       'Der Trigger kann nicht als Zeilentrigger (FOR EACH ROW) definiert werden, da der SELECT das Mutating-Table-Problem auslösen würde.\n\nDer BEFORE-INSERT-Trigger wird zum falschen Zeitpunkt angestossen, da vor dem eigentlichen INSERT die Anzahl der Datensätze noch nicht bekannt ist, die nach dem INSERT in der Datenbank stehen.',
     type: 'multiple-choice',
     answers: [
       {
-        text: "CREATE TRIGGER pruefen\nAFTER INSERT ON test\nDECLARE\nMY_VAR NUMBER;\nBEGIN\n      SELECT count(*) INTO MY_VAR FROM Test;\t\t\n\tIF MY_VAR > 2\n\tTHEN\n\t   RAISE_Application_error(-20001, 'Zu viele Daten!');\n\tEND IF;\nEND;\n",
+        text: "CREATE TRIGGER pruefen\nAFTER INSERT ON test\nDECLARE\nMY_VAR NUMBER;\nBEGIN\n      SELECT count(*) INTO MY_VAR FROM Test;        \n    IF MY_VAR > 2\n    THEN\n       RAISE_Application_error(-20001, 'Zu viele Daten!');\n    END IF;\nEND;\n",
         solution: 'true',
       },
       {
-        text: "CREATE TRIGGER pruefen\nBEFORE INSERT ON test\nDECLARE\nMY_VAR NUMBER;\nBEGIN\n      SELECT count(*) INTO MY_VAR FROM Test;\t\t\n\tIF MY_VAR > 2\n\tTHEN\n\t   RAISE_Application_error(-20001, 'Zu viele Daten!');\n\tEND IF;\nEND;",
+        text: "CREATE TRIGGER pruefen\nBEFORE INSERT ON test\nDECLARE\nMY_VAR NUMBER;\nBEGIN\n      SELECT count(*) INTO MY_VAR FROM Test;        \n    IF MY_VAR > 2\n    THEN\n       RAISE_Application_error(-20001, 'Zu viele Daten!');\n    END IF;\nEND;",
         solution: 'false',
       },
       {
-        text: "CREATE TRIGGER pruefen\nBEFORE INSERT ON test\nFOR EACH ROW\nDECLARE\nMY_VAR NUMBER;\nBEGIN\n        SELECT count(*) INTO MY_VAR FROM Test;\t\t\n\tIF MY_VAR > 2\n\tTHEN\n\t   RAISE_Application_error(-20001, 'Zu viele Daten!');\n\tEND IF;\nEND;",
+        text: "CREATE TRIGGER pruefen\nBEFORE INSERT ON test\nFOR EACH ROW\nDECLARE\nMY_VAR NUMBER;\nBEGIN\n        SELECT count(*) INTO MY_VAR FROM Test;        \n    IF MY_VAR > 2\n    THEN\n       RAISE_Application_error(-20001, 'Zu viele Daten!');\n    END IF;\nEND;",
         solution: 'false',
       },
     ],
@@ -31291,7 +31293,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'In Oracle-Instead-Of-Triggern können die Transitionsvariablen :OLD.spaltenname beschrieben werden.\n',
     explanation:
-      '\n\tDie Transitionsvariablen :NEW.spaltenname können unter Oracle-PL/SQL bei INSTEAD-OF-Triggern zwar gelesen, aber nicht beschrieben werden. Die :OLD.Transitionsvariablen können nie beschrieben werden, das sie einen alten Zustand enthalten.\n',
+      '\n    Die Transitionsvariablen :NEW.spaltenname können unter Oracle-PL/SQL bei INSTEAD-OF-Triggern zwar gelesen, aber nicht beschrieben werden. Die :OLD.Transitionsvariablen können nie beschrieben werden, das sie einen alten Zustand enthalten.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31310,7 +31312,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Aussagen über Views (Sichten) sind wahr?\n',
     explanation:
-      '\n\tDen View -Begriff (änderbare Sicht)  bitte im DB-Wiki unter   <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Aenderbare-Sicht" target="" title="Änderbare Sicht">http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Aenderbare-Sicht nachschlagen!\n',
+      '\n    Den View -Begriff (änderbare Sicht)  bitte im DB-Wiki unter   <a href="http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Aenderbare-Sicht" target="" title="Änderbare Sicht">http://wikis.gm.fh-koeln.de/wiki_db/Datenbanken/Aenderbare-Sicht nachschlagen!\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31339,9 +31341,9 @@ const questions: Question[] = [
     id: 3507,
     category: 12,
     difficulty: 3,
-    text: 'Folgende Prozedur sei gegeben:\n\n\tCREATE OR REPLACE PROCEDURE test_proc (p1   IN   NUMBER,  p2   IN OUT   NUMBER, p3   OUT    NUMBER) ... ;\n\n\tWelche Parameterverwendungen im Programm sind korrekt?\n',
+    text: 'Folgende Prozedur sei gegeben:\n\n    CREATE OR REPLACE PROCEDURE test_proc (p1   IN   NUMBER,  p2   IN OUT   NUMBER, p3   OUT    NUMBER) ... ;\n\n    Welche Parameterverwendungen im Programm sind korrekt?\n',
     explanation:
-      '\n\tPL/SQL unterschiedet drei Typen der Parameterübergabe: IN, OUT und IN OUT, wobei IN der Defaultwert ist.\n\n\t\n\n\tBeim Typ IN wird der Übergabewert beim Aufruf in das Programm übernommen, Dieser Typ verhält sich daher wie eine Konstante innerhalb eines Programms. Parameter vom Typ IN sind daher nicht in Zuweisungen verwendbar sondern nur in Bedingungen etc..\n\n\t\n\n\tBeim Typ OUT wird ein Wert aus dem Programm heraus an das aufrufende Programm übergeben und IN OUT ist eine Kombination aus beiden Möglichkeiten. Beim Typ OUT gibt es eine Wertübergabe in initialisierter Form an die Prozedur und Rückgabe eines veränderten Werts an das aufrufende Objekt. Dieser Typ verhält sich daher wie eine nicht initialisierte Variable, die nur einen Wert aufnehmen und an das aufrufende Objekt zurückgeben kann. Parameter vom Typ OUT  sind daher in Zuweisungen, Bedingungen, etc. verwendbar.\n\n\t\n\n\tDer Typ IN OUT verhält sich wie eine initialisierte Variable, die einen Wert aufnehmen und an das aufrufende Objekt zurückgeben kann. Parameter vom Typ IN OUT sind daher in Zuweisungen, Bedingungen etc. verwendbar.\n',
+      '\n    PL/SQL unterschiedet drei Typen der Parameterübergabe: IN, OUT und IN OUT, wobei IN der Defaultwert ist.\n\n    \n\n    Beim Typ IN wird der Übergabewert beim Aufruf in das Programm übernommen, Dieser Typ verhält sich daher wie eine Konstante innerhalb eines Programms. Parameter vom Typ IN sind daher nicht in Zuweisungen verwendbar sondern nur in Bedingungen etc..\n\n    \n\n    Beim Typ OUT wird ein Wert aus dem Programm heraus an das aufrufende Programm übergeben und IN OUT ist eine Kombination aus beiden Möglichkeiten. Beim Typ OUT gibt es eine Wertübergabe in initialisierter Form an die Prozedur und Rückgabe eines veränderten Werts an das aufrufende Objekt. Dieser Typ verhält sich daher wie eine nicht initialisierte Variable, die nur einen Wert aufnehmen und an das aufrufende Objekt zurückgeben kann. Parameter vom Typ OUT  sind daher in Zuweisungen, Bedingungen, etc. verwendbar.\n\n    \n\n    Der Typ IN OUT verhält sich wie eine initialisierte Variable, die einen Wert aufnehmen und an das aufrufende Objekt zurückgeben kann. Parameter vom Typ IN OUT sind daher in Zuweisungen, Bedingungen etc. verwendbar.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31374,9 +31376,9 @@ const questions: Question[] = [
     id: 3523,
     category: 16,
     difficulty: 1,
-    text: 'Welche Aussagen zu PHP sind richtig?\n\n\t \n',
+    text: 'Welche Aussagen zu PHP sind richtig?\n\n     \n',
     explanation:
-      '\n\tPHP ist eine weit verbreitete Scriptsprache bei gut 80% aller Websites und seit vielen Jahren im Web etabliert. PHP ist einfach zu erlernen, aber dennoch sehr mächtig und performant. PHP bringt Methoden mit, die eine schnelle Implementierung mit MySQL möglich macht. PHP hat sich zu einem Quasi-Standard für Server-seitige Programmiersprachen von Webanwendungen entwickelt.\n\n\t\n\n\tErfunden wurde sie 1994 von Rasmus Lerdorf (ursprünglich: Personal Home Page) und besteht aus einfachen Textdateien mit .php–Endung. Mittlerweilse steht das Akronym PFP: Hypertext Preprocessor. Die Ausgabe erfolgt vielfach im HTML-Format.  \n\n\t\n\n\tSeit PHP Version 5 ist objektorientiertesProgrammieren möglich. Somit ist eine Klassifizierung von Objekten der reelenWelt auf einen bestimmten Kontext umsetzbar.\n\n\t–Vereinfacht: Funktionen/Methoden können in Klassen zusammengefasst werden, um unendlich viele Objekte (mit verschiedenen Ausprägungen) instanzierenzu können.\n',
+      '\n    PHP ist eine weit verbreitete Scriptsprache bei gut 80% aller Websites und seit vielen Jahren im Web etabliert. PHP ist einfach zu erlernen, aber dennoch sehr mächtig und performant. PHP bringt Methoden mit, die eine schnelle Implementierung mit MySQL möglich macht. PHP hat sich zu einem Quasi-Standard für Server-seitige Programmiersprachen von Webanwendungen entwickelt.\n\n    \n\n    Erfunden wurde sie 1994 von Rasmus Lerdorf (ursprünglich: Personal Home Page) und besteht aus einfachen Textdateien mit .php–Endung. Mittlerweilse steht das Akronym PFP: Hypertext Preprocessor. Die Ausgabe erfolgt vielfach im HTML-Format.  \n\n    \n\n    Seit PHP Version 5 ist objektorientiertesProgrammieren möglich. Somit ist eine Klassifizierung von Objekten der reelenWelt auf einen bestimmten Kontext umsetzbar.\n\n    –Vereinfacht: Funktionen/Methoden können in Klassen zusammengefasst werden, um unendlich viele Objekte (mit verschiedenen Ausprägungen) instanzierenzu können.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31409,9 +31411,9 @@ const questions: Question[] = [
     id: 3529,
     category: 16,
     difficulty: 2,
-    text: '<div style="margin-left:.38in;">\n\tIn PHP gibt es interne Funktionen, die eine Verwendung von MySQL-Datenbanken einfach machen. Wie heißen sie?\n',
+    text: '<div style="margin-left:.38in;">\n    In PHP gibt es interne Funktionen, die eine Verwendung von MySQL-Datenbanken einfach machen. Wie heißen sie?\n',
     explanation:
-      '<div style="margin-left:.38in;">\n\tIn PHP gibt es interne Funktionen, die eine Verwendung von MySQL-Datenbanken einfach machen.\n<div style="margin-left:.81in;">\n\t–MySQLi (MySQL Improved Extension)\n<div style="margin-left:1.25in;">\n\t•<a href="http://www.php.net/manual/en/book.mysqli.php">http://<a href="http://www.php.net/manual/en/book.mysqli.php">www.php.net/manual/en/book.mysqli.php\n<div style="margin-left:.81in;">\n\t–PDO (PHP Data Objects)\n<div style="margin-left:1.25in;">\n\t•<a href="http://www.php.net/manual/de/book.pdo.php">http://<a href="http://www.php.net/manual/de/book.pdo.php">www.php.net/manual/de/book.pdo.php\n',
+      '<div style="margin-left:.38in;">\n    In PHP gibt es interne Funktionen, die eine Verwendung von MySQL-Datenbanken einfach machen.\n<div style="margin-left:.81in;">\n    –MySQLi (MySQL Improved Extension)\n<div style="margin-left:1.25in;">\n    •<a href="http://www.php.net/manual/en/book.mysqli.php">http://<a href="http://www.php.net/manual/en/book.mysqli.php">www.php.net/manual/en/book.mysqli.php\n<div style="margin-left:.81in;">\n    –PDO (PHP Data Objects)\n<div style="margin-left:1.25in;">\n    •<a href="http://www.php.net/manual/de/book.pdo.php">http://<a href="http://www.php.net/manual/de/book.pdo.php">www.php.net/manual/de/book.pdo.php\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31461,7 +31463,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Einschränkungen hat das klassische ER-Modell?\n',
     explanation:
-      '\n\tDie Anzahl der Attribute sind weder in UML noch im ER-Modell beschränkt, nur in manchen konkreten Datenbanksystemen. Die anderen Eigenschaften sind gerade die wesentlichen n Einschränkungren des klasischen ER-Modells.\n',
+      '\n    Die Anzahl der Attribute sind weder in UML noch im ER-Modell beschränkt, nur in manchen konkreten Datenbanksystemen. Die anderen Eigenschaften sind gerade die wesentlichen n Einschränkungren des klasischen ER-Modells.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31488,7 +31490,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Bei welchem Problem werden nicht freigegebene Änderungen (ohne commit) überschrieben?\n',
     explanation:
-      '\n\tBeim LOST UPDATE Problem handelt es sich um das Überschreiben von geänderten Daten. Bei allen anderen Problemen werden nicht freigegebene Änderungen in unterschiedlicher Weise verwendet.\n',
+      '\n    Beim LOST UPDATE Problem handelt es sich um das Überschreiben von geänderten Daten. Bei allen anderen Problemen werden nicht freigegebene Änderungen in unterschiedlicher Weise verwendet.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31500,7 +31502,7 @@ const questions: Question[] = [
         solution: 'true',
       },
       {
-        text: 'DIRTY READ\n\n\t\n\n\t\n\n\t \n',
+        text: 'DIRTY READ\n\n    \n\n    \n\n     \n',
         solution: 'false',
       },
       {
@@ -31515,7 +31517,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Beziehungstypen sieht das EERM (Erweitertes Entity-Relationship-Modell) vor?\n',
     explanation:
-      '\n\tDas ist die Definition des EERM!\n\n\tEin ER-Modell, das zusätzlich zu den klassischen Beziehungsarten und Attributen, IS-A-Beziehungen und Aggregation sowie, mehrwertige und zusammengesetzte Attribute vorsieht,  bezeichnen wir als EERM. \n\n\t(min-max) Beziehungen mit numerisch exakter Kardinalität, wie z.B. 1-10-Beziehungen,. sind nur in UML vorgesehen.\n',
+      '\n    Das ist die Definition des EERM!\n\n    Ein ER-Modell, das zusätzlich zu den klassischen Beziehungsarten und Attributen, IS-A-Beziehungen und Aggregation sowie, mehrwertige und zusammengesetzte Attribute vorsieht,  bezeichnen wir als EERM. \n\n    (min-max) Beziehungen mit numerisch exakter Kardinalität, wie z.B. 1-10-Beziehungen,. sind nur in UML vorgesehen.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31542,7 +31544,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'In welchen Triggern sind die Transitionsvariablen :OLD gefüllt?\n',
     explanation:
-      '\n\t:OLD-Transitionsvariablen sind nur in ROW-Triggern für DELETE und UPDATE gefüllt und unabhängig von AFTER und BEFORE, ebenso wie in INSTEAD-OF-Trigger für diese Ereignisse.  \n',
+      '\n    :OLD-Transitionsvariablen sind nur in ROW-Triggern für DELETE und UPDATE gefüllt und unabhängig von AFTER und BEFORE, ebenso wie in INSTEAD-OF-Trigger für diese Ereignisse.  \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31571,9 +31573,9 @@ const questions: Question[] = [
     id: 3522,
     category: 16,
     difficulty: 1,
-    text: 'Welche Aussagen zu MySQL sind richtig?\n\n\t \n',
+    text: 'Welche Aussagen zu MySQL sind richtig?\n\n     \n',
     explanation:
-      '\n\tWährend ORACLE den Markt im Enterprise-Segment anführt, führt MySQL im Web. MySQL ist eine etablierte und kostenfreie Alternative für „kleinere“ Datenbankanwendungen. MySQL ist einfach zu installieren und zu administrieren. MySQL gehört seit dem Verkauf von SUN Microsystems auch zum Unternehmen ORACLE, ist aber weiterhin OpenSource.\n',
+      '\n    Während ORACLE den Markt im Enterprise-Segment anführt, führt MySQL im Web. MySQL ist eine etablierte und kostenfreie Alternative für „kleinere“ Datenbankanwendungen. MySQL ist einfach zu installieren und zu administrieren. MySQL gehört seit dem Verkauf von SUN Microsystems auch zum Unternehmen ORACLE, ist aber weiterhin OpenSource.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31594,9 +31596,9 @@ const questions: Question[] = [
     id: 3524,
     category: 16,
     difficulty: 1,
-    text: 'Welche Aussagen zu PHP sind richtig?\n\n\t \n',
+    text: 'Welche Aussagen zu PHP sind richtig?\n\n     \n',
     explanation:
-      '\n\tPHP ist eine weit verbreitete Scriptsprache bei gut 80% aller Websites und seit vielen Jahren im Web etabliert. PHP ist einfach zu erlernen, aber dennoch sehr mächtig und performant. PHP bringt Methoden mit, die eine schnelle Implementierung mit MySQL möglich macht. PHP hat sich zu einem Quasi-Standard für Server-seitige Programmiersprachen von Webanwendungen entwickelt.\n\n\t\n\n\tErfunden wurde sie 1994 von Rasmus Lerdorf (ursprünglich: Personal Home Page) und besteht aus einfachen Textdateien mit .php–Endung. Mittlerweilse steht das Akronym PFP: Hypertext Preprocessor. Die Ausgabe erfolgt vielfach im HTML-Format.  \n\n\t\n\n\tSeit PHP Version 5 ist objektorientiertesProgrammieren möglich. Somit ist eine Klassifizierung von Objekten der reelenWelt auf einen bestimmten Kontext umsetzbar.\n\n\t–Vereinfacht: Funktionen/Methoden können in Klassen zusammengefasst werden, um unendlich viele Objekte (mit verschiedenen Ausprägungen) instanzierenzu können.\n',
+      '\n    PHP ist eine weit verbreitete Scriptsprache bei gut 80% aller Websites und seit vielen Jahren im Web etabliert. PHP ist einfach zu erlernen, aber dennoch sehr mächtig und performant. PHP bringt Methoden mit, die eine schnelle Implementierung mit MySQL möglich macht. PHP hat sich zu einem Quasi-Standard für Server-seitige Programmiersprachen von Webanwendungen entwickelt.\n\n    \n\n    Erfunden wurde sie 1994 von Rasmus Lerdorf (ursprünglich: Personal Home Page) und besteht aus einfachen Textdateien mit .php–Endung. Mittlerweilse steht das Akronym PFP: Hypertext Preprocessor. Die Ausgabe erfolgt vielfach im HTML-Format.  \n\n    \n\n    Seit PHP Version 5 ist objektorientiertesProgrammieren möglich. Somit ist eine Klassifizierung von Objekten der reelenWelt auf einen bestimmten Kontext umsetzbar.\n\n    –Vereinfacht: Funktionen/Methoden können in Klassen zusammengefasst werden, um unendlich viele Objekte (mit verschiedenen Ausprägungen) instanzierenzu können.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31631,7 +31633,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Aussagen zu PHP sind richtig?\n',
     explanation:
-      '\n\tPHP ist eine weit verbreitete Scriptsprache bei gut 80% aller Websites und seit vielen Jahren im Web etabliert. PHP ist einfach zu erlernen, aber dennoch sehr mächtig und performant. PHP bringt Methoden mit, die eine schnelle Implementierung mit MySQL möglich macht. PHP hat sich zu einem Quasi-Standard für Server-seitige Programmiersprachen von Webanwendungen entwickelt.\n\n\t\n\n\tErfunden wurde sie 1994 von Rasmus Lerdorf (ursprünglich: Personal Home Page) und besteht aus einfachen Textdateien mit .php–Endung. Mittlerweilse steht das Akronym PFP: Hypertext Preprocessor. Die Ausgabe erfolgt vielfach im HTML-Format.  \n\n\t\n\n\tSeit PHP Version 5 ist objektorientiertesProgrammieren möglich. Somit ist eine Klassifizierung von Objekten der reelenWelt auf einen bestimmten Kontext umsetzbar.  Vereinfacht: Funktionen/Methoden können in Klassen zusammengefasst werden, um unendlich viele Objekte (mit verschiedenen Ausprägungen) instanzierenzu können.\n',
+      '\n    PHP ist eine weit verbreitete Scriptsprache bei gut 80% aller Websites und seit vielen Jahren im Web etabliert. PHP ist einfach zu erlernen, aber dennoch sehr mächtig und performant. PHP bringt Methoden mit, die eine schnelle Implementierung mit MySQL möglich macht. PHP hat sich zu einem Quasi-Standard für Server-seitige Programmiersprachen von Webanwendungen entwickelt.\n\n    \n\n    Erfunden wurde sie 1994 von Rasmus Lerdorf (ursprünglich: Personal Home Page) und besteht aus einfachen Textdateien mit .php–Endung. Mittlerweilse steht das Akronym PFP: Hypertext Preprocessor. Die Ausgabe erfolgt vielfach im HTML-Format.  \n\n    \n\n    Seit PHP Version 5 ist objektorientiertesProgrammieren möglich. Somit ist eine Klassifizierung von Objekten der reelenWelt auf einen bestimmten Kontext umsetzbar.  Vereinfacht: Funktionen/Methoden können in Klassen zusammengefasst werden, um unendlich viele Objekte (mit verschiedenen Ausprägungen) instanzierenzu können.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31666,7 +31668,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'INSTEAD OF-Trigger sind definierbar als\n',
     explanation:
-      '\n\tINSTEAD OF-Trigger sind nur als ROW-Trigger definierbar.\n',
+      '\n    INSTEAD OF-Trigger sind nur als ROW-Trigger definierbar.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31689,7 +31691,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Aussagen zu PHP sind richtig?\n',
     explanation:
-      '\n\tPHP ist eine weit verbreitete Scriptsprache bei gut 80% aller Websites und seit vielen Jahren im Web etabliert. PHP ist einfach zu erlernen, aber dennoch sehr mächtig und performant. PHP bringt Methoden mit, die eine schnelle Implementierung mit MySQL möglich macht. PHP hat sich zu einem Quasi-Standard für Server-seitige Programmiersprachen von Webanwendungen entwickelt.\n\n\tErfunden wurde sie 1994 von Rasmus Lerdorf (ursprünglich: Personal Home Page) und besteht aus einfachen Textdateien mit .php–Endung. Mittlerweilse steht das Akronym PFP: Hypertext Preprocessor. Die Ausgabe erfolgt vielfach im HTML-Format.  \n\n\t\n\n\tSeit PHP Version 5 ist objektorientiertesProgrammieren möglich. Somit ist eine Klassifizierung von Objekten der reelen Welt auf einen bestimmten Kontext umsetzbar.  Vereinfacht: Funktionen/Methoden können in Klassen zusammengefasst werden, um unendlich viele Objekte (mit verschiedenen Ausprägungen) instanzierenzu können.\n',
+      '\n    PHP ist eine weit verbreitete Scriptsprache bei gut 80% aller Websites und seit vielen Jahren im Web etabliert. PHP ist einfach zu erlernen, aber dennoch sehr mächtig und performant. PHP bringt Methoden mit, die eine schnelle Implementierung mit MySQL möglich macht. PHP hat sich zu einem Quasi-Standard für Server-seitige Programmiersprachen von Webanwendungen entwickelt.\n\n    Erfunden wurde sie 1994 von Rasmus Lerdorf (ursprünglich: Personal Home Page) und besteht aus einfachen Textdateien mit .php–Endung. Mittlerweilse steht das Akronym PFP: Hypertext Preprocessor. Die Ausgabe erfolgt vielfach im HTML-Format.  \n\n    \n\n    Seit PHP Version 5 ist objektorientiertesProgrammieren möglich. Somit ist eine Klassifizierung von Objekten der reelen Welt auf einen bestimmten Kontext umsetzbar.  Vereinfacht: Funktionen/Methoden können in Klassen zusammengefasst werden, um unendlich viele Objekte (mit verschiedenen Ausprägungen) instanzierenzu können.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31716,7 +31718,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Bei welchen SQL-Lesezugriffen ist das Sortieren immer notwendig?\n',
     explanation:
-      '\n\tAußer bei Unterabfragen muss immer sortiert werden, um Duplikate zu erkennen.Das kostet Zeit!\n',
+      '\n    Außer bei Unterabfragen muss immer sortiert werden, um Duplikate zu erkennen.Das kostet Zeit!\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31743,7 +31745,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Mit welchen Konzepten können bei Oracle ab Version 12c Werte für künstliche Primärschlüssel generiert werden?\n',
     explanation:
-      '\n\tNeben den altbekanten Sequenzen ist bei Oracle 12c die Identity Column hinzu gekommen., siehe z.B.<a href="http://www.oracle.com/technetwork/database/database-technologies/rdb/0307-identity-columns-128126.pdf">http://www.oracle.com/technetwork/database/database-technologies/rdb/0307-identity-columns-128126.pdf\n',
+      '\n    Neben den altbekanten Sequenzen ist bei Oracle 12c die Identity Column hinzu gekommen., siehe z.B.<a href="http://www.oracle.com/technetwork/database/database-technologies/rdb/0307-identity-columns-128126.pdf">http://www.oracle.com/technetwork/database/database-technologies/rdb/0307-identity-columns-128126.pdf\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31766,7 +31768,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'In welchen Triggern sind die Transitionsvariablen :NEW gefüllt?\n',
     explanation:
-      '\n\t:NEW-Transitionsvariablen sind nur in ROW-Triggern für INSERT und UPDATE gefüllt und unabhängig von AFTER und BEFORE, ebenso wie in INSTEAD-OF-Triggern für diese Ereignisse.  \n',
+      '\n    :NEW-Transitionsvariablen sind nur in ROW-Triggern für INSERT und UPDATE gefüllt und unabhängig von AFTER und BEFORE, ebenso wie in INSTEAD-OF-Triggern für diese Ereignisse.  \n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31797,12 +31799,12 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie heißt die Methode, mit der mittels MySQLi eine SQL-Anfrage von PHP zu MySQL geschickt werden kann?\n',
     explanation:
-      '<div style="margin-left:.38in;">\n\t \n<div style="margin-left:.38in;">\n\t// 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n\t$connection = mysqli_connect(\n\n\t  <HOST>, <USER>, , <DATABASE>);\n\n\t$query = mysqli_query($connection, <SQL>);\n\n\twhile ($data = mysqli_fetch_array($query)){\n\n\t   // Verarbeitung..\n\n\t}\n\n\t \n\n\t// 2. Beispiel\n\n\t<?php\n\n\t$mysqlhost="localhost"; // MySQL-Host angeben\n\n\t$mysqluser="root"; // MySQL-User angeben\n\n\t$mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t$mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t$connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n\t?>\n',
+      '<div style="margin-left:.38in;">\n     \n<div style="margin-left:.38in;">\n    // 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n    $connection = mysqli_connect(\n\n      <HOST>, <USER>, , <DATABASE>);\n\n    $query = mysqli_query($connection, <SQL>);\n\n    while ($data = mysqli_fetch_array($query)){\n\n       // Verarbeitung..\n\n    }\n\n     \n\n    // 2. Beispiel\n\n    <?php\n\n    $mysqlhost="localhost"; // MySQL-Host angeben\n\n    $mysqluser="root"; // MySQL-User angeben\n\n    $mysqlpwd="xxxxxx"; // Passwort angeben\n\n    $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n    $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n    ?>\n',
     type: 'text',
     answers: [
       {
         text: 'Geben Sie den Funktionsnamen kleingeschrieben und ohne Klammern an.\n',
-        solution: '\r\n\tmysqli_query\r\n',
+        solution: '\r\n    mysqli_query\r\n',
       },
     ],
   },
@@ -31812,12 +31814,12 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie heißt die Methode, mit der mittels PDO eine SQL-Anfrage von PHP an MySQL geschickt werden kann?\n',
     explanation:
-      '\n\t<?php\n\n\tfunction getConnection() {\n\n\t  $mysqlhost="localhost"; // MySQL-Host angeben\n\n\t  $mysqluser="root"; // MySQL-User angeben\n\n\t  $mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t  $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t  $connection = new PDO("mysql:host=$mysqlhost;dbname=$mysqldb", $mysqluser, $mysqldb); \n\n\t  $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);\n\n\t  return $connection;\n\n\t}\n\n\t?>\n\n\t \n\n\tfunction getApps() {\n\n\t  $sql = "select * FROM apps ORDER BY name";\n\n\t  try {\n\n\t  $db = getConnection();\n\n\t  $stmt = $db->query($sql); \n\n\t  $data = $stmt->fetchAll(PDO::FETCH_OBJ);\n\n\t  $db = null;\n\n\t  return $data;\n\n\t  } catch(PDOException $e) {\n\n\t  echo "{"error":{"text":". $e->getApps() ."}}";\n\n\t  }\n\n\t}\n',
+      '\n    <?php\n\n    function getConnection() {\n\n      $mysqlhost="localhost"; // MySQL-Host angeben\n\n      $mysqluser="root"; // MySQL-User angeben\n\n      $mysqlpwd="xxxxxx"; // Passwort angeben\n\n      $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n      $connection = new PDO("mysql:host=$mysqlhost;dbname=$mysqldb", $mysqluser, $mysqldb); \n\n      $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);\n\n      return $connection;\n\n    }\n\n    ?>\n\n     \n\n    function getApps() {\n\n      $sql = "select * FROM apps ORDER BY name";\n\n      try {\n\n      $db = getConnection();\n\n      $stmt = $db->query($sql); \n\n      $data = $stmt->fetchAll(PDO::FETCH_OBJ);\n\n      $db = null;\n\n      return $data;\n\n      } catch(PDOException $e) {\n\n      echo "{"error":{"text":". $e->getApps() ."}}";\n\n      }\n\n    }\n',
     type: 'text',
     answers: [
       {
         text: 'Geben Sie den Funktionsnamen ohne Klammern an.\n',
-        solution: '\r\n\tquery\r\n',
+        solution: '\r\n    query\r\n',
       },
     ],
   },
@@ -31827,12 +31829,12 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie heißt die Methode, mit der mittels PDO eine Verbindung von PHP zu MySQL aufgebaut werden kann?\n',
     explanation:
-      '\n\t<?php\n\n\tfunction getConnection() {\n\n\t  $mysqlhost="localhost"; // MySQL-Host angeben\n\n\t  $mysqluser="root"; // MySQL-User angeben\n\n\t  $mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t  $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t  $connection = new PDO("mysql:host=$mysqlhost;dbname=$mysqldb", $mysqluser, $mysqldb); \n\n\t  $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);\n\n\t  return $connection;\n\n\t}\n\n\t?>\n\n\t \n\n\tfunction getApps() {\n\n\t  $sql = "select * FROM apps ORDER BY name";\n\n\t  try {\n\n\t  $db = getConnection();\n\n\t  $stmt = $db->query($sql); \n\n\t  $data = $stmt->fetchAll(PDO::FETCH_OBJ);\n\n\t  $db = null;\n\n\t  return $data;\n\n\t  } catch(PDOException $e) {\n\n\t  echo "{"error":{"text":". $e->getApps() ."}}";\n\n\t  }\n\n\t}\n',
+      '\n    <?php\n\n    function getConnection() {\n\n      $mysqlhost="localhost"; // MySQL-Host angeben\n\n      $mysqluser="root"; // MySQL-User angeben\n\n      $mysqlpwd="xxxxxx"; // Passwort angeben\n\n      $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n      $connection = new PDO("mysql:host=$mysqlhost;dbname=$mysqldb", $mysqluser, $mysqldb); \n\n      $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);\n\n      return $connection;\n\n    }\n\n    ?>\n\n     \n\n    function getApps() {\n\n      $sql = "select * FROM apps ORDER BY name";\n\n      try {\n\n      $db = getConnection();\n\n      $stmt = $db->query($sql); \n\n      $data = $stmt->fetchAll(PDO::FETCH_OBJ);\n\n      $db = null;\n\n      return $data;\n\n      } catch(PDOException $e) {\n\n      echo "{"error":{"text":". $e->getApps() ."}}";\n\n      }\n\n    }\n',
     type: 'text',
     answers: [
       {
         text: 'Geben Sie den Funktionsnamen ohne Klammern an.\n',
-        solution: '\r\n\tPDO\r\n',
+        solution: '\r\n    PDO\r\n',
       },
     ],
   },
@@ -31842,32 +31844,32 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Ordnen Sie die nachfolgenden Schritte in die richtige Ausführungsreihenfolge (1-6):\n',
     explanation:
-      '\n\t1. Der Client schickt eine Anfrage für die Ausführung einer .php-Datei über das Internet an den Webserver.  \n\n\t2. Der Webserver läd die .php-Datei von der Festplatte.\n\n\t3. Der Webserver übergibt die .php-Datei an den PHP-Interpreter.  \n\n\t4. Je nach php-Skript erzeugt der PHP-Interpreter eine Ausgabedatei des programmierten Formats, z.B. HTML, PDF, etc.\n\n\t5. Der erzeugte Code wird an dem Webserver gegeben.\n\n\t6. Der Webserver sendet den erzeugten Code an den Client.\n',
+      '\n    1. Der Client schickt eine Anfrage für die Ausführung einer .php-Datei über das Internet an den Webserver.  \n\n    2. Der Webserver läd die .php-Datei von der Festplatte.\n\n    3. Der Webserver übergibt die .php-Datei an den PHP-Interpreter.  \n\n    4. Je nach php-Skript erzeugt der PHP-Interpreter eine Ausgabedatei des programmierten Formats, z.B. HTML, PDF, etc.\n\n    5. Der erzeugte Code wird an dem Webserver gegeben.\n\n    6. Der Webserver sendet den erzeugten Code an den Client.\n',
     type: 'text',
     answers: [
       {
         text: 'Der Webserver übergibt die .php-Datei an den PHP-Interpreter.\n',
-        solution: '\r\n\t3\r\n',
+        solution: '\r\n    3\r\n',
       },
       {
         text: 'Der Client schickt eine Anfrage für die Ausführung einer .php-Datei über das Internet an den Webserver.\n',
-        solution: '\r\n\t1\r\n',
+        solution: '\r\n    1\r\n',
       },
       {
         text: 'Der Webserver sendet den erzeugten Code an den Client.\n',
-        solution: '\r\n\t6\r\n',
+        solution: '\r\n    6\r\n',
       },
       {
         text: 'Der erzeugte Code wird an dem Webserver gegeben.\n',
-        solution: '\r\n\t5\r\n',
+        solution: '\r\n    5\r\n',
       },
       {
         text: 'Der Webserver läd die .php-Datei von der Festplatte.\n',
-        solution: '\r\n\t2\r\n',
+        solution: '\r\n    2\r\n',
       },
       {
         text: 'Je nach php-Skript erzeugt der PHP-Interpreter eine Ausgabedatei des programmierten Formats, z.B. HTML, PDF, etc.\n',
-        solution: '\r\n\t4\r\n',
+        solution: '\r\n    4\r\n',
       },
     ],
   },
@@ -31877,32 +31879,32 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Ordnen Sie die nachfolgenden Schritte in die richtige Ausführungsreihenfolge (1-6):\n',
     explanation:
-      '\n\t1. Der Client schickt eine Anfrage für die Ausführung einer .php-Datei über das Internet an den Webserver.  \n\n\t2. Der Webserver läd die .php-Datei von der Festplatte.\n\n\t3. Der Webserver übergibt die .php-Datei an den PHP-Interpreter.  \n\n\t4. Je nach php-Skript erzeugt der PHP-Interpreter eine Ausgabedatei des programmierten Formats, z.B. HTML, PDF, etc.\n\n\t5. Der erzeugte Code wird an dem Webserver gegeben.\n\n\t6. Der Webserver sendet den erzeugten Code an den Client.\n',
+      '\n    1. Der Client schickt eine Anfrage für die Ausführung einer .php-Datei über das Internet an den Webserver.  \n\n    2. Der Webserver läd die .php-Datei von der Festplatte.\n\n    3. Der Webserver übergibt die .php-Datei an den PHP-Interpreter.  \n\n    4. Je nach php-Skript erzeugt der PHP-Interpreter eine Ausgabedatei des programmierten Formats, z.B. HTML, PDF, etc.\n\n    5. Der erzeugte Code wird an dem Webserver gegeben.\n\n    6. Der Webserver sendet den erzeugten Code an den Client.\n',
     type: 'text',
     answers: [
       {
         text: 'Der Webserver übergibt die .php-Datei an den PHP-Interpreter.\n',
-        solution: '\r\n\t3\r\n',
+        solution: '\r\n    3\r\n',
       },
       {
         text: 'Der Client schickt eine Anfrage für die Ausführung einer .php-Datei über das Internet an den Webserver.\n',
-        solution: '\r\n\t1\r\n',
+        solution: '\r\n    1\r\n',
       },
       {
         text: 'Der Webserver sendet den erzeugten Code an den Client.\n',
-        solution: '\r\n\t6\r\n',
+        solution: '\r\n    6\r\n',
       },
       {
         text: 'Der erzeugte Code wird an dem Webserver gegeben.\n',
-        solution: '\r\n\t5\r\n',
+        solution: '\r\n    5\r\n',
       },
       {
         text: 'Der Webserver läd die .php-Datei von der Festplatte.\n',
-        solution: '\r\n\t2\r\n',
+        solution: '\r\n    2\r\n',
       },
       {
         text: 'Je nach php-Skript erzeugt der PHP-Interpreter eine Ausgabedatei des programmierten Formats, z.B. HTML, PDF, etc.\n',
-        solution: '\r\n\t4\r\n',
+        solution: '\r\n    4\r\n',
       },
     ],
   },
@@ -31912,7 +31914,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welches Problem kann beim Isolationsgrad SERIALIABLE auftreten?\n',
     explanation:
-      '\n\tDer Isolationsgrad SERIALIABLE unterbindet jedes der aufgelisteten Probleme.\n',
+      '\n    Der Isolationsgrad SERIALIABLE unterbindet jedes der aufgelisteten Probleme.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31928,7 +31930,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'DIRTY READ\n\n\t\n\n\t\n\n\t \n',
+        text: 'DIRTY READ\n\n    \n\n    \n\n     \n',
         solution: 'false',
       },
       {
@@ -31970,7 +31972,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Faktoren spielen bei der physischen Optimierung eine Rolle?\n',
     explanation:
-      '\n\tDie Anzahl der Relationen spielt für die physische Optimierung keine Rolle.\n',
+      '\n    Die Anzahl der Relationen spielt für die physische Optimierung keine Rolle.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -31993,7 +31995,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'INSTEAD OF-Trigger sind für welche der folgenden DB-Objekte definierbar\n',
     explanation:
-      '\n\tINSTEAD OF-Trigger sind nur für Sichten definiert. Ggf. sind dann Anwendern die DML-Rechte auf die Tabelle mit REVOKE zu entziehen und auf der Sicht mit GRANT einzuräumen. Trigger sind nie auf andere Trigger definierbar.\n',
+      '\n    INSTEAD OF-Trigger sind nur für Sichten definiert. Ggf. sind dann Anwendern die DML-Rechte auf die Tabelle mit REVOKE zu entziehen und auf der Sicht mit GRANT einzuräumen. Trigger sind nie auf andere Trigger definierbar.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32020,7 +32022,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Optimierung ist eine Anwendung der relationalen Algebra?\n',
     explanation:
-      '\n\tDie logische Optimierung berücksichtigt die Operatoren der relationalen Algebra, die physische Optinierung die Größe der Relationen und  Statistiken.\n',
+      '\n    Die logische Optimierung berücksichtigt die Operatoren der relationalen Algebra, die physische Optinierung die Größe der Relationen und  Statistiken.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32039,7 +32041,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Aussagen zu MySQL sind richtig?\n',
     explanation:
-      '\n\tWährend ORACLE den Markt im Enterprise-Segment anführt, führt MySQL im Web. MySQL ist eine etablierte und kostenfreie Alternative für „kleinere“ Datenbankanwendungen. MySQL ist einfach zu installieren und zu administrieren. MySQL gehört seit dem Verkauf von SUN Microsystems auch zum Unternehmen ORACLE, ist aber weiterhin OpenSource.\n',
+      '\n    Während ORACLE den Markt im Enterprise-Segment anführt, führt MySQL im Web. MySQL ist eine etablierte und kostenfreie Alternative für „kleinere“ Datenbankanwendungen. MySQL ist einfach zu installieren und zu administrieren. MySQL gehört seit dem Verkauf von SUN Microsystems auch zum Unternehmen ORACLE, ist aber weiterhin OpenSource.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32062,7 +32064,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Mit welchen Schluesselwoertern wird bei mysqli die Feherbehandlung (error handling) programmiert?\n',
     explanation:
-      '\n\t<?php\n\n\t$mysqlhost="localhost"; // MySQL-Host angeben\n\n\t$mysqluser="root"; // MySQL-User angeben\n\n\t$mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t$mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t$connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n\t?>\n',
+      '\n    <?php\n\n    $mysqlhost="localhost"; // MySQL-Host angeben\n\n    $mysqluser="root"; // MySQL-User angeben\n\n    $mysqlpwd="xxxxxx"; // Passwort angeben\n\n    $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n    $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n    ?>\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32089,7 +32091,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Bei welcher Art von Sperren können Deadlocks entstehen?\n',
     explanation:
-      '\n\tSiehe http://lwibs01.gm.fh-koeln.de/wikis/wiki_db/index.php?n=Datenbanken.DEADLOCK\n',
+      '\n    Siehe http://lwibs01.gm.fh-koeln.de/wikis/wiki_db/index.php?n=Datenbanken.DEADLOCK\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32112,7 +32114,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Isolationsgrade unterstützt Oracle?\n',
     explanation:
-      '\n\tOracle unterstützt nur die Isolationsgrade  SERIALIZABLE und READ COMITTED.\n',
+      '\n    Oracle unterstützt nur die Isolationsgrade  SERIALIZABLE und READ COMITTED.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32128,7 +32130,7 @@ const questions: Question[] = [
         solution: 'true',
       },
       {
-        text: 'REPEATABLE READ\n\n\t\n\n\t\n\n\t \n',
+        text: 'REPEATABLE READ\n\n    \n\n    \n\n     \n',
         solution: 'false',
       },
       {
@@ -32143,7 +32145,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Die MySQLi-Funktion zum Ausführen von SQL-Befehlen "mysqli_query" wird mit welchen Parametern aufgerufen? \n',
     explanation:
-      '<div style="margin-left:.38in;">\n\t \n<div style="margin-left:.38in;">\n\t// 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n\t$connection = mysqli_connect(\n\n\t  <HOST>, <USER>, , <DATABASE>);\n\n\t$query = mysqli_query($connection, <SQL>);\n\n\twhile ($data = mysqli_fetch_array($query)){\n\n\t   // Verarbeitung..\n\n\t}\n\n\t \n\n\t// 2. Beispiel\n\n\t<?php\n\n\t$mysqlhost="localhost"; // MySQL-Host angeben\n\n\t$mysqluser="root"; // MySQL-User angeben\n\n\t$mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t$mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t$connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n\t?>\n',
+      '<div style="margin-left:.38in;">\n     \n<div style="margin-left:.38in;">\n    // 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n    $connection = mysqli_connect(\n\n      <HOST>, <USER>, , <DATABASE>);\n\n    $query = mysqli_query($connection, <SQL>);\n\n    while ($data = mysqli_fetch_array($query)){\n\n       // Verarbeitung..\n\n    }\n\n     \n\n    // 2. Beispiel\n\n    <?php\n\n    $mysqlhost="localhost"; // MySQL-Host angeben\n\n    $mysqluser="root"; // MySQL-User angeben\n\n    $mysqlpwd="xxxxxx"; // Passwort angeben\n\n    $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n    $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n    ?>\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32181,7 +32183,7 @@ const questions: Question[] = [
     category: 8,
     difficulty: 1,
     text: 'Bei welcher Join-Variante wird jedes Element mit jedem verglichen?\n',
-    explanation: '\n\tDas ist die Definition des Nested Loop Joins!\n',
+    explanation: '\n    Das ist die Definition des Nested Loop Joins!\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32204,7 +32206,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Bei welchem Problem werden nicht freigegebene Änderungen (ohne commit) gelesen?\n',
     explanation:
-      '\n\tBeim  LOST UPDATE Problem handelt es sich um das Überschreiben von geänderten Daten. Bei allen anderen Problemen werden nicht freigegebene Änderungen in unterschiedlicher Weise verwendet.\n',
+      '\n    Beim  LOST UPDATE Problem handelt es sich um das Überschreiben von geänderten Daten. Bei allen anderen Problemen werden nicht freigegebene Änderungen in unterschiedlicher Weise verwendet.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32216,7 +32218,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'DIRTY READ\n\n\t\n\n\t\n\n\t \n',
+        text: 'DIRTY READ\n\n    \n\n    \n\n     \n',
         solution: 'true',
       },
       {
@@ -32231,12 +32233,12 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie heißt die Methode, mit der mittels MySQLi eine Verbindung von PHP zu MySQL aufgebaut werden kann?\n',
     explanation:
-      '<div style="margin-left:.38in;">\n\t \n<div style="margin-left:.38in;">\n\t// 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n\t$connection = mysqli_connect(\n\n\t  <HOST>, <USER>, , <DATABASE>);\n\n\t$query = mysqli_query($connection, <SQL>);\n\n\twhile ($data = mysqli_fetch_array($query)){\n\n\t   // Verarbeitung..\n\n\t}\n\n\t \n\n\t// 2. Beispiel\n\n\t<?php\n\n\t$mysqlhost="localhost"; // MySQL-Host angeben\n\n\t$mysqluser="root"; // MySQL-User angeben\n\n\t$mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t$mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t$connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n\t?>\n',
+      '<div style="margin-left:.38in;">\n     \n<div style="margin-left:.38in;">\n    // 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n    $connection = mysqli_connect(\n\n      <HOST>, <USER>, , <DATABASE>);\n\n    $query = mysqli_query($connection, <SQL>);\n\n    while ($data = mysqli_fetch_array($query)){\n\n       // Verarbeitung..\n\n    }\n\n     \n\n    // 2. Beispiel\n\n    <?php\n\n    $mysqlhost="localhost"; // MySQL-Host angeben\n\n    $mysqluser="root"; // MySQL-User angeben\n\n    $mysqlpwd="xxxxxx"; // Passwort angeben\n\n    $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n    $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n    ?>\n',
     type: 'text',
     answers: [
       {
         text: 'Geben Sie den Funktionsnamen kleingeschrieben und ohne Klammern an.\n',
-        solution: '\r\n\tmysqli_connect\r\n',
+        solution: '\r\n    mysqli_connect\r\n',
       },
     ],
   },
@@ -32246,12 +32248,12 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Wie heißt die Methode und deren Parameter, mit der mittels MySQLi eine Verbindung von PHP zu MySQL aufgebaut werden kann?\n',
     explanation:
-      '<div style="margin-left:.38in;">\n\t \n<div style="margin-left:.38in;">\n\t// 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n\t$connection = mysqli_connect(\n\n\t  <HOST>, <USER>, , <DATABASE>);\n\n\t$query = mysqli_query($connection, <SQL>);\n\n\twhile ($data = mysqli_fetch_array($query)){\n\n\t   // Verarbeitung..\n\n\t}\n\n\t \n\n\t// 2. Beispiel\n\n\t<?php\n\n\t$mysqlhost="localhost"; // MySQL-Host angeben\n\n\t$mysqluser="root"; // MySQL-User angeben\n\n\t$mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t$mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t$connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n\t?>\n',
+      '<div style="margin-left:.38in;">\n     \n<div style="margin-left:.38in;">\n    // 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n    $connection = mysqli_connect(\n\n      <HOST>, <USER>, , <DATABASE>);\n\n    $query = mysqli_query($connection, <SQL>);\n\n    while ($data = mysqli_fetch_array($query)){\n\n       // Verarbeitung..\n\n    }\n\n     \n\n    // 2. Beispiel\n\n    <?php\n\n    $mysqlhost="localhost"; // MySQL-Host angeben\n\n    $mysqluser="root"; // MySQL-User angeben\n\n    $mysqlpwd="xxxxxx"; // Passwort angeben\n\n    $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n    $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n    ?>\n',
     type: 'text',
     answers: [
       {
         text: 'Geben Sie den Funktionsnamen kleingeschrieben an. Die Parameter großgeschrieben in spitzen Klammern, alles ohne trennende Leerzeichen und abschließendem Semikolon\n',
-        solution: '\r\n\tmysqli_connect(<HOST>,<USER>,,<DATABASE>)\r\n',
+        solution: '\r\n    mysqli_connect(<HOST>,<USER>,,<DATABASE>)\r\n',
       },
     ],
   },
@@ -32261,7 +32263,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Die MySQLi-Funktion zum Verbindungsaufbau "mysqli_connect" wird mit welchen Parametern aufgerufen? \n',
     explanation:
-      '<div style="margin-left:.38in;">\n\t \n<div style="margin-left:.38in;">\n\t// 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n\t$connection = mysqli_connect(\n\n\t  <HOST>, <USER>, , <DATABASE>);\n\n\t$query = mysqli_query($connection, <SQL>);\n\n\twhile ($data = mysqli_fetch_array($query)){\n\n\t   // Verarbeitung..\n\n\t}\n\n\t \n\n\t// 2. Beispiel\n\n\t<?php\n\n\t$mysqlhost="localhost"; // MySQL-Host angeben\n\n\t$mysqluser="root"; // MySQL-User angeben\n\n\t$mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t$mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t$connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n\t?>\n',
+      '<div style="margin-left:.38in;">\n     \n<div style="margin-left:.38in;">\n    // 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n    $connection = mysqli_connect(\n\n      <HOST>, <USER>, , <DATABASE>);\n\n    $query = mysqli_query($connection, <SQL>);\n\n    while ($data = mysqli_fetch_array($query)){\n\n       // Verarbeitung..\n\n    }\n\n     \n\n    // 2. Beispiel\n\n    <?php\n\n    $mysqlhost="localhost"; // MySQL-Host angeben\n\n    $mysqluser="root"; // MySQL-User angeben\n\n    $mysqlpwd="xxxxxx"; // Passwort angeben\n\n    $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n    $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n    ?>\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32323,12 +32325,12 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie heißt die Methode, mit der mittels MySQLi eine Ergebnismenge mit Datensätzen aus MySQL in PHP verarbeitet werden kann?\n',
     explanation:
-      '<div style="margin-left:.38in;">\n\t \n<div style="margin-left:.38in;">\n\t// 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n\t$connection = mysqli_connect(\n\n\t  <HOST>, <USER>, , <DATABASE>);\n\n\t$query = mysqli_query($connection, <SQL>);\n\n\twhile ($data = mysqli_fetch_array($query)){\n\n\t   // Verarbeitung..\n\n\t}\n\n\t \n\n\t// 2. Beispiel\n\n\t<?php\n\n\t$mysqlhost="localhost"; // MySQL-Host angeben\n\n\t$mysqluser="root"; // MySQL-User angeben\n\n\t$mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t$mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t$connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n\t?>\n',
+      '<div style="margin-left:.38in;">\n     \n<div style="margin-left:.38in;">\n    // 1. Beispiel:  Verbindungsaufbau mit mysqli:\n\n    $connection = mysqli_connect(\n\n      <HOST>, <USER>, , <DATABASE>);\n\n    $query = mysqli_query($connection, <SQL>);\n\n    while ($data = mysqli_fetch_array($query)){\n\n       // Verarbeitung..\n\n    }\n\n     \n\n    // 2. Beispiel\n\n    <?php\n\n    $mysqlhost="localhost"; // MySQL-Host angeben\n\n    $mysqluser="root"; // MySQL-User angeben\n\n    $mysqlpwd="xxxxxx"; // Passwort angeben\n\n    $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n    $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd, $mysqldb) or die("DB Connection ERROR!");\n\n    ?>\n',
     type: 'text',
     answers: [
       {
         text: 'Geben Sie den Funktionsnamen kleingeschrieben und ohne Klammern an.\n',
-        solution: '\r\n\tmysqli_fetch_array\r\n',
+        solution: '\r\n    mysqli_fetch_array\r\n',
       },
     ],
   },
@@ -32338,12 +32340,12 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Wie heißt die Methode, mit der mittels PDO eine Ergebnismenge mit Datensätzen aus MySQL in PHP verarbeitet werden kann?\n',
     explanation:
-      '\n\t<?php\n\n\tfunction getConnection() {\n\n\t  $mysqlhost="localhost"; // MySQL-Host angeben\n\n\t  $mysqluser="root"; // MySQL-User angeben\n\n\t  $mysqlpwd="xxxxxx"; // Passwort angeben\n\n\t  $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n\t  $connection = new PDO("mysql:host=$mysqlhost;dbname=$mysqldb", $mysqluser, $mysqldb); \n\n\t  $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);\n\n\t  return $connection;\n\n\t}\n\n\t?>\n\n\t \n\n\tfunction getApps() {\n\n\t  $sql = "select * FROM apps ORDER BY name";\n\n\t  try {\n\n\t  $db = getConnection();\n\n\t  $stmt = $db->query($sql); \n\n\t  $data = $stmt->fetchAll(PDO::FETCH_OBJ);\n\n\t  $db = null;\n\n\t  return $data;\n\n\t  } catch(PDOException $e) {\n\n\t  echo "{"error":{"text":". $e->getApps() ."}}";\n\n\t  }\n\n\t}\n',
+      '\n    <?php\n\n    function getConnection() {\n\n      $mysqlhost="localhost"; // MySQL-Host angeben\n\n      $mysqluser="root"; // MySQL-User angeben\n\n      $mysqlpwd="xxxxxx"; // Passwort angeben\n\n      $mysqldb="myDatabase"; // Gewuenschte Datenbank angeben\n\n      $connection = new PDO("mysql:host=$mysqlhost;dbname=$mysqldb", $mysqluser, $mysqldb); \n\n      $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);\n\n      return $connection;\n\n    }\n\n    ?>\n\n     \n\n    function getApps() {\n\n      $sql = "select * FROM apps ORDER BY name";\n\n      try {\n\n      $db = getConnection();\n\n      $stmt = $db->query($sql); \n\n      $data = $stmt->fetchAll(PDO::FETCH_OBJ);\n\n      $db = null;\n\n      return $data;\n\n      } catch(PDOException $e) {\n\n      echo "{"error":{"text":". $e->getApps() ."}}";\n\n      }\n\n    }\n',
     type: 'text',
     answers: [
       {
         text: 'Geben Sie den Funktionsnamen ohne Klammern an.\n',
-        solution: '\r\n\tfetchAll\r\n',
+        solution: '\r\n    fetchAll\r\n',
       },
     ],
   },
@@ -32353,7 +32355,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Aussagen über MySQL-Prozeduren und Trigger sind wahr?\n',
     explanation:
-      '<div style="margin-left:.38in;">\n\tMySQL 5.1 kennt auch gespeicherte Routinen (Prozeduren und Funktionen).\n<div style="margin-left:.38in;">\n\tMySQL verwendet die Syntax für gespeicherte Routinen gemäß dem SQL:2003-Standard. Zwischen der prozeduralen Sprache in MySQL und PL/SQL von Oracle gibt es viele Analogiien, aber doch auch so einige Unterschiede.\n<div style="margin-left:.38in;">\n\tWie bei ORACLE gibt es auch bei MySQL das Cursorkonzept, sogar die Syntax ist diesbezüglich weitestgehend gleich.\n<div style="margin-left:.38in;">\n\tAuch Trigger gibt es in MySQL. Nur das in MySQL die Trigger ausschließlich für ein Ereignis definiert werden können, eine OR-Option bei den Events gibt es nicht.\n',
+      '<div style="margin-left:.38in;">\n    MySQL 5.1 kennt auch gespeicherte Routinen (Prozeduren und Funktionen).\n<div style="margin-left:.38in;">\n    MySQL verwendet die Syntax für gespeicherte Routinen gemäß dem SQL:2003-Standard. Zwischen der prozeduralen Sprache in MySQL und PL/SQL von Oracle gibt es viele Analogiien, aber doch auch so einige Unterschiede.\n<div style="margin-left:.38in;">\n    Wie bei ORACLE gibt es auch bei MySQL das Cursorkonzept, sogar die Syntax ist diesbezüglich weitestgehend gleich.\n<div style="margin-left:.38in;">\n    Auch Trigger gibt es in MySQL. Nur das in MySQL die Trigger ausschließlich für ein Ereignis definiert werden können, eine OR-Option bei den Events gibt es nicht.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32380,7 +32382,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welche Aussagen über MySQL-Prozeduren und Trigger sind wahr?\n',
     explanation:
-      '<div style="margin-left:.38in;">\n\tMySQL 5.1 kennt auch gespeicherte Routinen (Prozeduren und Funktionen).\n<div style="margin-left:.38in;">\n\tMySQL verwendet die Syntax für gespeicherte Routinen gemäß dem SQL:2003-Standard. Zwischen der prozeduralen Sprache in MySQL und PL/SQL von Oracle gibt es viele Analogiien, aber doch auch so einige Unterschiede.\n<div style="margin-left:.38in;">\n\tWie bei ORACLE gibt es auch bei MySQL das Cursorkonzept, sogar die Syntax ist diesbezüglich weitestgehend gleich.\n<div style="margin-left:.38in;">\n\tAuch Trigger gibt es in MySQL. Nur das in MySQL die Trigger ausschließlich für ein Ereignis definiert werden können, eine OR-Option bei den Events gibt es nicht.\n',
+      '<div style="margin-left:.38in;">\n    MySQL 5.1 kennt auch gespeicherte Routinen (Prozeduren und Funktionen).\n<div style="margin-left:.38in;">\n    MySQL verwendet die Syntax für gespeicherte Routinen gemäß dem SQL:2003-Standard. Zwischen der prozeduralen Sprache in MySQL und PL/SQL von Oracle gibt es viele Analogiien, aber doch auch so einige Unterschiede.\n<div style="margin-left:.38in;">\n    Wie bei ORACLE gibt es auch bei MySQL das Cursorkonzept, sogar die Syntax ist diesbezüglich weitestgehend gleich.\n<div style="margin-left:.38in;">\n    Auch Trigger gibt es in MySQL. Nur das in MySQL die Trigger ausschließlich für ein Ereignis definiert werden können, eine OR-Option bei den Events gibt es nicht.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32407,24 +32409,24 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Nummerieren Sie die nachfolgenden Befehle einer Cursor-Verarbeitung in MySQL gemäß ihrer Ausführungsreihenfolge von 1 - 4 durch.\n',
     explanation:
-      '\n\tCREATE PROCEDURE KundenUpgrade()\n\n\tBEGIN\n\n\t    DECLARE val INT;\n\n\t    DECLARE finished INT DEFAULT 0;\n\n\t    DECLARE kundenCursor CURSOR FOR SELECT kunde_id FROM kunden; -- Cursordefinition\n\n\t    DECLARE CONTINUE HANDLER FOR SQLSTATE "02000" SET finished = 1;\n\n\t    OPEN kundenCursor; -- Cursor öffnen\n\n\t        REPEAT\n\n\t           FETCH kundenCursor INTO val;\n\n\t           IF NOT finished THEN\n\n\t               CALL KundenStatusByID(val); -- Ruft für jeden Kunden die Proz. auf\n\n\t  END IF;\n\n\t        UNTIL finished END REPEAT;   \n\n\t        CLOSE kundenCursor; -- Cursor schließen\n\n\tEND //\n\n\tDELIMITER ;\n',
+      '\n    CREATE PROCEDURE KundenUpgrade()\n\n    BEGIN\n\n        DECLARE val INT;\n\n        DECLARE finished INT DEFAULT 0;\n\n        DECLARE kundenCursor CURSOR FOR SELECT kunde_id FROM kunden; -- Cursordefinition\n\n        DECLARE CONTINUE HANDLER FOR SQLSTATE "02000" SET finished = 1;\n\n        OPEN kundenCursor; -- Cursor öffnen\n\n            REPEAT\n\n               FETCH kundenCursor INTO val;\n\n               IF NOT finished THEN\n\n                   CALL KundenStatusByID(val); -- Ruft für jeden Kunden die Proz. auf\n\n      END IF;\n\n            UNTIL finished END REPEAT;   \n\n            CLOSE kundenCursor; -- Cursor schließen\n\n    END //\n\n    DELIMITER ;\n',
     type: 'text',
     answers: [
       {
         text: 'CLOSE cursorname;\n',
-        solution: '\r\n\t4\r\n',
+        solution: '\r\n    4\r\n',
       },
       {
         text: 'DECLARE cursorname  CURSOR FOR SELECT ...  ;\n',
-        solution: '\r\n\t1\r\n',
+        solution: '\r\n    1\r\n',
       },
       {
         text: 'OPEN cursorname;\n',
-        solution: '\r\n\t2\r\n',
+        solution: '\r\n    2\r\n',
       },
       {
         text: 'FETCH cursorname INTO variable;\n',
-        solution: '\r\n\t3\r\n',
+        solution: '\r\n    3\r\n',
       },
     ],
   },
@@ -32434,7 +32436,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welcher Schnittstelle der 5-Schichten-Architektur eines DBMS werden SQL-Befehle übergeben?\n',
     explanation:
-      '\n\tDas ist die Definition der mengenorientierten Schnittstelle.\n',
+      '\n    Das ist die Definition der mengenorientierten Schnittstelle.\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32469,7 +32471,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Ein geöffneter CURSOR löst eine EXCEPTION aus, wenn eine FETCH-Anweisung keine Zeilen liefert.\n',
     explanation:
-      '\n\tEs wird nur die CURSOR%NOTFOUND Variable gesetzt. Eine Exception würde ja bedeuten, dass die Programmausführung abbricht und in die Exception springt\n',
+      '\n    Es wird nur die CURSOR%NOTFOUND Variable gesetzt. Eine Exception würde ja bedeuten, dass die Programmausführung abbricht und in die Exception springt\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32488,7 +32490,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Was versteht man unter Spezialisierung im EERM?\n',
     explanation:
-      'Unter einer Spezialisierung versteht man den Prozess der Gewinnung von Subtypen aus einem gegebenen Supertyp.\n\n\n\tDie abgeleiteten Typen haben dann neben den vom Supertyp ererbten Attributen eigene Attribute, die nur den Subtyp beschreiben.\n\n\n \n\nUnter Generalisierung versteht man den Prozess der Gewinnung eines Supertyps aus mehreren ähnlichen Subtypen.\n\n\n\tDer neue Supertyp wird dann durch diejenigen Attribute beschrieben, die den ähnlichen Subtypen gemeinsam sind.\n\n',
+      'Unter einer Spezialisierung versteht man den Prozess der Gewinnung von Subtypen aus einem gegebenen Supertyp.\n\n\n    Die abgeleiteten Typen haben dann neben den vom Supertyp ererbten Attributen eigene Attribute, die nur den Subtyp beschreiben.\n\n\n \n\nUnter Generalisierung versteht man den Prozess der Gewinnung eines Supertyps aus mehreren ähnlichen Subtypen.\n\n\n    Der neue Supertyp wird dann durch diejenigen Attribute beschrieben, die den ähnlichen Subtypen gemeinsam sind.\n\n',
     type: 'multiple-choice',
     answers: [
       {
@@ -32511,7 +32513,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Was versteht man unter Generalisierung im EERM?\n',
     explanation:
-      '\n\tUnter einer Spezialisierung versteht man den Prozess der Gewinnung von Subtypen aus einem gegebenen Supertyp.\n\n\t–Die abgeleiteten Typen haben dann neben den vom Supertyp ererbten Attributen eigene Attribute, die nur den Subtyp beschreiben.\n\n\t \n\n\tUnter Generalisierung versteht man den Prozess der Gewinnung eines Supertyps aus mehreren ähnlichen Subtypen.\n\n\t–Der neue Supertyp wird dann durch diejenigen Attribute beschrieben, die den ähnlichen Subtypen gemeinsam sind.\n',
+      '\n    Unter einer Spezialisierung versteht man den Prozess der Gewinnung von Subtypen aus einem gegebenen Supertyp.\n\n    –Die abgeleiteten Typen haben dann neben den vom Supertyp ererbten Attributen eigene Attribute, die nur den Subtyp beschreiben.\n\n     \n\n    Unter Generalisierung versteht man den Prozess der Gewinnung eines Supertyps aus mehreren ähnlichen Subtypen.\n\n    –Der neue Supertyp wird dann durch diejenigen Attribute beschrieben, die den ähnlichen Subtypen gemeinsam sind.\n',
     type: 'multiple-choice',
     answers: [
       {
