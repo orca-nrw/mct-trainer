@@ -25,7 +25,7 @@ export default function CheckboxAnswerHandler({
     <div className="space-y-2">
       {answers.map((answer, index) => {
         return (
-          <div key={index}>
+          <div className="flex flex-row items-center" key={index}>
             <input
               type="checkbox"
               name={`checkbox-${index}`}
@@ -33,12 +33,14 @@ export default function CheckboxAnswerHandler({
               checked={selectedAnswers[index] === 'true'}
               onChange={() => handleOnChange(index)}
             />
-            <label
-              className="ml-2 whitespace-pre-line"
-              htmlFor={`checkbox-${index}`}
-            >
-              {answer.text}
-            </label>
+            <div className="inline-block ml-2">
+              <label
+                className="whitespace-pre-line"
+                htmlFor={`checkbox-${index}`}
+              >
+                {answer.text}
+              </label>
+            </div>
           </div>
         )
       })}
