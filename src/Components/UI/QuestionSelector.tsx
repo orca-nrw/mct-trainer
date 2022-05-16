@@ -24,7 +24,7 @@ export default function QuestionSelector({
   }
 
   function handleNext() {
-    if (currentQuestion === numberOfQuestions) return
+    if (currentQuestion === numberOfQuestions - 1) return
 
     setCurrentQuestion(currentQuestion + 1)
   }
@@ -51,7 +51,7 @@ export default function QuestionSelector({
       </select>
       <PrimaryButton
         onClick={handleNext}
-        disabled={currentQuestion + 1 === numberOfQuestions}
+        disabled={currentQuestion === numberOfQuestions - 1}
       >
         Weiter
       </PrimaryButton>
