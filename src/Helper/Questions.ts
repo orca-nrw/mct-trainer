@@ -1077,7 +1077,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Wie fragt man in PL/SQL ab, ob ein Datenbanktrigger durch einen INSERT angestossen wurde?',
     explanation:
-      'Mit IF INSERTING THEN   \n     ELSIF DELETING THEN  \n     ELSIF UPDATING THEN  \nkann unter PL/SQL ein Trigger für mehrere DML-Ereignisse definiert werden und dann dieses Ereignis im Action-Teil des Triggers abgefragt werden.  \n\nDies ist eine PL/SQL-spezifische Syntax, die nicht zum SQL-Standard gehört.',
+      'Mit IF INSERTING THEN   \n     ELSIF DELETING THEN  \n     ELSIF UPDATING THEN  \nkann unter PL/SQL ein Trigger für mehrere DML-Ereignisse definiert werden und dann dieses Ereignis im Action-Teil des Triggers abgefragt werden.  \n\nDies ist eine PL/SQL-spezifische Syntax, die nicht zum SQL-Standard gehört.',
     type: 'text',
     answers: [
       {
@@ -3937,7 +3937,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'Join (NATURAL, THETA, EQUI, )',
+        text: 'Join (NATURAL, THETA, EQUI, )',
         solution: 'false',
       },
       {
@@ -3988,7 +3988,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'Join (NATURAL, THETA, EQUI, )',
+        text: 'Join (NATURAL, THETA, EQUI, )',
         solution: 'false',
       },
       {
@@ -5884,7 +5884,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Welcher PL/SQL-Block ermittelt einen Wert und gibt ihn als RETURN-Wert zurück?',
     explanation:
-      'PL/SQL unterscheidet vier Typen von Blöcken: \n\nEin Anonymer Block ist ein unbenannter PL/SQL-Block, der in einer Anwendung (Prozedur, Funktion ) eingebettet ist oder interaktiv eingegeben wird. \nEine Stored ist ein benannter PL/SQL-Block, der Parameter haben kann und als Prozedur oder Funktion definiert ist. Er wird im Datenbanksystem gespeichert und auf dem Server von der PL/SQL-Engine ausgeführt. Stored Functions geben über RETURN einen Wert an das aufrufende Programm zurück\nEin PACKAGE ist ein benannter PL/SQL-Block, der logisch verwandte Prozeduren und Funktionen, Deklarationen etc. zu einer Bibliothek zusammenfasst. \nEin Datenbanktrigger ist ein PL/SQL-Block, der zu einem definierten Ereignis (INSERT, UPDATE oder DELETE) automatisch vom Datenbankmanagementsystem aktiviert und ausgeführt wird.',
+      'PL/SQL unterscheidet vier Typen von Blöcken: \n\nEin Anonymer Block ist ein unbenannter PL/SQL-Block, der in einer Anwendung (Prozedur, Funktion ) eingebettet ist oder interaktiv eingegeben wird. \nEine Stored ist ein benannter PL/SQL-Block, der Parameter haben kann und als Prozedur oder Funktion definiert ist. Er wird im Datenbanksystem gespeichert und auf dem Server von der PL/SQL-Engine ausgeführt. Stored Functions geben über RETURN einen Wert an das aufrufende Programm zurück\nEin PACKAGE ist ein benannter PL/SQL-Block, der logisch verwandte Prozeduren und Funktionen, Deklarationen etc. zu einer Bibliothek zusammenfasst. \nEin Datenbanktrigger ist ein PL/SQL-Block, der zu einem definierten Ereignis (INSERT, UPDATE oder DELETE) automatisch vom Datenbankmanagementsystem aktiviert und ausgeführt wird.',
     type: 'multiple-choice',
     answers: [
       {
@@ -6720,7 +6720,7 @@ const questions: Question[] = [
     id: 1765,
     category: 12,
     difficulty: 3,
-    text: 'Welche EXCEPTIONS können speziell bei einem impliziten Cursor (SELECT  INTO ) geworfen werden? Bitte in alphabetischer Reihenfolge schreiben!',
+    text: 'Welche EXCEPTIONS können speziell bei einem impliziten Cursor (SELECT  INTO ) geworfen werden? Bitte in alphabetischer Reihenfolge schreiben!',
     explanation:
       'SELECT INTO übergibt genau einen Datensatz oder Wert an die INTO-Variable, die nur genau einen Wert oder Datensatz aufnehmen kann. Mehrere bzw. keine Datensätze als Ergebnis des SELECTS werfen die Exception TOO_MANY_ROWS bzw. NO_DATA_FOUND, wenn das Resultat des SELECTS leer ist. Eine Alternative ist die Verwendung eines Cursors, der auch mehrere Datensätze verarbeiten kann.',
     type: 'text',
@@ -12144,7 +12144,7 @@ const questions: Question[] = [
     difficulty: 3,
     text: 'Welcher PL/SQL-Blocktyp wird ausschließlich auf dem Datenbankserver eingesetzt?',
     explanation:
-      'PL/SQL unterscheidet fünf Typen von Blöcken: Ein anonymer Block ist ein unbenannter PL/SQL-Block, der in einer Anwendung (Prozedur, Funktion ) eingebettet ist oder interaktiv eingegeben wird. Eine Stored Procedure ist ein benannter PL/SQL-Block, der Parameter haben kann und als Prozedur oder Funktion definiert ist. Er wird im Datenbanksystem gespeichert und auf dem Server von der PL/SQL-Engine ausgeführt. Stored Functions geben über RETURN einen Wert an das aufrufende Programm zurückEin PACKAGE ist ein benannter PL/SQL-Block, der logisch verwandte Prozeduren und Funktionen, Deklarationen etc. zu einer Bibliothek zusammenfasst. Ein Datenbanktrigger ist ein PL/SQL-Block, der zu einem definierten Ereignis (INSERT, UPDATE oder DELETE) automatisch vom Datenbankmanagementsystem aktiviert und ausgeführt wird.',
+      'PL/SQL unterscheidet fünf Typen von Blöcken: Ein anonymer Block ist ein unbenannter PL/SQL-Block, der in einer Anwendung (Prozedur, Funktion ) eingebettet ist oder interaktiv eingegeben wird. Eine Stored Procedure ist ein benannter PL/SQL-Block, der Parameter haben kann und als Prozedur oder Funktion definiert ist. Er wird im Datenbanksystem gespeichert und auf dem Server von der PL/SQL-Engine ausgeführt. Stored Functions geben über RETURN einen Wert an das aufrufende Programm zurückEin PACKAGE ist ein benannter PL/SQL-Block, der logisch verwandte Prozeduren und Funktionen, Deklarationen etc. zu einer Bibliothek zusammenfasst. Ein Datenbanktrigger ist ein PL/SQL-Block, der zu einem definierten Ereignis (INSERT, UPDATE oder DELETE) automatisch vom Datenbankmanagementsystem aktiviert und ausgeführt wird.',
     type: 'multiple-choice',
     answers: [
       {
@@ -12631,7 +12631,7 @@ const questions: Question[] = [
         solution: 'true',
       },
       {
-        text: 'SQLJ unterstützt die Ausführung von SQL-DML-Anweisungen (SELECT, INSERT, UPDATE, DELETE), nicht aber von SQL-DDL-Anweisungen (CREATE, ALTER, DROP,).',
+        text: 'SQLJ unterstützt die Ausführung von SQL-DML-Anweisungen (SELECT, INSERT, UPDATE, DELETE), nicht aber von SQL-DDL-Anweisungen (CREATE, ALTER, DROP,).',
         solution: 'false',
       },
       {
@@ -13000,7 +13000,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'Innerhalb der Datensätze der Ergebnismenge einer DB-Anfrage kann mittels verschiedener Methodenaufrufe wie z.B. first(), previous(), hin und her navigiert werden.',
+        text: 'Innerhalb der Datensätze der Ergebnismenge einer DB-Anfrage kann mittels verschiedener Methodenaufrufe wie z.B. first(), previous(), hin und her navigiert werden.',
         solution: 'true',
       },
       {
@@ -13509,7 +13509,7 @@ const questions: Question[] = [
     difficulty: 2,
     text: 'Welche Kategorien von PL/SQL-Blöcken gibt es?',
     explanation:
-      'PL/SQL unterscheidet vier Typen von Blöcken: \n\nEin Anonymer Block ist ein unbenannter PL/SQL-Block, der in einer Anwendung (Prozedur, Funktion ) eingebettet ist oder interaktiv eingegeben wird. \nEine Stored Routine ist ein benannter PL/SQL-Block, der Parameter haben kann und als Prozedur oder Funktion definiert ist. Er wird im Datenbanksystem gespeichert und auf dem Server von der PL/SQL-Engine ausgeführt. \nEin PACKAGE ist ein benannter PL/SQL-Block, der logisch verwandte Prozeduren und Funktionen, Deklarationen etc. zu einer Bibliothek zusammenfasst. \nEin Datenbanktrigger ist ein PL/SQL-Block, der zu einem definierten Ereignis (INSERT, UPDATE oder DELETE) automatisch vom Datenbankmanagementsystem aktiviert und ausgeführt wird.',
+      'PL/SQL unterscheidet vier Typen von Blöcken: \n\nEin Anonymer Block ist ein unbenannter PL/SQL-Block, der in einer Anwendung (Prozedur, Funktion ) eingebettet ist oder interaktiv eingegeben wird. \nEine Stored Routine ist ein benannter PL/SQL-Block, der Parameter haben kann und als Prozedur oder Funktion definiert ist. Er wird im Datenbanksystem gespeichert und auf dem Server von der PL/SQL-Engine ausgeführt. \nEin PACKAGE ist ein benannter PL/SQL-Block, der logisch verwandte Prozeduren und Funktionen, Deklarationen etc. zu einer Bibliothek zusammenfasst. \nEin Datenbanktrigger ist ein PL/SQL-Block, der zu einem definierten Ereignis (INSERT, UPDATE oder DELETE) automatisch vom Datenbankmanagementsystem aktiviert und ausgeführt wird.',
     type: 'multiple-choice',
     answers: [
       {
@@ -15858,23 +15858,23 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE OR REPLACE PROCEDURE <methodenname> ;',
+        text: 'CREATE OR REPLACE PROCEDURE <methodenname> ;',
         solution: 'false',
       },
       {
-        text: 'CREATE OR REPLACE FUNCTION <methodenname> ;',
+        text: 'CREATE OR REPLACE FUNCTION <methodenname> ;',
         solution: 'false',
       },
       {
-        text: 'CREATE OR REPLACE METHOD <methodenname> ;',
+        text: 'CREATE OR REPLACE METHOD <methodenname> ;',
         solution: 'false',
       },
       {
-        text: 'CREATE OR REPLACE TYPE <typname> ;',
+        text: 'CREATE OR REPLACE TYPE <typname> ;',
         solution: 'true',
       },
       {
-        text: 'CREATE OR REPLACE TYPE BODY <typname> ;',
+        text: 'CREATE OR REPLACE TYPE BODY <typname> ;',
         solution: 'true',
       },
     ],
@@ -19483,7 +19483,7 @@ const questions: Question[] = [
     difficulty: 1,
     text: 'Mit  welchem PL/SQL-Blocktyp ermittelt man immer einen Wert und gibt ihn zurück?',
     explanation:
-      'PL/SQL unterscheidet vier Typen von Blöcken: \n\nEin Anonymer Block ist ein unbenannter PL/SQL-Block, der in einer Anwendung (Prozedur, Funktion ) eingebettet ist oder interaktiv eingegeben wird. \nEine Stored ist ein benannter PL/SQL-Block, der Parameter haben kann und als Prozedur oder Funktion definiert ist. Er wird im Datenbanksystem gespeichert und auf dem Server von der PL/SQL-Engine ausgeführt. Stored Functions geben über RETURN einen Wert an das aufrufende Programm zurück\nEin PACKAGE ist ein benannter PL/SQL-Block, der logisch verwandte Prozeduren und Funktionen, Deklarationen etc. zu einer Bibliothek zusammenfasst. \nEin Datenbanktrigger ist ein PL/SQL-Block, der zu einem definierten Ereignis (INSERT, UPDATE oder DELETE) automatisch vom Datenbankmanagementsystem aktiviert und ausgeführt wird.',
+      'PL/SQL unterscheidet vier Typen von Blöcken: \n\nEin Anonymer Block ist ein unbenannter PL/SQL-Block, der in einer Anwendung (Prozedur, Funktion ) eingebettet ist oder interaktiv eingegeben wird. \nEine Stored ist ein benannter PL/SQL-Block, der Parameter haben kann und als Prozedur oder Funktion definiert ist. Er wird im Datenbanksystem gespeichert und auf dem Server von der PL/SQL-Engine ausgeführt. Stored Functions geben über RETURN einen Wert an das aufrufende Programm zurück\nEin PACKAGE ist ein benannter PL/SQL-Block, der logisch verwandte Prozeduren und Funktionen, Deklarationen etc. zu einer Bibliothek zusammenfasst. \nEin Datenbanktrigger ist ein PL/SQL-Block, der zu einem definierten Ereignis (INSERT, UPDATE oder DELETE) automatisch vom Datenbankmanagementsystem aktiviert und ausgeführt wird.',
     type: 'multiple-choice',
     answers: [
       {
@@ -19794,11 +19794,11 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE OR REPLACE TYPE <typname>   STORE AS <tabellenname>;',
+        text: 'CREATE OR REPLACE TYPE <typname>   STORE AS <tabellenname>;',
         solution: 'false',
       },
       {
-        text: 'CREATE TABLE <tabellenname> AS OBJECT   STORE AS <tabellenname>;',
+        text: 'CREATE TABLE <tabellenname> AS OBJECT   STORE AS <tabellenname>;',
         solution: 'true',
       },
       {
@@ -19927,7 +19927,7 @@ const questions: Question[] = [
     id: 2251,
     category: 13,
     difficulty: 1,
-    text: 'Betrachten Sie einen ROW-Trigger auf der Tabelle Test_Tab (nr1 NUMBER, nr2 NUMBER) der Gestalt:  \n\nCREATE OR REPLACE TRIGGER test_tab_trg\n            AFTER UPDATE ON test_tab FOR EACH ROW BEGIN  END; \n\nWelche Aussagen sind für diesen ORACLE-Trigger wahr, wenn sich nur die Spalte nr1 mittels UPDATE ändert?',
+    text: 'Betrachten Sie einen ROW-Trigger auf der Tabelle Test_Tab (nr1 NUMBER, nr2 NUMBER) der Gestalt:  \n\nCREATE OR REPLACE TRIGGER test_tab_trg\n            AFTER UPDATE ON test_tab FOR EACH ROW BEGIN  END; \n\nWelche Aussagen sind für diesen ORACLE-Trigger wahr, wenn sich nur die Spalte nr1 mittels UPDATE ändert?',
     explanation:
       'Da das Ereignis nach einem UPDATE angestoßen wird und es sich um eine Zeilentrigger handelt, der nicht von einer Spalte abhängt, ist auch die Transitionsvariable NEW.n2 gefüllt.',
     type: 'multiple-choice',
@@ -20823,11 +20823,11 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE OR REPLACE TYPE <typname>  ;',
+        text: 'CREATE OR REPLACE TYPE <typname> ;',
         solution: 'false',
       },
       {
-        text: 'CREATE TABLE <tabellenname> AS OBJECT  ;',
+        text: 'CREATE TABLE <tabellenname> AS OBJECT ;',
         solution: 'true',
       },
       {
@@ -21023,15 +21023,15 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE OR REPLACE TYPE <subtypname> AS SUBTYP OF <supertypname> ;',
+        text: 'CREATE OR REPLACE TYPE <subtypname> AS SUBTYP OF <supertypname> ;',
         solution: 'false',
       },
       {
-        text: 'CREATE OR REPLACE TYPE <subtypname> OF SUPERTYP <supertypname> ;',
+        text: 'CREATE OR REPLACE TYPE <subtypname> OF SUPERTYP <supertypname> ;',
         solution: 'false',
       },
       {
-        text: 'CREATE OR REPLACE TYPE <subtypname> UNDER <supertypname> ;',
+        text: 'CREATE OR REPLACE TYPE <subtypname> UNDER <supertypname> ;',
         solution: 'true',
       },
     ],
@@ -21278,7 +21278,7 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'Unterabfragen, die mit einem Vergleichsoperator (=,<,>,) aber ohne ANY oder ALL, dürfen nur maximal einen Ergebnisdatensatz liefern.',
+        text: 'Unterabfragen, die mit einem Vergleichsoperator (=,<,>,) aber ohne ANY oder ALL, dürfen nur maximal einen Ergebnisdatensatz liefern.',
         solution: 'true',
       },
       {
@@ -22898,15 +22898,15 @@ const questions: Question[] = [
     type: 'multiple-choice',
     answers: [
       {
-        text: 'CREATE OID FOR <Tabellenname> ',
+        text: 'CREATE OID FOR <Tabellenname> ',
         solution: 'false',
       },
       {
-        text: 'CREATE TABLE <Tabellenname> OF <Typname> ',
+        text: 'CREATE TABLE <Tabellenname> OF <Typname> ',
         solution: 'true',
       },
       {
-        text: 'CREATE TYPE <Typname> AS OBJECT ',
+        text: 'CREATE TYPE <Typname> AS OBJECT ',
         solution: 'false',
       },
       {
@@ -23997,7 +23997,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'Join (NATURAL, THETA, EQUI, )',
+        text: 'Join (NATURAL, THETA, EQUI, )',
         solution: 'false',
       },
       {
@@ -24571,7 +24571,7 @@ const questions: Question[] = [
     id: 2709,
     category: 12,
     difficulty: 3,
-    text: 'Es sei eine Funktion test_check(sp1 IN NUMBER) RETURN BOOLEAN ; gegeben. Welche Aufrufe sind richtig?',
+    text: 'Es sei eine Funktion test_check(sp1 IN NUMBER) RETURN BOOLEAN ; gegeben. Welche Aufrufe sind richtig?',
     explanation:
       'Da der Rückgabewert (RETURN-Wert) vom Typ BOOLEAN ist, ist eine Verwendung innerhalb von Bedingungen z.B. von WHILE-Schleifen oder IF-Anweisungen sehr komfortabel möglich. Mit EXECUTE können Prozeduren ausgeführt werden und zwar  nicht innerhalb von PL/SQL-Programmen (dort nur durch Verwendung des Prozedurnamens) sondern in Tools wie  SQL-Developer. Bei Funktionen muss zusätzlich der Return-Wert verarbeitet werden.  Die Anweisung "SELECT funktionsname FROM DUAL;" eignet sich hervorragend für den Aufruf von Funktionen mit nur IN-Parametern, solange für sie nicht BOOLEAN als RETURN-Wert definiert ist. Der Grund ist, im SQL-Kontext kennt Oracle leider immer noch nicht den Datentyp BOOLEAN sondern nur in PL/SQL-Programmen.',
     type: 'multiple-choice',
@@ -24581,7 +24581,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'IF test_check(var_x) THEN  END IF;',
+        text: 'IF test_check(var_x) THEN  END IF;',
         solution: 'true',
       },
       {
@@ -24589,7 +24589,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'WHILE test_check(var_y) LOOP  ;',
+        text: 'WHILE test_check(var_y) LOOP  ;',
         solution: 'true',
       },
       {
@@ -26219,7 +26219,7 @@ const questions: Question[] = [
     id: 2710,
     category: 12,
     difficulty: 3,
-    text: 'Es sei eine Funktion \n\n     test_check(sp1 IN NUMBER) RETURN NUMBER ; \n\ngegeben. Welche Aufrufe sind richtig?',
+    text: 'Es sei eine Funktion \n\n     test_check(sp1 IN NUMBER) RETURN NUMBER ; \n\ngegeben. Welche Aufrufe sind richtig?',
     explanation:
       'Da der Rückgabewert (RETURN-Wert) vom Typ NUMBER ist, ist eine Verwendung wie innerhalb der Bedingung dieser IF-Anweisung unzulässig, da diese Syntax keine zu einem Wahrheitswert auswertbare Bedingung darstellt. \n\nAnders sieht es bei der Bedingung der WHILE-Schleifen aus. Aufgrund des Vergleichs ist dies eine auswertbare Bedingung mit einem Wahrheitswert. \n\nMit EXECUTE können nur Prozeduren ausgeführt werden und das auch nicht innerhalb von PL/SQL-Programmen (dort nur durch Verwendung des Prozedurnamens) sondern in Tools wie SQL-Plus oder SQL-Developer etc.\n\nDie Anweisung "SELECT funktionsname FROM DUAL;" eignet sich hervorragend für den Aufruf von Funktionen mit nur IN-Parametern, solange für sie nicht BOOLEAN als RETURN-Wert definiert ist. Der Grund ist, im SQL-Kontext kennt Oracle leider immer noch nicht den Datentyp BOOLEAN sondern nur in PL/SQL-Programmen.',
     type: 'multiple-choice',
@@ -26229,7 +26229,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'IF test_check(var_x) THEN  END IF;',
+        text: 'IF test_check(var_x) THEN  END IF;',
         solution: 'false',
       },
       {
@@ -26237,7 +26237,7 @@ const questions: Question[] = [
         solution: 'true',
       },
       {
-        text: 'WHILE ( test_check(var_y) < var_z ) LOOP  ;',
+        text: 'WHILE ( test_check(var_y) < var_z ) LOOP  ;',
         solution: 'true',
       },
     ],
@@ -26519,7 +26519,7 @@ const questions: Question[] = [
     id: 2701,
     category: 12,
     difficulty: 3,
-    text: 'Overloading-Routinen werden unterschieden durch ',
+    text: 'Overloading-Routinen werden unterschieden durch ',
     explanation:
       'Beim Overloading in PL/SQL können Paketroutinen gleich heißen:   Gleichnamige Prozeduren oder Funktionen werden durch eine unterschiedliche Anzahl, eine unterschiedliche Reihenfolge von Parametern oder durch unterschiedliche Datentypen der Parameter unterschieden.',
     type: 'multiple-choice',
@@ -26630,11 +26630,11 @@ const questions: Question[] = [
         solution: 'true',
       },
       {
-        text: 'WHILE p2 < 345 LOOP ;',
+        text: 'WHILE p2 < 345 LOOP ;',
         solution: 'true',
       },
       {
-        text: 'IF p1 = 456 THEN ;',
+        text: 'IF p1 = 456 THEN ;',
         solution: 'true',
       },
     ],
@@ -29787,7 +29787,7 @@ const questions: Question[] = [
         solution: 'false',
       },
       {
-        text: 'Sein Datentyp ist beliebig (numerisch oder alphanumerisch oder ).',
+        text: 'Sein Datentyp ist beliebig (numerisch oder alphanumerisch oder ).',
         solution: 'false',
       },
       {
@@ -30489,11 +30489,11 @@ const questions: Question[] = [
         solution: 'true',
       },
       {
-        text: 'WHILE p2 < 345 LOOP ;',
+        text: 'WHILE p2 < 345 LOOP ;',
         solution: 'true',
       },
       {
-        text: 'IF p3 = 456 THEN ;',
+        text: 'IF p3 = 456 THEN ;',
         solution: 'true',
       },
       {
