@@ -32,7 +32,7 @@ export default function QuestionsContainer({
     <div className="space-y-4">
       <TrainerHeader>Laufendes Quiz</TrainerHeader>
       {!selectedQuestions || selectedQuestions.length === 0 ? (
-        <></>
+        <p>Loading...</p>
       ) : (
         <>
           <QuestionHandler

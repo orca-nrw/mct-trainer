@@ -3,25 +3,30 @@ import { Route, Routes } from 'react-router'
 import CategorySelection from './CategorySelection'
 import Evaluation from './Evaluation'
 import QuestionsContainer from './QuestionsContainer'
-import categories from '../../Helper/Categories'
-import questions from '../../Helper/Questions'
 import _ from 'lodash'
 import Question from '../../Types/Question'
+import { useFetch } from '../../Helper/useFetch'
+import { Category } from '../../Types/Category'
 
 export default function QuizRouter() {
-  const [selectedCategories, setSelectedCategories] = useState(
-    new Array(categories.length).fill(false)
+  const { response: questions } = useFetch<Question[]>('./data/Questions.json')
+  const { response: categories } = useFetch<Category[]>(
+    './data/Categories.json'
   )
 
+  const [selectedCategories, setSelectedCategories] = useState<number[]>([])
   const [selectedQuestions, setSelectedQuestions] = useState<Question[]>([])
   const [selectedAnswersArrays, setSelectedAnswersArrays] = useState<
     string[][]
   >(new Array(15).fill([]))
 
   function resetQuestions() {
+    console.log(questions)
+    if (!questions) return
+
     const filteredQuestions = questions.filter(
       // Check whether the questions category is true in the selected Categories
-      (question) => selectedCategories[question.category - 1] === true
+      (question) => selectedCategories.includes(question.category)
     )
 
     // Draw sample from filteredQuestions
@@ -29,9 +34,17 @@ export default function QuizRouter() {
     setSelectedQuestions(newSelectedQuestions)
   }
 
+  // Prepare questions once categories are selected
   useEffect(() => {
     resetQuestions()
   }, [selectedCategories])
+
+  // Recall resetQuestions once the questions are loaded in case they are delayed
+  useEffect(() => {
+    if (!questions || !categories) return
+
+    resetQuestions()
+  }, [questions])
 
   useEffect(() => {
     setSelectedAnswersArrays(
@@ -51,7 +64,7 @@ export default function QuizRouter() {
         path="categories"
         element={
           <CategorySelection
-            categories={categories.map((categoryObj) => categoryObj.name)}
+            categories={categories || []}
             selectedCategories={selectedCategories}
             setSelectedCategories={setSelectedCategories}
             resetQuestions={resetQuestions}
