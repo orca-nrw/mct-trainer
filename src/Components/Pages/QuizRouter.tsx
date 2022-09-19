@@ -21,7 +21,6 @@ export default function QuizRouter() {
   >(new Array(15).fill([]))
 
   function resetQuestions() {
-    console.log(questions)
     if (!questions) return
 
     const filteredQuestions = questions.filter(

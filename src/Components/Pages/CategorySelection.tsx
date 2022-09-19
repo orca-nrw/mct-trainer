@@ -47,7 +47,9 @@ export default function CategorySelection({
 
       <PrimaryButton
         onClick={handleStart}
-        disabled={!selectedCategories || !categories}
+        disabled={
+          !selectedCategories || selectedCategories.length === 0 || !categories
+        }
       >
         Test starten
       </PrimaryButton>
