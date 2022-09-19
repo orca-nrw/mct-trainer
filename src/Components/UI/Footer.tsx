@@ -19,7 +19,7 @@ export const Footer = () => {
         </a>
         <a
           className="flex items-center no-underline text-white"
-          href="https://github.com/EILD-nrw/nf-trainer"
+          href="https://github.com/EILD-nrw/mct-trainer"
         >
           <img className="inline w-5 h-5" src={githubMark} alt="GitHub Logo" />
           <span className="ml-1 text-sm sm:text-base">GitHub</span>

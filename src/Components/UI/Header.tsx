@@ -10,14 +10,10 @@ export const Header = () => {
           className="flex items-center no-underline text-black whitespace-nowrap text-2xl sm:text-6xl font-bold font-mono mr-8"
           to="/"
         >
-          NF-Trainer
+          MCT-Trainer
         </Link>
         <div className="flex-auto">
-          <a
-            href="https://medien.hs-duesseldorf.de/eild"
-            rel="noreferrer"
-            target="_blank"
-          >
+          <a href="https://eild.nrw/" rel="noreferrer" target="_blank">
             <img
               className="max-h-24 max-w-full float-right"
               src={eildHeaderLogo}

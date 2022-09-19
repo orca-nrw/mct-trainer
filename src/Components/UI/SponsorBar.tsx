@@ -5,11 +5,7 @@ export default function SponsorBar() {
   return (
     <div className="bg-white p-4">
       <div className="flex-auto">
-        <a
-          href="https://medien.hs-duesseldorf.de/eild"
-          rel="noreferrer"
-          target="_blank"
-        >
+        <a href="https://www.dh.nrw/" rel="noreferrer" target="_blank">
           <img
             className="md:px-20 max-w-full float-right"
             src={sponsorLogo}
