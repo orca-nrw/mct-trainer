@@ -13,7 +13,11 @@ export const Header = () => {
           MCT-Trainer
         </Link>
         <div className="flex-auto">
-          <a href="https://eild.nrw/" rel="noreferrer" target="_blank">
+          <a
+            href="https://medien.hs-duesseldorf.de/eild"
+            rel="noreferrer"
+            target="_blank"
+          >
             <img
               className="max-h-24 max-w-full float-right"
               src={eildHeaderLogo}
